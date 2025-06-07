@@ -443,7 +443,6 @@ const Wholesale = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  />
                   <Badge className="absolute top-4 right-4 bg-[rgb(251,189,35)] text-black font-bold">
                     {project.savings}
                   </Badge>
