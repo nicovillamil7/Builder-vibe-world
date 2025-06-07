@@ -278,7 +278,7 @@ const Index = () => {
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-5 w-5 text-yellow-400 fill-current"
+                        className="h-5 w-5 text-[rgb(251,189,35)] fill-current"
                       />
                     ))}
                   </div>
