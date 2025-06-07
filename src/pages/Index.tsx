@@ -337,15 +337,8 @@ const Index = () => {
               Still have questions? We're here to help!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-red-800 hover:bg-red-900">
-                Call Us: (305) 555-0123
-              </Button>
-              <Button
-                variant="outline"
-                className="border-red-800 text-red-800 hover:bg-red-50"
-              >
-                Email Us
-              </Button>
+              <PrimaryButton>Call Us: (305) 555-0123</PrimaryButton>
+              <OutlineButton>Email Us</OutlineButton>
             </div>
           </div>
         </div>
