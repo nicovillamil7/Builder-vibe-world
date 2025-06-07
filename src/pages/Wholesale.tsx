@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import {
   Calculator,
   Truck,
@@ -126,7 +127,7 @@ const Wholesale = () => {
       timeline: "Completed in 8 weeks",
       materials: "LVP flooring, Porcelain tiles",
       savings: "$18,000 saved",
-      image: "https://i.imgur.com/4N8kpQ7.jpg", // Modern white interior commercial space
+      imageId: "luxuryApartmentComplex",
     },
     {
       title: "Office Tower Renovation",
@@ -136,7 +137,7 @@ const Wholesale = () => {
       timeline: "Completed in 6 weeks",
       materials: "Commercial porcelain, Carpet tiles",
       savings: "$12,000 saved",
-      image: "https://i.imgur.com/6T9mL3Q.jpg", // Light dining area - commercial application
+      imageId: "officeTowerRenovation",
     },
     {
       title: "Retail Shopping Center",
@@ -146,7 +147,7 @@ const Wholesale = () => {
       timeline: "Completed in 12 weeks",
       materials: "Natural stone, High-traffic porcelain",
       savings: "$25,000 saved",
-      image: "https://i.imgur.com/9L6fQ4P.jpg", // Large format tiles for commercial
+      imageId: "retailShoppingCenter",
     },
   ];
 
