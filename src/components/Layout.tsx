@@ -9,6 +9,8 @@ import {
   X,
   Facebook,
   Instagram,
+  Clock,
+  Truck,
 } from "lucide-react";
 
 interface LayoutProps {
@@ -32,74 +34,116 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Contact Bar */}
-      <div className="bg-red-800 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone className="h-4 w-4" />
-              <span>(305) 555-0123</span>
+      {/* Top Information Bar */}
+      <div className="bg-red-800 text-white py-3 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+            {/* Left side - Contact & Location */}
+            <div className="flex flex-wrap items-center gap-6 text-sm">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <a
+                  href="tel:+13055550123"
+                  className="hover:text-yellow-300 transition-colors"
+                >
+                  (305) 555-0123
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4" />
+                <span>Miami Design District</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock className="h-4 w-4" />
+                <span>Mon-Fri 7AM-6PM</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-1">
-              <MapPin className="h-4 w-4" />
-              <span>Miami, FL</span>
+
+            {/* Right side - Value Props & Quick Actions */}
+            <div className="flex flex-wrap items-center gap-6 text-sm">
+              <div className="flex items-center space-x-2">
+                <Truck className="h-4 w-4 text-yellow-300" />
+                <span className="font-medium">
+                  Free Samples • Same-Day Pickup
+                </span>
+              </div>
+              <div className="hidden lg:flex items-center space-x-3">
+                <a
+                  href="mailto:info@miamifloorspro.com"
+                  className="hover:text-yellow-300 transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+                <a href="#" className="hover:text-yellow-300 transition-colors">
+                  <Facebook className="h-4 w-4" />
+                </a>
+                <a href="#" className="hover:text-yellow-300 transition-colors">
+                  <Instagram className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="hidden md:block">
-            <span>Free Samples • Fast 3-5 Day Delivery</span>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      {/* Main Navigation Header */}
+      <header className="bg-white shadow-lg sticky top-0 z-50 border-b-2 border-red-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-red-800 rounded-lg flex items-center justify-center">
+            {/* Logo & Brand */}
+            <Link to="/" className="flex items-center space-x-4 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-red-800">
+              <div className="hidden sm:block">
+                <h1 className="text-2xl font-bold text-red-800 group-hover:text-red-900 transition-colors">
                   Miami Floors Pro
                 </h1>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 font-medium">
                   Premium Flooring Solutions
                 </p>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-red-800 ${
+                  className={`relative text-sm font-semibold transition-all duration-200 hover:text-red-800 ${
                     isActive(item.href) ? "text-red-800" : "text-gray-700"
                   }`}
                 >
                   {item.name}
+                  {isActive(item.href) && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-red-800 rounded-full"></div>
+                  )}
                 </Link>
               ))}
             </nav>
 
-            {/* Action Buttons */}
-            <div className="hidden md:flex items-center space-x-4">
-              <OutlineButton>Free Samples</OutlineButton>
-              <PrimaryButton>Get Free Quote</PrimaryButton>
-            </div>
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* CTA Buttons & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Desktop Action Buttons */}
+              <div className="hidden md:flex items-center space-x-3">
+                <OutlineButton size="sm" className="text-sm px-4">
+                  Free Samples
+                </OutlineButton>
+                <PrimaryButton size="sm" className="text-sm px-4">
+                  Get Quote
+                </PrimaryButton>
+              </div>
+
+              {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-700 hover:text-red-800"
+                className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 {mobileMenuOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-6 w-6 text-gray-700" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-gray-700" />
                 )}
               </button>
             </div>
@@ -107,23 +151,30 @@ const Layout = ({ children }: LayoutProps) => {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t border-gray-200 py-4">
+            <div className="lg:hidden border-t border-gray-200 py-4 bg-gray-50">
               <nav className="flex flex-col space-y-4">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`text-sm font-medium transition-colors hover:text-red-800 ${
-                      isActive(item.href) ? "text-red-800" : "text-gray-700"
+                    className={`text-base font-medium transition-colors px-4 py-2 rounded-lg ${
+                      isActive(item.href)
+                        ? "text-red-800 bg-red-50"
+                        : "text-gray-700 hover:text-red-800 hover:bg-red-50"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <div className="flex flex-col space-y-2 pt-4">
-                  <OutlineButton>Free Samples</OutlineButton>
-                  <PrimaryButton>Get Free Quote</PrimaryButton>
+                {/* Mobile Action Buttons */}
+                <div className="flex flex-col space-y-3 pt-4 px-4">
+                  <OutlineButton className="w-full">
+                    Request Free Samples
+                  </OutlineButton>
+                  <PrimaryButton className="w-full">
+                    Get Free Quote
+                  </PrimaryButton>
                 </div>
               </nav>
             </div>
@@ -141,19 +192,29 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-red-800 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">M</span>
+                <div className="w-10 h-10 bg-red-800 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">M</span>
                 </div>
                 <span className="text-xl font-bold">Miami Floors Pro</span>
               </div>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 Since 2008, Miami Floors Pro has been Florida's premier
                 destination for premium flooring solutions, serving contractors,
                 designers, and homeowners across South Florida.
               </p>
               <div className="flex space-x-4">
-                <Facebook className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
-                <Instagram className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
               </div>
             </div>
 
@@ -186,11 +247,27 @@ const Layout = ({ children }: LayoutProps) => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-5 w-5 text-gray-400" />
-                  <span className="text-gray-400">(305) 555-0123</span>
+                  <a
+                    href="tel:+13055550123"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    (305) 555-0123
+                  </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-5 w-5 text-gray-400" />
-                  <span className="text-gray-400">info@miamifloorspro.com</span>
+                  <a
+                    href="mailto:info@miamifloorspro.com"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    info@miamifloorspro.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock className="h-5 w-5 text-gray-400" />
+                  <span className="text-gray-400">
+                    Mon-Fri: 7:00 AM - 6:00 PM
+                  </span>
                 </div>
               </div>
             </div>
@@ -201,13 +278,22 @@ const Layout = ({ children }: LayoutProps) => {
               © 2024 Miami Floors Pro. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="#" className="text-gray-400 hover:text-white text-sm">
+              <Link
+                to="#"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link to="#" className="text-gray-400 hover:text-white text-sm">
+              <Link
+                to="#"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link to="#" className="text-gray-400 hover:text-white text-sm">
+              <Link
+                to="#"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Cookie Policy
               </Link>
             </div>
