@@ -163,7 +163,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Miami Floors Pro?
+              Why Genesis Stone?
             </h2>
           </div>
 
@@ -250,7 +250,7 @@ const Index = () => {
               {
                 name: "Carlos Rodriguez",
                 title: "General Contractor",
-                text: "Miami Floors Pro has been our go-to supplier for 5 years. Their bulk pricing and fast delivery keep our projects on schedule and on budget.",
+                text: "Genesis Stone has been our go-to supplier for 5 years. Their bulk pricing and fast delivery keep our projects on schedule and on budget.",
                 rating: 5,
               },
               {

@@ -102,8 +102,7 @@ const About = () => {
   const milestones = [
     {
       year: "2008",
-      event:
-        "Maria Gonzalez founded Miami Floors Pro after years as a contractor",
+      event: "Maria Gonzalez founded Genesis Stone after years as a contractor",
       details:
         "Started with a 2,000 sq ft warehouse and a mission to serve fellow contractors",
     },
@@ -160,9 +159,9 @@ const About = () => {
               <span className="text-[rgb(251,189,35)]">for Professionals</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Miami Floors Pro was born from real experience on real job sites.
-              We understand what it takes to deliver quality projects on time
-              and on budget.
+              Genesis Stone was born from real experience on real job sites. We
+              understand what it takes to deliver quality projects on time and
+              on budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <GoldButton size="lg" className="px-10 py-4 text-lg">
@@ -227,7 +226,7 @@ const About = () => {
                 <p>
                   "After missing too many project deadlines because of
                   unreliable suppliers, I decided to create the company I wished
-                  existed. Miami Floors Pro was born from the frustration of not
+                  existed. Genesis Stone was born from the frustration of not
                   having a true partner in the flooring business."
                 </p>
                 <p>
@@ -370,7 +369,7 @@ const About = () => {
               The People Behind Your Success
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals who make Miami Floors Pro your
+              Meet the experienced professionals who make Genesis Stone your
               most reliable partner
             </p>
           </div>
