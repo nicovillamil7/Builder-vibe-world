@@ -307,9 +307,8 @@ const Wholesale = () => {
                           ? "bg-blue-100"
                           : advantage.color === "green"
                             ? "bg-green-100"
-                            : advantage.color === "orange"
-                              ? "bg-orange-100"
-                              : "bg-purple-100"
+                      advantage.color === 'orange' ? 'bg-orange-100' :
+                      'bg-red-100'
                       }`}
                     >
                       <advantage.icon
@@ -318,9 +317,8 @@ const Wholesale = () => {
                             ? "text-blue-600"
                             : advantage.color === "green"
                               ? "text-green-600"
-                              : advantage.color === "orange"
-                                ? "text-orange-600"
-                                : "text-purple-600"
+                        advantage.color === 'orange' ? 'text-orange-600' :
+                        'text-[rgb(138,0,0)]'
                         }`}
                       />
                     </div>

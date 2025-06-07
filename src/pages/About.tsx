@@ -277,9 +277,8 @@ const About = () => {
                           ? "bg-red-100"
                           : value.color === "blue"
                             ? "bg-blue-100"
-                            : value.color === "green"
-                              ? "bg-green-100"
-                              : "bg-purple-100"
+                      value.color === 'yellow' ? 'bg-amber-100' :
+                      'bg-red-100'
                       }`}
                     >
                       <value.icon
@@ -288,9 +287,8 @@ const About = () => {
                             ? "text-[rgb(138,0,0)]"
                             : value.color === "blue"
                               ? "text-blue-600"
-                              : value.color === "green"
-                                ? "text-green-600"
-                                : "text-purple-600"
+                        value.color === 'yellow' ? 'text-[rgb(251,189,35)]' :
+                        'text-[rgb(138,0,0)]'
                         }`}
                       />
                     </div>

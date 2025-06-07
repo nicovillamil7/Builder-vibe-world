@@ -40,9 +40,9 @@ const Index = () => {
     },
     {
       icon: Palette,
-      title: "Luxury Tile Showroom",
+      title: "Premium Material Showroom",
       description:
-        "Explore marble, mosaic & custom patterns. 3 free samples & 1:1 design consult.",
+        "Explore marble, mosaic & custom patterns. Professional design consultation available.",
       action: "Request Designer Samples",
       category: "designers",
     },
@@ -119,9 +119,9 @@ const Index = () => {
         "Absolutely! We offer volume discounts starting at 15% for orders over 5,000 sq ft, and up to 25% for orders over 10,000 sq ft. We also provide Net-30 payment terms for qualified contractors.",
     },
     {
-      question: "Can I get samples before placing an order?",
+      question: "Can I see materials before placing an order?",
       answer:
-        "Yes, we provide up to 3 free samples for all customers. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our showroom.",
+        "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami Design District location.",
     },
   ];
 
