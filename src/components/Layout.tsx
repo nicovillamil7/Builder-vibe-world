@@ -26,8 +26,8 @@ const Layout = ({ children }: LayoutProps) => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
-    { name: "Retail", href: "/retail" },
-    { name: "Wholesale", href: "/wholesale" },
+    { name: "Interior Design", href: "/retail" },
+    { name: "Contractors", href: "/wholesale" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -64,7 +64,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex items-center space-x-2">
                 <Truck className="h-4 w-4 text-[rgb(251,189,35)]" />
                 <span className="font-medium">
-                  Free Samples • Same-Day Pickup
+                  Professional Installation • Same-Day Pickup
                 </span>
               </div>
               <div className="hidden lg:flex items-center space-x-3">
@@ -136,10 +136,10 @@ const Layout = ({ children }: LayoutProps) => {
               {/* Desktop Action Buttons */}
               <div className="hidden md:flex items-center space-x-3">
                 <OutlineButton size="sm" className="text-sm px-4">
-                  Free Samples
+                  Get Estimate
                 </OutlineButton>
                 <PrimaryButton size="sm" className="text-sm px-4">
-                  Get Quote
+                  Schedule Consultation
                 </PrimaryButton>
               </div>
 
@@ -177,11 +177,9 @@ const Layout = ({ children }: LayoutProps) => {
                 ))}
                 {/* Mobile Action Buttons */}
                 <div className="flex flex-col space-y-3 pt-4 px-4">
-                  <OutlineButton className="w-full">
-                    Request Free Samples
-                  </OutlineButton>
+                  <OutlineButton className="w-full">Get Estimate</OutlineButton>
                   <PrimaryButton className="w-full">
-                    Get Free Quote
+                    Schedule Consultation
                   </PrimaryButton>
                 </div>
               </nav>

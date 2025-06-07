@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Palette,
-  Sparkles,
+  Home,
   Eye,
   Zap,
   Crown,
@@ -21,156 +21,159 @@ import {
   Users,
   ArrowRight,
   CheckCircle2,
+  TrendingUp,
+  Heart,
+  Sparkles,
 } from "lucide-react";
 
 const Retail = () => {
-  const luxuryFeatures = [
+  const homeUpgradeFeatures = [
     {
-      icon: Crown,
-      title: "Exclusive Luxury Collections",
+      icon: Home,
+      title: "Home Value Enhancement",
       description:
-        "Curated premium materials from Italy, Spain, and artisan workshops worldwide",
-      highlight: "First access to new collections",
-      gradient: "from-purple-500 to-pink-500",
+        "Premium flooring that increases your property value and creates lasting beauty in every room",
+      highlight: "Increase home value up to 15%",
+      bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
     {
       icon: Eye,
-      title: "3D Design Visualization",
+      title: "Design Visualization Service",
       description:
-        "See your vision come to life with photorealistic renderings and virtual walkthroughs",
-      highlight: "Professional 3D mockups included",
-      gradient: "from-blue-500 to-cyan-500",
+        "See your vision come to life with our professional design consultation and 3D room mockups",
+      highlight: "Free design consultation",
+      bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
     },
     {
       icon: Sparkles,
-      title: "White-Glove Sample Service",
+      title: "Professional Installation",
       description:
-        "Large format samples delivered to your studio with detailed specification sheets",
-      highlight: "Up to 10 samples free",
-      gradient: "from-amber-500 to-orange-500",
+        "Expert installation with certified craftsmen ensuring perfect results and comprehensive warranties",
+      highlight: "Lifetime installation warranty",
+      bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
     {
       icon: Gem,
-      title: "Custom Pattern Creation",
+      title: "Premium Material Selection",
       description:
-        "Work with our artisans to create unique mosaic patterns and bespoke installations",
-      highlight: "Exclusive custom designs",
-      gradient: "from-green-500 to-emerald-500",
+        "Curated collection of high-end materials from top manufacturers for discerning homeowners",
+      highlight: "Designer-grade materials",
+      bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
     },
   ];
 
-  const designerBenefits = [
+  const homeownerBenefits = [
     {
-      title: "Trade Professional Pricing",
+      title: "Interior Design Consultation",
       description:
-        "Exclusive pricing structure for certified interior designers and architects",
-      savings: "Save 20-35%",
+        "Professional design guidance to select materials that complement your home's style and your lifestyle",
+      savings: "Included",
     },
     {
-      title: "Rapid Sample Program",
+      title: "Material Sample Service",
       description:
-        "Express sample delivery within 24-48 hours for time-sensitive projects",
-      savings: "Next-day delivery",
+        "Take home large format samples to see how materials look in your actual lighting conditions",
+      savings: "Up to 5 samples",
     },
     {
-      title: "Design Consultation Credits",
+      title: "Project Planning Support",
       description:
-        "Complimentary one-on-one consultations with our material specialists",
-      savings: "$200 value",
+        "Detailed project timeline, material calculations, and coordination with your preferred contractors",
+      savings: "Free service",
     },
     {
-      title: "Project Documentation",
+      title: "Warranty & Support",
       description:
-        "Complete technical specifications and installation guides for every material",
-      savings: "Professional docs",
+        "Comprehensive material warranties and ongoing maintenance guidance for your investment",
+      savings: "5-25 year warranties",
     },
   ];
 
-  const portfolioProjects = [
+  const homeProjects = [
     {
-      title: "Oceanfront Penthouse",
-      designer: "Elena Vasquez Design",
-      location: "Key Biscayne",
-      style: "Contemporary Luxury",
-      materials: ["Calacatta Marble", "Bronze Mosaics", "Venetian Terrazzo"],
-      image: "/placeholder.svg",
-      award: "Design Excellence Award 2024",
-    },
-    {
-      title: "Art Deco Revival",
-      designer: "Heritage Interiors",
-      location: "South Beach",
-      style: "Modern Classic",
-      materials: ["Geometric Mosaics", "Brass Inlays", "Marble Marquetry"],
-      image: "/placeholder.svg",
-      award: "Featured in Architectural Digest",
-    },
-    {
-      title: "Minimalist Sanctuary",
-      designer: "Zen Living Studio",
+      title: "Modern Family Home",
+      homeowner: "The Johnson Family",
       location: "Coral Gables",
-      style: "Scandinavian Modern",
+      style: "Contemporary Elegance",
       materials: [
         "Large Format Porcelain",
-        "Natural Stone",
-        "Wood-look Ceramics",
+        "Natural Wood-Look LVP",
+        "Marble Accents",
       ],
       image: "/placeholder.svg",
-      award: "Miami Design Week Showcase",
+      result: "Increased home value by $45,000",
+    },
+    {
+      title: "Historic Home Renovation",
+      homeowner: "The Rodriguez Family",
+      location: "Coconut Grove",
+      style: "Classic with Modern Touches",
+      materials: ["Hardwood Restoration", "Decorative Tile", "Natural Stone"],
+      image: "/placeholder.svg",
+      result: "Featured in Miami Home & Design",
+    },
+    {
+      title: "Waterfront Condo Upgrade",
+      homeowner: "The Chen Family",
+      location: "Key Biscayne",
+      style: "Coastal Contemporary",
+      materials: ["Luxury Vinyl Plank", "Porcelain Tile", "Glass Mosaics"],
+      image: "/placeholder.svg",
+      result: "Perfect for family living",
     },
   ];
 
-  const designerTestimonials = [
+  const homeownerTestimonials = [
     {
-      name: "Elena Vasquez",
-      firm: "Vasquez Design Studio",
-      credentials: "ASID, LEED AP",
-      text: "Miami Floors Pro understands luxury design at the highest level. Their material curation and technical support have been instrumental in delivering award-winning projects.",
-      projects: "25+ luxury residences",
-      specialty: "High-end residential",
+      name: "Sarah Johnson",
+      location: "Coral Gables",
+      projectType: "Whole Home Renovation",
+      text: "Miami Floors Pro transformed our entire home. The design consultation helped us choose materials that work perfectly with our lifestyle and aesthetic. Our home feels like a luxury resort now.",
+      rating: 5,
+      timeframe: "3-week project",
     },
     {
-      name: "Marcus Chen",
-      firm: "Chen Architecture & Design",
-      credentials: "AIA, NCARB",
-      text: "The custom pattern capabilities and artisan network have allowed us to create truly unique installations that define spaces and elevate our architectural vision.",
-      projects: "15+ commercial projects",
-      specialty: "Boutique hospitality",
+      name: "Carlos Rodriguez",
+      location: "Coconut Grove",
+      projectType: "Kitchen & Living Room",
+      text: "The team understood our vision for blending historic charm with modern functionality. The installation was flawless and the results exceeded our expectations. Worth every penny.",
+      rating: 5,
+      timeframe: "2-week project",
     },
   ];
 
   return (
     <Layout>
-      {/* Hero Section - Sophisticated design focus */}
+      {/* Hero Section - Home-focused design */}
       <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white overflow-hidden">
         {/* Elegant background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[rgb(251,189,35)]/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[rgb(251,189,35)]/10 to-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[rgb(138,0,0)]/10 to-red-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center">
             <Badge className="bg-[rgb(251,189,35)] text-black mb-8 px-6 py-3 text-lg font-bold">
-              For Interior Designers & Architects
+              For Homeowners & Interior Designers
             </Badge>
 
             <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-              <span className="block">Luxury Materials</span>
+              <span className="block">Transform Your Home</span>
               <span className="block bg-gradient-to-r from-[rgb(251,189,35)] to-amber-400 bg-clip-text text-transparent">
-                Extraordinary Designs
+                Beautiful Flooring
               </span>
             </h1>
 
             <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Elevate your design practice with our curated collection of
-              premium materials, expert consultation services, and artisan-level
-              custom solutions.
+              Upgrade your home with premium flooring solutions. From design
+              consultation to professional installation, we help you create the
+              home of your dreams.
             </p>
 
             <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-16">
               <GoldButton size="lg" className="px-12 py-6 text-xl font-bold">
-                Explore Luxury Collections
+                Start Your Home Project
                 <ArrowRight className="ml-3 h-6 w-6" />
               </GoldButton>
               <WhiteOutlineButton
@@ -185,15 +188,15 @@ const Retail = () => {
             <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
                 <Star className="h-5 w-5 text-[rgb(251,189,35)]" />
-                <span>500+ Designer Projects</span>
+                <span>500+ Home Projects</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Crown className="h-5 w-5 text-[rgb(251,189,35)]" />
-                <span>Exclusive Material Access</span>
+                <TrendingUp className="h-5 w-5 text-[rgb(251,189,35)]" />
+                <span>Increase Property Value</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Gem className="h-5 w-5 text-[rgb(251,189,35)]" />
-                <span>Custom Artisan Work</span>
+                <Heart className="h-5 w-5 text-[rgb(251,189,35)]" />
+                <span>Lifetime Warranty</span>
               </div>
             </div>
           </div>
@@ -214,32 +217,30 @@ const Retail = () => {
         </div>
       </div>
 
-      {/* Luxury Features - Elegant showcase */}
+      {/* Home Upgrade Features - Brand-consistent showcase */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold text-gray-900 mb-8">
-              The Designer Advantage
+              Everything for Your Dream Home
             </h2>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-              Everything you need to create spaces that inspire, delivered with
-              the precision your reputation demands
+              From initial design concepts to final installation, we provide
+              complete flooring solutions that transform your house into the
+              home you've always envisioned.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {luxuryFeatures.map((feature, index) => (
+            {homeUpgradeFeatures.map((feature, index) => (
               <Card
                 key={index}
                 className="group relative overflow-hidden hover:shadow-2xl transition-all duration-500 border-0"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-5 group-hover:opacity-10 transition-opacity`}
-                ></div>
                 <CardContent className="relative p-10">
                   <div className="flex items-start space-x-6">
                     <div
-                      className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center flex-shrink-0 shadow-xl`}
+                      className={`w-20 h-20 rounded-2xl ${feature.bgColor} flex items-center justify-center flex-shrink-0 shadow-xl`}
                     >
                       <feature.icon className="h-10 w-10 text-white" />
                     </div>
@@ -262,20 +263,21 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Designer Benefits - Professional focus */}
+      {/* Homeowner Benefits - Service focus */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Professional Trade Benefits
+              Complete Home Flooring Service
             </h2>
             <p className="text-xl text-gray-600">
-              Exclusive advantages designed for design professionals
+              Everything you need for a successful flooring project, all in one
+              place
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {designerBenefits.map((benefit, index) => (
+            {homeownerBenefits.map((benefit, index) => (
               <Card
                 key={index}
                 className="group hover:shadow-xl transition-all duration-300 bg-white border-0"
@@ -294,7 +296,7 @@ const Retail = () => {
                   </p>
                   <div className="mt-6 flex items-center text-[rgb(138,0,0)] font-medium group-hover:text-[rgb(153,27,27)]">
                     <CheckCircle2 className="h-5 w-5 mr-2" />
-                    <span>Available for certified professionals</span>
+                    <span>Professional service guaranteed</span>
                   </div>
                 </CardContent>
               </Card>
@@ -303,21 +305,21 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Portfolio Showcase - Project gallery */}
+      {/* Home Project Showcase */}
       <section className="py-24 bg-[rgb(138,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-8">
-              Award-Winning Designer Projects
+              Beautiful Homes, Happy Families
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              See how our materials and collaboration have elevated South
-              Florida's most prestigious design projects
+              See how Miami families have transformed their homes with our
+              premium flooring solutions
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {portfolioProjects.map((project, index) => (
+            {homeProjects.map((project, index) => (
               <Card
                 key={index}
                 className="group bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden hover:bg-white/20 transition-all duration-500"
@@ -340,7 +342,7 @@ const Retail = () => {
                       {project.title}
                     </h3>
                     <p className="text-[rgb(251,189,35)] font-semibold">
-                      {project.designer}
+                      {project.homeowner}
                     </p>
                     <p className="text-gray-300 text-sm">
                       {project.location} • {project.style}
@@ -349,7 +351,7 @@ const Retail = () => {
 
                   <div className="mb-6">
                     <p className="text-sm text-gray-300 mb-2">
-                      Featured Materials:
+                      Materials Used:
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.materials.map((material, idx) => (
@@ -365,7 +367,7 @@ const Retail = () => {
 
                   <div className="flex items-center justify-between">
                     <span className="text-green-300 text-sm font-medium">
-                      {project.award}
+                      {project.result}
                     </span>
                     <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-[rgb(251,189,35)] transition-colors" />
                   </div>
@@ -376,28 +378,27 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Designer Testimonials - Professional credibility */}
+      {/* Homeowner Testimonials */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Voices from the Design Community
+              What Miami Families Are Saying
             </h2>
             <p className="text-xl text-gray-600">
-              Hear from the designers who trust us with their most important
-              projects
+              Real stories from homeowners who transformed their spaces
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {designerTestimonials.map((testimonial, index) => (
+            {homeownerTestimonials.map((testimonial, index) => (
               <Card
                 key={index}
                 className="relative p-8 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-gray-50 to-white"
               >
                 <div className="absolute top-6 right-6">
                   <div className="flex">
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
                         className="h-5 w-5 text-[rgb(251,189,35)] fill-current"
@@ -413,28 +414,18 @@ const Retail = () => {
                     </blockquote>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <div className="flex-1">
+                  <div className="flex items-start justify-between">
+                    <div>
                       <h4 className="text-xl font-bold text-gray-900">
                         {testimonial.name}
                       </h4>
                       <p className="text-[rgb(138,0,0)] font-semibold">
-                        {testimonial.firm}
+                        {testimonial.location}
                       </p>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {testimonial.credentials}
-                      </p>
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <span>{testimonial.projects}</span>
-                        <span>•</span>
-                        <span>{testimonial.specialty}</span>
-                      </div>
+                      <p className="text-gray-600">{testimonial.projectType}</p>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant="secondary">{testimonial.timeframe}</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -444,59 +435,52 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Designer Resources Hub */}
+      {/* Home Design Process */}
       <section className="py-24 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(120,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              Designer Resource Center
+              Your Home Transformation Process
             </h2>
             <p className="text-xl text-white/90">
-              Professional tools and resources to support your design practice
+              Simple steps to create the home you've always wanted
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
-                icon: Users,
-                title: "Trade Certification Program",
+                step: "01",
+                title: "Design Consultation",
                 description:
-                  "Fast-track approval for professional pricing and benefits",
-                action: "Apply Today",
+                  "Meet with our design experts to discuss your vision and lifestyle",
               },
               {
-                icon: Camera,
-                title: "High-Resolution Material Library",
+                step: "02",
+                title: "Material Selection",
                 description:
-                  "Download professional images and technical specifications",
-                action: "Browse Library",
+                  "Choose from premium materials with take-home samples",
               },
               {
-                icon: Layers,
-                title: "Project Documentation Hub",
-                description:
-                  "Installation guides, warranties, and maintenance specs",
-                action: "Access Documents",
+                step: "03",
+                title: "Professional Installation",
+                description: "Expert installation by certified craftsmen",
               },
-            ].map((resource, index) => (
-              <Card
-                key={index}
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-300"
-              >
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-[rgb(251,189,35)] rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <resource.icon className="h-8 w-8 text-black" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">{resource.title}</h3>
-                  <p className="text-white/80 mb-6 leading-relaxed">
-                    {resource.description}
-                  </p>
-                  <WhiteOutlineButton className="w-full">
-                    {resource.action}
-                  </WhiteOutlineButton>
-                </CardContent>
-              </Card>
+              {
+                step: "04",
+                title: "Enjoy Your New Home",
+                description: "Relax and enjoy your beautiful new flooring",
+              },
+            ].map((process, index) => (
+              <div key={index} className="text-center">
+                <div className="w-20 h-20 bg-[rgb(251,189,35)] text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                  {process.step}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{process.title}</h3>
+                <p className="text-white/80 leading-relaxed">
+                  {process.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -507,16 +491,16 @@ const Retail = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Start Your Designer Partnership
+              Ready to Transform Your Home?
             </h2>
             <p className="text-xl text-gray-600">
-              Let's collaborate to bring your vision to life with exceptional
-              materials and support
+              Let's discuss your flooring project and create the home of your
+              dreams
             </p>
           </div>
           <ContactForm
-            title="Apply for Designer Trade Account"
-            subtitle="Join our community of South Florida's leading design professionals"
+            title="Get Your Free Home Design Consultation"
+            subtitle="Tell us about your project and we'll help you choose the perfect flooring"
           />
         </div>
       </section>
@@ -525,21 +509,21 @@ const Retail = () => {
       <section className="py-20 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-8">
-            Ready to Elevate Your Design Practice?
+            Start Your Home Transformation Today
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Join the community of South Florida's most successful designers who
-            trust Miami Floors Pro for their luxury projects.
+            Join hundreds of Miami families who have created beautiful, valuable
+            homes with Miami Floors Pro's premium flooring solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <GoldButton size="lg" className="px-12 py-6 text-lg font-bold">
-              Schedule Private Showroom Tour
+              Schedule Home Consultation
             </GoldButton>
             <WhiteOutlineButton
               size="lg"
               className="px-12 py-6 text-lg font-bold"
             >
-              Apply for Trade Account
+              View Home Portfolio
             </WhiteOutlineButton>
           </div>
         </div>
