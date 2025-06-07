@@ -34,8 +34,8 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Information Bar */}
-      <div className="bg-red-800 text-white py-3 px-4">
+      {/* Top Information Bar - Genesis Maroon */}
+      <div className="bg-[rgb(138,0,0)] text-white py-3 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             {/* Left side - Contact & Location */}
@@ -44,7 +44,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <Phone className="h-4 w-4" />
                 <a
                   href="tel:+13055550123"
-                  className="hover:text-yellow-300 transition-colors"
+                  className="hover:text-[rgb(251,189,35)] transition-colors"
                 >
                   (305) 555-0123
                 </a>
@@ -62,7 +62,7 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Right side - Value Props & Quick Actions */}
             <div className="flex flex-wrap items-center gap-6 text-sm">
               <div className="flex items-center space-x-2">
-                <Truck className="h-4 w-4 text-yellow-300" />
+                <Truck className="h-4 w-4 text-[rgb(251,189,35)]" />
                 <span className="font-medium">
                   Free Samples • Same-Day Pickup
                 </span>
@@ -70,14 +70,20 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="hidden lg:flex items-center space-x-3">
                 <a
                   href="mailto:info@miamifloorspro.com"
-                  className="hover:text-yellow-300 transition-colors"
+                  className="hover:text-[rgb(251,189,35)] transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                 </a>
-                <a href="#" className="hover:text-yellow-300 transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-[rgb(251,189,35)] transition-colors"
+                >
                   <Facebook className="h-4 w-4" />
                 </a>
-                <a href="#" className="hover:text-yellow-300 transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-[rgb(251,189,35)] transition-colors"
+                >
                   <Instagram className="h-4 w-4" />
                 </a>
               </div>
@@ -92,11 +98,11 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex justify-between items-center py-4">
             {/* Logo & Brand */}
             <Link to="/" className="flex items-center space-x-4 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-red-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-2xl font-bold text-red-800 group-hover:text-red-900 transition-colors">
+                <h1 className="text-2xl font-bold text-[rgb(138,0,0)] group-hover:text-[rgb(153,27,27)] transition-colors">
                   Miami Floors Pro
                 </h1>
                 <p className="text-sm text-gray-600 font-medium">
@@ -111,13 +117,15 @@ const Layout = ({ children }: LayoutProps) => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`relative text-sm font-semibold transition-all duration-200 hover:text-red-800 ${
-                    isActive(item.href) ? "text-red-800" : "text-gray-700"
+                  className={`relative text-sm font-semibold transition-all duration-200 hover:text-[rgb(138,0,0)] ${
+                    isActive(item.href)
+                      ? "text-[rgb(138,0,0)]"
+                      : "text-gray-700"
                   }`}
                 >
                   {item.name}
                   {isActive(item.href) && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-red-800 rounded-full"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[rgb(138,0,0)] rounded-full"></div>
                   )}
                 </Link>
               ))}
@@ -159,8 +167,8 @@ const Layout = ({ children }: LayoutProps) => {
                     to={item.href}
                     className={`text-base font-medium transition-colors px-4 py-2 rounded-lg ${
                       isActive(item.href)
-                        ? "text-red-800 bg-red-50"
-                        : "text-gray-700 hover:text-red-800 hover:bg-red-50"
+                        ? "text-[rgb(138,0,0)] bg-red-50"
+                        : "text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-red-50"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -192,7 +200,7 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-red-800 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-lg">M</span>
                 </div>
                 <span className="text-xl font-bold">Miami Floors Pro</span>

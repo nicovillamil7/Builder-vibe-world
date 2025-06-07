@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
-// Primary brand button (Genesis Gold)
+// Genesis Gold button (proper brand color: rgb(251, 189, 35))
 export const GoldButton = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
@@ -11,7 +11,8 @@ export const GoldButton = forwardRef<
     <Button
       ref={ref}
       className={cn(
-        "bg-yellow-500 text-black font-semibold hover:bg-yellow-600 border-0 shadow-lg hover:shadow-xl transition-all duration-200",
+        "font-semibold border-0 shadow-lg hover:shadow-xl transition-all duration-200",
+        "bg-[rgb(251,189,35)] hover:bg-[rgb(245,158,11)] text-black",
         className,
       )}
       {...props}
@@ -19,7 +20,7 @@ export const GoldButton = forwardRef<
   );
 });
 
-// Secondary brand button (White outline on dark background)
+// White outline button for dark backgrounds
 export const WhiteOutlineButton = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
@@ -29,7 +30,8 @@ export const WhiteOutlineButton = forwardRef<
       ref={ref}
       variant="outline"
       className={cn(
-        "border-2 border-white text-white bg-transparent hover:bg-white hover:text-red-800 font-semibold transition-all duration-200",
+        "border-2 border-white text-white bg-transparent font-semibold transition-all duration-200",
+        "hover:bg-white hover:text-[rgb(138,0,0)]",
         className,
       )}
       {...props}
@@ -37,7 +39,7 @@ export const WhiteOutlineButton = forwardRef<
   );
 });
 
-// Primary red button (Genesis Maroon)
+// Primary red button (Genesis Maroon: rgb(138, 0, 0))
 export const PrimaryButton = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
@@ -46,7 +48,8 @@ export const PrimaryButton = forwardRef<
     <Button
       ref={ref}
       className={cn(
-        "bg-red-800 text-white font-semibold hover:bg-red-900 shadow-lg hover:shadow-xl transition-all duration-200",
+        "font-semibold shadow-lg hover:shadow-xl transition-all duration-200",
+        "bg-[rgb(138,0,0)] hover:bg-[rgb(153,27,27)] text-white",
         className,
       )}
       {...props}
@@ -64,7 +67,8 @@ export const OutlineButton = forwardRef<
       ref={ref}
       variant="outline"
       className={cn(
-        "border-2 border-red-800 text-red-800 bg-transparent hover:bg-red-50 font-semibold transition-all duration-200",
+        "border-2 font-semibold transition-all duration-200",
+        "border-[rgb(138,0,0)] text-[rgb(138,0,0)] bg-transparent hover:bg-[rgb(138,0,0)] hover:text-white",
         className,
       )}
       {...props}
