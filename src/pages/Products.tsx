@@ -186,12 +186,11 @@ const Products = () => {
             </p>
           </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <SimpleReliableImage
-                imageId="professionalInstallation"
-                alt="Professional flooring installation in progress"
-                className="w-full h-80 object-cover"
-              />
+          <div className="relative overflow-hidden rounded-lg shadow-xl">
+            <SimpleReliableImage
+              imageId="showroomDisplay"
+              alt="Genesis Stone showroom displaying various tile and stone samples"
+              className="w-full h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
             <div className="absolute inset-0 flex items-center">
