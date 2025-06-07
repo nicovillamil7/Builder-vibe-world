@@ -217,6 +217,124 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     alt: "Construction site with professional flooring installation",
     category: "commercial-projects",
   },
+
+  // 🎯 FLOOR-FOCUSED PRODUCT IMAGES - Category-specific with floor prominence
+
+  // PORCELAIN TILES - Floor-focused
+  porcelainLargeFormat: {
+    id: "porcelainLargeFormat",
+    primary:
+      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Large format porcelain tiles covering entire floor in modern space",
+    category: "porcelain-products",
+  },
+  porcelainMarbleLook: {
+    id: "porcelainMarbleLook",
+    primary:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Porcelain tiles with realistic marble veining pattern covering floor",
+    category: "porcelain-products",
+  },
+  porcelainContemporary: {
+    id: "porcelainContemporary",
+    primary:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Contemporary white porcelain floor tiles in minimalist space",
+    category: "porcelain-products",
+  },
+
+  // NATURAL STONE - Floor-focused
+  naturalTravertine: {
+    id: "naturalTravertine",
+    primary:
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Natural travertine stone floor with filled and honed finish",
+    category: "natural-stone-products",
+  },
+  naturalSlate: {
+    id: "naturalSlate",
+    primary:
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Dark slate natural stone floor with rich charcoal coloring",
+    category: "natural-stone-products",
+  },
+  naturalMarble: {
+    id: "naturalMarble",
+    primary:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Natural marble floor with elegant veining and polished surface",
+    category: "natural-stone-products",
+  },
+
+  // VINYL & LAMINATE - Floor-focused
+  vinylLuxuryPlank: {
+    id: "vinylLuxuryPlank",
+    primary:
+      "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury vinyl plank flooring with realistic wood grain texture",
+    category: "vinyl-laminate-products",
+  },
+  laminateHardwood: {
+    id: "laminateHardwood",
+    primary:
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Premium laminate flooring with hardwood appearance and AC5 rating",
+    category: "vinyl-laminate-products",
+  },
+  spcFlooring: {
+    id: "spcFlooring",
+    primary:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "SPC core flooring with stone polymer composite construction",
+    category: "vinyl-laminate-products",
+  },
+
+  // MOSAICS - Floor applications
+  mosaicGlassFloor: {
+    id: "mosaicGlassFloor",
+    primary:
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Glass mosaic tiles creating intricate floor patterns",
+    category: "mosaic-products",
+  },
+  mosaicStoneBlend: {
+    id: "mosaicStoneBlend",
+    primary:
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Natural stone mosaic floor with mixed material composition",
+    category: "mosaic-products",
+  },
+  mosaicCustomDesign: {
+    id: "mosaicCustomDesign",
+    primary:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Custom mosaic floor design with bespoke pattern and premium materials",
+    category: "mosaic-products",
+  },
 };
 
 // Image health checker - Tests actual HTTP response
