@@ -304,8 +304,10 @@ const Layout = ({ children }: LayoutProps) => {
               </Link>
             </div>
           </div>
-        </div>
-      </footer>
+      </div>
+
+      {/* Development Diagnostic Access */}
+      <DiagnosticAccessButton />
     </div>
   );
 };
