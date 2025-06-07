@@ -130,6 +130,55 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     alt: "Luxury vinyl plank flooring installation",
     category: "vinyl-laminate",
   },
+
+  // ✅ REALISTIC PROJECT IMAGES - Match actual descriptions
+  modernFamilyHome: {
+    id: "modernFamilyHome",
+    primary:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern family home living room with large format porcelain and marble accents",
+    category: "residential-projects",
+  },
+  historicHomeRenovation: {
+    id: "historicHomeRenovation",
+    primary:
+      "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Historic home renovation blending classic architecture with modern flooring",
+    category: "residential-projects",
+  },
+  waterfrontCondoUpgrade: {
+    id: "waterfrontCondoUpgrade",
+    primary:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Waterfront condo with coastal contemporary flooring and glass mosaics",
+    category: "residential-projects",
+  },
+
+  // ✅ ADDITIONAL CONTEXT-APPROPRIATE IMAGES
+  luxuryBathroom: {
+    id: "luxuryBathroom",
+    primary:
+      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury bathroom with premium stone and porcelain tiles",
+    category: "luxury",
+  },
+  modernKitchen: {
+    id: "modernKitchen",
+    primary:
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern kitchen with premium flooring and contemporary design",
+    category: "luxury",
+  },
 };
 
 // Image health checker - Tests actual HTTP response

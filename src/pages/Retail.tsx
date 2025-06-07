@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import {
   Palette,
   Home,
@@ -101,7 +102,7 @@ const Retail = () => {
         "Natural Wood-Look LVP",
         "Marble Accents",
       ],
-      image: "https://i.imgur.com/mY8KqL2.jpg", // Luxury interior with marble accent wall
+      imageId: "modernFamilyHome",
       result: "Increased home value by $45,000",
     },
     {
@@ -110,7 +111,7 @@ const Retail = () => {
       location: "Coconut Grove",
       style: "Classic with Modern Touches",
       materials: ["Hardwood Restoration", "Decorative Tile", "Natural Stone"],
-      image: "https://i.imgur.com/7B9qN8W.jpg", // Dark stone living room
+      imageId: "historicHomeRenovation",
       result: "Featured in Miami Home & Design",
     },
     {
@@ -119,7 +120,7 @@ const Retail = () => {
       location: "Key Biscayne",
       style: "Coastal Contemporary",
       materials: ["Luxury Vinyl Plank", "Porcelain Tile", "Glass Mosaics"],
-      image: "https://i.imgur.com/8K2YQnV.jpg", // Modern pool deck
+      imageId: "waterfrontCondoUpgrade",
       result: "Perfect for family living",
     },
   ];
