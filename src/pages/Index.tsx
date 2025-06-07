@@ -120,7 +120,7 @@ const Index = () => {
     },
     {
       question: "Can I see materials before placing an order?",
-      answer:
+      answer: "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami showroom location."
         "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami Design District location.",
     },
   ];
@@ -331,7 +331,7 @@ const Index = () => {
               Still have questions? We're here to help!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <PrimaryButton>Call Us: (305) 555-0123</PrimaryButton>
+              <PrimaryButton>Call Us: (305) 477-4402</PrimaryButton>
               <OutlineButton>Email Us</OutlineButton>
             </div>
           </div>
