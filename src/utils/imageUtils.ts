@@ -179,6 +179,44 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     alt: "Modern kitchen with premium flooring and contemporary design",
     category: "luxury",
   },
+
+  // ✅ CONTRACTOR PROJECT IMAGES - Commercial Applications
+  luxuryApartmentComplex: {
+    id: "luxuryApartmentComplex",
+    primary:
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury apartment complex with modern flooring throughout",
+    category: "commercial-projects",
+  },
+  officeTowerRenovation: {
+    id: "officeTowerRenovation",
+    primary:
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Office tower renovation with commercial-grade flooring",
+    category: "commercial-projects",
+  },
+  retailShoppingCenter: {
+    id: "retailShoppingCenter",
+    primary:
+      "https://images.unsplash.com/photo-1600566752734-fb8444a7e4db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Retail shopping center with high-traffic flooring solutions",
+    category: "commercial-projects",
+  },
+  contractorHeroImage: {
+    id: "contractorHeroImage",
+    primary:
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Construction site with professional flooring installation",
+    category: "commercial-projects",
+  },
 };
 
 // Image health checker - Tests actual HTTP response
