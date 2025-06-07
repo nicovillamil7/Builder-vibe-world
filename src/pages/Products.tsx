@@ -48,7 +48,6 @@ const Products = () => {
           image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
           features: ["Realistic Wood Grain", "Waterproof", "Pet Friendly"]
         }
-        },
       ],
     },
     {
@@ -62,24 +61,25 @@ const Products = () => {
           size: "12x12, 18x18",
           finish: "Polished, Honed",
           price: "$12.50-18.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Premium Quality", "Unique Veining", "Timeless Beauty"],
+          image: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Premium Quality", "Unique Veining", "Timeless Beauty"]
         },
         {
           name: "Travertine Collection",
           size: "16x16, 12x24",
           finish: "Tumbled, Filled",
           price: "$8.50-12.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Natural Texture", "Non-Slip Surface", "Heat Resistant"],
+          image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Texture", "Non-Slip Surface", "Heat Resistant"]
         },
         {
           name: "Granite Tiles",
           size: "12x12, 24x24",
           finish: "Polished, Flamed",
           price: "$15.50-22.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Extremely Durable", "Scratch Resistant", "Heat Proof"],
+          image: "https://images.unsplash.com/photo-1615651300008-40734b9b53b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Extremely Durable", "Scratch Resistant", "Heat Proof"]
+        }
         },
       ],
     },
@@ -132,23 +132,25 @@ const Products = () => {
           size: "1x1, 2x2 mesh",
           finish: "Glossy, Frosted",
           price: "$8.50-15.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Light Reflective", "Easy to Clean", "Color Fast"],
+          image: "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Light Reflective", "Easy to Clean", "Color Fast"]
         },
         {
           name: "Stone Mosaics",
           size: "1x2, 2x4 mesh",
           finish: "Natural, Tumbled",
           price: "$12.50-20.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Natural Variation", "Durable", "Unique Patterns"],
+          image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Variation", "Durable", "Unique Patterns"]
         },
         {
           name: "Metal Accents",
           size: "1x4, 2x6 strips",
           finish: "Brushed, Polished",
           price: "$18.50-35.50/sq ft",
-          image: "/placeholder.svg",
+          image: "https://images.unsplash.com/photo-1631545806609-59fb6f2e1b36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Modern Appeal", "Corrosion Resistant", "Easy Maintenance"]
+        }
           features: [
             "Modern Appeal",
             "Corrosion Resistant",
