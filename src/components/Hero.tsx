@@ -5,8 +5,19 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <div className="relative bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] text-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-black opacity-20"></div>
+      {/* Background Image Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url('https://i.imgur.com/mY8KqL2.jpg')`,
+        }}
+        onError={(e) => {
+          e.target.style.backgroundImage = `url('https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`;
+        }}
+      ></div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgb(138,0,0)]/90 to-[rgb(120,0,0)]/90"></div>
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">

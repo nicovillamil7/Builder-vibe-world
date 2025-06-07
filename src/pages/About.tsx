@@ -67,7 +67,8 @@ const About = () => {
       title: "Founder & CEO",
       description:
         "15+ years in flooring industry, former contractor who understands project needs firsthand.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b7c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       quote:
         "Quality flooring shouldn't be a luxury - it should be accessible to every professional.",
     },
@@ -76,7 +77,8 @@ const About = () => {
       title: "Operations Manager",
       description:
         "Logistics expert ensuring fast, reliable delivery across South Florida.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       quote:
         "Every delivery matters. We treat your timeline as seriously as our own.",
     },
@@ -85,7 +87,8 @@ const About = () => {
       title: "Design Consultant",
       description:
         "Licensed interior designer helping clients select the perfect materials for their vision.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       quote:
         "Great design starts with understanding both vision and practical needs.",
     },
@@ -94,7 +97,8 @@ const About = () => {
       title: "Contractor Relations",
       description:
         "Former project manager specializing in volume orders and trade accounts.",
-      image: "/placeholder.svg",
+      image:
+        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
       quote: "I've been on job sites. I know what contractors need to succeed.",
     },
   ];
