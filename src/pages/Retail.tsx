@@ -504,30 +504,6 @@ const Retail = () => {
           />
         </div>
       </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-8">
-            Start Your Home Transformation Today
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Join hundreds of Miami families who have created beautiful, valuable
-            homes with Miami Floors Pro's premium flooring solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton size="lg" className="px-12 py-6 text-lg font-bold">
-              Schedule Home Consultation
-            </GoldButton>
-            <WhiteOutlineButton
-              size="lg"
-              className="px-12 py-6 text-lg font-bold"
-            >
-              View Home Portfolio
-            </WhiteOutlineButton>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

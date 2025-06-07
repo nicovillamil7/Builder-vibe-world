@@ -22,18 +22,18 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      primary: "(305) 555-0123",
+      primary: "(305) 477-4402",
       secondary: "Mon-Fri: 7:00 AM - 6:00 PM",
       action: "Call Now",
-      href: "tel:+13055550123",
+      href: "tel:+13054774402",
     },
     {
       icon: Mail,
       title: "Email Us",
-      primary: "info@miamifloorspro.com",
+      primary: "genesistonemore@gmail.com",
       secondary: "We respond within 2 hours",
       action: "Send Email",
-      href: "mailto:info@miamifloorspro.com",
+      href: "mailto:genesistonemore@gmail.com",
     },
     {
       icon: MessageSquare,
@@ -48,9 +48,9 @@ const Contact = () => {
   const locations = [
     {
       name: "Miami Showroom & Warehouse",
-      address: "123 Design District Ave",
-      city: "Miami, FL 33137",
-      phone: "(305) 555-0123",
+      address: "3399 NW 72nd Ave #109",
+      city: "Miami, FL 33122",
+      phone: "(305) 477-4402",
       hours: [
         "Monday - Friday: 7:00 AM - 6:00 PM",
         "Saturday: 8:00 AM - 4:00 PM",
@@ -226,7 +226,7 @@ const Contact = () => {
                 <MapPin className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-600">Interactive Map</p>
                 <p className="text-sm text-gray-500">
-                  123 Design District Ave, Miami, FL 33137
+                  3399 NW 72nd Ave #109, Miami, FL 33122
                 </p>
               </div>
             </div>
@@ -311,7 +311,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="mt-4 md:mt-0">
-              <GoldButton size="lg">Emergency Line: (305) 555-0911</GoldButton>
+              <GoldButton size="lg">Emergency Line: (305) 477-4402</GoldButton>
             </div>
           </div>
         </div>

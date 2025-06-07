@@ -43,15 +43,15 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <a
-                  href="tel:+13055550123"
+                  href="tel:+13054774402"
                   className="hover:text-[rgb(251,189,35)] transition-colors"
                 >
-                  (305) 555-0123
+                  (305) 477-4402
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Miami Design District</span>
+                <span>3399 NW 72nd Ave #109, Miami, FL</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4" />
@@ -69,19 +69,19 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
               <div className="hidden lg:flex items-center space-x-3">
                 <a
-                  href="mailto:info@miamifloorspro.com"
+                  href="mailto:genesistonemore@gmail.com"
                   className="hover:text-[rgb(251,189,35)] transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://web.facebook.com/genesisstoneus/?_rdc=1&_rdr#"
                   className="hover:text-[rgb(251,189,35)] transition-colors"
                 >
                   <Facebook className="h-4 w-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/genesistone/"
                   className="hover:text-[rgb(251,189,35)] transition-colors"
                 >
                   <Instagram className="h-4 w-4" />
@@ -210,13 +210,13 @@ const Layout = ({ children }: LayoutProps) => {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://web.facebook.com/genesisstoneus/?_rdc=1&_rdr#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/genesistone/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Instagram className="h-5 w-5" />
@@ -248,25 +248,25 @@ const Layout = ({ children }: LayoutProps) => {
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-5 w-5 text-gray-400" />
                   <span className="text-gray-400">
-                    123 Design District, Miami, FL 33137
+                    3399 NW 72nd Ave #109, Miami, FL 33122
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-5 w-5 text-gray-400" />
                   <a
-                    href="tel:+13055550123"
+                    href="tel:+13054774402"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    (305) 555-0123
+                    (305) 477-4402
                   </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-5 w-5 text-gray-400" />
                   <a
-                    href="mailto:info@miamifloorspro.com"
+                    href="mailto:genesistonemore@gmail.com"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    info@miamifloorspro.com
+                    genesistonemore@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-2">
