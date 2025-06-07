@@ -29,24 +29,25 @@ const Products = () => {
           size: "24x24, 12x24",
           finish: "Polished, Matte",
           price: "$4.50-6.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Slip Resistant", "Frost Proof", "Stain Resistant"],
+          image: "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Slip Resistant", "Frost Proof", "Stain Resistant"]
         },
         {
           name: "Stone Look Series",
           size: "12x24, 6x24",
           finish: "Textured, Natural",
           price: "$5.50-8.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Natural Appearance", "Durable", "Low Maintenance"],
+          image: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Appearance", "Durable", "Low Maintenance"]
         },
         {
           name: "Wood Look Planks",
           size: "6x48, 9x48",
           finish: "Matte, Semi-Gloss",
           price: "$6.50-9.50/sq ft",
-          image: "/placeholder.svg",
-          features: ["Realistic Wood Grain", "Waterproof", "Pet Friendly"],
+          image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Realistic Wood Grain", "Waterproof", "Pet Friendly"]
+        }
         },
       ],
     },
