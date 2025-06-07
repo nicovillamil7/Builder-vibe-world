@@ -106,7 +106,7 @@ const Layout = ({ children }: LayoutProps) => {
                   Genesis Stone
                 </h1>
                 <p className="text-sm text-gray-600 font-medium">
-                  Premium Flooring Solutions
+                  Premium Stone & Flooring
                 </p>
               </div>
             </Link>
