@@ -101,7 +101,7 @@ const Retail = () => {
         "Natural Wood-Look LVP",
         "Marble Accents",
       ],
-      image: "/placeholder.svg",
+      image: "https://i.imgur.com/mY8KqL2.jpg", // Luxury interior with marble accent wall
       result: "Increased home value by $45,000",
     },
     {
@@ -110,7 +110,7 @@ const Retail = () => {
       location: "Coconut Grove",
       style: "Classic with Modern Touches",
       materials: ["Hardwood Restoration", "Decorative Tile", "Natural Stone"],
-      image: "/placeholder.svg",
+      image: "https://i.imgur.com/7B9qN8W.jpg", // Dark stone living room
       result: "Featured in Miami Home & Design",
     },
     {
@@ -119,7 +119,7 @@ const Retail = () => {
       location: "Key Biscayne",
       style: "Coastal Contemporary",
       materials: ["Luxury Vinyl Plank", "Porcelain Tile", "Glass Mosaics"],
-      image: "/placeholder.svg",
+      image: "https://i.imgur.com/8K2YQnV.jpg", // Modern pool deck
       result: "Perfect for family living",
     },
   ];

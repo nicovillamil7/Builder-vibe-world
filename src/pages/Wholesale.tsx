@@ -126,7 +126,7 @@ const Wholesale = () => {
       timeline: "Completed in 8 weeks",
       materials: "LVP flooring, Porcelain tiles",
       savings: "$18,000 saved",
-      image: "/placeholder.svg",
+      image: "https://i.imgur.com/4N8kpQ7.jpg", // Modern white interior commercial space
     },
     {
       title: "Office Tower Renovation",
@@ -136,7 +136,7 @@ const Wholesale = () => {
       timeline: "Completed in 6 weeks",
       materials: "Commercial porcelain, Carpet tiles",
       savings: "$12,000 saved",
-      image: "/placeholder.svg",
+      image: "https://i.imgur.com/6T9mL3Q.jpg", // Light dining area - commercial application
     },
     {
       title: "Retail Shopping Center",
@@ -146,7 +146,7 @@ const Wholesale = () => {
       timeline: "Completed in 12 weeks",
       materials: "Natural stone, High-traffic porcelain",
       savings: "$25,000 saved",
-      image: "/placeholder.svg",
+      image: "https://i.imgur.com/9L6fQ4P.jpg", // Large format tiles for commercial
     },
   ];
 
@@ -262,9 +262,13 @@ const Wholesale = () => {
 
             <div className="relative">
               <img
-                src="/placeholder.svg"
-                alt="Construction Site"
+                src="https://i.imgur.com/VyN8mFj.jpg"
+                alt="Professional flooring installation at construction site"
                 className="rounded-lg shadow-2xl"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+                }}
               />
               <div className="absolute -bottom-8 -left-8 bg-[rgb(251,189,35)] text-black p-6 rounded-lg shadow-xl">
                 <div className="flex items-center space-x-3">
