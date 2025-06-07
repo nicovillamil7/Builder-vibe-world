@@ -7,6 +7,7 @@ import {
   OutlineButton,
 } from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import {
   Phone,
   Mail,
@@ -129,14 +130,10 @@ const Contact = () => {
             </div>
 
             <div className="relative overflow-hidden rounded-lg shadow-xl">
-              <img
-                src="https://i.imgur.com/5R8qN9X.jpg"
+              <SimpleReliableImage
+                imageId="showroomDisplay"
                 alt="Genesis Stone showroom displaying various tile and stone samples"
                 className="w-full h-96 object-cover"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                }}
               />
             </div>
           </div>
