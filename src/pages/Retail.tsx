@@ -47,7 +47,7 @@ const Retail = () => {
       description:
         "Large format samples delivered to your studio with detailed specification sheets",
       highlight: "Up to 10 samples free",
-      gradient: "from-yellow-500 to-orange-500",
+      gradient: "from-amber-500 to-orange-500",
     },
     {
       icon: Gem,
@@ -141,23 +141,23 @@ const Retail = () => {
 
   return (
     <Layout>
-      {/* Hero Section - Luxury focused */}
-      <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-        {/* Animated background elements */}
+      {/* Hero Section - Sophisticated design focus */}
+      <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white overflow-hidden">
+        {/* Elegant background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[rgb(251,189,35)]/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[rgb(138,0,0)]/10 to-red-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center">
-            <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black mb-8 px-6 py-3 text-lg font-bold">
+            <Badge className="bg-[rgb(251,189,35)] text-black mb-8 px-6 py-3 text-lg font-bold">
               For Interior Designers & Architects
             </Badge>
 
             <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
               <span className="block">Luxury Materials</span>
-              <span className="block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[rgb(251,189,35)] to-amber-400 bg-clip-text text-transparent">
                 Extraordinary Designs
               </span>
             </h1>
@@ -184,15 +184,15 @@ const Retail = () => {
             {/* Trust indicators */}
             <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
-                <Star className="h-5 w-5 text-yellow-400" />
+                <Star className="h-5 w-5 text-[rgb(251,189,35)]" />
                 <span>500+ Designer Projects</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Crown className="h-5 w-5 text-yellow-400" />
+                <Crown className="h-5 w-5 text-[rgb(251,189,35)]" />
                 <span>Exclusive Material Access</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Gem className="h-5 w-5 text-yellow-400" />
+                <Gem className="h-5 w-5 text-[rgb(251,189,35)]" />
                 <span>Custom Artisan Work</span>
               </div>
             </div>
@@ -214,7 +214,7 @@ const Retail = () => {
         </div>
       </div>
 
-      {/* Luxury Features - Visual showcase */}
+      {/* Luxury Features - Elegant showcase */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -247,7 +247,7 @@ const Retail = () => {
                       <Badge className="bg-gray-100 text-gray-800 mb-4">
                         {feature.highlight}
                       </Badge>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 group-hover:bg-clip-text transition-all">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[rgb(138,0,0)] transition-colors">
                         {feature.title}
                       </h3>
                       <p className="text-lg text-gray-600 leading-relaxed">
@@ -262,7 +262,7 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Designer Benefits - Premium pricing showcase */}
+      {/* Designer Benefits - Professional focus */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -292,7 +292,7 @@ const Retail = () => {
                   <p className="text-gray-600 leading-relaxed">
                     {benefit.description}
                   </p>
-                  <div className="mt-6 flex items-center text-red-800 font-medium group-hover:text-red-900">
+                  <div className="mt-6 flex items-center text-[rgb(138,0,0)] font-medium group-hover:text-[rgb(153,27,27)]">
                     <CheckCircle2 className="h-5 w-5 mr-2" />
                     <span>Available for certified professionals</span>
                   </div>
@@ -304,7 +304,7 @@ const Retail = () => {
       </section>
 
       {/* Portfolio Showcase - Project gallery */}
-      <section className="py-24 bg-gray-900 text-white">
+      <section className="py-24 bg-[rgb(138,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-8">
@@ -320,7 +320,7 @@ const Retail = () => {
             {portfolioProjects.map((project, index) => (
               <Card
                 key={index}
-                className="group bg-gray-800 border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-500"
+                className="group bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden hover:bg-white/20 transition-all duration-500"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -329,7 +329,7 @@ const Retail = () => {
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-yellow-500 text-black font-semibold">
+                    <Badge className="bg-[rgb(251,189,35)] text-black font-semibold">
                       Featured
                     </Badge>
                   </div>
@@ -339,23 +339,23 @@ const Retail = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-yellow-400 font-semibold">
+                    <p className="text-[rgb(251,189,35)] font-semibold">
                       {project.designer}
                     </p>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-300 text-sm">
                       {project.location} • {project.style}
                     </p>
                   </div>
 
                   <div className="mb-6">
-                    <p className="text-sm text-gray-400 mb-2">
+                    <p className="text-sm text-gray-300 mb-2">
                       Featured Materials:
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.materials.map((material, idx) => (
                         <span
                           key={idx}
-                          className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs"
+                          className="bg-white/20 text-gray-200 px-3 py-1 rounded-full text-xs"
                         >
                           {material}
                         </span>
@@ -364,10 +364,10 @@ const Retail = () => {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-green-400 text-sm font-medium">
+                    <span className="text-green-300 text-sm font-medium">
                       {project.award}
                     </span>
-                    <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-yellow-400 transition-colors" />
+                    <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-[rgb(251,189,35)] transition-colors" />
                   </div>
                 </CardContent>
               </Card>
@@ -376,7 +376,7 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Designer Testimonials - Personal stories */}
+      {/* Designer Testimonials - Professional credibility */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -400,7 +400,7 @@ const Retail = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-5 w-5 text-yellow-400 fill-current"
+                        className="h-5 w-5 text-[rgb(251,189,35)] fill-current"
                       />
                     ))}
                   </div>
@@ -414,7 +414,7 @@ const Retail = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-800 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-full flex items-center justify-center text-white font-bold text-xl">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])
@@ -424,7 +424,7 @@ const Retail = () => {
                       <h4 className="text-xl font-bold text-gray-900">
                         {testimonial.name}
                       </h4>
-                      <p className="text-red-800 font-semibold">
+                      <p className="text-[rgb(138,0,0)] font-semibold">
                         {testimonial.firm}
                       </p>
                       <p className="text-sm text-gray-600 mb-2">
@@ -445,7 +445,7 @@ const Retail = () => {
       </section>
 
       {/* Designer Resources Hub */}
-      <section className="py-24 bg-gradient-to-br from-red-800 to-red-900 text-white">
+      <section className="py-24 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(120,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -485,7 +485,7 @@ const Retail = () => {
                 className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-300"
               >
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[rgb(251,189,35)] rounded-xl flex items-center justify-center mx-auto mb-6">
                     <resource.icon className="h-8 w-8 text-black" />
                   </div>
                   <h3 className="text-xl font-bold mb-4">{resource.title}</h3>
