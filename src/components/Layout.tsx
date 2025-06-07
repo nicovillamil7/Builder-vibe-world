@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import {
   Phone,
   MapPin,
@@ -87,17 +87,9 @@ const Layout = ({ children }: LayoutProps) => {
 
             {/* Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                variant="outline"
-                className="border-red-800 text-red-800 hover:bg-red-50"
-              >
-                Free Samples
-              </Button>
-              <Button className="bg-red-800 hover:bg-red-900">
-                Get Free Quote
-              </Button>
+              <OutlineButton>Free Samples</OutlineButton>
+              <PrimaryButton>Get Free Quote</PrimaryButton>
             </div>
-
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button
@@ -130,15 +122,8 @@ const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4">
-                  <Button
-                    variant="outline"
-                    className="border-red-800 text-red-800 hover:bg-red-50"
-                  >
-                    Free Samples
-                  </Button>
-                  <Button className="bg-red-800 hover:bg-red-900">
-                    Get Free Quote
-                  </Button>
+                  <OutlineButton>Free Samples</OutlineButton>
+                  <PrimaryButton>Get Free Quote</PrimaryButton>
                 </div>
               </nav>
             </div>
