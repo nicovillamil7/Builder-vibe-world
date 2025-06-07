@@ -13,7 +13,8 @@ const products = [
     id: 1,
     name: "Porcelain Tiles",
     description: "Durable, water-resistant, and available in countless designs",
-    image: "/placeholder.svg",
+    image:
+      "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     features: [
       "Water Resistant",
       "Durable",
@@ -26,7 +27,8 @@ const products = [
     id: 2,
     name: "Laminate & Vinyl SPC",
     description: "Perfect blend of style, comfort, and affordability",
-    image: "/placeholder.svg",
+    image:
+      "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     features: ["Waterproof", "Comfortable", "Affordable", "Easy Install"],
     category: "Popular",
   },
@@ -34,7 +36,8 @@ const products = [
     id: 3,
     name: "Natural Stone",
     description: "Timeless elegance with unique patterns and textures",
-    image: "/placeholder.svg",
+    image:
+      "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     features: ["Unique Patterns", "Timeless", "Natural Beauty", "High Value"],
     category: "Luxury",
   },
@@ -42,7 +45,8 @@ const products = [
     id: 4,
     name: "Mosaics",
     description: "Intricate designs for accent walls and decorative features",
-    image: "/placeholder.svg",
+    image:
+      "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     features: ["Custom Designs", "Artistic", "Accent Features", "Handcrafted"],
     category: "Specialty",
   },
