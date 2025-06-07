@@ -19,7 +19,7 @@ interface ContactFormProps {
 }
 
 const ContactForm = ({
-  title = "Get Your Free Quote",
+  title = "Get Your Project Estimate",
   subtitle = "Tell us about your project and we'll provide a detailed estimate",
 }: ContactFormProps) => {
   const [formData, setFormData] = useState({
