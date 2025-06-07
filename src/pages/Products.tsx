@@ -15,6 +15,8 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { CheckCircle, Search, Filter } from "lucide-react";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
+import { getReliableImageUrl } from "@/utils/imageUtils";
 
 const Products = () => {
   const productCategories = [
@@ -29,7 +31,7 @@ const Products = () => {
           size: "24x48, 32x32",
           finish: "Polished, Matte, Textured",
           price: "$5.50-8.50/sq ft",
-          image: "https://i.imgur.com/8K2YQnV.jpg", // Modern pool deck
+          imageId: "modernPoolDeck",
           features: ["Pool Safe", "Frost Proof", "Slip Resistant"],
         },
         {
@@ -37,7 +39,7 @@ const Products = () => {
           size: "12x24, 24x24",
           finish: "Polished, Honed",
           price: "$6.50-9.50/sq ft",
-          image: "https://i.imgur.com/mY8KqL2.jpg", // Interior marble look
+          imageId: "luxuryInterior",
           features: ["Natural Veining", "Luxury Appeal", "Low Maintenance"],
         },
         {
@@ -45,7 +47,7 @@ const Products = () => {
           size: "12x24, 18x36",
           finish: "High Gloss, Matte",
           price: "$4.50-7.50/sq ft",
-          image: "https://i.imgur.com/4N8kpQ7.jpg", // White modern interior
+          imageId: "contemporaryWhite",
           features: ["Bright Spaces", "Easy Clean", "Timeless Design"],
         },
       ],
