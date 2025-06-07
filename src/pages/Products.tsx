@@ -267,26 +267,10 @@ const Products = () => {
                     >
                       <CardHeader className="p-0">
                         <div className="relative overflow-hidden rounded-t-lg">
-                          <img
-                            src={product.image}
+                          <SimpleReliableImage
+                            imageId={product.imageId}
                             alt={product.name}
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                            onError={(e) => {
-                              // Fallback images for each category
-                              const fallbacks = {
-                                porcelain:
-                                  "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                                "natural-stone":
-                                  "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                                "vinyl-laminate":
-                                  "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                                mosaics:
-                                  "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                              };
-                              e.target.src =
-                                fallbacks[category.id] ||
-                                "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                            }}
                           />
                           <Badge
                             className="absolute top-3 right-3 bg-[rgb(138,0,0)] hover:bg-[rgb(153,27,27)]"
