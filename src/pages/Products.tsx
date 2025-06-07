@@ -277,12 +277,9 @@ const Products = () => {
                         <PrimaryButton className="w-full">
                           Get Quote
                         </PrimaryButton>
-                        <Button
-                          variant="outline"
-                          className="w-full border-red-800 text-red-800 hover:bg-red-50"
-                        >
+                        <OutlineButton className="w-full">
                           Request Sample
-                        </Button>
+                        </OutlineButton>
                       </CardFooter>
                     </Card>
                   ))}
