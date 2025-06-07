@@ -1,5 +1,10 @@
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
+import {
+  GoldButton,
+  WhiteOutlineButton,
+  PrimaryButton,
+  OutlineButton,
+} from "@/components/ui/custom-buttons";
 import {
   Card,
   CardContent,
@@ -178,13 +183,11 @@ const Products = () => {
               <Input placeholder="Search products..." className="pl-10" />
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="outline" className="flex items-center space-x-2">
+              <OutlineButton className="flex items-center space-x-2">
                 <Filter className="h-4 w-4" />
                 <span>Filter</span>
-              </Button>
-              <Button className="bg-red-800 hover:bg-red-900">
-                Request Samples
-              </Button>
+              </OutlineButton>
+              <PrimaryButton>Request Samples</PrimaryButton>
             </div>
           </div>
         </div>

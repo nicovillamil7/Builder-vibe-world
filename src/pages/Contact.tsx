@@ -1,6 +1,11 @@
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
-import { Button } from "@/components/ui/button";
+import {
+  GoldButton,
+  WhiteOutlineButton,
+  PrimaryButton,
+  OutlineButton,
+} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Phone,
@@ -311,12 +316,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="mt-4 md:mt-0">
-              <Button
-                size="lg"
-                className="bg-yellow-400 text-black hover:bg-yellow-500"
-              >
-                Emergency Line: (305) 555-0911
-              </Button>
+              <GoldButton size="lg">Emergency Line: (305) 555-0911</GoldButton>
             </div>
           </div>
         </div>
