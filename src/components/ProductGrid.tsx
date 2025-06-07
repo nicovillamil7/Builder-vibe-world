@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import {
   Card,
   CardContent,
@@ -108,12 +108,7 @@ const ProductGrid = () => {
               </CardContent>
 
               <CardFooter className="p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-red-800 text-red-800 hover:bg-red-50"
-                >
-                  Get Sample
-                </Button>
+                <OutlineButton className="w-full">Get Sample</OutlineButton>
               </CardFooter>
             </Card>
           ))}
@@ -121,9 +116,9 @@ const ProductGrid = () => {
 
         {/* Center Button */}
         <div className="text-center">
-          <Button size="lg" className="bg-red-800 hover:bg-red-900 px-8 py-3">
+          <PrimaryButton size="lg" className="px-8 py-3">
             View More Products
-          </Button>
+          </PrimaryButton>
         </div>
       </div>
     </section>
