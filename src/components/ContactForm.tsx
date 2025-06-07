@@ -197,12 +197,12 @@ const ContactForm = ({
             type="submit"
             className="w-full py-3 text-lg font-semibold"
           >
-            Get My Free Quote
+            Get My Estimate
           </PrimaryButton>
 
           <p className="text-sm text-gray-500 text-center">
-            We'll contact you within 24 hours with your personalized quote and
-            next steps.
+            We'll contact you within 24 hours with your personalized estimate
+            and next steps.
           </p>
         </form>
       </CardContent>
