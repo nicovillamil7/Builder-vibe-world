@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -44,20 +44,16 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-          <Button
-            size="lg"
-            className="bg-yellow-400 text-black hover:bg-yellow-500 px-8 py-3 text-lg font-semibold"
-          >
+          <GoldButton size="lg" className="px-8 py-3 text-lg font-semibold">
             Get Trade Pricing
             <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
+          </GoldButton>
+          <WhiteOutlineButton
             size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-red-800 px-8 py-3 text-lg font-semibold"
+            className="px-8 py-3 text-lg font-semibold"
           >
             Request Designer Samples
-          </Button>
+          </WhiteOutlineButton>
         </div>
 
         {/* Discount Banner */}

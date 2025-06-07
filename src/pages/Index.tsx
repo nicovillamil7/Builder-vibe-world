@@ -1,7 +1,12 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
-import { Button } from "@/components/ui/button";
+import {
+  GoldButton,
+  WhiteOutlineButton,
+  PrimaryButton,
+  OutlineButton,
+} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -142,9 +147,7 @@ const Index = () => {
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 mb-6">{feature.description}</p>
-                  <Button className="bg-red-800 hover:bg-red-900">
-                    {feature.action}
-                  </Button>
+                  <PrimaryButton>{feature.action}</PrimaryButton>
                 </CardContent>
               </Card>
             ))}
@@ -355,19 +358,12 @@ const Index = () => {
             Ready to Get Started?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button
-              size="lg"
-              className="bg-yellow-400 text-black hover:bg-yellow-500 px-8 py-3"
-            >
+            <GoldButton size="lg" className="px-8 py-3">
               Get Trade Pricing
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-red-800 px-8 py-3"
-            >
+            </GoldButton>
+            <WhiteOutlineButton size="lg" className="px-8 py-3">
               Request Designer Samples
-            </Button>
+            </WhiteOutlineButton>
           </div>
           <div className="flex items-center justify-center space-x-4 text-white/90">
             <Badge variant="secondary" className="bg-white/20 text-white">
