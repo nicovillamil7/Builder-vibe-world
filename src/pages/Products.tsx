@@ -63,7 +63,7 @@ const Products = () => {
           size: "16x16, 16x24",
           finish: "Tumbled, Filled & Honed",
           price: "$8.50-12.50/sq ft",
-          image: "https://i.imgur.com/RLp4K9X.jpg", // Travertine pool area
+          imageId: "travertinePool",
           features: ["Non-Slip Surface", "Heat Resistant", "Natural Beauty"],
         },
         {
@@ -71,7 +71,7 @@ const Products = () => {
           size: "12x12, 24x24",
           finish: "Natural Cleft, Honed",
           price: "$10.50-15.50/sq ft",
-          image: "https://i.imgur.com/7B9qN8W.jpg", // Dark stone living room
+          imageId: "darkStoneLiving",
           features: ["Rich Color", "Durable", "Sophisticated Look"],
         },
         {
@@ -79,7 +79,7 @@ const Products = () => {
           size: "18x18, 12x24",
           finish: "Honed, Tumbled",
           price: "$12.50-18.50/sq ft",
-          image: "https://i.imgur.com/9L6fQ4P.jpg", // Large format pool deck
+          imageId: "largeFormatPool",
           features: ["Consistent Color", "Pool Safe", "Premium Quality"],
         },
       ],
@@ -94,7 +94,7 @@ const Products = () => {
           size: "7x48, 9x60",
           finish: "Embossed Wood Grain",
           price: "$3.50-5.50/sq ft",
-          image: "https://i.imgur.com/VyN8mFj.jpg", // Installation process
+          imageId: "professionalInstallation",
           features: ["100% Waterproof", "Click Lock", "Easy Install"],
         },
         {
@@ -102,7 +102,7 @@ const Products = () => {
           size: "7x48, 9x48",
           finish: "Textured, Matte",
           price: "$4.50-6.50/sq ft",
-          image: "https://i.imgur.com/8mP3QnR.jpg", // Professional installation
+          imageId: "installationProcess",
           features: ["Stone Polymer Core", "Scratch Resistant", "Pet Friendly"],
         },
         {
@@ -110,7 +110,7 @@ const Products = () => {
           size: "8x48, 10x48",
           finish: "AC5 Rated",
           price: "$2.50-4.50/sq ft",
-          image: "https://i.imgur.com/6T9mL3Q.jpg", // Light dining area
+          imageId: "modernDining",
           features: [
             "High Traffic Rated",
             "Fade Resistant",
