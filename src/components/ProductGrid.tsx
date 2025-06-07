@@ -79,7 +79,7 @@ const ProductGrid = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <Badge
-                    className="absolute top-3 right-3 bg-red-800 hover:bg-red-900"
+                    className="absolute top-3 right-3 bg-[rgb(138,0,0)] hover:bg-[rgb(153,27,27)]"
                     variant="default"
                   >
                     {product.category}
