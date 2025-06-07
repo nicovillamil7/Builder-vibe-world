@@ -183,7 +183,7 @@ const Wholesale = () => {
       company: "Rodriguez Construction Group",
       role: "General Contractor",
       license: "CGC1234567",
-      text: "Miami Floors Pro has been our strategic partner for 5 years. Their volume pricing and reliable delivery have helped us win more competitive bids while maintaining quality.",
+      text: "Genesis Stone has been our strategic partner for 5 years. Their volume pricing and reliable delivery have helped us win more competitive bids while maintaining quality.",
       projects: "50+ completed projects",
       savings: "$150,000+ total savings",
     },
@@ -532,7 +532,7 @@ const Wholesale = () => {
               Proven Track Record
             </h2>
             <p className="text-xl text-gray-600">
-              Licensed contractors who trust Miami Floors Pro for their success
+              Licensed contractors who trust Genesis Stone for their success
             </p>
           </div>
 

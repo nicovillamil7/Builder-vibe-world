@@ -128,7 +128,7 @@ const Retail = () => {
       name: "Sarah Johnson",
       location: "Coral Gables",
       projectType: "Whole Home Renovation",
-      text: "Miami Floors Pro transformed our entire home. The design consultation helped us choose materials that work perfectly with our lifestyle and aesthetic. Our home feels like a luxury resort now.",
+      text: "Genesis Stone transformed our entire home. The design consultation helped us choose materials that work perfectly with our lifestyle and aesthetic. Our home feels like a luxury resort now.",
       rating: 5,
       timeframe: "3-week project",
     },
