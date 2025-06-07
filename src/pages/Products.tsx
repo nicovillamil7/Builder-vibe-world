@@ -161,7 +161,7 @@ const Products = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="bg-red-800 text-white py-16">
+      <div className="bg-[rgb(138,0,0)] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Premium Flooring Products
@@ -234,7 +234,7 @@ const Products = () => {
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <Badge
-                            className="absolute top-3 right-3 bg-red-800 hover:bg-red-900"
+                            className="absolute top-3 right-3 bg-[rgb(138,0,0)] hover:bg-[rgb(153,27,27)]"
                             variant="default"
                           >
                             {category.name}
@@ -337,7 +337,7 @@ const Products = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-red-800 text-white py-16">
+      <div className="bg-[rgb(138,0,0)] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Start Your Project?

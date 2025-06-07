@@ -227,7 +227,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {processSteps.map((step) => (
               <div key={step.number} className="text-center">
-                <div className="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[rgb(138,0,0)] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">
                     {step.number}
                   </span>

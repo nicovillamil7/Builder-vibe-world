@@ -84,7 +84,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="bg-red-800 text-white py-16">
+      <div className="bg-[rgb(138,0,0)] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -298,7 +298,7 @@ const Contact = () => {
       </section>
 
       {/* Emergency Contact */}
-      <section className="py-8 bg-red-800 text-white">
+      <section className="py-8 bg-[rgb(138,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div>
