@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-r from-red-800 to-red-900 text-white">
+    <div className="relative bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] text-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
@@ -57,7 +57,7 @@ const Hero = () => {
         </div>
 
         {/* Discount Banner */}
-        <div className="inline-flex items-center bg-yellow-400/20 border border-yellow-400/30 rounded-full px-6 py-2 text-yellow-300">
+        <div className="inline-flex items-center bg-[rgb(251,189,35)]/20 border border-[rgb(251,189,35)]/30 rounded-full px-6 py-2 text-[rgb(251,189,35)]">
           <span className="mr-2">🎉</span>
           <span className="font-medium">Reveal Your 10% Discount</span>
         </div>

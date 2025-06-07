@@ -50,14 +50,14 @@ const About = () => {
       title: "Reliability",
       description:
         "On-time delivery, consistent quality, and responsive service. You can count on us to keep your projects on schedule.",
-      color: "yellow",
+      color: "green",
     },
     {
       icon: Heart,
       title: "Community Focus",
       description:
         "As a Miami-based company, we're committed to supporting the growth and success of South Florida's construction community.",
-      color: "green",
+      color: "purple",
     },
   ];
 
@@ -139,7 +139,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section - Story-focused */}
-      <div className="relative bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-br from-[rgb(138,0,0)] via-[rgb(120,0,0)] to-[rgb(100,0,0)] text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -151,13 +151,13 @@ const About = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center mb-16">
-            <Badge className="bg-yellow-500 text-black mb-6 px-4 py-2 text-sm font-semibold">
+            <Badge className="bg-[rgb(251,189,35)] text-black mb-6 px-4 py-2 text-sm font-semibold">
               Our Story Since 2008
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               Built by Contractors,
               <br />
-              <span className="text-yellow-400">for Professionals</span>
+              <span className="text-[rgb(251,189,35)]">for Professionals</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
               Miami Floors Pro was born from real experience on real job sites.
@@ -179,9 +179,9 @@ const About = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                  <stat.icon className="h-8 w-8 text-yellow-400" />
+                  <stat.icon className="h-8 w-8 text-[rgb(251,189,35)]" />
                 </div>
-                <div className="text-4xl font-bold text-yellow-400 mb-2">
+                <div className="text-4xl font-bold text-[rgb(251,189,35)] mb-2">
                   {stat.number}
                 </div>
                 <p className="text-white/80 font-medium">{stat.label}</p>
@@ -201,9 +201,9 @@ const About = () => {
                 alt="Maria Gonzalez - Founder"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-8 -right-8 bg-red-800 text-white p-6 rounded-xl shadow-lg">
+              <div className="absolute -bottom-8 -right-8 bg-[rgb(138,0,0)] text-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-3">
-                  <Building2 className="h-8 w-8 text-yellow-400" />
+                  <Building2 className="h-8 w-8 text-[rgb(251,189,35)]" />
                   <div>
                     <p className="font-bold text-lg">20,000 sq ft</p>
                     <p className="text-sm opacity-90">Showroom & Warehouse</p>
@@ -212,7 +212,7 @@ const About = () => {
               </div>
             </div>
             <div>
-              <Badge className="bg-red-100 text-red-800 mb-6">
+              <Badge className="bg-red-100 text-[rgb(138,0,0)] mb-6">
                 Founder's Story
               </Badge>
               <h2 className="text-4xl font-bold text-gray-900 mb-8">
@@ -236,7 +236,7 @@ const About = () => {
                   need because we've been where you are."
                 </p>
               </div>
-              <div className="mt-8 p-6 bg-yellow-50 rounded-xl border-l-4 border-yellow-500">
+              <div className="mt-8 p-6 bg-amber-50 rounded-xl border-l-4 border-[rgb(251,189,35)]">
                 <p className="text-gray-800 font-medium italic">
                   "Every day, we ask ourselves: Would this make my old
                   contracting business better? If the answer is yes, we do it."
@@ -277,25 +277,25 @@ const About = () => {
                           ? "bg-red-100"
                           : value.color === "blue"
                             ? "bg-blue-100"
-                            : value.color === "yellow"
-                              ? "bg-yellow-100"
-                              : "bg-green-100"
+                            : value.color === "green"
+                              ? "bg-green-100"
+                              : "bg-purple-100"
                       }`}
                     >
                       <value.icon
                         className={`h-8 w-8 ${
                           value.color === "red"
-                            ? "text-red-600"
+                            ? "text-[rgb(138,0,0)]"
                             : value.color === "blue"
                               ? "text-blue-600"
-                              : value.color === "yellow"
-                                ? "text-yellow-600"
-                                : "text-green-600"
+                              : value.color === "green"
+                                ? "text-green-600"
+                                : "text-purple-600"
                         }`}
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-800 transition-colors">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[rgb(138,0,0)] transition-colors">
                         {value.title}
                       </h3>
                       <p className="text-gray-600 text-lg leading-relaxed">
@@ -325,7 +325,7 @@ const About = () => {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-red-800 to-yellow-500 h-full rounded-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[rgb(138,0,0)] to-[rgb(251,189,35)] h-full rounded-full"></div>
 
             <div className="space-y-16">
               {milestones.map((milestone, index) => (
@@ -338,7 +338,7 @@ const About = () => {
                   >
                     <Card className="group hover:shadow-xl transition-all duration-300">
                       <CardContent className="p-8">
-                        <div className="text-3xl font-bold text-red-800 mb-3">
+                        <div className="text-3xl font-bold text-[rgb(138,0,0)] mb-3">
                           {milestone.year}
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -352,7 +352,7 @@ const About = () => {
                   </div>
 
                   {/* Timeline dot */}
-                  <div className="w-6 h-6 bg-red-800 rounded-full relative z-10 border-4 border-white shadow-lg"></div>
+                  <div className="w-6 h-6 bg-[rgb(138,0,0)] rounded-full relative z-10 border-4 border-white shadow-lg"></div>
 
                   <div className="w-1/2"></div>
                 </div>
@@ -392,13 +392,13 @@ const About = () => {
                       <h3 className="text-xl font-bold text-gray-900 mb-1">
                         {member.name}
                       </h3>
-                      <p className="text-red-800 font-semibold mb-3">
+                      <p className="text-[rgb(138,0,0)] font-semibold mb-3">
                         {member.title}
                       </p>
                       <p className="text-gray-600 mb-4">{member.description}</p>
                     </div>
                   </div>
-                  <div className="mt-6 p-4 bg-gray-50 rounded-xl border-l-4 border-red-800">
+                  <div className="mt-6 p-4 bg-gray-50 rounded-xl border-l-4 border-[rgb(138,0,0)]">
                     <p className="text-gray-800 italic">"{member.quote}"</p>
                   </div>
                 </div>
@@ -426,7 +426,7 @@ const About = () => {
             ].map((cert, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 bg-white rounded-xl shadow-lg flex items-center justify-center mx-auto mb-4 group-hover:shadow-xl transition-shadow">
-                  <cert.icon className="h-8 w-8 text-red-800" />
+                  <cert.icon className="h-8 w-8 text-[rgb(138,0,0)]" />
                 </div>
                 <p className="font-semibold text-gray-900">{cert.name}</p>
               </div>
@@ -436,7 +436,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-red-800 to-red-900 text-white">
+      <section className="py-20 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-8">
             Ready to Experience the Difference?
