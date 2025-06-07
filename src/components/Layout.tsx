@@ -99,11 +99,11 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo & Brand */}
             <Link to="/" className="flex items-center space-x-4 group">
               <div className="w-12 h-12 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                <span className="text-white font-bold text-xl">M</span>
+                <span className="text-white font-bold text-xl">G</span>
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-2xl font-bold text-[rgb(138,0,0)] group-hover:text-[rgb(153,27,27)] transition-colors">
-                  Miami Floors Pro
+                  Genesis Stone
                 </h1>
                 <p className="text-sm text-gray-600 font-medium">
                   Premium Flooring Solutions
@@ -199,14 +199,14 @@ const Layout = ({ children }: LayoutProps) => {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">M</span>
+                  <span className="text-white font-bold text-lg">G</span>
                 </div>
-                <span className="text-xl font-bold">Miami Floors Pro</span>
+                <span className="text-xl font-bold">Genesis Stone</span>
               </div>
               <p className="text-gray-400 mb-4 leading-relaxed">
-                Since 2008, Miami Floors Pro has been Florida's premier
-                destination for premium flooring solutions, serving contractors,
-                designers, and homeowners across South Florida.
+                Since 2008, Genesis Stone has been Florida's premier destination
+                for premium flooring solutions, serving contractors, designers,
+                and homeowners across South Florida.
               </p>
               <div className="flex space-x-4">
                 <a
