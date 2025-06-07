@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { PrimaryButton } from "@/components/ui/custom-buttons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -193,12 +193,12 @@ const ContactForm = ({
             />
           </div>
 
-          <Button
+          <PrimaryButton
             type="submit"
-            className="w-full bg-red-800 hover:bg-red-900 text-white py-3 text-lg font-semibold"
+            className="w-full py-3 text-lg font-semibold"
           >
             Get My Free Quote
-          </Button>
+          </PrimaryButton>
 
           <p className="text-sm text-gray-500 text-center">
             We'll contact you within 24 hours with your personalized quote and
