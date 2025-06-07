@@ -60,7 +60,7 @@ const Wholesale = () => {
       description: "Delivery solutions that keep your projects on schedule",
       stats: "Same-day pickup",
       details: [
-        "Miami warehouse pickup",
+        "Genesis Stone warehouse pickup",
         "Statewide delivery",
         "Job site coordination",
       ],
@@ -657,8 +657,8 @@ const Wholesale = () => {
             Ready to Build Your Competitive Advantage?
           </h2>
           <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Join 500+ successful contractors across Florida who use Miami Floors
-            Pro to win more bids and deliver better projects.
+            Join 500+ successful contractors across Florida who use Genesis
+            Stone Pro to win more bids and deliver better projects.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <GoldButton size="lg" className="px-12 py-6 text-lg font-bold">

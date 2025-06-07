@@ -441,8 +441,8 @@ const About = () => {
             Ready to Experience the Difference?
           </h2>
           <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Join hundreds of satisfied contractors and designers who trust Miami
-            Floors Pro for their most important projects.
+            Join hundreds of satisfied contractors and designers who trust
+            Genesis Stone Floors Pro for their most important projects.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <GoldButton size="lg" className="px-10 py-4 text-lg">
