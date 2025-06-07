@@ -120,8 +120,8 @@ const Index = () => {
     },
     {
       question: "Can I see materials before placing an order?",
-      answer: "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami showroom location."
-        "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami Design District location.",
+      answer:
+        "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami showroom location.",
     },
   ];
 
