@@ -1,5 +1,10 @@
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
+import {
+  GoldButton,
+  WhiteOutlineButton,
+  PrimaryButton,
+  OutlineButton,
+} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,6 +17,9 @@ import {
   Target,
   Heart,
   Zap,
+  Building2,
+  Handshake,
+  Shield,
 } from "lucide-react";
 
 const About = () => {
@@ -28,24 +36,28 @@ const About = () => {
       title: "Quality First",
       description:
         "We source only the highest quality materials from trusted manufacturers, ensuring every project meets our exacting standards.",
+      color: "red",
     },
     {
       icon: Users,
       title: "Customer Partnership",
       description:
         "We don't just sell flooring - we partner with contractors and designers to ensure project success from start to finish.",
+      color: "blue",
     },
     {
       icon: Zap,
       title: "Reliability",
       description:
         "On-time delivery, consistent quality, and responsive service. You can count on us to keep your projects on schedule.",
+      color: "yellow",
     },
     {
       icon: Heart,
       title: "Community Focus",
       description:
         "As a Miami-based company, we're committed to supporting the growth and success of South Florida's construction community.",
+      color: "green",
     },
   ];
 
@@ -56,6 +68,8 @@ const About = () => {
       description:
         "15+ years in flooring industry, former contractor who understands project needs firsthand.",
       image: "/placeholder.svg",
+      quote:
+        "Quality flooring shouldn't be a luxury - it should be accessible to every professional.",
     },
     {
       name: "David Chen",
@@ -63,6 +77,8 @@ const About = () => {
       description:
         "Logistics expert ensuring fast, reliable delivery across South Florida.",
       image: "/placeholder.svg",
+      quote:
+        "Every delivery matters. We treat your timeline as seriously as our own.",
     },
     {
       name: "Sofia Rodriguez",
@@ -70,6 +86,8 @@ const About = () => {
       description:
         "Licensed interior designer helping clients select the perfect materials for their vision.",
       image: "/placeholder.svg",
+      quote:
+        "Great design starts with understanding both vision and practical needs.",
     },
     {
       name: "Mike Thompson",
@@ -77,164 +95,171 @@ const About = () => {
       description:
         "Former project manager specializing in volume orders and trade accounts.",
       image: "/placeholder.svg",
+      quote: "I've been on job sites. I know what contractors need to succeed.",
     },
   ];
 
   const milestones = [
     {
       year: "2008",
-      event: "Miami Floors Pro founded in small Miami warehouse",
+      event:
+        "Maria Gonzalez founded Miami Floors Pro after years as a contractor",
+      details:
+        "Started with a 2,000 sq ft warehouse and a mission to serve fellow contractors",
     },
     {
       year: "2012",
       event: "Expanded to 20,000 sq ft showroom and warehouse facility",
+      details:
+        "Growth driven by word-of-mouth recommendations from satisfied customers",
     },
     {
       year: "2015",
       event: "Launched contractor trade program with volume discounts",
+      details: "Introduced Net-30 terms and dedicated account management",
     },
     {
       year: "2018",
       event: "Added designer consultation services and luxury collections",
+      details:
+        "Partnered with high-end manufacturers to serve interior design market",
     },
     {
       year: "2020",
-      event: "Introduced online ordering and virtual consultations",
+      event: "Adapted with virtual consultations and enhanced delivery",
+      details: "Maintained service excellence during challenging times",
     },
     {
       year: "2024",
       event: "Serving 500+ contractors and 50+ designers across Florida",
+      details: "Recognized as South Florida's premier flooring destination",
     },
   ];
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="bg-yellow-400 text-black mb-4">
-                Since 2008
-              </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Florida's Trusted Flooring Partner
-              </h1>
-              <p className="text-xl text-white/90 mb-8">
-                For over 15 years, Miami Floors Pro has been the premier
-                destination for premium flooring materials, serving contractors,
-                designers, and homeowners across South Florida with unmatched
-                quality and service.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-yellow-400 text-black hover:bg-yellow-500 px-8"
-                >
-                  Visit Our Showroom
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-red-800 px-8"
-                >
-                  Contact Us
-                </Button>
-              </div>
+      {/* Hero Section - Story-focused */}
+      <div className="relative bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className={
+              'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')]'
+            }
+          ></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="text-center mb-16">
+            <Badge className="bg-yellow-500 text-black mb-6 px-4 py-2 text-sm font-semibold">
+              Our Story Since 2008
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Built by Contractors,
+              <br />
+              <span className="text-yellow-400">for Professionals</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Miami Floors Pro was born from real experience on real job sites.
+              We understand what it takes to deliver quality projects on time
+              and on budget.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <GoldButton size="lg" className="px-10 py-4 text-lg">
+                Visit Our Showroom
+              </GoldButton>
+              <WhiteOutlineButton size="lg" className="px-10 py-4 text-lg">
+                Meet Our Team
+              </WhiteOutlineButton>
             </div>
-            <div className="relative">
-              <img
-                src="/placeholder.svg"
-                alt="Miami Floors Pro Showroom"
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white text-black p-4 rounded-lg shadow-lg">
-                <div className="flex items-center space-x-2">
-                  <MapPin className="h-5 w-5 text-red-800" />
-                  <span className="font-semibold">20,000 sq ft Showroom</span>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                  <stat.icon className="h-8 w-8 text-yellow-400" />
                 </div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">
+                  {stat.number}
+                </div>
+                <p className="text-white/80 font-medium">{stat.label}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Founder Story Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <Card
-                key={index}
-                className="text-center group hover:shadow-lg transition-shadow duration-300"
-              >
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="h-6 w-6 text-red-800" />
-                  </div>
-                  <div className="text-3xl font-bold text-red-800 mb-2">
-                    {stat.number}
-                  </div>
-                  <p className="text-gray-600 font-medium">{stat.label}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Miami Floors Pro was founded in 2008 by Maria Gonzalez, a former
-                contractor who experienced firsthand the challenges of finding
-                reliable flooring suppliers who understood the unique demands of
-                South Florida construction projects.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Starting with a small warehouse and a commitment to quality,
-                we've grown into the region's premier flooring destination. Our
-                success is built on strong relationships with contractors and
-                designers who depend on us for premium materials, competitive
-                pricing, and reliable service.
-              </p>
-              <p className="text-lg text-gray-600">
-                Today, we operate from a 20,000 square foot facility in Miami's
-                Design District, serving hundreds of contractors and dozens of
-                interior designers across Florida. Our commitment to quality and
-                service remains unchanged.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
                 src="/placeholder.svg"
-                alt="Miami Floors Pro History"
-                className="rounded-lg shadow-lg"
+                alt="Maria Gonzalez - Founder"
+                className="rounded-2xl shadow-2xl"
               />
-              <Badge className="absolute top-4 left-4 bg-red-800">
-                Family Owned
+              <div className="absolute -bottom-8 -right-8 bg-red-800 text-white p-6 rounded-xl shadow-lg">
+                <div className="flex items-center space-x-3">
+                  <Building2 className="h-8 w-8 text-yellow-400" />
+                  <div>
+                    <p className="font-bold text-lg">20,000 sq ft</p>
+                    <p className="text-sm opacity-90">Showroom & Warehouse</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Badge className="bg-red-100 text-red-800 mb-6">
+                Founder's Story
               </Badge>
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+                From the Job Site to the Showroom
+              </h2>
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  "I spent years as a contractor, dealing with suppliers who
+                  didn't understand the pressure of deadlines, the importance of
+                  quality, or the reality of thin margins."
+                </p>
+                <p>
+                  "After missing too many project deadlines because of
+                  unreliable suppliers, I decided to create the company I wished
+                  existed. Miami Floors Pro was born from the frustration of not
+                  having a true partner in the flooring business."
+                </p>
+                <p>
+                  "Today, we're proud to be that partner for hundreds of
+                  contractors and designers across Florida. We know what you
+                  need because we've been where you are."
+                </p>
+              </div>
+              <div className="mt-8 p-6 bg-yellow-50 rounded-xl border-l-4 border-yellow-500">
+                <p className="text-gray-800 font-medium italic">
+                  "Every day, we ask ourselves: Would this make my old
+                  contracting business better? If the answer is yes, we do it."
+                </p>
+                <p className="text-sm text-gray-600 mt-3">
+                  — Maria Gonzalez, Founder & CEO
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-16 bg-gray-50">
+      {/* Values Section - Visual storytelling */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Values
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Values That Drive Everything We Do
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              These core principles guide everything we do, from product
-              selection to customer service.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              These aren't just words on a wall. They're the principles that
+              guide every decision, every interaction, and every shipment.
             </p>
           </div>
 
@@ -242,18 +267,40 @@ const About = () => {
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-lg transition-shadow duration-300"
+                className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white"
               >
                 <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <value.icon className="h-6 w-6 text-red-800" />
+                  <div className="flex items-start space-x-6">
+                    <div
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 ${
+                        value.color === "red"
+                          ? "bg-red-100"
+                          : value.color === "blue"
+                            ? "bg-blue-100"
+                            : value.color === "yellow"
+                              ? "bg-yellow-100"
+                              : "bg-green-100"
+                      }`}
+                    >
+                      <value.icon
+                        className={`h-8 w-8 ${
+                          value.color === "red"
+                            ? "text-red-600"
+                            : value.color === "blue"
+                              ? "text-blue-600"
+                              : value.color === "yellow"
+                                ? "text-yellow-600"
+                                : "text-green-600"
+                        }`}
+                      />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-800 transition-colors">
                         {value.title}
                       </h3>
-                      <p className="text-gray-600">{value.description}</p>
+                      <p className="text-gray-600 text-lg leading-relaxed">
+                        {value.description}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -263,39 +310,50 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Journey
+      {/* Timeline - Journey visualization */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Our Growth Journey
             </h2>
-            <p className="text-lg text-gray-600">
-              Key milestones in our company's growth and evolution
+            <p className="text-xl text-gray-600">
+              From humble beginnings to South Florida's premier flooring
+              destination
             </p>
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-red-800"></div>
-            <div className="space-y-8">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-red-800 to-yellow-500 h-full rounded-full"></div>
+
+            <div className="space-y-16">
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
                   className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
                 >
                   <div
-                    className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8"}`}
+                    className={`w-1/2 ${index % 2 === 0 ? "pr-12 text-right" : "pl-12"}`}
                   >
-                    <Card>
-                      <CardContent className="p-4">
-                        <div className="text-2xl font-bold text-red-800 mb-2">
+                    <Card className="group hover:shadow-xl transition-all duration-300">
+                      <CardContent className="p-8">
+                        <div className="text-3xl font-bold text-red-800 mb-3">
                           {milestone.year}
                         </div>
-                        <p className="text-gray-600">{milestone.event}</p>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                          {milestone.event}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {milestone.details}
+                        </p>
                       </CardContent>
                     </Card>
                   </div>
-                  <div className="w-4 h-4 bg-red-800 rounded-full relative z-10"></div>
+
+                  {/* Timeline dot */}
+                  <div className="w-6 h-6 bg-red-800 rounded-full relative z-10 border-4 border-white shadow-lg"></div>
+
                   <div className="w-1/2"></div>
                 </div>
               ))}
@@ -304,97 +362,96 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Team Section - Personal approach */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Meet Our Team
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              The People Behind Your Success
             </h2>
-            <p className="text-lg text-gray-600">
-              The experienced professionals behind Miami Floors Pro
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet the experienced professionals who make Miami Floors Pro your
+              most reliable partner
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {team.map((member, index) => (
               <Card
                 key={index}
-                className="text-center group hover:shadow-lg transition-shadow duration-300"
+                className="group hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
-                <CardContent className="p-6">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                  />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-red-800 font-medium mb-3">
-                    {member.title}
-                  </p>
-                  <p className="text-gray-600 text-sm">{member.description}</p>
-                </CardContent>
+                <div className="p-8">
+                  <div className="flex items-start space-x-6">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-20 h-20 rounded-xl object-cover flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-red-800 font-semibold mb-3">
+                        {member.title}
+                      </p>
+                      <p className="text-gray-600 mb-4">{member.description}</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 p-4 bg-gray-50 rounded-xl border-l-4 border-red-800">
+                    <p className="text-gray-800 italic">"{member.quote}"</p>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Certifications & Partnerships */}
-      <section className="py-16 bg-white">
+      {/* Trust indicators */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Certifications & Partnerships
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Trusted & Certified
             </h2>
-            <p className="text-lg text-gray-600">
-              Proud members and certified partners
-            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {[
-              "Better Business Bureau A+ Rating",
-              "Florida State Certified Supplier",
-              "National Tile Contractors Association",
-              "Miami Chamber of Commerce",
-            ].map((certification, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Award className="h-8 w-8 text-red-800" />
+              { name: "BBB A+ Rating", icon: Award },
+              { name: "FL State Certified", icon: Shield },
+              { name: "NTCA Member", icon: Handshake },
+              { name: "Chamber Member", icon: Building2 },
+            ].map((cert, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-16 h-16 bg-white rounded-xl shadow-lg flex items-center justify-center mx-auto mb-4 group-hover:shadow-xl transition-shadow">
+                  <cert.icon className="h-8 w-8 text-red-800" />
                 </div>
-                <p className="text-sm font-medium text-gray-900">
-                  {certification}
-                </p>
+                <p className="font-semibold text-gray-900">{cert.name}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-16 bg-red-800 text-white">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-red-800 to-red-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Work Together?</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Experience the Miami Floors Pro difference for your next project
+          <h2 className="text-4xl font-bold mb-8">
+            Ready to Experience the Difference?
+          </h2>
+          <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+            Join hundreds of satisfied contractors and designers who trust Miami
+            Floors Pro for their most important projects.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-yellow-400 text-black hover:bg-yellow-500 px-8"
-            >
-              Visit Our Showroom
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-red-800 px-8"
-            >
-              Get in Touch
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <GoldButton size="lg" className="px-10 py-4 text-lg">
+              Visit Our 20,000 sq ft Showroom
+            </GoldButton>
+            <WhiteOutlineButton size="lg" className="px-10 py-4 text-lg">
+              Schedule a Consultation
+            </WhiteOutlineButton>
           </div>
         </div>
       </section>
