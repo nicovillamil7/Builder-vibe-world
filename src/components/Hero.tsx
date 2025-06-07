@@ -8,34 +8,10 @@ const Hero = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
-      {/* Hero Navigation */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <nav className="flex justify-center space-x-8">
-          <Link
-            to="/wholesale"
-            className="text-white/90 hover:text-white transition-colors text-sm font-medium"
-          >
-            For Contractors
-          </Link>
-          <Link
-            to="/retail"
-            className="text-white/90 hover:text-white transition-colors text-sm font-medium"
-          >
-            For Homeowners
-          </Link>
-          <Link
-            to="/products"
-            className="text-white/90 hover:text-white transition-colors text-sm font-medium"
-          >
-            Browse All Flooring
-          </Link>
-        </nav>
-      </div>
-
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Miami's Premium Flooring—
+          Miami's Premium Flooring
         </h1>
         <h2 className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
           Volume discounts for contractors • Beautiful home transformations •

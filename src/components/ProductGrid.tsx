@@ -113,13 +113,6 @@ const ProductGrid = () => {
             </Card>
           ))}
         </div>
-
-        {/* Center Button */}
-        <div className="text-center">
-          <PrimaryButton size="lg" className="px-8 py-3">
-            View More Products
-          </PrimaryButton>
-        </div>
       </div>
     </section>
   );
