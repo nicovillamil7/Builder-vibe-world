@@ -354,13 +354,9 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
-                src="https://i.imgur.com/8K2YQnV.jpg"
+                src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -371,13 +367,9 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
-                src="https://i.imgur.com/mY8KqL2.jpg"
+                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury living room with marble accent wall"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -388,13 +380,9 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
-                src="https://i.imgur.com/RLp4K9X.jpg"
+                src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -405,13 +393,9 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
-                src="https://i.imgur.com/4N8kpQ7.jpg"
+                src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern white interior with polished porcelain"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -422,13 +406,9 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
-                src="https://i.imgur.com/VyN8mFj.jpg"
+                src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Professional installation of luxury vinyl plank flooring"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -439,13 +419,9 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
-                src="https://i.imgur.com/3N7ZqB8.jpg"
+                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Blue mosaic tile spa application"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
