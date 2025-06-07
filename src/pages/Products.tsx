@@ -31,7 +31,7 @@ const Products = () => {
           size: "24x48, 32x32",
           finish: "Polished, Matte, Textured",
           price: "$5.50-8.50/sq ft",
-          imageId: "modernPoolDeck",
+          imageId: "porcelainLargeFormat",
           features: ["Pool Safe", "Frost Proof", "Slip Resistant"],
         },
         {
@@ -39,7 +39,7 @@ const Products = () => {
           size: "12x24, 24x24",
           finish: "Polished, Honed",
           price: "$6.50-9.50/sq ft",
-          imageId: "luxuryInterior",
+          imageId: "porcelainMarbleLook",
           features: ["Natural Veining", "Luxury Appeal", "Low Maintenance"],
         },
         {
@@ -47,7 +47,7 @@ const Products = () => {
           size: "12x24, 18x36",
           finish: "High Gloss, Matte",
           price: "$4.50-7.50/sq ft",
-          imageId: "contemporaryWhite",
+          imageId: "porcelainContemporary",
           features: ["Bright Spaces", "Easy Clean", "Timeless Design"],
         },
       ],
@@ -56,14 +56,14 @@ const Products = () => {
       id: "natural-stone",
       name: "Natural Stone",
       description:
-        "Authentic natural stone materials including travertine, limestone, and granite",
+        "Authentic natural stone materials including travertine, marble, and slate",
       products: [
         {
           name: "Travertine Pool Deck",
           size: "16x16, 16x24",
           finish: "Tumbled, Filled & Honed",
           price: "$8.50-12.50/sq ft",
-          imageId: "travertinePool",
+          imageId: "naturalTravertine",
           features: ["Non-Slip Surface", "Heat Resistant", "Natural Beauty"],
         },
         {
@@ -71,16 +71,16 @@ const Products = () => {
           size: "12x12, 24x24",
           finish: "Natural Cleft, Honed",
           price: "$10.50-15.50/sq ft",
-          imageId: "darkStoneLiving",
+          imageId: "naturalSlate",
           features: ["Rich Color", "Durable", "Sophisticated Look"],
         },
         {
-          name: "Limestone Elegance",
+          name: "Marble Elegance",
           size: "18x18, 12x24",
-          finish: "Honed, Tumbled",
-          price: "$12.50-18.50/sq ft",
-          imageId: "largeFormatPool",
-          features: ["Consistent Color", "Pool Safe", "Premium Quality"],
+          finish: "Polished, Honed",
+          price: "$15.50-25.50/sq ft",
+          imageId: "naturalMarble",
+          features: ["Luxury Appeal", "Unique Veining", "Premium Quality"],
         },
       ],
     },
@@ -94,7 +94,7 @@ const Products = () => {
           size: "7x48, 9x60",
           finish: "Embossed Wood Grain",
           price: "$3.50-5.50/sq ft",
-          imageId: "professionalInstallation",
+          imageId: "vinylLuxuryPlank",
           features: ["100% Waterproof", "Click Lock", "Easy Install"],
         },
         {
@@ -102,15 +102,15 @@ const Products = () => {
           size: "7x48, 9x48",
           finish: "Textured, Matte",
           price: "$4.50-6.50/sq ft",
-          imageId: "installationProcess",
+          imageId: "spcFlooring",
           features: ["Stone Polymer Core", "Scratch Resistant", "Pet Friendly"],
         },
         {
-          name: "Wide Plank Laminate",
+          name: "Premium Laminate",
           size: "8x48, 10x48",
           finish: "AC5 Rated",
           price: "$2.50-4.50/sq ft",
-          imageId: "modernDining",
+          imageId: "laminateHardwood",
           features: [
             "High Traffic Rated",
             "Fade Resistant",
@@ -123,22 +123,22 @@ const Products = () => {
       id: "mosaics",
       name: "Mosaics",
       description:
-        "Decorative mosaic tiles for pools, spas, and accent features",
+        "Decorative mosaic tiles for floors, accent walls, and artistic features",
       products: [
         {
-          name: "Glass Pool Mosaics",
+          name: "Glass Floor Mosaics",
           size: "1x1, 2x2 mesh",
           finish: "Glossy, Iridescent",
           price: "$12.50-18.50/sq ft",
-          imageId: "blueMosaicSpa",
-          features: ["Pool & Spa Safe", "Color Fast", "Light Reflective"],
+          imageId: "mosaicGlassFloor",
+          features: ["Light Reflective", "Easy to Clean", "Color Fast"],
         },
         {
           name: "Stone Blend Mosaics",
           size: "1x2, 2x4 mesh",
           finish: "Natural, Tumbled",
           price: "$15.50-22.50/sq ft",
-          imageId: "darkStoneLiving",
+          imageId: "mosaicStoneBlend",
           features: ["Natural Variation", "Handcrafted", "Unique Patterns"],
         },
         {
@@ -146,7 +146,7 @@ const Products = () => {
           size: "Custom Patterns",
           finish: "Mixed Materials",
           price: "$25.50-45.50/sq ft",
-          imageId: "luxuryInterior",
+          imageId: "mosaicCustomDesign",
           features: [
             "Bespoke Designs",
             "Artist Collaboration",
@@ -169,6 +169,19 @@ const Products = () => {
             Explore our comprehensive collection of high-quality flooring
             materials, carefully curated for contractors, designers, and
             homeowners across South Florida.
+          </p>
+        </div>
+      </div>
+
+      {/* Floor Focus Banner */}
+      <div className="py-8 bg-gradient-to-r from-[rgb(251,189,35)] to-amber-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-black mb-2">
+            🎯 Floor-Focused Product Showcase
+          </h2>
+          <p className="text-black/80">
+            Each image prominently displays the actual flooring material to help
+            you visualize your project
           </p>
         </div>
       </div>
@@ -265,7 +278,7 @@ const Products = () => {
                         <div className="relative overflow-hidden rounded-t-lg">
                           <SimpleReliableImage
                             imageId={product.imageId}
-                            alt={product.name}
+                            alt={`${product.name} - ${category.name} flooring showcasing floor prominence`}
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <Badge
@@ -274,6 +287,9 @@ const Products = () => {
                           >
                             {category.name}
                           </Badge>
+                          <div className="absolute bottom-3 left-3 bg-black/70 text-white px-2 py-1 rounded text-xs">
+                            Floor Focus
+                          </div>
                         </div>
                       </CardHeader>
 
@@ -376,11 +392,11 @@ const Products = () => {
               </ul>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-xl">
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
               <SimpleReliableImage
-                imageId="showroomDisplay"
-                alt="Genesis Stone showroom displaying various tile and stone samples"
-                className="w-full h-96 object-cover"
+                imageId="professionalInstallation"
+                alt="Professional flooring installation in progress"
+                className="w-full h-80 object-cover"
               />
             </div>
           </div>
