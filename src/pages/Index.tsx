@@ -338,6 +338,131 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Application Showcase Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              See Our Work in Action
+            </h2>
+            <p className="text-lg text-gray-600">
+              Real projects showcasing the quality and beauty of our flooring
+              solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <img
+                src="https://i.imgur.com/8K2YQnV.jpg"
+                alt="Modern pool deck with large format porcelain tiles"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-bold text-lg">Pool Deck Paradise</h4>
+                <p className="text-sm">Large Format Porcelain</p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <img
+                src="https://i.imgur.com/mY8KqL2.jpg"
+                alt="Luxury living room with marble accent wall"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-bold text-lg">Luxury Interior</h4>
+                <p className="text-sm">Marble & Premium Tiles</p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <img
+                src="https://i.imgur.com/RLp4K9X.jpg"
+                alt="Natural stone travertine pool area with spa"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-bold text-lg">Natural Stone Elegance</h4>
+                <p className="text-sm">Travertine Pool & Spa</p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <img
+                src="https://i.imgur.com/4N8kpQ7.jpg"
+                alt="Modern white interior with polished porcelain"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-bold text-lg">Contemporary Clean</h4>
+                <p className="text-sm">White Polished Porcelain</p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <img
+                src="https://i.imgur.com/VyN8mFj.jpg"
+                alt="Professional installation of luxury vinyl plank flooring"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-bold text-lg">Professional Installation</h4>
+                <p className="text-sm">Luxury Vinyl Plank</p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <img
+                src="https://i.imgur.com/3N7ZqB8.jpg"
+                alt="Blue mosaic tile spa application"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-bold text-lg">Mosaic Artistry</h4>
+                <p className="text-sm">Custom Spa Design</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <GoldButton size="lg" className="px-8">
+              View Our Complete Portfolio
+            </GoldButton>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-16 bg-[rgb(138,0,0)] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

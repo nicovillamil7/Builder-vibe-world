@@ -95,8 +95,56 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Contact Methods */}
+      {/* Showroom Preview */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Visit Our Miami Showroom
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Experience our materials firsthand in our state-of-the-art
+                showroom. See, touch, and compare hundreds of flooring options
+                with expert guidance from our design consultants.
+              </p>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Interactive material displays
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Professional design consultation
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Contractor will-call pickup
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  Same-day sample availability
+                </li>
+              </ul>
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg shadow-xl">
+              <img
+                src="https://i.imgur.com/5R8qN9X.jpg"
+                alt="Genesis Stone showroom displaying various tile and stone samples"
+                className="w-full h-96 object-cover"
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Methods */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
