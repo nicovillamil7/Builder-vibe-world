@@ -40,15 +40,15 @@ const Retail = () => {
       icon: Eye,
       title: "Design Visualization Service",
       description:
-        "See your vision come to life with our professional design consultation and 3D room mockups",
-      highlight: "Free design consultation",
+        "See your vision come to life with our professional design consultation and room mockups",
+      highlight: "Professional design consultation",
       bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
     },
     {
       icon: Sparkles,
-      title: "Professional Installation",
+      title: "Expert Installation Service",
       description:
-        "Expert installation with certified craftsmen ensuring perfect results and comprehensive warranties",
+        "Certified craftsmen ensure perfect installation with comprehensive warranties and ongoing support",
       highlight: "Lifetime installation warranty",
       bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
@@ -72,14 +72,14 @@ const Retail = () => {
     {
       title: "Material Sample Service",
       description:
-        "Take home large format samples to see how materials look in your actual lighting conditions",
-      savings: "Up to 5 samples",
+        "Take home material samples to see how they look in your actual lighting conditions",
+      savings: "Professional service",
     },
     {
       title: "Project Planning Support",
       description:
         "Detailed project timeline, material calculations, and coordination with your preferred contractors",
-      savings: "Free service",
+      savings: "Comprehensive planning",
     },
     {
       title: "Warranty & Support",
@@ -459,7 +459,7 @@ const Retail = () => {
                 step: "02",
                 title: "Material Selection",
                 description:
-                  "Choose from premium materials with take-home samples",
+                  "Choose from premium materials with professional guidance",
               },
               {
                 step: "03",
@@ -499,7 +499,7 @@ const Retail = () => {
             </p>
           </div>
           <ContactForm
-            title="Get Your Free Home Design Consultation"
+            title="Get Your Home Design Consultation"
             subtitle="Tell us about your project and we'll help you choose the perfect flooring"
           />
         </div>

@@ -21,7 +21,7 @@ const Hero = () => {
             to="/retail"
             className="text-white/90 hover:text-white transition-colors text-sm font-medium"
           >
-            For Designers
+            For Homeowners
           </Link>
           <Link
             to="/products"
@@ -38,28 +38,28 @@ const Hero = () => {
           Miami's Premium Flooring—
         </h1>
         <h2 className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
-          Bulk discounts for contractors • Curated luxury collections for
-          designers • Free samples & expert guidance
+          Volume discounts for contractors • Beautiful home transformations •
+          Professional installation & expert guidance
         </h2>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <GoldButton size="lg" className="px-8 py-3 text-lg font-semibold">
-            Get Trade Pricing
+            Get Project Estimate
             <ArrowRight className="ml-2 h-5 w-5" />
           </GoldButton>
           <WhiteOutlineButton
             size="lg"
             className="px-8 py-3 text-lg font-semibold"
           >
-            Request Designer Samples
+            Schedule Consultation
           </WhiteOutlineButton>
         </div>
 
         {/* Discount Banner */}
         <div className="inline-flex items-center bg-[rgb(251,189,35)]/20 border border-[rgb(251,189,35)]/30 rounded-full px-6 py-2 text-[rgb(251,189,35)]">
           <span className="mr-2">🎉</span>
-          <span className="font-medium">Reveal Your 10% Discount</span>
+          <span className="font-medium">Get Your Project Quote Today</span>
         </div>
       </div>
 
