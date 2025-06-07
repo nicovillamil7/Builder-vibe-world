@@ -277,8 +277,9 @@ const About = () => {
                           ? "bg-red-100"
                           : value.color === "blue"
                             ? "bg-blue-100"
-                      value.color === 'yellow' ? 'bg-amber-100' :
-                      'bg-red-100'
+                            : value.color === "yellow"
+                              ? "bg-amber-100"
+                              : "bg-red-100"
                       }`}
                     >
                       <value.icon

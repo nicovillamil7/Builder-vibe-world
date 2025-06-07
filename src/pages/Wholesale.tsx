@@ -307,8 +307,9 @@ const Wholesale = () => {
                           ? "bg-blue-100"
                           : advantage.color === "green"
                             ? "bg-green-100"
-                      advantage.color === 'orange' ? 'bg-orange-100' :
-                      'bg-red-100'
+                            : advantage.color === "orange"
+                              ? "bg-orange-100"
+                              : "bg-red-100"
                       }`}
                     >
                       <advantage.icon
