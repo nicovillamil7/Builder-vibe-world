@@ -262,14 +262,10 @@ const Wholesale = () => {
             </div>
 
             <div className="relative">
-              <img
-                src="https://i.imgur.com/VyN8mFj.jpg"
+              <SimpleReliableImage
+                imageId="contractorHeroImage"
                 alt="Professional flooring installation at construction site"
                 className="rounded-lg shadow-2xl"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                }}
               />
               <div className="absolute -bottom-8 -left-8 bg-[rgb(251,189,35)] text-black p-6 rounded-lg shadow-xl">
                 <div className="flex items-center space-x-3">
