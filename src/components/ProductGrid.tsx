@@ -7,13 +7,14 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle } from "lucide-react";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 
 const products = [
   {
     id: 1,
     name: "Porcelain Tiles",
     description: "Durable, water-resistant, and available in countless designs",
-    image: "https://i.imgur.com/8K2YQnV.jpg", // Modern pool deck with porcelain
+    imageId: "modernPoolDeck",
     features: [
       "Water Resistant",
       "Durable",
@@ -26,7 +27,7 @@ const products = [
     id: 2,
     name: "Laminate & Vinyl SPC",
     description: "Perfect blend of style, comfort, and affordability",
-    image: "https://i.imgur.com/VyN8mFj.jpg", // Installation process image
+    imageId: "vinylInstallation",
     features: ["Waterproof", "Comfortable", "Affordable", "Easy Install"],
     category: "Popular",
   },
@@ -34,7 +35,7 @@ const products = [
     id: 3,
     name: "Natural Stone",
     description: "Timeless elegance with unique patterns and textures",
-    image: "https://i.imgur.com/RLp4K9X.jpg", // Travertine pool area
+    imageId: "travertinePool",
     features: ["Unique Patterns", "Timeless", "Natural Beauty", "High Value"],
     category: "Luxury",
   },
@@ -42,7 +43,7 @@ const products = [
     id: 4,
     name: "Mosaics",
     description: "Intricate designs for accent walls and decorative features",
-    image: "https://i.imgur.com/3N7ZqB8.jpg", // Blue mosaic spa
+    imageId: "blueMosaicSpa",
     features: ["Custom Designs", "Artistic", "Accent Features", "Handcrafted"],
     category: "Specialty",
   },
@@ -73,20 +74,10 @@ const ProductGrid = () => {
             >
               <CardHeader className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={product.image}
+                  <SimpleReliableImage
+                    imageId={product.imageId}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      // Fallback to Unsplash images if imgur fails
-                      const fallbacks = {
-                        1: "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                        2: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                        3: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                        4: "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                      };
-                      e.target.src = fallbacks[product.id];
-                    }}
                   />
                   <Badge
                     className="absolute top-3 right-3 bg-[rgb(138,0,0)] hover:bg-[rgb(153,27,27)]"
@@ -138,14 +129,10 @@ const ProductGrid = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="https://i.imgur.com/mY8KqL2.jpg"
+              <SimpleReliableImage
+                imageId="luxuryInterior"
                 alt="Luxury interior with marble accent wall"
                 className="w-full h-64 object-cover"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -155,14 +142,10 @@ const ProductGrid = () => {
             </div>
 
             <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="https://i.imgur.com/4N8kpQ7.jpg"
+              <SimpleReliableImage
+                imageId="contemporaryWhite"
                 alt="Modern white porcelain living space"
                 className="w-full h-64 object-cover"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -172,14 +155,10 @@ const ProductGrid = () => {
             </div>
 
             <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="https://i.imgur.com/8mP3QnR.jpg"
+              <SimpleReliableImage
+                imageId="professionalInstallation"
                 alt="Professional installation process"
                 className="w-full h-64 object-cover"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">

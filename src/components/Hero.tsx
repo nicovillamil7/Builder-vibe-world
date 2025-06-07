@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { ArrowRight } from "lucide-react";
+import { getReliableImageUrl } from "@/utils/imageUtils";
 
 const Hero = () => {
   return (
@@ -9,10 +10,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-          backgroundImage: `url('https://i.imgur.com/mY8KqL2.jpg')`,
-        }}
-        onError={(e) => {
-          e.target.style.backgroundImage = `url('https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`;
+          backgroundImage: `url('${getReliableImageUrl("luxuryInterior")}')`,
         }}
       ></div>
 
