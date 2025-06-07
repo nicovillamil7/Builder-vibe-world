@@ -130,7 +130,7 @@ const Products = () => {
           size: "1x1, 2x2 mesh",
           finish: "Glossy, Iridescent",
           price: "$12.50-18.50/sq ft",
-          image: "https://i.imgur.com/3N7ZqB8.jpg", // Blue mosaic spa
+          imageId: "blueMosaicSpa",
           features: ["Pool & Spa Safe", "Color Fast", "Light Reflective"],
         },
         {
@@ -138,8 +138,7 @@ const Products = () => {
           size: "1x2, 2x4 mesh",
           finish: "Natural, Tumbled",
           price: "$15.50-22.50/sq ft",
-          image:
-            "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          imageId: "darkStoneLiving",
           features: ["Natural Variation", "Handcrafted", "Unique Patterns"],
         },
         {
@@ -147,8 +146,7 @@ const Products = () => {
           size: "Custom Patterns",
           finish: "Mixed Materials",
           price: "$25.50-45.50/sq ft",
-          image:
-            "https://images.unsplash.com/photo-1631545806609-59fb6f2e1b36?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+          imageId: "luxuryInterior",
           features: [
             "Bespoke Designs",
             "Artist Collaboration",
@@ -398,15 +396,11 @@ const Products = () => {
               </ul>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <img
-                src="https://i.imgur.com/VyN8mFj.jpg"
-                alt="Professional flooring installation in progress"
-                className="w-full h-80 object-cover"
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-                }}
+            <div className="relative overflow-hidden rounded-lg shadow-xl">
+              <SimpleReliableImage
+                imageId="showroomDisplay"
+                alt="Genesis Stone showroom displaying various tile and stone samples"
+                className="w-full h-96 object-cover"
               />
             </div>
           </div>
