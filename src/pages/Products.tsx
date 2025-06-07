@@ -186,15 +186,12 @@ const Products = () => {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-lg shadow-xl">
-            <img
-              src="https://i.imgur.com/5R8qN9X.jpg"
-              alt="Genesis Stone showroom with tile samples on display"
-              className="w-full h-96 object-cover"
-              onError={(e) => {
-                e.target.src =
-                  "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
-              }}
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <SimpleReliableImage
+                imageId="professionalInstallation"
+                alt="Professional flooring installation in progress"
+                className="w-full h-80 object-cover"
+              />
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
             <div className="absolute inset-0 flex items-center">
