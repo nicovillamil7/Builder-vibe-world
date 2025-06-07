@@ -438,10 +438,11 @@ const Wholesale = () => {
                 className="bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden group hover:bg-white/20 transition-all duration-300"
               >
                 <div className="relative">
-                  <img
-                    src={project.image}
+                  <SimpleReliableImage
+                    imageId={project.imageId}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   />
                   <Badge className="absolute top-4 right-4 bg-[rgb(251,189,35)] text-black font-bold">
                     {project.savings}
