@@ -349,19 +349,12 @@ const Products = () => {
             Contact us for personalized product recommendations and pricing
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-yellow-400 text-black hover:bg-yellow-500 px-8"
-            >
+            <GoldButton size="lg" className="px-8">
               Get Custom Quote
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-red-800 px-8"
-            >
+            </GoldButton>
+            <WhiteOutlineButton size="lg" className="px-8">
               Schedule Showroom Visit
-            </Button>
+            </WhiteOutlineButton>
           </div>
         </div>
       </div>
