@@ -124,12 +124,11 @@ const Contact = () => {
                     {method.primary}
                   </p>
                   <p className="text-gray-600 mb-6">{method.secondary}</p>
-                  <Button
-                    className="bg-red-800 hover:bg-red-900"
+                  <PrimaryButton
                     onClick={() => window.open(method.href, "_blank")}
                   >
                     {method.action}
-                  </Button>
+                  </PrimaryButton>
                 </CardContent>
               </Card>
             ))}
@@ -288,16 +287,12 @@ const Contact = () => {
             experts
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-red-800 text-red-800 hover:bg-red-50 px-8"
-            >
+            <OutlineButton size="lg" className="px-8">
               View FAQ
-            </Button>
-            <Button size="lg" className="bg-red-800 hover:bg-red-900 px-8">
+            </OutlineButton>
+            <PrimaryButton size="lg" className="px-8">
               Speak with Expert
-            </Button>
+            </PrimaryButton>
           </div>
         </div>
       </section>

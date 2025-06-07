@@ -274,9 +274,9 @@ const Products = () => {
                       </CardContent>
 
                       <CardFooter className="p-6 pt-0 space-y-2">
-                        <Button className="w-full bg-red-800 hover:bg-red-900">
+                        <PrimaryButton className="w-full">
                           Get Quote
-                        </Button>
+                        </PrimaryButton>
                         <Button
                           variant="outline"
                           className="w-full border-red-800 text-red-800 hover:bg-red-50"
