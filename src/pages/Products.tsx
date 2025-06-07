@@ -29,25 +29,28 @@ const Products = () => {
           size: "24x24, 12x24",
           finish: "Polished, Matte",
           price: "$4.50-6.50/sq ft",
-          image: "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Slip Resistant", "Frost Proof", "Stain Resistant"]
+          image:
+            "https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Slip Resistant", "Frost Proof", "Stain Resistant"],
         },
         {
           name: "Stone Look Series",
           size: "12x24, 6x24",
           finish: "Textured, Natural",
           price: "$5.50-8.50/sq ft",
-          image: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Natural Appearance", "Durable", "Low Maintenance"]
+          image:
+            "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Appearance", "Durable", "Low Maintenance"],
         },
         {
           name: "Wood Look Planks",
           size: "6x48, 9x48",
           finish: "Matte, Semi-Gloss",
           price: "$6.50-9.50/sq ft",
-          image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Realistic Wood Grain", "Waterproof", "Pet Friendly"]
-        }
+          image:
+            "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Realistic Wood Grain", "Waterproof", "Pet Friendly"],
+        },
       ],
     },
     {
@@ -61,25 +64,28 @@ const Products = () => {
           size: "12x12, 18x18",
           finish: "Polished, Honed",
           price: "$12.50-18.50/sq ft",
-          image: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Premium Quality", "Unique Veining", "Timeless Beauty"]
+          image:
+            "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Premium Quality", "Unique Veining", "Timeless Beauty"],
         },
         {
           name: "Travertine Collection",
           size: "16x16, 12x24",
           finish: "Tumbled, Filled",
           price: "$8.50-12.50/sq ft",
-          image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Natural Texture", "Non-Slip Surface", "Heat Resistant"]
+          image:
+            "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Texture", "Non-Slip Surface", "Heat Resistant"],
         },
         {
           name: "Granite Tiles",
           size: "12x12, 24x24",
           finish: "Polished, Flamed",
           price: "$15.50-22.50/sq ft",
-          image: "https://images.unsplash.com/photo-1615651300008-40734b9b53b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Extremely Durable", "Scratch Resistant", "Heat Proof"]
-        }
+          image:
+            "https://images.unsplash.com/photo-1615651300008-40734b9b53b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Extremely Durable", "Scratch Resistant", "Heat Proof"],
+        },
       ],
     },
     {
@@ -92,7 +98,8 @@ const Products = () => {
           size: "7x48, 9x60",
           finish: "Embossed, Smooth",
           price: "$3.50-5.50/sq ft",
-          image: "/placeholder.svg",
+          image:
+            "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
           features: ["100% Waterproof", "Click Lock", "Comfortable Underfoot"],
         },
         {
@@ -100,7 +107,8 @@ const Products = () => {
           size: "7x48, 9x48",
           finish: "Textured, Matte",
           price: "$4.50-6.50/sq ft",
-          image: "/placeholder.svg",
+          image:
+            "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
           features: [
             "Stone Polymer Core",
             "Dimensionally Stable",
@@ -112,7 +120,8 @@ const Products = () => {
           size: "5x48, 8x48",
           finish: "AC4, AC5",
           price: "$2.50-4.50/sq ft",
-          image: "/placeholder.svg",
+          image:
+            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
           features: [
             "High Traffic Rated",
             "Easy Installation",
@@ -131,25 +140,26 @@ const Products = () => {
           size: "1x1, 2x2 mesh",
           finish: "Glossy, Frosted",
           price: "$8.50-15.50/sq ft",
-          image: "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Light Reflective", "Easy to Clean", "Color Fast"]
+          image:
+            "https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Light Reflective", "Easy to Clean", "Color Fast"],
         },
         {
           name: "Stone Mosaics",
           size: "1x2, 2x4 mesh",
           finish: "Natural, Tumbled",
           price: "$12.50-20.50/sq ft",
-          image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Natural Variation", "Durable", "Unique Patterns"]
+          image:
+            "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Variation", "Durable", "Unique Patterns"],
         },
         {
           name: "Metal Accents",
           size: "1x4, 2x6 strips",
           finish: "Brushed, Polished",
           price: "$18.50-35.50/sq ft",
-          image: "https://images.unsplash.com/photo-1631545806609-59fb6f2e1b36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-          features: ["Modern Appeal", "Corrosion Resistant", "Easy Maintenance"]
-        }
+          image:
+            "https://images.unsplash.com/photo-1631545806609-59fb6f2e1b36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
           features: [
             "Modern Appeal",
             "Corrosion Resistant",
@@ -256,7 +266,7 @@ const Products = () => {
                           <div>
                             <strong>Finish:</strong> {product.finish}
                           </div>
-                          <div className="text-lg font-bold text-red-800">
+                          <div className="text-lg font-bold text-[rgb(138,0,0)]">
                             {product.price}
                           </div>
                         </div>
@@ -304,7 +314,7 @@ const Products = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-red-800" />
+                <CheckCircle className="h-8 w-8 text-[rgb(138,0,0)]" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Quality Guaranteed</h3>
               <p className="text-gray-600">
@@ -315,7 +325,7 @@ const Products = () => {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-red-800" />
+                <CheckCircle className="h-8 w-8 text-[rgb(138,0,0)]" />
               </div>
               <h3 className="text-xl font-semibold mb-2">
                 Competitive Pricing
@@ -327,7 +337,7 @@ const Products = () => {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-red-800" />
+                <CheckCircle className="h-8 w-8 text-[rgb(138,0,0)]" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Expert Support</h3>
               <p className="text-gray-600">
