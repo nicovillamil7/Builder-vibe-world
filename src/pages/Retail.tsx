@@ -95,6 +95,7 @@ const Retail = () => {
       homeowner: "The Johnson Family",
       location: "Coral Gables",
       style: "Contemporary Elegance",
+      image: "https://i.imgur.com/mY8KqL2.jpg", // Luxury interior with marble accent wall
       materials: [
         "Large Format Porcelain",
         "Natural Wood-Look LVP",
