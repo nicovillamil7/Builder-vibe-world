@@ -327,8 +327,8 @@ const Retail = () => {
                 className="group bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden hover:bg-white/20 transition-all duration-500"
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
+                  <SimpleReliableImage
+                    imageId={project.imageId}
                     alt={project.title}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
