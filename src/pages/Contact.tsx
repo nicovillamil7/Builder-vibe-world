@@ -322,27 +322,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Quick Links */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Need Quick Answers?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Check out our frequently asked questions or speak with one of our
-            experts
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <OutlineButton size="lg" className="px-8">
-              View FAQ
-            </OutlineButton>
-            <PrimaryButton size="lg" className="px-8">
-              Speak with Expert
-            </PrimaryButton>
-          </div>
-        </div>
-      </section>
-
       {/* Emergency Contact */}
       <section className="py-8 bg-[rgb(138,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
