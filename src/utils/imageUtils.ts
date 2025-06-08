@@ -226,7 +226,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     primary:
       "https://images.unsplash.com/photo-1630408842575-2e8c2edc5a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80", // Would be unique if it worked
     fallback:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Large format porcelain tiles covering entire floor in modern space",
     category: "porcelain-products",
   },
