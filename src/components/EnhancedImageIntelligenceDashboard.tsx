@@ -87,6 +87,9 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
   >([]);
   const [filteredImages, setFilteredImages] = useState<EnhancedImageData[]>([]);
   const [bulkReplacementPlan, setBulkReplacementPlan] = useState<any>(null);
+  const [validatedReplacements, setValidatedReplacements] = useState<
+    ValidatedReplacement[]
+  >([]);
   const [isProcessingBulk, setIsProcessingBulk] = useState(false);
   const [notifications, setNotifications] = useState<any[]>([]);
   const [loadingStates, setLoadingStates] = useState({
