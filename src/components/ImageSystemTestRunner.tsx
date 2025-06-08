@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import { Badge } from "@/components/ui/badge";
-import { runImageSystemDiagnostics } from "@/tests/imageSystem.e2e.test";
+import {
+  ImageSystemDiagnostics,
+  type DiagnosticResult,
+  type SystemHealth,
+  type ComprehensiveDiagnosticResult,
+} from "@/utils/imageSystemDiagnostics";
 import {
   WebsiteImageScanner,
   type ImageScanResult,
