@@ -101,7 +101,7 @@ const Index = () => {
     },
     { number: 2, title: "Get Your Quote", description: "Or Samples" },
     { number: 3, title: "Approve & Schedule", description: "Delivery" },
-    { number: 4, title: "Install & Enjoy", description: "Your New Floors" },
+    { number: 4, title: "Connect & Build", description: "Your Dream Home" },
   ];
 
   const contractorFaqs = [
@@ -178,9 +178,9 @@ const Index = () => {
         "We serve all of South Florida, with same-day pickup available at our Miami showroom and next-day delivery throughout the state. We have special shipping rates for bulk orders.",
     },
     {
-      question: "Do you provide warranties on your products and installation?",
+      question: "Do you provide warranties on your products?",
       answer:
-        "Yes, we offer comprehensive warranties on all our products. Most products come with manufacturer warranties ranging from 5-25 years, and we provide a 1-year installation warranty on all our work.",
+        "Yes, we offer comprehensive warranties on all our products. Most products come with manufacturer warranties ranging from 5-25 years, giving you complete peace of mind with your investment.",
     },
     {
       question: "What types of flooring materials do you carry?",
