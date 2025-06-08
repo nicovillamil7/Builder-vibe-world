@@ -867,21 +867,41 @@ export const ImageIntelligenceDashboard: React.FC = () => {
                           Usage & Locations
                         </h4>
                         <div className="text-xs space-y-2">
-                          <div><strong>Category:</strong> <span className="capitalize">{img.category}</span></div>
-                          <div><strong>Alt Text:</strong> {img.alt}</div>
-                          <div><strong>Keywords:</strong> {img.keywords.join(', ')}</div>
+                          <div>
+                            <strong>Category:</strong>{" "}
+                            <span className="capitalize">{img.category}</span>
+                          </div>
+                          <div>
+                            <strong>Alt Text:</strong> {img.alt}
+                          </div>
+                          <div>
+                            <strong>Keywords:</strong> {img.keywords.join(", ")}
+                          </div>
                           <div className="mt-2">
                             <strong>Used In:</strong>
                             <ul className="mt-1 space-y-1">
-                              {getImageUsageLocations(img.id).map((location, index) => (
-                                <li key={index} className="text-blue-700 bg-blue-100 rounded px-2 py-1">
-                                  • {location}
-                                </li>
-                              ))}
+                              {getImageUsageLocations(img.id).map(
+                                (location, index) => (
+                                  <li
+                                    key={index}
+                                    className="text-blue-700 bg-blue-100 rounded px-2 py-1"
+                                  >
+                                    • {location}
+                                  </li>
+                                ),
+                              )}
                             </ul>
                           </div>
                         </div>
                       </div>
+
+                      <div className="bg-purple-50 rounded-lg p-3">
+                        <h4 className="font-semibold text-sm text-purple-800 mb-2 flex items-center">
+                          <Brain className="h-4 w-4 mr-1" />
+                          AI Context & Analysis
+                        </h4>
+                        <div className="text-xs space-y-1">
+                          <div>
                             <strong>Expected Content:</strong>{" "}
                             {img.contextMatch}
                           </div>
