@@ -182,6 +182,14 @@ const Retail = () => {
               <WhiteOutlineButton
                 size="lg"
                 className="px-12 py-6 text-xl font-bold"
+                onClick={() => {
+                  const phoneNumber = "13055104733";
+                  const message =
+                    "Hi! I'm interested in scheduling a design consultation for my home flooring project. Can you help me?";
+                  const encodedMessage = encodeURIComponent(message);
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
               >
                 Schedule Design Consultation
               </WhiteOutlineButton>
