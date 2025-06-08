@@ -365,23 +365,21 @@ const Retail = () => {
                 key={index}
                 className="relative p-8 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-gray-50 to-white"
               >
-                <div className="absolute top-6 right-6">
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 text-[rgb(251,189,35)] fill-current"
-                      />
-                    ))}
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="flex space-x-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 text-[rgb(251,189,35)] fill-current"
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                <CardContent className="p-0">
-                  <div className="mb-6">
-                    <blockquote className="text-lg text-gray-700 leading-relaxed italic">
-                      "{testimonial.text}"
-                    </blockquote>
-                  </div>
+                  <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
+                    "{testimonial.text}"
+                  </blockquote>
 
                   <div className="flex items-start justify-between">
                     <div>
