@@ -415,6 +415,7 @@ export class BulkReplacementManager {
       poorPerformers: targetImages.map((img) => img.id),
       replacementSources: [],
       estimatedImprovementScore: 0,
+      projectedAverageScore: 0,
     };
 
     // Generate replacement sources for each poor performer
@@ -435,6 +436,7 @@ export class BulkReplacementManager {
     }
 
     plan.estimatedImprovementScore = this.calculateImprovementScore(plan);
+    plan.projectedAverageScore = this.calculateProjectedAverageScore(plan);
 
     return plan;
   }
