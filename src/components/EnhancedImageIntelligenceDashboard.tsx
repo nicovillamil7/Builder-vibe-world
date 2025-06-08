@@ -455,7 +455,7 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
 
         {/* Main Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="overview" className="flex items-center gap-2">
               <BarChart3 className="h-4 w-4" />
               Overview
@@ -471,12 +471,18 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
               <Globe className="h-4 w-4" />
               Website Scan
             </TabsTrigger>
+            <TabsTrigger
+              value="system-reset"
+              className="flex items-center gap-2 text-orange-600"
+            >
+              <Settings className="h-4 w-4" />
+              System Reset
+            </TabsTrigger>
             <TabsTrigger value="bulk-ops" className="flex items-center gap-2">
               <Zap className="h-4 w-4" />
               Bulk Operations
             </TabsTrigger>
           </TabsList>
-
           {/* Overview Tab */}
           <TabsContent value="overview" className="space-y-6">
             {/* Summary Cards */}
