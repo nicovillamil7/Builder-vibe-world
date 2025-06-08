@@ -174,8 +174,8 @@ const ProductGrid = () => {
                 }}
               ></div>
               <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold">Professional Installation</h4>
-                <p className="text-sm">Expert Craftsmanship</p>
+                <h4 className="font-semibold">Contractor Network</h4>
+                <p className="text-sm">Trusted Professionals</p>
               </div>
             </div>
           </div>
