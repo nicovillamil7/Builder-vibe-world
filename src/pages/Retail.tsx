@@ -265,32 +265,32 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Add homeowner benefits to the main section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-        {homeownerBenefits.map((benefit, index) => (
-          <Card
-            key={index}
-            className="group hover:shadow-xl transition-all duration-300 bg-white border-0"
-          >
-            <CardContent className="p-8">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-gray-900">
-                  {benefit.title}
-                </h3>
-                <Badge className="bg-green-100 text-green-800 font-semibold">
-                  {benefit.savings}
-                </Badge>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                {benefit.description}
-              </p>
-              <div className="mt-6 flex items-center text-[rgb(138,0,0)] font-medium group-hover:text-[rgb(153,27,27)]">
-                <span>Learn more →</span>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+          {/* Add homeowner benefits to the main section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            {homeownerBenefits.map((benefit, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 bg-white border-0"
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {benefit.title}
+                    </h3>
+                    <Badge className="bg-green-100 text-green-800 font-semibold">
+                      {benefit.savings}
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                  <div className="mt-6 flex items-center text-[rgb(138,0,0)] font-medium group-hover:text-[rgb(153,27,27)]">
+                    <span>Learn more →</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
