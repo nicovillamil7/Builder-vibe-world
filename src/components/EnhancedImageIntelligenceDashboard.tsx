@@ -1123,7 +1123,25 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
                 </p>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <PrimaryButton
+                    onClick={() => handleBulkReplacement(7)}
+                    disabled={isProcessingBulk}
+                    className="flex items-center justify-center bg-red-600 hover:bg-red-700"
+                  >
+                    {loadingStates.creatingPlan ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        Creating Plan...
+                      </>
+                    ) : (
+                      <>
+                        <Zap className="h-4 w-4 mr-2" />
+                        Replace Images Below 7
+                      </>
+                    )}
+                  </PrimaryButton>
+
                   <PrimaryButton
                     onClick={() => handleBulkReplacement(6)}
                     disabled={isProcessingBulk}
@@ -1137,7 +1155,7 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
                     ) : (
                       <>
                         <Zap className="h-4 w-4 mr-2" />
-                        Replace Poor Images
+                        Replace Images Below 6
                       </>
                     )}
                   </PrimaryButton>
@@ -1161,9 +1179,164 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
                   </OutlineButton>
                 </div>
 
+                {/* Images Below 7 Score Display */}
+                <Card className="mb-6 border-orange-200 bg-orange-50">
+                  <CardHeader>
+                    <h3 className="text-lg font-bold text-orange-800 flex items-center">
+                      <AlertTriangle className="h-5 w-5 mr-2" />
+                      Images Below Quality Threshold (Score &lt; 7)
+                    </h3>
+                    <p className="text-orange-700">
+                      These images need immediate replacement for better quality
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    {(() => {
+                      const imagesBelow7 = allEnhancedImages.filter(
+                        (img) => img.relevanceScore < 7,
+                      );
+                      return (
+                        <>
+                          <div className="mb-4 p-3 bg-white rounded border">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                              <div>
+                                <p className="text-sm text-gray-600">
+                                  Images Below 7
+                                </p>
+                                <p className="text-2xl font-bold text-red-600">
+                                  {imagesBelow7.length}
+                                </p>
+                              </div>
+                              <div>
+                                <p className="text-sm text-gray-600">
+                                  Average Score
+                                </p>
+                                <p className="text-2xl font-bold text-orange-600">
+                                  {imagesBelow7.length > 0
+                                    ? (
+                                        imagesBelow7.reduce(
+                                          (sum, img) =>
+                                            sum + img.relevanceScore,
+                                          0,
+                                        ) / imagesBelow7.length
+                                      ).toFixed(1)
+                                    : "0.0"}
+                                  /10
+                                </p>
+                              </div>
+                              <div>
+                                <p className="text-sm text-gray-600">
+                                  Potential Improvement
+                                </p>
+                                <p className="text-2xl font-bold text-green-600">
+                                  +40%
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {imagesBelow7.length > 0 ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {imagesBelow7.map((img) => (
+                                <Card
+                                  key={img.id}
+                                  className="border-red-200 bg-red-50"
+                                >
+                                  <CardContent className="p-4">
+                                    <div className="relative mb-3">
+                                      <img
+                                        src={img.primary}
+                                        alt={img.alt}
+                                        className="w-full h-24 object-cover rounded-lg"
+                                        onError={(e) => {
+                                          const target =
+                                            e.target as HTMLImageElement;
+                                          target.src = img.fallback;
+                                        }}
+                                      />
+                                      <div className="absolute top-2 right-2">
+                                        <Badge className="bg-red-100 text-red-800 border-red-300">
+                                          <XCircle className="h-3 w-3 mr-1" />
+                                          {img.relevanceScore}/10
+                                        </Badge>
+                                      </div>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                      <h4 className="font-semibold text-sm line-clamp-1">
+                                        {img.title}
+                                      </h4>
+                                      <p className="text-xs text-gray-600 line-clamp-1">
+                                        {img.purpose}
+                                      </p>
+                                      <p className="text-xs text-gray-500">
+                                        {img.location}
+                                      </p>
+
+                                      <div className="pt-2 border-t">
+                                        <p className="text-xs text-red-700 font-medium">
+                                          Issues:
+                                        </p>
+                                        {img.improvementSuggestions &&
+                                        img.improvementSuggestions.length >
+                                          0 ? (
+                                          <p className="text-xs text-red-600 line-clamp-2">
+                                            {img.improvementSuggestions[0]}
+                                          </p>
+                                        ) : (
+                                          <p className="text-xs text-red-600">
+                                            Quality below standards
+                                          </p>
+                                        )}
+                                      </div>
+
+                                      <div className="flex gap-1 pt-2">
+                                        <OutlineButton
+                                          size="sm"
+                                          className="text-xs px-2 py-1 h-auto"
+                                          onClick={() =>
+                                            window.open(img.primary, "_blank")
+                                          }
+                                        >
+                                          <ExternalLink className="h-3 w-3 mr-1" />
+                                          View
+                                        </OutlineButton>
+                                        {!img.isManaged && (
+                                          <PrimaryButton
+                                            size="sm"
+                                            className="text-xs px-2 py-1 h-auto"
+                                            onClick={() => addToAISystem(img)}
+                                          >
+                                            <Plus className="h-3 w-3 mr-1" />
+                                            Fix
+                                          </PrimaryButton>
+                                        )}
+                                      </div>
+                                    </div>
+                                  </CardContent>
+                                </Card>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="text-center py-8 bg-green-50 rounded-lg border border-green-200">
+                              <CheckCircle className="h-12 w-12 mx-auto mb-4 text-green-600" />
+                              <h3 className="font-semibold text-green-800 mb-2">
+                                All Images Meet Quality Standards!
+                              </h3>
+                              <p className="text-green-600">
+                                No images found with scores below 7/10
+                              </p>
+                            </div>
+                          )}
+                        </>
+                      );
+                    })()}
+                  </CardContent>
+                </Card>
+
                 {/* Bulk Replacement Plan Display */}
                 {bulkReplacementPlan && (
-                  <Card className="mt-6 border-green-200 bg-green-50">
+                  <Card className="border-green-200 bg-green-50">
                     <CardHeader>
                       <h3 className="text-lg font-bold text-green-800 flex items-center">
                         <Wand2 className="h-5 w-5 mr-2" />
@@ -1171,7 +1344,7 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
                       </h3>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                         <div className="text-center">
                           <p className="text-sm text-gray-600">
                             Images to Replace
@@ -1204,6 +1377,34 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
                           </p>
                         </div>
                       </div>
+
+                      <div className="text-sm text-gray-600 mb-4">
+                        <strong>Images to be replaced:</strong>{" "}
+                        {bulkReplacementPlan.replacementSources
+                          .map((source: any) => source.imageId)
+                          .join(", ")}
+                      </div>
+
+                      <PrimaryButton
+                        onClick={() => {
+                          // Execute the bulk replacement
+                          if (
+                            window.confirm(
+                              `Replace ${bulkReplacementPlan.totalImages} images with higher quality alternatives?`,
+                            )
+                          ) {
+                            // Here you would execute the replacement
+                            console.log(
+                              "Executing bulk replacement...",
+                              bulkReplacementPlan,
+                            );
+                          }
+                        }}
+                        className="w-full bg-green-600 hover:bg-green-700"
+                      >
+                        <Zap className="h-4 w-4 mr-2" />
+                        Execute Replacement Plan
+                      </PrimaryButton>
                     </CardContent>
                   </Card>
                 )}
