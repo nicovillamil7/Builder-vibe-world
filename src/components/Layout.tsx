@@ -27,7 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
-    { name: "Interior Design", href: "/retail" },
+    { name: "Homeowners", href: "/retail" },
     { name: "Contractors", href: "/wholesale" },
     { name: "Contact", href: "/contact" },
   ];

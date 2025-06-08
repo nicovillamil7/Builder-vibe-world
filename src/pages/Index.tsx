@@ -43,8 +43,8 @@ const Index = () => {
       title: "Premium Material Showroom",
       description:
         "Explore marble, mosaic & custom patterns. Professional design consultation available.",
-      action: "Request Designer Samples",
-      category: "designers",
+      action: "Request Homeowner Samples",
+      category: "homeowners",
     },
   ];
 
@@ -373,7 +373,7 @@ const Index = () => {
           <Tabs defaultValue="general" className="mb-8">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="contractors">For Contractors</TabsTrigger>
-              <TabsTrigger value="designers">For Designers</TabsTrigger>
+              <TabsTrigger value="designers">For Homeowners</TabsTrigger>
               <TabsTrigger value="general">General</TabsTrigger>
             </TabsList>
 
