@@ -20,11 +20,37 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
 }) => {
   const [hasErrored, setHasErrored] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentImageUrl, setCurrentImageUrl] = useState<string>("");
 
-  const config = RELIABLE_IMAGES[imageId];
+  // Check if there's an updated image from the AI system
+  const aiImage = ImageSystemState.getImage(imageId);
+  const config = aiImage || RELIABLE_IMAGES[imageId];
   const fallbackConfig = fallbackImageId
     ? RELIABLE_IMAGES[fallbackImageId]
     : null;
+
+  // Update image URL when AI system changes
+  useEffect(() => {
+    const handleImageSystemUpdate = () => {
+      const updatedImage = ImageSystemState.getImage(imageId);
+      if (updatedImage) {
+        setCurrentImageUrl(updatedImage.primary);
+        setHasErrored(false);
+        setIsLoading(true);
+      }
+    };
+
+    window.addEventListener("imageSystemUpdated", handleImageSystemUpdate);
+
+    // Set initial URL
+    if (config) {
+      setCurrentImageUrl(config.primary);
+    }
+
+    return () => {
+      window.removeEventListener("imageSystemUpdated", handleImageSystemUpdate);
+    };
+  }, [imageId, config]);
 
   if (!config) {
     console.warn(`Image ID "${imageId}" not found, using default`);
