@@ -31,35 +31,35 @@ import {
 const Retail = () => {
   const homeUpgradeFeatures = [
     {
-      icon: Home,
+      icon: TrendingUp,
       title: "Home Value Enhancement",
       description:
-        "Premium flooring that increases your property value and creates lasting beauty in every room",
-      highlight: "Increase home value up to 15%",
-      bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
-    },
-    {
-      icon: Eye,
-      title: "Design Visualization Service",
-      description:
-        "See your vision come to life with our professional design consultation and room mockups",
-      highlight: "Professional design consultation",
-      bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
-    },
-    {
-      icon: Sparkles,
-      title: "Expert Project Coordination",
-      description:
-        "Professional guidance and contractor connections ensure perfect project execution with comprehensive support",
-      highlight: "Trusted contractor network",
+        "Premium flooring materials that significantly increase your property value and create lasting appeal for potential buyers",
+      highlight: "Increase property value",
       bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
     {
       icon: Gem,
       title: "Premium Material Selection",
       description:
-        "Curated collection of high-end materials from top manufacturers for discerning homeowners",
+        "Curated collection of high-end porcelain, natural stone, and luxury materials from top manufacturers",
       highlight: "Designer-grade materials",
+      bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
+    },
+    {
+      icon: Palette,
+      title: "Interior Design Consultation",
+      description:
+        "Professional design guidance to select materials that perfectly complement your home's style and your lifestyle",
+      highlight: "Expert design guidance",
+      bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
+    },
+    {
+      icon: Shield,
+      title: "Warranty & Support",
+      description:
+        "Comprehensive material warranties up to 25 years plus ongoing maintenance guidance for your investment",
+      highlight: "25-year warranties",
       bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
     },
   ];
