@@ -34,6 +34,10 @@ const App = () => (
             path="/image-intelligence"
             element={<ImageIntelligenceDashboard />}
           />
+          <Route
+            path="/enhanced-image-intelligence"
+            element={<EnhancedImageIntelligenceDashboard />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
