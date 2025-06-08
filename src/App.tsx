@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import { ImageDiagnostic } from "./components/ImageDiagnostic";
 import { ImageIntelligenceDashboard } from "@/components/ImageIntelligenceDashboard";
 import { EnhancedImageIntelligenceDashboard } from "@/components/EnhancedImageIntelligenceDashboard";
+import { ImageSystemTestRunner } from "@/components/ImageSystemTestRunner";
 
 const queryClient = new QueryClient();
 
