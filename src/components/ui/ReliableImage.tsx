@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
+import { ImageSystemState } from "@/utils/imageSystemState";
 
 interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   imageId: string;
