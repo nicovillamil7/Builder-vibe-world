@@ -76,15 +76,17 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-[rgb(138,0,0)] rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">G</span>
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-gray-900">
-                  Genesis Stone
+              <div className="flex items-center">
+                <span className="text-4xl font-serif text-[rgb(138,0,0)] font-bold tracking-tight">
+                  G
                 </span>
-                <div className="text-sm text-gray-600 font-medium">
-                  Premium Stone & Flooring
+                <div className="ml-2">
+                  <span className="text-2xl font-serif font-bold text-gray-900 tracking-tight">
+                    enesis Stone
+                  </span>
+                  <div className="text-sm text-gray-600 font-medium tracking-wide">
+                    Premium Stone & Flooring
+                  </div>
                 </div>
               </div>
             </Link>
