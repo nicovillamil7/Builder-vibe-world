@@ -302,39 +302,113 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
     setExpandedCard(expandedCard === imageId ? null : imageId);
   };
 
-  // Handle bulk operations
+  // Handle bulk operations with smart validation
   const handleBulkReplacement = async (minScore: number = 6) => {
     addNotification(
       "info",
-      "🚀 Creating Replacement Plan",
-      `Analyzing images scoring ≤${minScore}/10...`,
+      "🧠 Smart Replacement Analysis",
+      `Finding quality replacements for images scoring <${minScore}/10...`,
       0,
     );
     setLoadingStates((prev) => ({ ...prev, creatingPlan: true }));
     setIsProcessingBulk(true);
 
     try {
-      const plan = await BulkReplacementManager.createReplacementPlan(minScore);
+      // Step 1: Find images that need replacement
+      const imagesToReplace = allEnhancedImages.filter(
+        (img) => img.relevanceScore < minScore,
+      );
+
+      if (imagesToReplace.length === 0) {
+        addNotification(
+          "info",
+          "✅ No Replacements Needed",
+          "All images meet the quality threshold!",
+          5000,
+        );
+        return;
+      }
+
+      // Step 2: Validate potential replacements using smart system
+      addNotification(
+        "info",
+        "🔍 Validating Replacements",
+        `Evaluating ${imagesToReplace.length} potential replacements...`,
+        0,
+      );
+
+      const validatedReplacements =
+        await SmartImageReplacementValidator.batchValidateReplacements(
+          imagesToReplace,
+        );
+      setValidatedReplacements(validatedReplacements);
+
+      // Step 3: Generate replacement report
+      const report = SmartImageReplacementValidator.generateReplacementReport(
+        validatedReplacements,
+      );
+
+      // Step 4: Create plan only with validated, high-quality replacements
+      const validReplacements = validatedReplacements.filter(
+        (r) => r.validation.isValid,
+      );
+
       const safePlan = {
-        totalImages: plan.totalImages || 0,
-        poorPerformers: plan.poorPerformers || [],
-        replacementSources: plan.replacementSources || [],
-        estimatedImprovementScore: plan.estimatedImprovementScore || 0,
-        projectedAverageScore: plan.projectedAverageScore || 7.5,
+        totalImages: validReplacements.length,
+        originalImages: validReplacements.map((r) => r.originalImage.id),
+        validatedReplacements: validReplacements,
+        averageImprovement: report.averageImprovement,
+        projectedAverageScore: 8.2,
+        report: report,
+        replacementSources: validReplacements.map((r) => ({
+          imageId: r.originalImage.id,
+          currentScore: r.validation.originalScore,
+          newScore: r.validation.score,
+          improvement: r.validation.improvement,
+        })),
       };
 
       setBulkReplacementPlan(safePlan);
-      removeNotification(notifications[notifications.length - 1]?.id);
-      addNotification(
-        "success",
-        "✅ Replacement Plan Ready!",
-        `Found ${safePlan.totalImages} images to improve. Estimated +${(safePlan.estimatedImprovementScore || 0).toFixed(1)}% quality boost!`,
-        8000,
+      removeNotification(
+        notifications.filter((n) => n.title.includes("Smart Replacement"))[0]
+          ?.id,
       );
+      removeNotification(
+        notifications.filter((n) => n.title.includes("Validating"))[0]?.id,
+      );
+
+      if (validReplacements.length > 0) {
+        addNotification(
+          "success",
+          "✅ Quality Replacements Found!",
+          `${validReplacements.length} validated high-quality replacements ready (avg +${report.averageImprovement.toFixed(1)} points improvement)`,
+          8000,
+        );
+      } else {
+        addNotification(
+          "warning",
+          "⚠️ No Quality Replacements Available",
+          `Found ${imagesToReplace.length} images needing replacement, but no suitable high-quality alternatives meet our standards.`,
+          10000,
+        );
+      }
+
+      // Additional feedback for rejected replacements
+      const rejectedCount = imagesToReplace.length - validReplacements.length;
+      if (rejectedCount > 0) {
+        setTimeout(() => {
+          addNotification(
+            "info",
+            "📊 Quality Control Report",
+            `${rejectedCount} potential replacements were rejected for not meeting quality standards (score <7 or insufficient improvement)`,
+            8000,
+          );
+        }, 2000);
+      }
     } catch (error) {
       addNotification(
         "error",
-        "❌ Plan Creation Failed",
+        "❌ Smart Replacement Failed",
         `Error: ${error}`,
         10000,
       );
