@@ -127,7 +127,15 @@ const Layout = ({ children }: LayoutProps) => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <PrimaryButton size="sm">Call Now</PrimaryButton>
+              <PrimaryButton
+                size="sm"
+                onClick={() => {
+                  window.location.href = "tel:+13054774402";
+                }}
+                className="cursor-pointer"
+              >
+                Call Now
+              </PrimaryButton>
             </div>
 
             {/* Mobile menu button */}
