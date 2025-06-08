@@ -124,7 +124,7 @@ export const ImageIntelligenceDashboard: React.FC = () => {
       addNotification(
         "success",
         "✅ Replacement Plan Ready!",
-        `Found ${plan.totalImages} images to improve. Estimated +${plan.estimatedImprovementScore.toFixed(1)}% quality boost!`,
+        `Found ${plan.totalImages} images to improve. Estimated +${(plan.estimatedImprovementScore || 0).toFixed(1)}% quality boost!`,
         8000,
       );
 
