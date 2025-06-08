@@ -48,7 +48,9 @@ import {
   Download,
   BarChart3,
   Globe,
+  Settings,
 } from "lucide-react";
+import { ImageSystemResetPanel } from "@/components/ImageSystemResetPanel";
 
 // Enhanced interface for image display
 interface EnhancedImageData {
