@@ -170,7 +170,7 @@ const ProductGrid = () => {
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
                 style={{
                   backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F96a2d77e785b401a8036ad7ad95e724e?format=webp)",
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fa987d6e0b13c4260b3a6463ae04d4b4f?format=webp)",
                 }}
               ></div>
               <div className="absolute bottom-4 left-4 text-white">
