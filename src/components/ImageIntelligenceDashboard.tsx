@@ -117,7 +117,16 @@ export const ImageIntelligenceDashboard: React.FC = () => {
       });
       const plan = await BulkReplacementManager.createReplacementPlan(minScore);
 
-      setBulkReplacementPlan(plan);
+      // Ensure plan has all required properties with defaults
+      const safePlan = {
+        totalImages: plan.totalImages || 0,
+        poorPerformers: plan.poorPerformers || [],
+        replacementSources: plan.replacementSources || [],
+        estimatedImprovementScore: plan.estimatedImprovementScore || 0,
+        projectedAverageScore: plan.projectedAverageScore || 7.5,
+      };
+
+      setBulkReplacementPlan(safePlan);
 
       // Success notification
       removeNotification(notifications[notifications.length - 1]?.id);
