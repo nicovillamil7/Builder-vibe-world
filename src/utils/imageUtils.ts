@@ -211,7 +211,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   contractorHeroImage: {
     id: "contractorHeroImage",
     primary:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80", // Using unique image for contractor hero
+      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80", // Using unique image for contractor hero
     fallback:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Construction site with professional flooring installation",
