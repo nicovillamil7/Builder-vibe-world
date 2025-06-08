@@ -245,7 +245,7 @@ export const ImageIntelligenceDashboard: React.FC = () => {
         );
         addNotification(
           "error",
-          "❌ Replacement Failed",
+          "�� Replacement Failed",
           `Error: ${error}`,
           15000,
         );
