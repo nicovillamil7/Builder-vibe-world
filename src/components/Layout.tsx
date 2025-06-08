@@ -29,7 +29,6 @@ const Layout = ({ children }: LayoutProps) => {
     { name: "Products", href: "/products" },
     { name: "Interior Design", href: "/retail" },
     { name: "Contractors", href: "/wholesale" },
-    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -107,7 +106,6 @@ const Layout = ({ children }: LayoutProps) => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <OutlineButton size="sm">Get Quote</OutlineButton>
               <PrimaryButton size="sm">Call Now</PrimaryButton>
             </div>
 
