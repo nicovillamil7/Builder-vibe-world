@@ -15,10 +15,10 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   modernPoolDeck: {
     id: "modernPoolDeck",
     primary:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     fallback:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Modern pool deck with large format porcelain tiles",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Large format porcelain tiles in luxury contemporary interior",
     category: "porcelain",
   },
   luxuryInterior: {
