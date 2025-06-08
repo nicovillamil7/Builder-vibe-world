@@ -18,16 +18,15 @@ export const DiagnosticAccessButton: React.FC = () => {
         {isExpanded && (
           <>
             <Link
-              to="/enhanced-image-intelligence"
+              to="/image-intelligence"
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 flex items-center space-x-2"
-              title="🚀 Enhanced AI Dashboard - Complete website image management"
+              title="🚀 AI Image Intelligence - Complete website image management"
             >
               <Sparkles className="h-5 w-5" />
               <span className="hidden sm:inline text-sm font-medium">
-                Enhanced AI
+                AI Dashboard
               </span>
             </Link>
-
             <Link
               to="/image-system-tests"
               className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center space-x-2"
