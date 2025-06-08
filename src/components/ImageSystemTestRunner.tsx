@@ -12,9 +12,6 @@ import {
   WebsiteImageScanner,
   type ImageScanResult,
 } from "@/utils/websiteImageScanner";
-import { analyzeAllImages } from "@/utils/intelligentImages";
-import { checkImageHealth } from "@/utils/imageUtils";
-import { BulkReplacementManager } from "@/utils/advancedImageManager";
 import {
   Brain,
   CheckCircle,
@@ -42,14 +39,6 @@ interface TestResult {
   details?: any;
 }
 
-interface SystemHealth {
-  overall: "healthy" | "warning" | "critical";
-  totalImages: number;
-  managedImages: number;
-  avgScore: number;
-  issues: string[];
-}
-
 export const ImageSystemTestRunner: React.FC = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [testResults, setTestResults] = useState<TestResult[]>([
@@ -61,7 +50,8 @@ export const ImageSystemTestRunner: React.FC = () => {
     { name: "6. Image Upload", status: "idle" },
   ]);
   const [systemHealth, setSystemHealth] = useState<SystemHealth | null>(null);
-  const [diagnosticsResult, setDiagnosticsResult] = useState<any>(null);
+  const [diagnosticsResult, setDiagnosticsResult] =
+    useState<ComprehensiveDiagnosticResult | null>(null);
 
   const updateTestResult = (index: number, update: Partial<TestResult>) => {
     setTestResults((prev) =>
@@ -74,188 +64,56 @@ export const ImageSystemTestRunner: React.FC = () => {
     console.log("🚀 Starting comprehensive AI Image System tests...");
 
     try {
-      // Test 1: Image Detection
-      updateTestResult(0, { status: "running" });
-      const startTime1 = Date.now();
+      // Reset all tests to running state
+      const runningTests = testResults.map((test) => ({
+        ...test,
+        status: "running" as const,
+      }));
+      setTestResults(runningTests);
 
-      try {
-        const scanResult = await WebsiteImageScanner.scanWebsiteImages();
-        const duration1 = Date.now() - startTime1;
+      // Run all diagnostics sequentially to show progress
+      const diagnosticFunctions = [
+        ImageSystemDiagnostics.testImageDetection,
+        ImageSystemDiagnostics.testImageStorage,
+        ImageSystemDiagnostics.testImageRanking,
+        ImageSystemDiagnostics.testImageDisplay,
+        ImageSystemDiagnostics.testImageGeneration,
+        ImageSystemDiagnostics.testImageUpload,
+      ];
 
-        if (scanResult.totalImages > 0) {
-          updateTestResult(0, {
-            status: "passed",
-            duration: duration1,
-            details: `Found ${scanResult.totalImages} images across ${Object.keys(scanResult.imagesByLocation).length} locations`,
+      const results: DiagnosticResult[] = [];
+
+      for (let i = 0; i < diagnosticFunctions.length; i++) {
+        try {
+          const result = await diagnosticFunctions[i]();
+          results.push(result);
+          updateTestResult(i, {
+            status: result.status,
+            duration: result.duration,
+            details: result.details,
+            error: result.error,
           });
-        } else {
-          updateTestResult(0, {
-            status: "failed",
-            duration: duration1,
-            error: "No images detected",
-          });
+        } catch (error) {
+          const failedResult = {
+            name: `Test ${i + 1}`,
+            status: "failed" as const,
+            error: `Unexpected error: ${error}`,
+          };
+          results.push(failedResult);
+          updateTestResult(i, failedResult);
         }
-      } catch (error) {
-        updateTestResult(0, {
-          status: "failed",
-          duration: Date.now() - startTime1,
-          error: `Detection failed: ${error}`,
-        });
       }
 
-      // Test 2: Image Storage
-      updateTestResult(1, { status: "running" });
-      const startTime2 = Date.now();
-
-      try {
-        const analysis = analyzeAllImages();
-        const duration2 = Date.now() - startTime2;
-
-        if (analysis && analysis.poorPerformers !== undefined) {
-          updateTestResult(1, {
-            status: "passed",
-            duration: duration2,
-            details: `Storage system operational with ${analysis.poorPerformers.length} poor performers identified`,
-          });
-        } else {
-          updateTestResult(1, {
-            status: "failed",
-            duration: duration2,
-            error: "Storage analysis failed",
-          });
-        }
-      } catch (error) {
-        updateTestResult(1, {
-          status: "failed",
-          duration: Date.now() - startTime2,
-          error: `Storage test failed: ${error}`,
-        });
-      }
-
-      // Test 3: Image Ranking
-      updateTestResult(2, { status: "running" });
-      const startTime3 = Date.now();
-
-      try {
-        const analysis = analyzeAllImages();
-        const duration3 = Date.now() - startTime3;
-
-        const totalAnalyzed =
-          analysis.poorPerformers.length + analysis.needsImprovement.length;
-        updateTestResult(2, {
-          status: "passed",
-          duration: duration3,
-          details: `AI ranking system operational, analyzed ${totalAnalyzed} images`,
-        });
-      } catch (error) {
-        updateTestResult(2, {
-          status: "failed",
-          duration: Date.now() - startTime3,
-          error: `Ranking test failed: ${error}`,
-        });
-      }
-
-      // Test 4: Image Display
-      updateTestResult(3, { status: "running" });
-      const startTime4 = Date.now();
-
-      try {
-        const testUrl =
-          "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
-        const isHealthy = await checkImageHealth(testUrl);
-        const duration4 = Date.now() - startTime4;
-
-        updateTestResult(3, {
-          status: "passed",
-          duration: duration4,
-          details: `Display system operational, test image ${isHealthy ? "healthy" : "unhealthy"}`,
-        });
-      } catch (error) {
-        updateTestResult(3, {
-          status: "failed",
-          duration: Date.now() - startTime4,
-          error: `Display test failed: ${error}`,
-        });
-      }
-
-      // Test 5: Image Generation
-      updateTestResult(4, { status: "running" });
-      const startTime5 = Date.now();
-
-      try {
-        const replacementPlan =
-          await BulkReplacementManager.createReplacementPlan(6);
-        const duration5 = Date.now() - startTime5;
-
-        if (replacementPlan && replacementPlan.totalImages !== undefined) {
-          updateTestResult(4, {
-            status: "passed",
-            duration: duration5,
-            details: `Generation system operational, created plan for ${replacementPlan.totalImages} images`,
-          });
-        } else {
-          updateTestResult(4, {
-            status: "failed",
-            duration: duration5,
-            error: "Generation plan creation failed",
-          });
-        }
-      } catch (error) {
-        updateTestResult(4, {
-          status: "failed",
-          duration: Date.now() - startTime5,
-          error: `Generation test failed: ${error}`,
-        });
-      }
-
-      // Test 6: Image Upload (simulated)
-      updateTestResult(5, { status: "running" });
-      const startTime6 = Date.now();
-
-      try {
-        // Simulate upload validation
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        const duration6 = Date.now() - startTime6;
-
-        updateTestResult(5, {
-          status: "passed",
-          duration: duration6,
-          details: "Upload validation system operational",
-        });
-      } catch (error) {
-        updateTestResult(5, {
-          status: "failed",
-          duration: Date.now() - startTime6,
-          error: `Upload test failed: ${error}`,
-        });
-      }
-
-      // Run diagnostics
-      const diagnostics = await runImageSystemDiagnostics();
+      // Run comprehensive diagnostics
+      const diagnostics = await ImageSystemDiagnostics.runQuickDiagnostics();
       setDiagnosticsResult(diagnostics);
 
       // Calculate system health
-      const passedTests = testResults.filter(
-        (test) => test.status === "passed",
-      ).length;
-      const totalTests = testResults.length;
-
-      const health: SystemHealth = {
-        overall:
-          passedTests === totalTests
-            ? "healthy"
-            : passedTests >= totalTests * 0.8
-              ? "warning"
-              : "critical",
-        totalImages: diagnostics?.scanResult?.totalImages || 0,
-        managedImages: diagnostics?.scanResult?.managedImages || 0,
-        avgScore: diagnostics?.avgScore || 0,
-        issues: testResults
-          .filter((test) => test.status === "failed")
-          .map((test) => test.error || "Unknown error"),
-      };
-
-      setSystemHealth(health);
+      const systemHealth = ImageSystemDiagnostics.calculateSystemHealth(
+        results,
+        diagnostics,
+      );
+      setSystemHealth(systemHealth);
     } catch (error) {
       console.error("Test suite failed:", error);
     } finally {
@@ -321,12 +179,17 @@ export const ImageSystemTestRunner: React.FC = () => {
   };
 
   const exportTestReport = () => {
-    const report = {
-      timestamp: new Date().toISOString(),
-      testResults,
-      systemHealth,
-      diagnosticsResult,
-    };
+    const report = ImageSystemDiagnostics.generateTestReport(
+      testResults.map((t) => ({
+        name: t.name,
+        status: t.status as "passed" | "failed" | "running",
+        duration: t.duration,
+        error: t.error,
+        details: t.details,
+      })),
+      systemHealth!,
+      diagnosticsResult || undefined,
+    );
 
     const blob = new Blob([JSON.stringify(report, null, 2)], {
       type: "application/json",
