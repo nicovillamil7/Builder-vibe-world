@@ -53,10 +53,10 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   travertinePool: {
     id: "travertinePool",
     primary:
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fca8a484aecde490380b0d4469420bb8c",
     fallback:
       "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Travertine pool area with spa and natural stone",
+    alt: "Natural Stone",
     category: "natural-stone",
   },
   darkStoneLiving: {
