@@ -139,7 +139,7 @@ const Index = () => {
     {
       question: "Can I get large format samples for client presentations?",
       answer:
-        'Absolutely! We offer 12"x12" samples and even full-size tile samples for designers to present to clients. Our sample library includes the latest trends in porcelain, natural stone, and custom mosaics.',
+        'Absolutely! We offer 12"x12" samples and even full-size tile samples for homeowners to see in their actual space. Our sample library includes the latest trends in porcelain, natural stone, and custom mosaics.',
     },
     {
       question: "Do you offer custom design consultation?",
