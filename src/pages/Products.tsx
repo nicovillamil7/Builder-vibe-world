@@ -349,9 +349,9 @@ const Products = () => {
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Licensed & Insured Installers</strong>
+                    <strong>Licensed & Insured Contractors</strong>
                     <p className="text-gray-600">
-                      All our installation partners are fully licensed and carry
+                      All our contractor partners are fully licensed and carry
                       comprehensive insurance.
                     </p>
                   </div>
@@ -359,10 +359,10 @@ const Products = () => {
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Material & Labor Warranty</strong>
+                    <strong>Material Quality Guarantee</strong>
                     <p className="text-gray-600">
-                      Complete peace of mind with warranties on both materials
-                      and installation work.
+                      Complete peace of mind with comprehensive warranties on
+                      all premium materials.
                     </p>
                   </div>
                 </li>
