@@ -532,9 +532,47 @@ export const ImageIntelligenceDashboard: React.FC = () => {
             <Brain className="h-8 w-8 mr-3 text-blue-600" />
             AI Image Intelligence Dashboard
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mb-4">
             Advanced AI-powered image analysis and optimization system
           </p>
+
+          {/* AI Context Overview */}
+          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+            <CardContent className="p-4">
+              <h3 className="font-semibold text-blue-800 mb-2 flex items-center">
+                <Wand2 className="h-5 w-5 mr-2" />
+                AI Generation Context Overview
+              </h3>
+              <p className="text-sm text-blue-700 mb-3">
+                Our AI system generates and analyzes images using
+                category-specific prompts designed for flooring industry
+                relevance:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                <div className="bg-white rounded p-2 border border-blue-200">
+                  <strong className="text-blue-800">Porcelain:</strong>
+                  <br />
+                  Focus on large format tiles, contemporary spaces, polished
+                  finishes
+                </div>
+                <div className="bg-white rounded p-2 border border-blue-200">
+                  <strong className="text-blue-800">Natural Stone:</strong>
+                  <br />
+                  Emphasize natural textures, veining, luxury installations
+                </div>
+                <div className="bg-white rounded p-2 border border-blue-200">
+                  <strong className="text-blue-800">Vinyl & Laminate:</strong>
+                  <br />
+                  Wood-look planks, realistic textures, modern installations
+                </div>
+                <div className="bg-white rounded p-2 border border-blue-200">
+                  <strong className="text-blue-800">Mosaics:</strong>
+                  <br />
+                  Small tile patterns, artistic designs, decorative applications
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Summary Cards */}
