@@ -327,12 +327,23 @@ export const ImageIntelligenceDashboard: React.FC = () => {
     return <XCircle className="h-4 w-4 text-red-600" />;
   };
 
-  const allImages = Object.values(INTELLIGENT_IMAGES).map((img) => ({
-    ...img,
-    relevanceScore: ImageIntelligenceAnalyzer.analyzeRelevance(img),
-    improvementSuggestions:
-      ImageIntelligenceAnalyzer.generateImprovementSuggestions(img),
-  }));
+  const allImages = Object.values(INTELLIGENT_IMAGES).map((img) => {
+    try {
+      return {
+        ...img,
+        relevanceScore: ImageIntelligenceAnalyzer.analyzeRelevance(img) || 5,
+        improvementSuggestions:
+          ImageIntelligenceAnalyzer.generateImprovementSuggestions(img) || [],
+      };
+    } catch (error) {
+      console.error("Error analyzing image:", img.id, error);
+      return {
+        ...img,
+        relevanceScore: 5,
+        improvementSuggestions: [],
+      };
+    }
+  });
 
   const excellentImages = allImages.filter((img) => img.relevanceScore >= 8);
   const goodImages = allImages.filter(
