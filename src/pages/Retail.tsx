@@ -25,6 +25,7 @@ import {
   TrendingUp,
   Heart,
   Sparkles,
+  Shield,
 } from "lucide-react";
 
 const Retail = () => {
