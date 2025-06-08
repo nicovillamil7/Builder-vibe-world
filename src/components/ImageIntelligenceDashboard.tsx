@@ -487,12 +487,14 @@ export const ImageIntelligenceDashboard: React.FC = () => {
                     Average Score
                   </p>
                   <p className="text-2xl font-bold text-blue-600">
-                    {(
-                      allImages.reduce(
-                        (sum, img) => sum + img.relevanceScore,
-                        0,
-                      ) / allImages.length
-                    ).toFixed(1)}
+                    {allImages.length > 0
+                      ? (
+                          allImages.reduce(
+                            (sum, img) => sum + img.relevanceScore,
+                            0,
+                          ) / allImages.length
+                        ).toFixed(1)
+                      : "0.0"}
                     /10
                   </p>
                 </div>
