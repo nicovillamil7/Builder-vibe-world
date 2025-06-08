@@ -173,19 +173,6 @@ const Products = () => {
         </div>
       </div>
 
-      {/* Floor Focus Banner */}
-      <div className="py-8 bg-gradient-to-r from-[rgb(251,189,35)] to-amber-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-black mb-2">
-            🎯 Floor-Focused Product Showcase
-          </h2>
-          <p className="text-black/80">
-            Each image prominently displays the actual flooring material to help
-            you visualize your project
-          </p>
-        </div>
-      </div>
-
       {/* Showroom Image Section */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
