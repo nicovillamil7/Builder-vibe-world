@@ -66,23 +66,30 @@ const Index = () => {
     },
   ];
 
-  const designerBenefits = [
+  const homeownerBenefits = [
     {
       icon: Palette,
-      title: "Curated Luxury Collections",
+      title: "Premium Material Selection",
       description:
-        "Exclusive access to premium marble, stone, and custom mosaics",
+        "Curated collection of luxury porcelain, natural stone, and custom mosaics for your dream home",
     },
     {
       icon: Award,
-      title: "Moodboards & 3D Mockups",
+      title: "Take-Home Samples",
       description:
-        "Visualize your designs with professional rendering services",
+        "See how materials look in your actual lighting before making decisions",
     },
     {
       icon: Shield,
-      title: "In-Showroom & Virtual Consults",
-      description: "Expert design guidance wherever you are in Florida",
+      title: "Expert Design Consultation",
+      description:
+        "Professional guidance to select materials that complement your home's style",
+    },
+    {
+      icon: CheckCircle,
+      title: "Trusted Contractor Network",
+      description:
+        "Connect with licensed, experienced contractors who know our materials",
     },
   ];
 
@@ -263,7 +270,7 @@ const Index = () => {
                 For Homeowners
               </h3>
               <div className="space-y-6">
-                {designerBenefits.map((benefit, index) => (
+                {homeownerBenefits.map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="h-6 w-6 text-red-800" />
