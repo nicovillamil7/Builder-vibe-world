@@ -189,16 +189,16 @@ const Retail = () => {
 
             {/* Trust indicators */}
             <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Star className="h-5 w-5 text-[rgb(251,189,35)]" />
+              <div className="flex items-center space-x-3">
+                <Star className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
                 <span>500+ Home Projects</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="h-5 w-5 text-[rgb(251,189,35)]" />
+              <div className="flex items-center space-x-3">
+                <TrendingUp className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
                 <span>Increase Property Value</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Heart className="h-5 w-5 text-[rgb(251,189,35)]" />
+              <div className="flex items-center space-x-3">
+                <Heart className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
                 <span>Lifetime Warranty</span>
               </div>
             </div>
