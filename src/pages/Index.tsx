@@ -377,10 +377,40 @@ const Index = () => {
               <TabsTrigger value="general">General</TabsTrigger>
             </TabsList>
 
+            <TabsContent value="contractors" className="mt-8">
+              <Accordion type="single" collapsible className="w-full">
+                {contractorFaqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`contractor-${index}`}>
+                    <AccordionTrigger className="text-left">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </TabsContent>
+
+            <TabsContent value="designers" className="mt-8">
+              <Accordion type="single" collapsible className="w-full">
+                {designerFaqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`designer-${index}`}>
+                    <AccordionTrigger className="text-left">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </TabsContent>
+
             <TabsContent value="general" className="mt-8">
               <Accordion type="single" collapsible className="w-full">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
+                {generalFaqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`general-${index}`}>
                     <AccordionTrigger className="text-left">
                       {faq.question}
                     </AccordionTrigger>
