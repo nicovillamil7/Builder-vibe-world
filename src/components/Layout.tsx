@@ -56,7 +56,7 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
               <div className="flex items-baseline space-x-2">
                 <Clock className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
-                <span>Mon-Fri 7AM-6PM</span>
+                <span>Mon-Fri 7AM-4PM</span>
               </div>
               <div className="flex items-baseline space-x-2">
                 <Truck className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />

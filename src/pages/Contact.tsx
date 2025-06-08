@@ -25,7 +25,7 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       primary: "(305) 477-4402",
-      secondary: "Mon-Fri: 7:00 AM - 6:00 PM",
+      secondary: "Mon-Fri: 7:00 AM - 4:00 PM",
       action: "Call Now",
       href: "tel:+13054774402",
     },
@@ -73,7 +73,7 @@ const Contact = () => {
       title: "Will Call & Pickup",
       description:
         "Same-day pickup available for contractors and urgent orders",
-      hours: "Mon-Fri: 7:00 AM - 6:00 PM, Sat: 8:00 AM - 4:00 PM",
+      hours: "Mon-Fri: 7:00 AM - 4:00 PM, Sat: 8:00 AM - 4:00 PM",
     },
     {
       icon: Building,
