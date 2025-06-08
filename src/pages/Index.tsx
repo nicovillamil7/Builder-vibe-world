@@ -85,14 +85,7 @@ const Index = () => {
       description:
         "Professional guidance to select materials that complement your home's style",
     },
-    {
-      icon: CheckCircle,
-      title: "Trusted Contractor Network",
-      description:
-        "Connect with licensed, experienced contractors who know our materials",
-    },
   ];
-
   const processSteps = [
     {
       number: 1,
