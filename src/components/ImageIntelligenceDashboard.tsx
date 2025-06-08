@@ -309,6 +309,25 @@ export const ImageIntelligenceDashboard: React.FC = () => {
     window.open(url, "_blank");
   };
 
+  // Generate AI avoidance prompts based on category
+  const getAIAvoidancePrompt = (category: string): string => {
+    const avoidanceRules: Record<string, string> = {
+      porcelain:
+        "walls, backsplash, small tiles, non-flooring applications, bathrooms",
+      "natural-stone":
+        "artificial materials, painted surfaces, non-stone textures",
+      "vinyl-laminate":
+        "real wood, ceramic tiles, natural stone, painted floors",
+      mosaics:
+        "large tiles, plain surfaces, single-color installations, uniform patterns",
+    };
+
+    return (
+      avoidanceRules[category] ||
+      "low quality, blurry images, irrelevant content"
+    );
+  };
+
   if (!analysis) {
     return (
       <div className="p-6 bg-gray-50 min-h-screen">
