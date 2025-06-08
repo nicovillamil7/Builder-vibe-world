@@ -238,10 +238,10 @@ export const INTELLIGENT_IMAGES: Record<string, IntelligentImageConfig> = {
   porcelainMarbleLook: {
     id: "porcelainMarbleLook",
     primary:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F82084b8d71414a99aeb5979316a13668?format=webp",
     fallback:
       "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Porcelain tiles with realistic marble veining pattern",
+    alt: "Marble Look Series - Porcelain Tiles flooring showcasing floor prominence",
     category: "porcelain",
     title: "Marble-Look Porcelain Series",
     subtitle:
