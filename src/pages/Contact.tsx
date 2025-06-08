@@ -266,13 +266,25 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-gray-200 rounded-lg h-96 lg:h-full flex items-center justify-center">
+            {/* Interactive Google Maps */}
+            <div
+              className="bg-gray-200 rounded-lg h-96 lg:h-full flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors duration-200 group"
+              onClick={() => {
+                const address = "3399 NW 72nd Ave #109, Miami, FL 33122";
+                const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+                window.open(googleMapsUrl, "_blank");
+              }}
+            >
               <div className="text-center">
-                <MapPin className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600">Interactive Map</p>
-                <p className="text-sm text-gray-500">
+                <MapPin className="h-16 w-16 text-red-600 mx-auto mb-4 group-hover:text-red-700 transition-colors" />
+                <p className="text-gray-700 font-semibold group-hover:text-gray-900">
+                  Show on Map
+                </p>
+                <p className="text-sm text-gray-600 mt-2">
                   3399 NW 72nd Ave #109, Miami, FL 33122
+                </p>
+                <p className="text-xs text-red-600 mt-2 group-hover:text-red-700">
+                  Click to open in Google Maps
                 </p>
               </div>
             </div>
