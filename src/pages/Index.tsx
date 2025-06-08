@@ -257,10 +257,10 @@ const Index = () => {
               </div>
             </div>
 
-            {/* For Designers */}
+            {/* For Homeowners */}
             <div>
               <h3 className="text-2xl font-bold text-red-800 text-center mb-8">
-                For Designers
+                For Homeowners
               </h3>
               <div className="space-y-6">
                 {designerBenefits.map((benefit, index) => (
