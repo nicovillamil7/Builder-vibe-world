@@ -175,7 +175,14 @@ const Layout = ({ children }: LayoutProps) => {
                   <OutlineButton size="sm" className="w-full">
                     Get Quote
                   </OutlineButton>
-                  <PrimaryButton size="sm" className="w-full">
+                  <PrimaryButton
+                    size="sm"
+                    className="w-full cursor-pointer"
+                    onClick={() => {
+                      window.location.href = "tel:+13054774402";
+                      setMobileMenuOpen(false);
+                    }}
+                  >
                     Call Now
                   </PrimaryButton>
                 </div>
