@@ -52,7 +52,7 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
 
-            {/* Right side - Service Info */}
+            {/* Right side - Service Info & Social */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
               <div className="flex items-baseline space-x-2">
                 <Clock className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
@@ -63,6 +63,27 @@ const Layout = ({ children }: LayoutProps) => {
                 <span className="text-center sm:text-left">
                   Quality Materials
                 </span>
+              </div>
+              {/* Social Media Icons */}
+              <div className="flex items-center space-x-3">
+                <a
+                  href="https://www.instagram.com/genesisstonefl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300 transition-colors duration-200"
+                  title="Follow us on Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.facebook.com/genesisstonefl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300 transition-colors duration-200"
+                  title="Follow us on Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
