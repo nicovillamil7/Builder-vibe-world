@@ -1,0 +1,73 @@
+{/* Complete Home Flooring Service - Everything for Your Dream Home */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold text-gray-900 mb-8">
+              Complete Home Flooring Service - Everything for Your Dream Home
+            </h2>
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
+              From initial design concepts to final installation, we provide
+              everything you need for a successful flooring project that transforms your house into the
+              home you've always envisioned.
+            </p>
+          </div>
+
+          {/* Home upgrade features */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {homeUpgradeFeatures.map((feature, index) => (
+              <Card
+                key={index}
+                className="group relative overflow-hidden hover:shadow-2xl transition-all duration-500 border-0"
+              >
+                <CardContent className="relative p-10">
+                  <div className="flex items-start space-x-6">
+                    <div
+                      className={`w-20 h-20 rounded-2xl ${feature.bgColor} flex items-center justify-center flex-shrink-0 shadow-xl`}
+                    >
+                      <feature.icon className="h-10 w-10 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <Badge className="bg-gray-100 text-gray-800 mb-4">
+                        {feature.highlight}
+                      </Badge>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[rgb(138,0,0)] transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Homeowner benefits integrated */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            {homeownerBenefits.map((benefit, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 bg-white border-0"
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {benefit.title}
+                    </h3>
+                    <Badge className="bg-green-100 text-green-800 font-semibold">
+                      {benefit.savings}
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                  <div className="mt-6 flex items-center text-[rgb(138,0,0)] font-medium group-hover:text-[rgb(153,27,27)]">
+                    <span>Learn more →</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>

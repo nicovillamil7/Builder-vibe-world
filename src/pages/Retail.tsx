@@ -262,10 +262,8 @@ const Retail = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-          {/* Add homeowner benefits to the main section */}
+          {/* Homeowner benefits integrated */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
             {homeownerBenefits.map((benefit, index) => (
               <Card
