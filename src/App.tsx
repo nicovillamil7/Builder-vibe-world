@@ -36,6 +36,10 @@ const App = () => (
             element={<EnhancedImageIntelligenceDashboard />}
           />
           <Route
+            path="/enhanced-image-intelligence"
+            element={<EnhancedImageIntelligenceDashboard />}
+          />
+          <Route
             path="/legacy-image-intelligence"
             element={<ImageIntelligenceDashboard />}
           />
