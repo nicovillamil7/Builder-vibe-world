@@ -66,11 +66,24 @@ export const ImageSystemResetPanel: React.FC = () => {
       const result = await ImageSystemReset.performCompleteReset();
       setResetResult(result);
 
-      // Refresh the page after successful reset to show new data
+      // Show immediate feedback about the replacement
       if (result.success) {
-        setTimeout(() => {
-          window.location.reload();
-        }, 3000);
+        // Show success message
+        const message =
+          `✅ SYSTEM RESET COMPLETE!\n\n` +
+          `• ${result.totalImages} images are now managed by AI\n` +
+          `• ${result.regeneratedImages} images replaced with high-quality alternatives\n` +
+          `• Average quality improved to ${result.avgScore.toFixed(1)}/10\n\n` +
+          `The new images should be visible throughout your website immediately!`;
+
+        alert(message);
+
+        // Force immediate update of images
+        window.dispatchEvent(
+          new CustomEvent("imageSystemUpdated", {
+            detail: result,
+          }),
+        );
       }
     } catch (error) {
       console.error("System reset failed:", error);
