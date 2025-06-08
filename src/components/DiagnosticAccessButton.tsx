@@ -39,16 +39,15 @@ export const DiagnosticAccessButton: React.FC = () => {
             </Link>
 
             <Link
-              to="/image-intelligence"
-              className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center space-x-2"
-              title="🧠 Classic AI Analysis - AI-powered relevance scoring"
+              to="/legacy-image-intelligence"
+              className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center space-x-2"
+              title="📊 Legacy Dashboard - Original simple interface"
             >
               <Brain className="h-5 w-5" />
               <span className="hidden sm:inline text-sm font-medium">
-                Classic AI
+                Legacy
               </span>
             </Link>
-
             <Link
               to="/image-diagnostic"
               className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200 flex items-center space-x-2"
