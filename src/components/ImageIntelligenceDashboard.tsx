@@ -152,7 +152,7 @@ export const ImageIntelligenceDashboard: React.FC = () => {
     const confirmed = window.confirm(
       `🚨 BULK REPLACEMENT CONFIRMATION\n\n` +
         `This will replace ${bulkReplacementPlan.totalImages} images.\n` +
-        `Estimated improvement: +${bulkReplacementPlan.estimatedImprovementScore.toFixed(1)}% quality score.\n\n` +
+        `Estimated improvement: +${(bulkReplacementPlan.estimatedImprovementScore || 0).toFixed(1)}% quality score.\n\n` +
         `Are you sure you want to proceed?`,
     );
 
