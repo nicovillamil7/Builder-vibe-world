@@ -65,7 +65,7 @@ export class WebsiteImageScanner {
       // INTELLIGENT IMAGES (Managed by AI system)
       {
         id: "porcelainLargeFormat",
-        url: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        url: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         location: "/products",
         component: "Products.tsx",
         purpose: "Product showcase - Large Format Porcelain",
