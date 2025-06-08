@@ -33,11 +33,11 @@ const App = () => (
           <Route path="/image-diagnostic" element={<ImageDiagnostic />} />
           <Route
             path="/image-intelligence"
-            element={<ImageIntelligenceDashboard />}
+            element={<EnhancedImageIntelligenceDashboard />}
           />
           <Route
-            path="/enhanced-image-intelligence"
-            element={<EnhancedImageIntelligenceDashboard />}
+            path="/legacy-image-intelligence"
+            element={<ImageIntelligenceDashboard />}
           />
           <Route
             path="/image-system-tests"
