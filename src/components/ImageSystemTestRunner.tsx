@@ -266,7 +266,7 @@ export const ImageSystemTestRunner: React.FC = () => {
 
   const runQuickDiagnostics = async () => {
     try {
-      const diagnostics = await runImageSystemDiagnostics();
+      const diagnostics = await ImageSystemDiagnostics.runQuickDiagnostics();
       setDiagnosticsResult(diagnostics);
 
       const health: SystemHealth = {
