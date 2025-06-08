@@ -211,10 +211,10 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   contractorHeroImage: {
     id: "contractorHeroImage",
     primary:
-      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fdc5fc27aa9464492b864fb829dbb453b", // Using unique image for contractor hero
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F9a94e48351c7464885d2f00aa4e7e208", // Using unique image for contractor hero
     fallback:
       "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F82084b8d71414a99aeb5979316a13668?format=webp",
-    alt: "Construction site with professional flooring installation",
+    alt: "Professional flooring installation at construction site",
     category: "commercial-projects",
   },
 
