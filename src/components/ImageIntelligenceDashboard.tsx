@@ -714,56 +714,271 @@ export const ImageIntelligenceDashboard: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Detailed Image Analysis */}
+        {/* Comprehensive Image System Overview */}
+        <Card className="mb-8">
+          <CardHeader>
+            <h2 className="text-xl font-bold flex items-center">
+              <FileImage className="h-5 w-5 mr-2" />
+              Complete Image System Overview
+            </h2>
+            <p className="text-gray-600">
+              All images in the system with titles, locations, AI context, and
+              generation prompts
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {allImages.map((img) => (
+                <Card
+                  key={img.id}
+                  className={`border-l-4 hover:shadow-md transition-shadow ${
+                    img.relevanceScore >= 8
+                      ? "border-green-500"
+                      : img.relevanceScore >= 6
+                        ? "border-yellow-500"
+                        : "border-red-500"
+                  }`}
+                >
+                  <CardContent className="p-6">
+                    {/* Header with Score and Title */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="font-bold text-lg">{img.title}</h3>
+                          <Badge
+                            className={getScoreColor(img.relevanceScore)}
+                            size="lg"
+                          >
+                            {getScoreIcon(img.relevanceScore)}
+                            {img.relevanceScore}/10
+                          </Badge>
+                        </div>
+                        <p className="text-gray-600 text-sm mb-2">
+                          {img.subtitle}
+                        </p>
+                        <p className="text-xs text-gray-500">ID: {img.id}</p>
+                      </div>
+                      <div className="ml-4">
+                        <img
+                          src={img.primary}
+                          alt={img.alt}
+                          className="w-24 h-24 object-cover rounded-lg border"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = img.fallback;
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Usage and Location Information */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div className="bg-blue-50 rounded-lg p-3">
+                        <h4 className="font-semibold text-sm text-blue-800 mb-2 flex items-center">
+                          <Target className="h-4 w-4 mr-1" />
+                          Usage & Location
+                        </h4>
+                        <div className="text-xs space-y-1">
+                          <div>
+                            <strong>Category:</strong>{" "}
+                            <span className="capitalize">{img.category}</span>
+                          </div>
+                          <div>
+                            <strong>Alt Text:</strong> {img.alt}
+                          </div>
+                          <div>
+                            <strong>Keywords:</strong> {img.keywords.join(", ")}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-purple-50 rounded-lg p-3">
+                        <h4 className="font-semibold text-sm text-purple-800 mb-2 flex items-center">
+                          <Brain className="h-4 w-4 mr-1" />
+                          AI Context & Analysis
+                        </h4>
+                        <div className="text-xs space-y-1">
+                          <div>
+                            <strong>Expected Content:</strong>{" "}
+                            {img.contextMatch}
+                          </div>
+                          <div>
+                            <strong>Actual Content:</strong> {img.actualContent}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* AI Generation Prompt */}
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 mb-4">
+                      <h4 className="font-semibold text-sm text-green-800 mb-2 flex items-center">
+                        <Wand2 className="h-4 w-4 mr-1" />
+                        AI Image Generation Prompt
+                      </h4>
+                      <div className="bg-white rounded border p-3 font-mono text-xs">
+                        <div className="text-green-700 mb-2">
+                          <strong>Primary Prompt:</strong>
+                        </div>
+                        <div className="mb-3 text-gray-800">
+                          "Generate a high-quality, professional photograph
+                          showing {img.description}. Focus on {img.category}{" "}
+                          flooring with emphasis on{" "}
+                          {img.keywords.slice(0, 3).join(", ")}. The image
+                          should clearly show the flooring material as the main
+                          subject in a real-world installation."
+                        </div>
+
+                        <div className="text-green-700 mb-2">
+                          <strong>Style Parameters:</strong>
+                        </div>
+                        <div className="mb-3 text-gray-800">
+                          "Style: Professional architectural photography,
+                          well-lit, high resolution, clean composition. Avoid:{" "}
+                          {getAIAvoidancePrompt(img.category)}"
+                        </div>
+
+                        <div className="text-green-700 mb-2">
+                          <strong>Quality Requirements:</strong>
+                        </div>
+                        <div className="text-gray-800">
+                          "Resolution: 1200x800px minimum, Format: JPG/WebP,
+                          Compression: High quality, Focus: Sharp detail on
+                          flooring texture and pattern"
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Description and Improvement Suggestions */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold text-sm mb-2">
+                          Current Description:
+                        </h4>
+                        <p className="text-xs text-gray-600 bg-gray-50 rounded p-2">
+                          {img.description}
+                        </p>
+                      </div>
+
+                      {img.improvementSuggestions &&
+                        img.improvementSuggestions.length > 0 && (
+                          <div>
+                            <h4 className="font-semibold text-sm mb-2 text-orange-700">
+                              AI Improvement Suggestions:
+                            </h4>
+                            <div className="space-y-1">
+                              {img.improvementSuggestions.map(
+                                (suggestion, index) => (
+                                  <div
+                                    key={index}
+                                    className="text-xs bg-orange-50 rounded p-2 border-l-2 border-orange-300"
+                                  >
+                                    {suggestion}
+                                  </div>
+                                ),
+                              )}
+                            </div>
+                          </div>
+                        )}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-2 mt-4 pt-4 border-t">
+                      <OutlineButton
+                        size="sm"
+                        className="text-xs"
+                        onClick={() =>
+                          openUnsplashSearch(
+                            `${img.category} flooring ${img.keywords[0]}`,
+                          )
+                        }
+                      >
+                        <Search className="h-3 w-3 mr-1" />
+                        Find Similar
+                      </OutlineButton>
+
+                      <OutlineButton
+                        size="sm"
+                        className="text-xs"
+                        onClick={() => window.open(img.primary, "_blank")}
+                      >
+                        <ExternalLink className="h-3 w-3 mr-1" />
+                        View Full Size
+                      </OutlineButton>
+
+                      {img.relevanceScore < 7 && (
+                        <OutlineButton
+                          size="sm"
+                          className="text-xs text-orange-600 border-orange-300"
+                          onClick={() =>
+                            generateSmartSuggestions(
+                              img.category,
+                              img.contextMatch,
+                            )
+                          }
+                        >
+                          <Sparkles className="h-3 w-3 mr-1" />
+                          Generate Alternatives
+                        </OutlineButton>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Quick Stats Summary */}
         <Card>
           <CardHeader>
             <h2 className="text-xl font-bold flex items-center">
               <Brain className="h-5 w-5 mr-2" />
-              Detailed Image Analysis
+              AI Generation Summary
             </h2>
             <p className="text-gray-600">
-              Detailed breakdown of all images with relevance scores
+              Overall system statistics and AI prompt effectiveness
             </p>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-              {allImages.map((img) => (
-                <Card
-                  key={img.id}
-                  className="hover:shadow-md transition-shadow"
-                >
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-sm">{img.id}</h4>
-                      <Badge className={getScoreColor(img.relevanceScore)}>
-                        {getScoreIcon(img.relevanceScore)}
-                        {img.relevanceScore}/10
-                      </Badge>
-                    </div>
-                    <div className="text-xs text-gray-600 mb-2">
-                      <strong>Category:</strong> {img.category}
-                    </div>
-                    <div className="text-xs text-gray-600 mb-3">
-                      <strong>Content:</strong> {img.actualContent}
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-blue-50 rounded-lg p-4">
+                <h3 className="font-semibold text-blue-800">Total Images</h3>
+                <p className="text-2xl font-bold text-blue-600">
+                  {allImages.length}
+                </p>
+                <p className="text-xs text-blue-600">
+                  Across {new Set(allImages.map((img) => img.category)).size}{" "}
+                  categories
+                </p>
+              </div>
 
-                    {img.relevanceScore < 6 && (
-                      <div className="flex gap-1">
-                        <OutlineButton
-                          size="sm"
-                          className="text-xs px-2 py-1 h-auto"
-                          onClick={() =>
-                            openUnsplashSearch(`${img.category} flooring`)
-                          }
-                        >
-                          <Search className="h-3 w-3 mr-1" />
-                          Find Better
-                        </OutlineButton>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
+              <div className="bg-green-50 rounded-lg p-4">
+                <h3 className="font-semibold text-green-800">Avg AI Score</h3>
+                <p className="text-2xl font-bold text-green-600">
+                  {allImages.length > 0
+                    ? (
+                        allImages.reduce(
+                          (sum, img) => sum + img.relevanceScore,
+                          0,
+                        ) / allImages.length
+                      ).toFixed(1)
+                    : "0.0"}
+                  /10
+                </p>
+                <p className="text-xs text-green-600">AI relevance accuracy</p>
+              </div>
+
+              <div className="bg-purple-50 rounded-lg p-4">
+                <h3 className="font-semibold text-purple-800">
+                  Optimization Potential
+                </h3>
+                <p className="text-2xl font-bold text-purple-600">
+                  {allImages.filter((img) => img.relevanceScore < 7).length}
+                </p>
+                <p className="text-xs text-purple-600">
+                  Images can be improved
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
