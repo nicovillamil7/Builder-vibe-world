@@ -77,12 +77,15 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <div>
-                <div className="text-2xl font-serif font-bold tracking-tight">
+                <div className="text-2xl font-serif font-bold tracking-tight leading-tight">
                   <span className="text-[rgb(138,0,0)]">G</span>
                   <span className="text-gray-900">enesis Stone</span>
                 </div>
-                <div className="text-sm text-gray-600 font-medium">
-                  Premium Stone & Flooring
+                <div className="text-sm text-gray-600 font-medium leading-tight">
+                  Premium Stone &
+                </div>
+                <div className="text-sm text-gray-600 font-medium leading-tight">
+                  Flooring
                 </div>
               </div>
             </Link>
