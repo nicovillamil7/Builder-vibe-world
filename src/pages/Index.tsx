@@ -506,7 +506,13 @@ const Index = () => {
                 alt="Modern white interior with polished porcelain"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F5ca1a82e481b45e8b81cba03d3e6ad83?format=webp)",
+                }}
+              ></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h4 className="font-bold text-lg">Contemporary Clean</h4>
                 <p className="text-sm">White Polished Porcelain</p>
