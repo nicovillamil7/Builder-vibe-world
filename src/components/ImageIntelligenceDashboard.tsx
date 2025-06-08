@@ -245,7 +245,7 @@ export const ImageIntelligenceDashboard: React.FC = () => {
         );
         addNotification(
           "error",
-          "�� Replacement Failed",
+          "❌ Replacement Failed",
           `Error: ${error}`,
           15000,
         );
@@ -326,6 +326,75 @@ export const ImageIntelligenceDashboard: React.FC = () => {
       avoidanceRules[category] ||
       "low quality, blurry images, irrelevant content"
     );
+  };
+
+  // Track where each image is used across the website
+  const getImageUsageLocations = (imageId: string): string[] => {
+    const usageMap: Record<string, string[]> = {
+      // Porcelain images
+      porcelainLargeFormat: [
+        "/products - Porcelain Tiles - Large Format Collection",
+        "/components/ProductGrid - Homepage product showcase",
+        "Product catalog - Main porcelain category",
+      ],
+      porcelainMarbleLook: [
+        "/products - Porcelain Tiles - Marble Look Series",
+        "Product galleries - Luxury porcelain section",
+        "Homepage hero rotation",
+      ],
+      porcelainContemporary: [
+        "/products - Porcelain Tiles - Contemporary White",
+        "Product comparison pages",
+      ],
+
+      // Natural Stone images
+      naturalStoneTravertine: [
+        "/products - Natural Stone - Travertine Collection",
+        "/retail - Residential projects gallery",
+        "Homepage - Natural materials section",
+      ],
+      naturalStoneMarble: [
+        "/products - Natural Stone - Marble Collection",
+        "/wholesale - Commercial projects",
+        "Luxury home galleries",
+      ],
+      naturalStoneSlate: [
+        "/products - Natural Stone - Slate Collection",
+        "Rustic design galleries",
+      ],
+
+      // Vinyl & Laminate images
+      vinylLuxuryPlank: [
+        "/products - Vinyl & Laminate - Luxury Vinyl Plank",
+        "/retail - Budget-friendly options",
+        "DIY installation guides",
+      ],
+      vinylWoodLook: [
+        "/products - Vinyl & Laminate - Wood Look Collection",
+        "Product comparison - Wood alternatives",
+      ],
+      laminateEuropean: [
+        "/products - Vinyl & Laminate - European Laminate",
+        "Commercial flooring solutions",
+      ],
+
+      // Mosaic images
+      mosaicGlass: [
+        "/products - Mosaics - Glass Mosaic Collection",
+        "Accent wall galleries",
+        "Bathroom design inspiration",
+      ],
+      mosaicNatural: [
+        "/products - Mosaics - Natural Stone Mosaic",
+        "Kitchen backsplash gallery",
+      ],
+      mosaicMetallic: [
+        "/products - Mosaics - Metallic Mosaic Series",
+        "Modern design galleries",
+      ],
+    };
+
+    return usageMap[imageId] || ["Location mapping not configured"];
   };
 
   if (!analysis) {
