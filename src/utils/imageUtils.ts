@@ -15,7 +15,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   modernPoolDeck: {
     id: "modernPoolDeck",
     primary:
-      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fdc5fc27aa9464492b864fb829dbb453b",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fdb22d75002424925b61abb0b2c647e50?format=webp",
     fallback:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Porcelain Tiles",
@@ -53,7 +53,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   travertinePool: {
     id: "travertinePool",
     primary:
-      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fca8a484aecde490380b0d4469420bb8c",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93",
     fallback:
       "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Natural Stone",
