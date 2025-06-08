@@ -97,7 +97,74 @@ const Index = () => {
     { number: 4, title: "Install & Enjoy", description: "Your New Floors" },
   ];
 
-  const faqs = [
+  const contractorFaqs = [
+    {
+      question: "What volume discounts do you offer for contractors?",
+      answer:
+        "We offer tiered volume pricing: 15% off orders 5,000+ sq ft, 20% off orders 8,000+ sq ft, and 25% off orders 10,000+ sq ft. Plus Net-30 payment terms for qualified contractors with trade accounts.",
+    },
+    {
+      question: "Do you offer job site delivery?",
+      answer:
+        "Yes! We provide direct job site delivery throughout South Florida. Same-day pickup available at our Miami warehouse, and scheduled delivery can be arranged to meet your project timeline.",
+    },
+    {
+      question: "What's your lead time for large commercial orders?",
+      answer:
+        "Most standard materials are in stock for immediate pickup. Special orders typically take 1-2 weeks. We maintain large inventory levels specifically to support contractor schedules and urgent project needs.",
+    },
+    {
+      question: "Do you provide material take-offs and estimates?",
+      answer:
+        "Absolutely! Our team can review blueprints and provide detailed material take-offs, pricing, and recommendations. We also offer technical support for installation questions and product specifications.",
+    },
+    {
+      question: "What payment terms do you offer contractors?",
+      answer:
+        "We offer Net-30 terms for established contractors with approved credit. We also accept cash, check, and card payments. Volume orders may qualify for extended payment terms based on project size.",
+    },
+    {
+      question: "Can you support multi-phase projects?",
+      answer:
+        "Yes, we excel at multi-phase project support with staged deliveries, inventory management, and consistent material matching across project phases. We maintain detailed project records for seamless continuity.",
+    },
+  ];
+
+  const designerFaqs = [
+    {
+      question: "Do you have a trade program for interior designers?",
+      answer:
+        "Yes! Our trade program offers designer discounts, dedicated account management, and access to our full sample library. We also provide design support and technical specifications for project planning.",
+    },
+    {
+      question: "Can I get large format samples for client presentations?",
+      answer:
+        'Absolutely! We offer 12"x12" samples and even full-size tile samples for designers to present to clients. Our sample library includes the latest trends in porcelain, natural stone, and custom mosaics.',
+    },
+    {
+      question: "Do you offer custom design consultation?",
+      answer:
+        "Yes, our design team can work with you on custom layouts, pattern design, and material combinations. We provide 3D renderings and detailed specifications to help present concepts to your clients.",
+    },
+    {
+      question: "What's your process for custom mosaic and pattern work?",
+      answer:
+        "We specialize in custom mosaics and patterns. Provide us with your design concept, and we'll create samples, provide technical drawings, and handle fabrication. Lead time is typically 3-4 weeks for custom work.",
+    },
+    {
+      question: "Do you offer continuing education or design seminars?",
+      answer:
+        "Yes! We host quarterly design seminars covering new trends, installation techniques, and product innovations. We also offer AIA continuing education credits for architects and designers.",
+    },
+    {
+      question:
+        "Can you support luxury residential projects with unique requirements?",
+      answer:
+        "Definitely! We specialize in high-end residential projects with custom requirements. From book-matched slabs to intricate mosaic designs, we have the expertise and resources for luxury applications.",
+    },
+  ];
+
+  const generalFaqs = [
     {
       question: "What areas in Florida do you serve?",
       answer:
@@ -114,14 +181,14 @@ const Index = () => {
         "We carry a comprehensive selection including porcelain tiles, natural stone, luxury vinyl plank, laminate, hardwood, and custom mosaics. All materials are sourced from top manufacturers and meet commercial-grade standards.",
     },
     {
-      question: "Do you offer bulk pricing for contractors?",
+      question: "Can I visit your showroom to see materials?",
       answer:
-        "Absolutely! We offer volume discounts starting at 15% for orders over 5,000 sq ft, and up to 25% for orders over 10,000 sq ft. We also provide Net-30 payment terms for qualified contractors.",
+        "Yes! Our Miami showroom is open Mon-Fri 7AM-6PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs.",
     },
     {
-      question: "Can I see materials before placing an order?",
+      question: "Do you offer professional installation services?",
       answer:
-        "Yes, we have material samples available for viewing in our showroom. For designers and contractors, we offer expanded sample programs and can arrange for large format samples to be viewed in our Miami showroom location.",
+        "Yes, we have a network of certified installers throughout South Florida. All our installers are licensed, insured, and experienced with the specific materials we carry. Installation warranties included.",
     },
   ];
 
