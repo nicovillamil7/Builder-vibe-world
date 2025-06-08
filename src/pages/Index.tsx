@@ -183,7 +183,7 @@ const Index = () => {
     {
       question: "Can I visit your showroom to see materials?",
       answer:
-        "Yes! Our Miami showroom is open Mon-Fri 7AM-6PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs.",
+        "Yes! Our Miami showroom is open Mon-Fri 7AM-4PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs.",
     },
     {
       question: "Do you offer professional installation services?",

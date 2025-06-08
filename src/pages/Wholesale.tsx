@@ -156,7 +156,7 @@ const Wholesale = () => {
       icon: Zap,
       title: "Express Order Processing",
       description: "Orders processed within 2 hours during business days",
-      availability: "Mon-Fri: 7 AM - 6 PM",
+      availability: "Mon-Fri: 7 AM - 4 PM",
     },
     {
       icon: Target,
