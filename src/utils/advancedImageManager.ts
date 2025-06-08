@@ -39,6 +39,7 @@ export interface BulkReplacementPlan {
     }[];
   }[];
   estimatedImprovementScore: number;
+  projectedAverageScore: number;
 }
 
 // 🎯 WEBPAGE DESIGN DETECTION - Analyzes where images should be placed
