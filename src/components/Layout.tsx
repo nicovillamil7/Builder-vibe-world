@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
-import { DiagnosticAccessButton } from "@/components/DiagnosticAccessButton";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
   Phone,
   MapPin,
@@ -260,8 +260,8 @@ const Layout = ({ children }: LayoutProps) => {
         </div>
       </footer>
 
-      {/* Development Diagnostic Access */}
-      <DiagnosticAccessButton />
+      {/* WhatsApp Contact Button */}
+      <WhatsAppButton />
     </div>
   );
 };
