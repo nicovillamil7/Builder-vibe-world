@@ -97,7 +97,7 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
   return (
     <div className="relative">
       <img
-        src={config.primary}
+        src={currentImageUrl || config.primary}
         alt={alt || config.alt}
         className={`${className} ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
         onLoad={handleLoad}
