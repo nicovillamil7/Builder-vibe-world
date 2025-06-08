@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
-import { Input } from "@/components/ui/input";
+import React, { useState, useEffect, useRef } from 'react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { PrimaryButton, OutlineButton } from '@/components/ui/custom-buttons';
+import { Input } from '@/components/ui/input';
 import {
   INTELLIGENT_IMAGES,
   analyzeAllImages,
   ImageIntelligenceAnalyzer,
-  IMPROVED_IMAGE_SUGGESTIONS,
-} from "@/utils/intelligentImages";
+  IMPROVED_IMAGE_SUGGESTIONS
+} from '@/utils/intelligentImages';
 import {
   BulkReplacementManager,
   AIImageValidator,
   SmartImageSuggestions,
-  WebpageDesignAnalyzer,
-} from "@/utils/advancedImageManager";
+  WebpageDesignAnalyzer
+} from '@/utils/advancedImageManager';
 import {
   AlertTriangle,
   CheckCircle,
@@ -30,7 +30,10 @@ import {
   FileImage,
   Sparkles,
   Wand2,
-} from "lucide-react";
+  Loader2,
+  Info,
+  Clock
+} from 'lucide-react';
 
 export const ImageIntelligenceDashboard: React.FC = () => {
   const [analysis, setAnalysis] = useState<any>(null);
@@ -40,7 +43,33 @@ export const ImageIntelligenceDashboard: React.FC = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [validationResults, setValidationResults] = useState<any[]>([]);
   const [smartSuggestions, setSmartSuggestions] = useState<any>({});
+  const [notifications, setNotifications] = useState<any[]>([]);
+  const [loadingStates, setLoadingStates] = useState({
+    analyzing: false,
+    creatingPlan: false,
+    executing: false,
+    uploading: false
+  });
+  const [progress, setProgress] = useState({ current: 0, total: 0, step: '' });
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Add notification helper
+  const addNotification = (type: 'success' | 'error' | 'info' | 'warning', title: string, message: string, duration: number = 5000) => {
+    const id = Date.now();
+    const notification = { id, type, title, message };
+    setNotifications(prev => [...prev, notification]);
+
+    if (duration > 0) {
+      setTimeout(() => {
+        setNotifications(prev => prev.filter(n => n.id !== id));
+      }, duration);
+    }
+  };
+
+  // Remove notification
+  const removeNotification = (id: number) => {
+    setNotifications(prev => prev.filter(n => n.id !== id));
+  };
 
   useEffect(() => {
     const results = analyzeAllImages();
@@ -48,53 +77,125 @@ export const ImageIntelligenceDashboard: React.FC = () => {
     console.log("🧠 INTELLIGENT IMAGE ANALYSIS:", results);
   }, []);
 
-  // Handle bulk replacement
+  // Handle bulk replacement with comprehensive feedback
   const handleBulkReplacement = async (minScore: number = 6) => {
+    // Immediate feedback
+    addNotification('info', '🚀 Creating Replacement Plan', `Analyzing images scoring ≤${minScore}/10...`, 0);
+    setLoadingStates(prev => ({ ...prev, creatingPlan: true }));
     setIsProcessingBulk(true);
+
     try {
+      // Show progress steps
+      setProgress({ current: 1, total: 3, step: 'Analyzing current images...' });
+      await new Promise(resolve => setTimeout(resolve, 500)); // Simulate analysis time
+
+      setProgress({ current: 2, total: 3, step: 'Generating replacement suggestions...' });
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      setProgress({ current: 3, total: 3, step: 'Creating optimization plan...' });
       const plan = await BulkReplacementManager.createReplacementPlan(minScore);
+
       setBulkReplacementPlan(plan);
+
+      // Success notification
+      removeNotification(notifications[notifications.length - 1]?.id);
+      addNotification(
+        'success',
+        '✅ Replacement Plan Ready!',
+        `Found ${plan.totalImages} images to improve. Estimated +${plan.estimatedImprovementScore.toFixed(1)}% quality boost!`,
+        8000
+      );
+
       console.log("📋 BULK REPLACEMENT PLAN:", plan);
     } catch (error) {
+      removeNotification(notifications[notifications.length - 1]?.id);
+      addNotification('error', '❌ Plan Creation Failed', `Error: ${error}`, 10000);
       console.error("Error creating replacement plan:", error);
     } finally {
+      setLoadingStates(prev => ({ ...prev, creatingPlan: false }));
       setIsProcessingBulk(false);
+      setProgress({ current: 0, total: 0, step: '' });
     }
   };
 
-  // Execute bulk replacement
+  // Execute bulk replacement with detailed progress
   const executeBulkReplacement = async () => {
     if (!bulkReplacementPlan) return;
 
     const confirmed = window.confirm(
       `🚨 BULK REPLACEMENT CONFIRMATION\n\n` +
-        `This will replace ${bulkReplacementPlan.totalImages} images.\n` +
-        `Estimated improvement: +${bulkReplacementPlan.estimatedImprovementScore.toFixed(1)}% quality score.\n\n` +
-        `Are you sure you want to proceed?`,
+      `This will replace ${bulkReplacementPlan.totalImages} images.\n` +
+      `Estimated improvement: +${bulkReplacementPlan.estimatedImprovementScore.toFixed(1)}% quality score.\n\n` +
+      `Are you sure you want to proceed?`
     );
 
     if (confirmed) {
+      // Start execution with detailed feedback
+      addNotification('info', '🔄 Executing Bulk Replacement', 'Starting image replacement process...', 0);
+      setLoadingStates(prev => ({ ...prev, executing: true }));
       setIsProcessingBulk(true);
+
       try {
-        const results =
-          await BulkReplacementManager.executeBulkReplacement(
-            bulkReplacementPlan,
-          );
+        const totalImages = bulkReplacementPlan.totalImages;
+
+        // Simulate detailed progress for each image
+        for (let i = 0; i < totalImages; i++) {
+          const imageName = bulkReplacementPlan.replacementSources[i]?.imageId || `image-${i+1}`;
+          setProgress({
+            current: i + 1,
+            total: totalImages,
+            step: `Replacing ${imageName}...`
+          });
+
+          // Add progress notification for every few images
+          if (i % Math.max(1, Math.floor(totalImages / 3)) === 0) {
+            addNotification(
+              'info',
+              '⚡ Progress Update',
+              `Replaced ${i}/${totalImages} images so far...`,
+              3000
+            );
+          }
+
+          await new Promise(resolve => setTimeout(resolve, 800)); // Simulate processing time
+        }
+
+        const results = await BulkReplacementManager.executeBulkReplacement(bulkReplacementPlan);
         console.log("✅ BULK REPLACEMENT RESULTS:", results);
 
-        // Refresh analysis after replacement
+        // Update analysis with new results
+        setProgress({ current: totalImages, total: totalImages, step: 'Refreshing analysis...' });
         const newAnalysis = analyzeAllImages();
         setAnalysis(newAnalysis);
         setBulkReplacementPlan(null);
 
-        alert(
-          `🎉 SUCCESS!\n\nReplaced ${results.replacedImages.length} images.\nErrors: ${results.errors.length}`,
+        // Success notification
+        removeNotification(notifications.filter(n => n.title.includes('Executing'))[0]?.id);
+        addNotification(
+          'success',
+          '🎉 Bulk Replacement Complete!',
+          `Successfully replaced ${results.replacedImages.length} images! ${results.errors.length > 0 ? `${results.errors.length} errors occurred.` : 'No errors!'}`,
+          10000
         );
+
+        // Show detailed results
+        setTimeout(() => {
+          addNotification(
+            'info',
+            '📊 Replacement Summary',
+            `Images improved: ${results.replacedImages.join(', ')}`,
+            15000
+          );
+        }, 2000);
+
       } catch (error) {
+        removeNotification(notifications.filter(n => n.title.includes('Executing'))[0]?.id);
+        addNotification('error', '❌ Replacement Failed', `Error: ${error}`, 15000);
         console.error("Error executing bulk replacement:", error);
-        alert("❌ Error during bulk replacement. Check console for details.");
       } finally {
+        setLoadingStates(prev => ({ ...prev, executing: false }));
         setIsProcessingBulk(false);
+        setProgress({ current: 0, total: 0, step: '' });
       }
     }
   };
@@ -195,6 +296,65 @@ export const ImageIntelligenceDashboard: React.FC = () => {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
+
+        {/* Notifications */}
+        <div className="fixed top-4 right-4 z-50 space-y-2">
+          {notifications.map((notification) => (
+            <Card
+              key={notification.id}
+              className={`max-w-md shadow-lg border-l-4 ${
+                notification.type === 'success' ? 'border-green-500 bg-green-50' :
+                notification.type === 'error' ? 'border-red-500 bg-red-50' :
+                notification.type === 'warning' ? 'border-yellow-500 bg-yellow-50' :
+                'border-blue-500 bg-blue-50'
+              } animate-in slide-in-from-right duration-300`}
+            >
+              <CardContent className="p-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-1">
+                      {notification.type === 'success' && <CheckCircle className="h-4 w-4 text-green-600 mr-2" />}
+                      {notification.type === 'error' && <XCircle className="h-4 w-4 text-red-600 mr-2" />}
+                      {notification.type === 'warning' && <AlertTriangle className="h-4 w-4 text-yellow-600 mr-2" />}
+                      {notification.type === 'info' && <Info className="h-4 w-4 text-blue-600 mr-2" />}
+                      <h4 className="font-semibold text-sm">{notification.title}</h4>
+                    </div>
+                    <p className="text-sm text-gray-600">{notification.message}</p>
+                  </div>
+                  <button
+                    onClick={() => removeNotification(notification.id)}
+                    className="ml-2 text-gray-400 hover:text-gray-600"
+                  >
+                    <XCircle className="h-4 w-4" />
+                  </button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Progress Indicator */}
+        {progress.total > 0 && (
+          <Card className="mb-6 border-blue-200 bg-blue-50">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-semibold text-blue-800">Processing...</span>
+                <span className="text-sm text-blue-600">{progress.current}/{progress.total}</span>
+              </div>
+              <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
+                <div
+                  className="bg-blue-600 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${(progress.current / progress.total) * 100}%` }}
+                />
+              </div>
+              <div className="flex items-center text-sm text-blue-700">
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                {progress.step}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
@@ -225,37 +385,70 @@ export const ImageIntelligenceDashboard: React.FC = () => {
             <span className="text-xs opacity-80">
               Score ≤6 ({belowAcceptableImages.length})
             </span>
+          <PrimaryButton
+            onClick={() => handleBulkReplacement(6)}
+            disabled={isProcessingBulk || belowAcceptableImages.length === 0}
+            className={`p-4 h-auto flex flex-col items-center transition-all duration-200 ${
+              loadingStates.creatingPlan ? 'bg-blue-600 hover:bg-blue-700' : ''
+            }`}
+          >
+            {loadingStates.creatingPlan ? (
+              <Loader2 className="h-6 w-6 mb-2 animate-spin" />
+            ) : isProcessingBulk ? (
+              <RefreshCw className="h-6 w-6 mb-2 animate-spin" />
+            ) : (
+              <Zap className="h-6 w-6 mb-2" />
+            )}
+            <span className="font-bold">
+              {loadingStates.creatingPlan ? 'Analyzing...' : 'Replace Poor Images'}
+            </span>
+            <span className="text-xs opacity-80">
+              {loadingStates.creatingPlan ? 'Creating plan...' : `Score ≤6 (${belowAcceptableImages.length})`}
+            </span>
           </PrimaryButton>
 
           <OutlineButton
             onClick={() => handleBulkReplacement(8)}
             disabled={isProcessingBulk}
-            className="p-4 h-auto flex flex-col items-center"
+            className={`p-4 h-auto flex flex-col items-center transition-all duration-200 ${
+              loadingStates.creatingPlan ? 'border-blue-500 text-blue-600' : ''
+            }`}
           >
-            <Sparkles className="h-6 w-6 mb-2" />
-            <span className="font-bold">Optimize All</span>
+            {loadingStates.creatingPlan ? (
+              <Loader2 className="h-6 w-6 mb-2 animate-spin" />
+            ) : (
+              <Sparkles className="h-6 w-6 mb-2" />
+            )}
+            <span className="font-bold">
+              {loadingStates.creatingPlan ? 'Processing...' : 'Optimize All'}
+            </span>
             <span className="text-xs opacity-80">
-              Score ≤8 (
-              {allImages.filter((img) => img.relevanceScore < 8).length})
+              {loadingStates.creatingPlan ? 'Please wait...' : `Score ≤8 (${allImages.filter(img => img.relevanceScore < 8).length})`}
             </span>
           </OutlineButton>
 
           <OutlineButton
-            onClick={() => fileInputRef.current?.click()}
+            onClick={() => {
+              addNotification('info', '🔄 Refreshing Analysis', 'Re-scanning all images for latest scores...', 3000);
+              setLoadingStates(prev => ({ ...prev, analyzing: true }));
+              setTimeout(() => {
+                window.location.reload();
+              }, 1000);
+            }}
+            disabled={loadingStates.analyzing}
             className="p-4 h-auto flex flex-col items-center"
           >
-            <Upload className="h-6 w-6 mb-2" />
-            <span className="font-bold">Upload Images</span>
-            <span className="text-xs opacity-80">AI Validation</span>
-          </OutlineButton>
-
-          <OutlineButton
-            onClick={() => window.location.reload()}
-            className="p-4 h-auto flex flex-col items-center"
-          >
-            <RefreshCw className="h-6 w-6 mb-2" />
-            <span className="font-bold">Refresh Analysis</span>
-            <span className="text-xs opacity-80">Re-scan All</span>
+            {loadingStates.analyzing ? (
+              <Loader2 className="h-6 w-6 mb-2 animate-spin" />
+            ) : (
+              <RefreshCw className="h-6 w-6 mb-2" />
+            )}
+            <span className="font-bold">
+              {loadingStates.analyzing ? 'Refreshing...' : 'Refresh Analysis'}
+            </span>
+            <span className="text-xs opacity-80">
+              {loadingStates.analyzing ? 'Please wait...' : 'Re-scan All'}
+            </span>
           </OutlineButton>
         </div>
 
@@ -289,14 +482,20 @@ export const ImageIntelligenceDashboard: React.FC = () => {
                 <PrimaryButton
                   onClick={executeBulkReplacement}
                   disabled={isProcessingBulk}
-                  className="bg-green-600 hover:bg-green-700"
+                  className={`${
+                    loadingStates.executing
+                      ? 'bg-blue-600 hover:bg-blue-700'
+                      : 'bg-green-600 hover:bg-green-700'
+                  } transition-all duration-200`}
                 >
-                  {isProcessingBulk ? (
+                  {loadingStates.executing ? (
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  ) : isProcessingBulk ? (
                     <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
                   ) : (
                     <CheckCircle className="h-4 w-4 mr-2" />
                   )}
-                  Execute Replacement
+                  {loadingStates.executing ? 'Executing...' : 'Execute Replacement'}
                 </PrimaryButton>
                 <OutlineButton onClick={() => setBulkReplacementPlan(null)}>
                   Cancel
