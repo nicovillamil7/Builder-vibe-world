@@ -491,6 +491,8 @@ export class BulkReplacementManager {
   }
 
   private static calculateImprovementScore(plan: BulkReplacementPlan): number {
+    if (plan.replacementSources.length === 0) return 0;
+
     const currentAverage =
       plan.replacementSources.reduce(
         (sum, item) => sum + item.currentScore,
@@ -498,6 +500,15 @@ export class BulkReplacementManager {
       ) / plan.replacementSources.length;
     const estimatedNewAverage = 8; // Assume good replacements
     return ((estimatedNewAverage - currentAverage) / currentAverage) * 100;
+  }
+
+  private static calculateProjectedAverageScore(
+    plan: BulkReplacementPlan,
+  ): number {
+    if (plan.replacementSources.length === 0) return 7.5;
+
+    // Estimate that replaced images will score around 8-8.5
+    return 8.2;
   }
 
   // Execute bulk replacement
