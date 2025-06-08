@@ -11,7 +11,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { ImageDiagnostic } from "./components/ImageDiagnostic";
-import { ImageIntelligenceDashboard } from "./components/ImageIntelligenceDashboard";
+import { ImageIntelligenceDashboard } from "@/components/ImageIntelligenceDashboard";
+import { EnhancedImageIntelligenceDashboard } from "@/components/EnhancedImageIntelligenceDashboard";
 
 const queryClient = new QueryClient();
 
