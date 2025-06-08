@@ -184,28 +184,28 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   luxuryApartmentComplex: {
     id: "luxuryApartmentComplex",
     primary:
-      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fd1016abb6dd24daca2f7d29f8042bb9c",
     fallback:
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Luxury apartment complex with modern flooring throughout",
+    alt: "Luxury Apartment Complex",
     category: "commercial-projects",
   },
   officeTowerRenovation: {
     id: "officeTowerRenovation",
     primary:
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F773283d622e342ac8bb986c99673a3a7",
     fallback:
       "https://images.unsplash.com/photo-1600566752734-fb8444a7e4db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Office tower renovation with commercial-grade flooring",
+    alt: "Office Tower Renovation",
     category: "commercial-projects",
   },
   retailShoppingCenter: {
     id: "retailShoppingCenter",
     primary:
-      "https://images.unsplash.com/photo-1600566752734-fb8444a7e4db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F991e34ddb48a4181b4ed0ed85998369c",
     fallback:
       "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Retail shopping center with high-traffic flooring solutions",
+    alt: "Retail Shopping Center",
     category: "commercial-projects",
   },
   contractorHeroImage: {
