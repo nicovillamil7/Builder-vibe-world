@@ -477,13 +477,38 @@ export class ImageSystemReset {
     );
   }
 
-  // Save new configuration (this would integrate with your state management)
+  // Save new configuration and actually update images
   private static async saveNewConfiguration(
     images: AdvancedImageConfig[],
   ): Promise<void> {
-    // This would save to your state management system
-    // For now, we'll just log it
-    console.log("💾 Saving new image configuration:", {
+    // Update the intelligent images storage
+    const newIntelligentImages: Record<string, AdvancedImageConfig> = {};
+
+    images.forEach((img) => {
+      newIntelligentImages[img.id] = img;
+    });
+
+    // Save to localStorage for persistence
+    localStorage.setItem(
+      "intelligentImages",
+      JSON.stringify(newIntelligentImages),
+    );
+
+    // Trigger a custom event to notify components about the image updates
+    const updateEvent = new CustomEvent("imageSystemUpdated", {
+      detail: {
+        totalImages: images.length,
+        categories: Array.from(new Set(images.map((img) => img.category))),
+        avgScore:
+          images.reduce((sum, img) => sum + (img.relevanceScore || 0), 0) /
+          images.length,
+        timestamp: new Date().toISOString(),
+      },
+    });
+
+    window.dispatchEvent(updateEvent);
+
+    console.log("💾 Saved new image configuration and updated images:", {
       totalImages: images.length,
       categories: Array.from(new Set(images.map((img) => img.category))),
       avgScore:
