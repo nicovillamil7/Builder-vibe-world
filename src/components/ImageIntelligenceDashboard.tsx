@@ -600,13 +600,20 @@ export const ImageIntelligenceDashboard: React.FC = () => {
                 <div className="text-center">
                   <p className="text-sm text-gray-600">Estimated Improvement</p>
                   <p className="text-2xl font-bold text-green-600">
-                    +{bulkReplacementPlan.estimatedImprovementScore.toFixed(1)}%
+                    +
+                    {(
+                      bulkReplacementPlan.estimatedImprovementScore || 0
+                    ).toFixed(1)}
+                    %
                   </p>
                 </div>
                 <div className="text-center">
                   <p className="text-sm text-gray-600">New Average Score</p>
                   <p className="text-2xl font-bold text-green-600">
-                    {bulkReplacementPlan.projectedAverageScore.toFixed(1)}/10
+                    {(bulkReplacementPlan.projectedAverageScore || 7.5).toFixed(
+                      1,
+                    )}
+                    /10
                   </p>
                 </div>
               </div>
