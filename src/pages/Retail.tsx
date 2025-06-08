@@ -219,17 +219,17 @@ const Retail = () => {
         </div>
       </div>
 
-      {/* Home Upgrade Features - Brand-consistent showcase */}
+      {/* Complete Home Flooring Service - Everything for Your Dream Home */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold text-gray-900 mb-8">
-              Everything for Your Dream Home
+              Complete Home Flooring Service - Everything for Your Dream Home
             </h2>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
               From initial design concepts to final installation, we provide
-              complete flooring solutions that transform your house into the
-              home you've always envisioned.
+              everything you need for a successful flooring project that
+              transforms your house into the home you've always envisioned.
             </p>
           </div>
 
