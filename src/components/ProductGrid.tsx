@@ -147,7 +147,13 @@ const ProductGrid = () => {
                 alt="Modern white porcelain living space"
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f?format=webp)",
+                }}
+              ></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h4 className="font-semibold">Contemporary Elegance</h4>
                 <p className="text-sm">Polished Porcelain Tiles</p>
@@ -160,7 +166,13 @@ const ProductGrid = () => {
                 alt="Professional installation process"
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F96a2d77e785b401a8036ad7ad95e724e?format=webp)",
+                }}
+              ></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h4 className="font-semibold">Professional Installation</h4>
                 <p className="text-sm">Expert Craftsmanship</p>
