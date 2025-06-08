@@ -1420,9 +1420,13 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
                   <Card className="border-green-200 bg-green-50">
                     <CardHeader>
                       <h3 className="text-lg font-bold text-green-800 flex items-center">
-                        <Wand2 className="h-5 w-5 mr-2" />
-                        Replacement Plan Ready
+                        <Wand2 className="h-5 w-5 mr-2" />✅ Quality-Validated
+                        Replacement Plan
                       </h3>
+                      <p className="text-green-700 text-sm">
+                        All replacements validated for quality (7+ score) and
+                        proper context
+                      </p>
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
