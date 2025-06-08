@@ -128,7 +128,9 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   onError,
   ...props
 }) => {
-  const config = RELIABLE_IMAGES[imageId];
+  // Check for updated image from AI system first
+  const aiImage = ImageSystemState.getImage(imageId);
+  const config = aiImage || RELIABLE_IMAGES[imageId];
 
   if (!config) {
     console.warn(`Image ID "${imageId}" not found, using default`);
