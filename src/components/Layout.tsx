@@ -35,9 +35,22 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Top Information Bar - Genesis Maroon */}
-      <div className="bg-[rgb(138,0,0)] text-white py-2.5 px-4">
+      <div className="bg-[rgb(138,0,0)] text-white py-1.5 md:py-2.5 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-3">
+          {/* Mobile Version - Just Phone & Location */}
+          <div className="flex justify-center items-center gap-6 text-xs md:hidden">
+            <div className="flex items-center space-x-1.5">
+              <Phone className="h-3 w-3 flex-shrink-0" />
+              <span className="font-medium">(305) 477-4402</span>
+            </div>
+            <div className="flex items-center space-x-1.5">
+              <MapPin className="h-3 w-3 flex-shrink-0" />
+              <span>Miami, FL</span>
+            </div>
+          </div>
+
+          {/* Desktop Version - Full Info */}
+          <div className="hidden md:flex flex-col lg:flex-row justify-between items-center gap-3">
             {/* Left side - Contact & Location */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
               <div className="flex items-baseline space-x-2">
