@@ -997,6 +997,11 @@ export const EnhancedImageIntelligenceDashboard: React.FC = () => {
             )}
           </TabsContent>
 
+          {/* System Reset Tab */}
+          <TabsContent value="system-reset" className="space-y-6">
+            <ImageSystemResetPanel />
+          </TabsContent>
+
           {/* Website Scan Tab */}
           <TabsContent value="website-scan" className="space-y-6">
             {websiteScan && (
