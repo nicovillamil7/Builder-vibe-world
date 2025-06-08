@@ -393,11 +393,11 @@ const Retail = () => {
                 className="relative p-8 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-gray-50 to-white"
               >
                 <div className="absolute top-6 right-6">
-                  <div className="flex">
+                  <div className="flex space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-5 w-5 text-[rgb(251,189,35)] fill-current"
+                        className="h-4 w-4 text-[rgb(251,189,35)] fill-current"
                       />
                     ))}
                   </div>
