@@ -102,10 +102,10 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   blueMosaicSpa: {
     id: "blueMosaicSpa",
     primary:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F62a47965cba54dd7b57094f1e799ab8c",
     fallback:
       "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Custom spa with blue mosaic tile design",
+    alt: "Mosaics",
     category: "mosaics",
   },
 
