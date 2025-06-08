@@ -21,6 +21,10 @@ import {
   type ImageScanResult,
 } from "@/utils/websiteImageScanner";
 import {
+  SmartImageReplacementValidator,
+  type ValidatedReplacement,
+} from "@/utils/smartImageReplacement";
+import {
   AlertTriangle,
   CheckCircle,
   XCircle,
