@@ -24,7 +24,7 @@ const Hero = () => {
         </h1>
         <h2 className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
           Volume discounts for contractors • Beautiful home transformations •
-          Professional installation & expert guidance
+          Premium materials & expert guidance
         </h2>
 
         {/* CTA Buttons */}

@@ -61,7 +61,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex items-baseline space-x-2">
                 <Truck className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
                 <span className="text-center sm:text-left">
-                  Professional Installation
+                  Quality Materials
                 </span>
               </div>
             </div>

@@ -186,9 +186,9 @@ const Index = () => {
         "Yes! Our Miami showroom is open Mon-Fri 7AM-4PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs.",
     },
     {
-      question: "Do you offer professional installation services?",
+      question: "Do you provide contractor referrals?",
       answer:
-        "Yes, we have a network of certified installers throughout South Florida. All our installers are licensed, insured, and experienced with the specific materials we carry. Installation warranties included.",
+        "Yes, we work with a network of trusted contractors throughout South Florida. All our referred contractors are licensed, insured, and experienced with the specific materials we carry. We can connect you with qualified professionals.",
     },
   ];
 
