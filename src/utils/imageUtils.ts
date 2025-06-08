@@ -233,7 +233,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   porcelainMarbleLook: {
     id: "porcelainMarbleLook",
     primary:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80", // Reusing but in different category
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F82084b8d71414a99aeb5979316a13668?format=webp", // Reusing but in different category
     fallback:
       "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Porcelain tiles with realistic marble veining pattern covering floor",
