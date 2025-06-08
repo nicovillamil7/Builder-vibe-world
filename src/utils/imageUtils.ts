@@ -33,11 +33,11 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   contemporaryWhite: {
     id: "contemporaryWhite",
     primary:
-      "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F5ca1a82e481b45e8b81cba03d3e6ad83",
     fallback:
-      "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Contemporary white polished porcelain interior space",
-    category: "porcelain",
+      "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Contemporary White - Porcelain Tiles flooring showcasing floor prominence",
+    category: "contemporary",
   },
   modernDining: {
     id: "modernDining",
