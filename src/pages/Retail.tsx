@@ -47,10 +47,10 @@ const Retail = () => {
     },
     {
       icon: Sparkles,
-      title: "Expert Installation Service",
+      title: "Expert Project Coordination",
       description:
-        "Certified craftsmen ensure perfect installation with comprehensive warranties and ongoing support",
-      highlight: "Lifetime installation warranty",
+        "Professional guidance and contractor connections ensure perfect project execution with comprehensive support",
+      highlight: "Trusted contractor network",
       bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
     {
@@ -169,7 +169,7 @@ const Retail = () => {
 
             <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
               Upgrade your home with premium flooring solutions. From design
-              consultation to professional installation, we help you create the
+              consultation to contractor connections, we help you create the
               home of your dreams.
             </p>
 
@@ -227,7 +227,7 @@ const Retail = () => {
               Complete Home Flooring Service - Everything for Your Dream Home
             </h2>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-              From initial design concepts to final installation, we provide
+              From initial design concepts to project completion, we provide
               everything you need for a successful flooring project that
               transforms your house into the home you've always envisioned.
             </p>
