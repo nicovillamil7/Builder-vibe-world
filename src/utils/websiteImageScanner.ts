@@ -79,7 +79,7 @@ export class WebsiteImageScanner {
       },
       {
         id: "porcelainMarbleLook",
-        url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        url: "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F82084b8d71414a99aeb5979316a13668?format=webp",
         location: "/products",
         component: "Products.tsx",
         purpose: "Product showcase - Marble Look Porcelain",
