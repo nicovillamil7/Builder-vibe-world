@@ -36,30 +36,34 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Top Information Bar - Genesis Maroon */}
-      <div className="bg-[rgb(138,0,0)] text-white py-3 px-4">
+      <div className="bg-[rgb(138,0,0)] text-white py-2.5 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-3">
             {/* Left side - Contact & Location */}
-            <div className="flex flex-wrap items-center gap-6 text-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>(305) 477-4402</span>
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <span className="font-medium">(305) 477-4402</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4" />
-                <span>3399 NW 72nd Ave #109, Miami, FL 33122</span>
+                <MapPin className="h-4 w-4 flex-shrink-0" />
+                <span className="text-center sm:text-left">
+                  Miami, FL 33122
+                </span>
               </div>
             </div>
 
             {/* Right side - Service Info */}
-            <div className="flex flex-wrap items-center gap-6 text-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
               <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4" />
+                <Clock className="h-4 w-4 flex-shrink-0" />
                 <span>Mon-Fri 7AM-6PM</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Truck className="h-4 w-4" />
-                <span>Professional Installation • Same-Day Pickup</span>
+                <Truck className="h-4 w-4 flex-shrink-0" />
+                <span className="text-center sm:text-left">
+                  Professional Installation
+                </span>
               </div>
             </div>
           </div>
