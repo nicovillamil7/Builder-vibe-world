@@ -41,12 +41,12 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-3">
             {/* Left side - Contact & Location */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 flex-shrink-0" />
+              <div className="flex items-baseline space-x-2">
+                <Phone className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
                 <span className="font-medium">(305) 477-4402</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 flex-shrink-0" />
+              <div className="flex items-baseline space-x-2">
+                <MapPin className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
                 <span className="text-center sm:text-left">
                   Miami, FL 33122
                 </span>
@@ -55,12 +55,12 @@ const Layout = ({ children }: LayoutProps) => {
 
             {/* Right side - Service Info */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 flex-shrink-0" />
+              <div className="flex items-baseline space-x-2">
+                <Clock className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
                 <span>Mon-Fri 7AM-6PM</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Truck className="h-4 w-4 flex-shrink-0" />
+              <div className="flex items-baseline space-x-2">
+                <Truck className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
                 <span className="text-center sm:text-left">
                   Professional Installation
                 </span>
@@ -77,9 +77,8 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <div>
-                <div className="text-2xl font-serif font-bold tracking-tight leading-tight">
-                  <span className="text-[rgb(138,0,0)]">G</span>
-                  <span className="text-gray-900">enesis Stone</span>
+                <div className="text-2xl font-serif font-bold tracking-tight leading-tight text-gray-900">
+                  Genesis Stone
                 </div>
                 <div className="text-sm text-gray-600 font-medium leading-tight">
                   Premium Stone &
@@ -89,7 +88,6 @@ const Layout = ({ children }: LayoutProps) => {
                 </div>
               </div>
             </Link>
-
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
