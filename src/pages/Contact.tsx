@@ -16,6 +16,7 @@ import {
   Car,
   Building,
   MessageSquare,
+  CheckCircle,
 } from "lucide-react";
 
 const Contact = () => {
