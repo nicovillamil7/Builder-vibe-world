@@ -39,6 +39,10 @@ const App = () => (
             path="/enhanced-image-intelligence"
             element={<EnhancedImageIntelligenceDashboard />}
           />
+          <Route
+            path="/image-system-tests"
+            element={<ImageSystemTestRunner />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
