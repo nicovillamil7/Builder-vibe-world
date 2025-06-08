@@ -358,7 +358,13 @@ const Index = () => {
                 alt="Modern pool deck with large format porcelain tiles"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F37ad3adaf8fd4909968a7295164d4eb7)",
+                }}
+              ></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h4 className="font-bold text-lg">Pool Deck Paradise</h4>
                 <p className="text-sm">Large Format Porcelain</p>
@@ -371,7 +377,13 @@ const Index = () => {
                 alt="Luxury living room with marble accent wall"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f)",
+                }}
+              ></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h4 className="font-bold text-lg">Luxury Interior</h4>
                 <p className="text-sm">Marble & Premium Tiles</p>
