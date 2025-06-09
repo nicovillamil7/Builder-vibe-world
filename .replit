@@ -1,11 +1,11 @@
-entrypoint = "index.html"
-modules = ["nodejs-20"]
+modules = ["nodejs-20", "web", "bash", "nix"]
+run = "npm run dev"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "npm run build && npx serve dist"]
+run = ["sh", "-c", "npm run dev"]
 deploymentTarget = "cloudrun"
 
 [languages.javascript]
@@ -19,3 +19,7 @@ start = "typescript-language-server --stdio"
 XDG_CONFIG_HOME = "/home/runner/.config"
 PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
 npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
