@@ -7,6 +7,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: [
+      ".replit.dev",
+      ".repl.co", 
+      "localhost",
+      "127.0.0.1"
+    ],
   },
   plugins: [react()],
   resolve: {
