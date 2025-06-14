@@ -145,7 +145,7 @@ const ProductGrid = () => {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div
-              className="flex gap-6 transition-transform duration-500 ease-out"
+              className="flex gap-6 transition-transform duration-500 ease-out pb-6"
               style={{
                 transform: `translateX(-${currentIndex * itemWidth}px)`,
                 width: `${products.length * itemWidth}px`,
@@ -186,7 +186,7 @@ const ProductGrid = () => {
                     </p>
                   </CardContent>
 
-                  <CardFooter className="p-6 pt-0 flex-shrink-0">
+                  <CardFooter className="px-6 pb-6 pt-0 flex-shrink-0">
                     <OutlineButton
                       className="w-full hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200"
                       style={{ borderRadius: "12px" }}
@@ -213,17 +213,6 @@ const ProductGrid = () => {
               />
             ))}
           </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <PrimaryButton
-            size="lg"
-            className="px-10 py-4 text-lg font-semibold bg-[rgb(138,0,0)] hover:bg-[rgb(120,0,0)] transition-all duration-200"
-            style={{ borderRadius: "16px" }}
-          >
-            View Complete Catalog
-          </PrimaryButton>
         </div>
       </div>
     </section>
