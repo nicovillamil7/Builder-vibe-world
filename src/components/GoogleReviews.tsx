@@ -27,13 +27,11 @@ const fallbackReviews: GoogleReview[] = [
   {
     reviewId: "fallback_1",
     reviewer: {
-      displayName: "Carlos Rodriguez",
-      profilePhotoUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      displayName: "Adina Caicedo",
     },
     starRating: 5,
     comment:
-      "Genesis Stone has been our go-to supplier for over 5 years. Their bulk pricing and fast delivery keep our construction projects on schedule and within budget. The quality of their materials is consistently excellent.",
+      "From start to finish the experience with genesis stone and more was seamless. They helped me choose the perfect tile for my home. Awesome customer service, very attentive.",
     createTime: "2024-01-15T10:30:00Z",
     updateTime: "2024-01-15T10:30:00Z",
     source: "fallback",
@@ -41,13 +39,11 @@ const fallbackReviews: GoogleReview[] = [
   {
     reviewId: "fallback_2",
     reviewer: {
-      displayName: "Maria Santos",
-      profilePhotoUrl:
-        "https://images.unsplash.com/photo-1494790108755-2616b332c367?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      displayName: "Shirley Martinez",
     },
     starRating: 5,
     comment:
-      "Amazing selection of premium flooring materials! The team helped us find the perfect porcelain tiles for our home renovation. Their expertise and customer service are unmatched in Miami.",
+      "Have a good variety, small but Luis and Maribel will find you anything you want. Very personalized service and fair prices",
     createTime: "2024-01-10T14:20:00Z",
     updateTime: "2024-01-10T14:20:00Z",
     source: "fallback",
@@ -56,12 +52,10 @@ const fallbackReviews: GoogleReview[] = [
     reviewId: "fallback_3",
     reviewer: {
       displayName: "David Wilson",
-      profilePhotoUrl:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     },
     starRating: 5,
     comment:
-      "Professional service and competitive pricing every time. Genesis Stone handles all our commercial flooring needs across multiple properties. Fast delivery and excellent quality materials.",
+      "Great quality materials and great customer service! The team at Genesis was so kind and helpful through every step of my experience and offered a product selection I couldn't find anywhere else. Would definitely recommend them to anyone!",
     createTime: "2024-01-05T09:15:00Z",
     updateTime: "2024-01-05T09:15:00Z",
     source: "fallback",
@@ -76,11 +70,23 @@ const GoogleReviews = () => {
     totalReviews: number;
     name: string;
   }>({
-    rating: 4.9,
+    rating: 4.8,
     totalReviews: 150,
     name: "Genesis Stone",
   });
   const [isUsingFallback, setIsUsingFallback] = useState(true);
+
+  // Helper function to get avatar background color
+  const getAvatarColor = (index: number) => {
+    const colors = [
+      "from-blue-500 to-blue-600",
+      "from-green-500 to-green-600",
+      "from-purple-500 to-purple-600",
+      "from-orange-500 to-orange-600",
+      "from-pink-500 to-pink-600",
+    ];
+    return colors[index % colors.length];
+  };
 
   // Function to fetch reviews through backend API
   const fetchGoogleReviewsViaBackend = async () => {
@@ -242,7 +248,7 @@ const GoogleReviews = () => {
           {reviews.map((review) => (
             <Card
               key={review.reviewId}
-              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden hover:border-[rgb(138,0,0)] hover:border-2"
+              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden hover:border-[rgb(138,0,0)] hover:border-2 h-80 flex flex-col"
               style={{ borderRadius: "20px" }}
             >
               {/* Quote decoration */}
@@ -257,43 +263,25 @@ const GoogleReviews = () => {
                 </div>
               )}
 
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 relative z-10 flex-1 flex flex-col">
                 {/* Stars */}
                 <div className="flex items-center mb-6">
                   {renderStars(review.starRating)}
                 </div>
 
                 {/* Review text */}
-                <p className="text-gray-700 group-hover:text-gray-800 mb-8 leading-relaxed text-lg italic transition-colors duration-300">
+                <p className="text-gray-700 group-hover:text-gray-800 mb-8 leading-relaxed text-lg italic transition-colors duration-300 flex-1">
                   "{review.comment}"
                 </p>
 
                 {/* Reviewer info */}
                 <div className="flex items-center space-x-4">
                   <div className="relative">
-                    {review.reviewer.profilePhotoUrl ? (
-                      <img
-                        src={review.reviewer.profilePhotoUrl}
-                        alt={review.reviewer.displayName}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-gray-200 group-hover:ring-[rgb(138,0,0)] transition-all duration-300"
-                        onError={(e) => {
-                          // Fallback if image fails to load
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = "none";
-                          target.nextElementSibling!.style.display = "flex";
-                        }}
-                      />
-                    ) : null}
                     <div
-                      className="w-12 h-12 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                      style={{
-                        display: review.reviewer.profilePhotoUrl
-                          ? "none"
-                          : "flex",
-                      }}
+                      className={`w-14 h-14 bg-gradient-to-r ${getAvatarColor(index)} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                     >
-                      <span className="text-white font-semibold text-sm">
-                        {review.reviewer.displayName.charAt(0)}
+                      <span className="text-white font-bold text-lg">
+                        {review.reviewer.displayName.charAt(0).toUpperCase()}
                       </span>
                     </div>
 
@@ -313,12 +301,9 @@ const GoogleReviews = () => {
                       </div>
                     )}
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="font-semibold text-gray-900 group-hover:text-[rgb(138,0,0)] text-lg transition-colors duration-300">
                       {review.reviewer.displayName}
-                    </p>
-                    <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
-                      {formatDate(review.createTime)}
                     </p>
                   </div>
                 </div>
@@ -352,23 +337,6 @@ const GoogleReviews = () => {
             <ExternalLink className="w-5 h-5 ml-2" />
           </a>
         </div>
-
-        {/* Debug info in development */}
-        {process.env.NODE_ENV === "development" && (
-          <div className="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-600">
-            <p>
-              <strong>Debug Info:</strong>
-            </p>
-            <p>
-              • Reviews source: {isUsingFallback ? "Fallback" : "Google API"}
-            </p>
-            <p>• Loading: {loading.toString()}</p>
-            <p>• API Key: {GOOGLE_API_KEY.substring(0, 10)}...</p>
-            <p>
-              • Backend API: {isUsingFallback ? "Not available" : "Connected"}
-            </p>
-          </div>
-        )}
       </div>
     </section>
   );
