@@ -41,13 +41,13 @@ const fallbackReviews: GoogleReview[] = [
   {
     reviewId: "fallback_2",
     reviewer: {
-      displayName: "Sarah Chen",
+      displayName: "Maria Santos",
       profilePhotoUrl:
         "https://images.unsplash.com/photo-1494790108755-2616b332c367?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     },
     starRating: 5,
     comment:
-      "Outstanding selection of premium materials! The team at Genesis Stone helped me find the perfect porcelain tiles for my client's luxury waterfront home. Their expertise in material selection and customer service are unmatched in South Florida.",
+      "Amazing selection of premium flooring materials! The team helped us find the perfect porcelain tiles for our home renovation. Their expertise and customer service are unmatched in Miami.",
     createTime: "2024-01-10T14:20:00Z",
     updateTime: "2024-01-10T14:20:00Z",
     source: "fallback",
@@ -55,13 +55,13 @@ const fallbackReviews: GoogleReview[] = [
   {
     reviewId: "fallback_3",
     reviewer: {
-      displayName: "Mike Thompson",
+      displayName: "David Wilson",
       profilePhotoUrl:
         "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     },
     starRating: 5,
     comment:
-      "Professional service and competitive pricing every time. Genesis Stone handles all our commercial flooring needs across multiple properties in Miami. Fast delivery, great inventory, and they always have what we need in stock.",
+      "Professional service and competitive pricing every time. Genesis Stone handles all our commercial flooring needs across multiple properties. Fast delivery and excellent quality materials.",
     createTime: "2024-01-05T09:15:00Z",
     updateTime: "2024-01-05T09:15:00Z",
     source: "fallback",
@@ -238,11 +238,11 @@ const GoogleReviews = () => {
           {reviews.map((review) => (
             <Card
               key={review.reviewId}
-              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden"
+              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden hover:border-[rgb(138,0,0)] hover:border-2"
               style={{ borderRadius: "20px" }}
             >
               {/* Quote decoration */}
-              <div className="absolute top-4 right-4 text-gray-200">
+              <div className="absolute top-4 right-4 text-gray-200 group-hover:text-gray-300 transition-colors duration-300">
                 <Quote className="h-8 w-8" />
               </div>
 
@@ -253,14 +253,14 @@ const GoogleReviews = () => {
                 </div>
               )}
 
-              <CardContent className="p-8">
+              <CardContent className="p-8 relative z-10">
                 {/* Stars */}
                 <div className="flex items-center mb-6">
                   {renderStars(review.starRating)}
                 </div>
 
                 {/* Review text */}
-                <p className="text-gray-700 mb-8 leading-relaxed text-lg italic">
+                <p className="text-gray-700 group-hover:text-gray-800 mb-8 leading-relaxed text-lg italic transition-colors duration-300">
                   "{review.comment}"
                 </p>
 
@@ -271,7 +271,7 @@ const GoogleReviews = () => {
                       <img
                         src={review.reviewer.profilePhotoUrl}
                         alt={review.reviewer.displayName}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-gray-200"
+                        className="w-12 h-12 rounded-full object-cover ring-2 ring-gray-200 group-hover:ring-[rgb(138,0,0)] transition-all duration-300"
                         onError={(e) => {
                           // Fallback if image fails to load
                           const target = e.target as HTMLImageElement;
@@ -281,7 +281,7 @@ const GoogleReviews = () => {
                       />
                     ) : null}
                     <div
-                      className="w-12 h-12 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] rounded-full flex items-center justify-center"
+                      className="w-12 h-12 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                       style={{
                         display: review.reviewer.profilePhotoUrl
                           ? "none"
@@ -310,18 +310,18 @@ const GoogleReviews = () => {
                     )}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-lg">
+                    <p className="font-semibold text-gray-900 group-hover:text-[rgb(138,0,0)] text-lg transition-colors duration-300">
                       {review.reviewer.displayName}
                     </p>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
                       {formatDate(review.createTime)}
                     </p>
                   </div>
                 </div>
               </CardContent>
 
-              {/* Gradient border effect */}
-              <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"></div>
+              {/* Subtle glow effect instead of background overlay */}
+              <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
             </Card>
           ))}
         </div>
