@@ -7,7 +7,7 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    // Option 1: Google Places API (Easier to implement)
+    // Google Places API implementation
     const placeId = process.env.GOOGLE_PLACE_ID; // Your Google Business Place ID
     const apiKey = process.env.GOOGLE_PLACES_API_KEY; // Your Google Places API key
 
@@ -69,36 +69,3 @@ export default async function handler(req: any, res: any) {
     });
   }
 }
-
-/* 
-COMPLETE SETUP GUIDE:
-
-1. **Get Google Places API Key:**
-   - Go to Google Cloud Console (console.cloud.google.com)
-   - Create/select a project
-   - Enable "Places API"
-   - Go to "Credentials" → "Create Credentials" → "API Key"
-   - Restrict the key to "Places API" for security
-
-2. **Find Your Place ID:**
-   - Go to: https://developers.google.com/maps/documentation/places/web-service/place-id
-   - Search for "Genesis Stone" in Miami
-   - Copy the Place ID (starts with "ChIJ...")
-
-3. **Environment Variables:**
-   Add to your .env file:
-   ```
-   GOOGLE_PLACES_API_KEY=your_api_key_here
-   GOOGLE_PLACE_ID=your_place_id_here
-   ```
-
-4. **Deploy this API endpoint to your backend**
-
-5. **Update the component to use real API:**
-   Uncomment the fetchGoogleReviews() call in useEffect
-
-ALTERNATIVE SIMPLER APPROACH:
-If you don't want to set up the API, you can manually update the fallback reviews
-in GoogleReviews.tsx with your actual Google reviews by copying them from your
-Google Business Profile.
-*/
