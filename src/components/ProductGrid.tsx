@@ -31,7 +31,7 @@ const products = [
     id: 3,
     name: "Laminates",
     description:
-      "A cost-effective and stylish flooring solution that replicates the look of hardwood and stone while providing excellent resistance to scratches and moisture.",
+      "A cost-effective and stylish flooring solution that replicates the look of hardwood and stone while providing excellent resistance to scratches.",
     imageId: "vinylInstallation",
     category: "Luxury",
   },
