@@ -34,16 +34,16 @@ const Index = () => {
       icon: Calculator,
       title: "Volume & Trade Pricing",
       description:
-        "Save up to 25% on orders 10,000+ sq ft, Net-30 terms, same-day pickup in Miami.",
+        "Volume discounts starting at 2,000 sq ft, extra discounts at 5,000 sq ft. Flexible Payment Plan. Same Day Pickup",
       action: "Get Trade Pricing",
       category: "contractors",
     },
     {
       icon: Palette,
-      title: "Premium Material Showroom",
+      title: "Endless Styles. One Showroom",
       description:
-        "Explore marble, mosaic & custom patterns. Professional design consultation available.",
-      action: "Request Homeowner Samples",
+        "Explore a wide range of materials and selections that vary in size, design, quality, real world application etc.",
+      action: "Request an Appointment",
       category: "homeowners",
     },
   ];
@@ -51,18 +51,19 @@ const Index = () => {
   const contractorBenefits = [
     {
       icon: Calculator,
-      title: "Bulk Discounts & Net-30 Terms",
+      title: "Bulk Discounts and Flexible Payments",
       description: "Save up to 25% on large orders with flexible payment terms",
     },
     {
       icon: Truck,
-      title: "Fast Local Delivery & Pallet Shipping",
-      description: "Same-day pickup in Miami, next-day delivery statewide",
+      title: "Delivery in South Florida",
+      description: "Same-day Delivery, Same-day pick up*",
     },
     {
       icon: Users,
-      title: "Dedicated Account Manager",
-      description: "Direct line to your personal flooring expert",
+      title: "Dedicated & Experienced Team",
+      description:
+        "Qualified & Experienced Personnel, Excellent customer service and Transportation Network.",
     },
   ];
 
@@ -71,11 +72,11 @@ const Index = () => {
       icon: Palette,
       title: "Premium Material Selection",
       description:
-        "Curated collection of luxury porcelain, natural stone, and custom mosaics for your dream home",
+        "Curated and up-to-date collection of the latest floors, design trends & styles",
     },
     {
       icon: Award,
-      title: "Take-Home Samples",
+      title: "Tailored Options & Design",
       description:
         "See how materials look in your actual lighting before making decisions",
     },
@@ -83,7 +84,7 @@ const Index = () => {
       icon: Shield,
       title: "Expert Design Consultation",
       description:
-        "Professional guidance to select materials that complement your home's style",
+        "We´ve designed a carefully curated collection that offers various options for every style and budget",
     },
   ];
   const processSteps = [
@@ -308,7 +309,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Customers Say
+              Our Customers Experience
             </h2>
           </div>
 
@@ -576,7 +577,7 @@ const Index = () => {
               1,000+ Florida Projects
             </Badge>
             <Badge variant="secondary" className="bg-white/20 text-white">
-              5-Year Warranty
+              ManufacturerWarranty
             </Badge>
           </div>
         </div>

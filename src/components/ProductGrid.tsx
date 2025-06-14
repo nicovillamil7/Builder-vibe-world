@@ -12,39 +12,66 @@ import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 const products = [
   {
     id: 1,
-    name: "Porcelain Tiles",
-    description: "Durable, water-resistant, and available in countless designs",
+    name: "Porcelain",
+    description:
+      "High-performance and versatile, porcelain tiles offer exceptional durability, water resistance, and timeless design. Perfect for both indoor and outdoor spaces, they deliver a sophisticated look while standing up to heavy traffic and wear.",
     imageId: "modernPoolDeck",
-    features: [
-      "Water Resistant",
-      "Durable",
-      "Easy Maintenance",
-      "Endless Designs",
-    ],
     category: "Premium",
   },
   {
     id: 2,
-    name: "Laminate & Vinyl SPC",
-    description: "Perfect blend of style, comfort, and affordability",
-    imageId: "vinylInstallation",
-    features: ["Waterproof", "Comfortable", "Affordable", "Easy Install"],
+    name: "Natural Stone",
+    description:
+      "Bring the beauty of nature into your space with our premium selection of natural stone. Each piece is unique in texture and pattern, offering unmatched elegance and durability for floors, walls, and architectural features.",
+    imageId: "travertinePool",
     category: "Popular",
   },
   {
     id: 3,
-    name: "Natural Stone",
-    description: "Timeless elegance with unique patterns and textures",
-    imageId: "travertinePool",
-    features: ["Unique Patterns", "Timeless", "Natural Beauty", "High Value"],
+    name: "Laminates",
+    description:
+      "A cost-effective and stylish flooring solution, our laminate options replicate the look of hardwood and stone while providing excellent resistance to scratches, stains, and moisture—ideal for both residential and commercial projects.",
+    imageId: "vinylInstallation",
     category: "Luxury",
   },
   {
     id: 4,
     name: "Mosaics",
-    description: "Intricate designs for accent walls and decorative features",
+    description:
+      "Add a touch of creativity and detail with our mosaic collections. Available in various materials, colors, and patterns, mosaics are perfect for backsplashes, feature walls, and decorative accents that elevate any design.",
     imageId: "blueMosaicSpa",
-    features: ["Custom Designs", "Artistic", "Accent Features", "Handcrafted"],
+    category: "Specialty",
+  },
+  {
+    id: 5,
+    name: "Wall Panels",
+    description:
+      "Transform any room with our modern wall panels. Easy to install and maintain, they provide texture, depth, and character to both residential and commercial interiors, creating impactful and stylish vertical surfaces.",
+    imageId: "modernPoolDeck",
+    category: "Premium",
+  },
+  {
+    id: 6,
+    name: "Metal Trims",
+    description:
+      "Ensure a flawless finish with our durable metal trims. Designed to protect edges and transitions, they enhance both the appearance and longevity of tile and flooring installations.",
+    imageId: "vinylInstallation",
+    category: "Popular",
+  },
+  {
+    id: 7,
+    name: "Grout",
+    description:
+      "Essential for a perfect tile installation, our grout solutions offer strong adhesion, color consistency, and resistance to stains and cracking, ensuring long-lasting and beautiful results.",
+    imageId: "travertinePool",
+    category: "Luxury",
+  },
+  {
+    id: 8,
+    name: "Mortar Mix",
+    description:
+      "Our high-performance mortar mixes deliver excellent bonding strength for various tile and stone applications. Easy to work with, they provide the reliability and durability needed for professional-grade installations.",
+    imageId: "blueMosaicSpa",
     category: "Specialty",
   },
 ];
@@ -56,7 +83,7 @@ const ProductGrid = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Genesis Stone has these amazing products for you
+            Our Selection
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Explore our comprehensive collection of premium flooring materials,
@@ -93,19 +120,6 @@ const ProductGrid = () => {
                   {product.name}
                 </h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
-
-                {/* Features List */}
-                <ul className="space-y-2">
-                  {product.features.map((feature, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-sm text-gray-600"
-                    >
-                      <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </CardContent>
 
               <CardFooter className="p-6 pt-0">
@@ -113,72 +127,6 @@ const ProductGrid = () => {
               </CardFooter>
             </Card>
           ))}
-        </div>
-
-        {/* Application Showcase */}
-        <div className="mt-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              See Our Products in Action
-            </h3>
-            <p className="text-gray-600">
-              Real installations from our satisfied customers across South
-              Florida
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <SimpleReliableImage
-                imageId="luxuryInterior"
-                alt="Luxury interior with marble accent wall"
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold">Luxury Interior Design</h4>
-                <p className="text-sm">Marble & Porcelain Combination</p>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <SimpleReliableImage
-                imageId="contemporaryWhite"
-                alt="Modern white porcelain living space"
-                className="w-full h-64 object-cover"
-              />
-              <div
-                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f?format=webp)",
-                }}
-              ></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold">Contemporary Elegance</h4>
-                <p className="text-sm">Polished Porcelain Tiles</p>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <SimpleReliableImage
-                imageId="professionalInstallation"
-                alt="Professional installation process"
-                className="w-full h-64 object-cover"
-              />
-              <div
-                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fa987d6e0b13c4260b3a6463ae04d4b4f?format=webp)",
-                }}
-              ></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold">Contractor Network</h4>
-                <p className="text-sm">Trusted Professionals</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

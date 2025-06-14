@@ -20,11 +20,11 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Genesis Stone Premium Flooring
+          Genesis Stone Premium Flooring and Setting materials
         </h1>
         <h2 className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
-          Volume discounts for contractors • Beautiful home transformations •
-          Premium materials & expert guidance
+          Over 17 Years of Service. We offer a wide range of indoor, outdoor,
+          wall & kitchen/bathroom tiles and natural stones
         </h2>
 
         {/* CTA Buttons */}
@@ -33,18 +33,6 @@ const Hero = () => {
             Get Project Estimate
             <ArrowRight className="ml-2 h-5 w-5" />
           </GoldButton>
-          <WhiteOutlineButton
-            size="lg"
-            className="px-8 py-3 text-lg font-semibold"
-          >
-            Schedule Consultation
-          </WhiteOutlineButton>
-        </div>
-
-        {/* Discount Banner */}
-        <div className="inline-flex items-center bg-[rgb(251,189,35)]/20 border border-[rgb(251,189,35)]/30 rounded-full px-6 py-2 text-[rgb(251,189,35)]">
-          <span className="mr-2">🎉</span>
-          <span className="font-medium">Get Your Project Quote Today</span>
         </div>
       </div>
 
