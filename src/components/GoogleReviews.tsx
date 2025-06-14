@@ -248,8 +248,8 @@ const GoogleReviews = () => {
           {reviews.map((review, index) => (
             <Card
               key={review.reviewId}
-              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden hover:border-[rgb(138,0,0)] hover:border-2 h-80 flex flex-col"
-              style={{ borderRadius: "20px" }}
+              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden hover:border-[rgb(138,0,0)] hover:border-2"
+              style={{ borderRadius: "20px", height: "420px" }}
             >
               {/* Quote decoration */}
               <div className="absolute top-4 right-4 text-gray-200 group-hover:text-gray-300 transition-colors duration-300">
@@ -263,20 +263,22 @@ const GoogleReviews = () => {
                 </div>
               )}
 
-              <CardContent className="p-8 relative z-10 flex-1 flex flex-col">
+              <div className="h-full flex flex-col p-8 relative z-10">
                 {/* Stars */}
                 <div className="flex items-center mb-6">
                   {renderStars(review.starRating)}
                 </div>
 
-                {/* Review text */}
-                <p className="text-gray-700 group-hover:text-gray-800 mb-8 leading-relaxed text-lg italic transition-colors duration-300 flex-1">
-                  "{review.comment}"
-                </p>
+                {/* Review text - takes available space */}
+                <div className="flex-1 flex items-start mb-6">
+                  <p className="text-gray-700 group-hover:text-gray-800 leading-relaxed text-lg italic transition-colors duration-300">
+                    "{review.comment}"
+                  </p>
+                </div>
 
-                {/* Reviewer info */}
-                <div className="flex items-center space-x-4">
-                  <div className="relative">
+                {/* Reviewer info - fixed at bottom */}
+                <div className="flex items-center space-x-4 mt-auto">
+                  <div className="relative flex-shrink-0">
                     <div
                       className={`w-14 h-14 bg-gradient-to-r ${getAvatarColor(index)} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                     >
@@ -301,13 +303,13 @@ const GoogleReviews = () => {
                       </div>
                     )}
                   </div>
-                  <div className="flex-1">
-                    <p className="font-semibold text-gray-900 group-hover:text-[rgb(138,0,0)] text-lg transition-colors duration-300">
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-gray-900 group-hover:text-[rgb(138,0,0)] text-lg transition-colors duration-300 truncate">
                       {review.reviewer.displayName}
                     </p>
                   </div>
                 </div>
-              </CardContent>
+              </div>
 
               {/* Subtle glow effect instead of background overlay */}
               <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
