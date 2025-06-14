@@ -86,9 +86,8 @@ const ProductGrid = () => {
             Our Selection
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive collection of premium flooring materials,
-            carefully curated for contractors, designers, and discerning
-            homeowners across South Florida.
+            Explore our collection of flooring materials, carefully for
+            contractors, designers, and homeowners across South Florida.
           </p>
         </div>
 

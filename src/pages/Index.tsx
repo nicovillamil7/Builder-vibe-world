@@ -577,7 +577,7 @@ const Index = () => {
               1,000+ Florida Projects
             </Badge>
             <Badge variant="secondary" className="bg-white/20 text-white">
-              ManufacturerWarranty
+              Manufacturer Warranty
             </Badge>
           </div>
         </div>
