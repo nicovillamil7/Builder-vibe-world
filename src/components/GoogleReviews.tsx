@@ -77,7 +77,7 @@ const GoogleReviews = () => {
     name: string;
   }>({
     rating: 4.9,
-    totalReviews: 127,
+    totalReviews: 150,
     name: "Genesis Stone",
   });
   const [isUsingFallback, setIsUsingFallback] = useState(true);
@@ -203,33 +203,37 @@ const GoogleReviews = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Customers Experience
           </h2>
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="flex items-center">
+
+          {/* Rating display */}
+          <div className="flex items-center justify-center gap-6 mb-6">
+            <div className="flex items-center bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] px-6 py-3 rounded-full">
               {renderStars(businessInfo.rating)}
-              <span className="ml-2 text-xl font-semibold text-gray-900">
+              <span className="ml-3 text-2xl font-bold text-white">
                 {businessInfo.rating.toFixed(1)}
               </span>
             </div>
-            <div className="text-gray-600">
-              Based on {businessInfo.totalReviews}+ Google reviews
+            <div className="text-xl text-gray-700 font-semibold">
+              {businessInfo.totalReviews}+ Customer Reviews
             </div>
           </div>
 
+          {/* Status messages */}
           {loading && (
-            <p className="text-sm text-blue-600 animate-pulse">
-              Loading latest reviews...
-            </p>
+            <div className="flex items-center justify-center gap-2 text-blue-600 animate-pulse">
+              <div className="w-4 h-4 bg-blue-600 rounded-full animate-bounce"></div>
+              <p className="text-sm">Loading latest reviews...</p>
+            </div>
           )}
 
           {isUsingFallback && !loading && (
-            <p className="text-sm text-gray-500">
-              Showing curated customer testimonials
+            <p className="text-sm text-gray-600 bg-gray-100 px-4 py-2 rounded-full inline-block">
+              Real Customer Testimonials
             </p>
           )}
 
           {!isUsingFallback && !loading && (
-            <p className="text-sm text-green-600">
-              ✅ Live reviews from Google Business Profile
+            <p className="text-sm text-green-600 bg-green-100 px-4 py-2 rounded-full inline-block">
+              ✅ Live from Google Business Profile
             </p>
           )}
         </div>
