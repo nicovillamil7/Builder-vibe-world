@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import {
   Card,
@@ -6,7 +7,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 
 const products = [
@@ -14,7 +15,7 @@ const products = [
     id: 1,
     name: "Porcelain",
     description:
-      "High-performance and versatile, porcelain tiles offer exceptional durability, water resistance, and timeless design. Perfect for both indoor and outdoor spaces, they deliver a sophisticated look while standing up to heavy traffic and wear.",
+      "High-performance and versatile, porcelain tiles offer exceptional durability, water resistance, and timeless design. Perfect for both indoor and outdoor spaces.",
     imageId: "modernPoolDeck",
     category: "Premium",
   },
@@ -22,7 +23,7 @@ const products = [
     id: 2,
     name: "Natural Stone",
     description:
-      "Bring the beauty of nature into your space with our premium selection of natural stone. Each piece is unique in texture and pattern, offering unmatched elegance and durability for floors, walls, and architectural features.",
+      "Bring the beauty of nature into your space with our premium selection of natural stone. Each piece is unique in texture and pattern.",
     imageId: "travertinePool",
     category: "Popular",
   },
@@ -30,7 +31,7 @@ const products = [
     id: 3,
     name: "Laminates",
     description:
-      "A cost-effective and stylish flooring solution, our laminate options replicate the look of hardwood and stone while providing excellent resistance to scratches, stains, and moisture—ideal for both residential and commercial projects.",
+      "A cost-effective and stylish flooring solution that replicates the look of hardwood and stone while providing excellent resistance to scratches and moisture.",
     imageId: "vinylInstallation",
     category: "Luxury",
   },
@@ -38,7 +39,7 @@ const products = [
     id: 4,
     name: "Mosaics",
     description:
-      "Add a touch of creativity and detail with our mosaic collections. Available in various materials, colors, and patterns, mosaics are perfect for backsplashes, feature walls, and decorative accents that elevate any design.",
+      "Add creativity and detail with our mosaic collections. Available in various materials, colors, and patterns for backsplashes and decorative accents.",
     imageId: "blueMosaicSpa",
     category: "Specialty",
   },
@@ -46,7 +47,7 @@ const products = [
     id: 5,
     name: "Wall Panels",
     description:
-      "Transform any room with our modern wall panels. Easy to install and maintain, they provide texture, depth, and character to both residential and commercial interiors, creating impactful and stylish vertical surfaces.",
+      "Transform any room with our modern wall panels. Easy to install and maintain, they provide texture, depth, and character to interiors.",
     imageId: "modernPoolDeck",
     category: "Premium",
   },
@@ -54,7 +55,7 @@ const products = [
     id: 6,
     name: "Metal Trims",
     description:
-      "Ensure a flawless finish with our durable metal trims. Designed to protect edges and transitions, they enhance both the appearance and longevity of tile and flooring installations.",
+      "Ensure a flawless finish with our durable metal trims. Designed to protect edges and transitions for enhanced appearance and longevity.",
     imageId: "vinylInstallation",
     category: "Popular",
   },
@@ -62,7 +63,7 @@ const products = [
     id: 7,
     name: "Grout",
     description:
-      "Essential for a perfect tile installation, our grout solutions offer strong adhesion, color consistency, and resistance to stains and cracking, ensuring long-lasting and beautiful results.",
+      "Essential for perfect tile installation. Our grout solutions offer strong adhesion, color consistency, and resistance to stains and cracking.",
     imageId: "travertinePool",
     category: "Luxury",
   },
@@ -70,62 +71,159 @@ const products = [
     id: 8,
     name: "Mortar Mix",
     description:
-      "Our high-performance mortar mixes deliver excellent bonding strength for various tile and stone applications. Easy to work with, they provide the reliability and durability needed for professional-grade installations.",
+      "High-performance mortar mixes deliver excellent bonding strength for various tile and stone applications with professional-grade reliability.",
     imageId: "blueMosaicSpa",
     category: "Specialty",
   },
 ];
 
 const ProductGrid = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const itemWidth = 320; // Card width + gap
+  const visibleItems = 4;
+  const maxIndex = Math.max(0, products.length - visibleItems);
+
+  const scrollToIndex = (index: number) => {
+    const clampedIndex = Math.max(0, Math.min(index, maxIndex));
+    setCurrentIndex(clampedIndex);
+
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({
+        left: clampedIndex * itemWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const nextSlide = () => {
+    scrollToIndex(currentIndex + 1);
+  };
+
+  const prevSlide = () => {
+    scrollToIndex(currentIndex - 1);
+  };
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Selection
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore our collection of flooring materials, carefully for
             contractors, designers, and homeowners across South Florida.
           </p>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {products.map((product) => (
-            <Card
-              key={product.id}
-              className="group hover:shadow-lg transition-shadow duration-300"
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            disabled={currentIndex === 0}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            disabled={currentIndex >= maxIndex}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Products Carousel */}
+          <div
+            ref={scrollContainerRef}
+            className="overflow-hidden px-12"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            <div
+              className="flex gap-6 transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${currentIndex * itemWidth}px)`,
+                width: `${products.length * itemWidth}px`,
+              }}
             >
-              <CardHeader className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <SimpleReliableImage
-                    imageId={product.imageId}
-                    alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <Badge
-                    className="absolute top-3 right-3 bg-[rgb(138,0,0)] hover:bg-[rgb(153,27,27)]"
-                    variant="default"
-                  >
-                    {product.category}
-                  </Badge>
-                </div>
-              </CardHeader>
+              {products.map((product) => (
+                <Card
+                  key={product.id}
+                  className="flex-shrink-0 w-72 group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg"
+                  style={{ borderRadius: "20px" }}
+                >
+                  <CardHeader className="p-0">
+                    <div
+                      className="relative overflow-hidden"
+                      style={{ borderRadius: "20px 20px 0 0" }}
+                    >
+                      <SimpleReliableImage
+                        imageId={product.imageId}
+                        alt={product.name}
+                        className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <Badge
+                        className="absolute top-4 right-4 bg-[rgb(138,0,0)]/90 hover:bg-[rgb(138,0,0)] text-white border-0 backdrop-blur-sm px-3 py-1 text-xs font-semibold"
+                        style={{ borderRadius: "12px" }}
+                      >
+                        {product.category}
+                      </Badge>
+                    </div>
+                  </CardHeader>
 
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-              </CardContent>
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[rgb(138,0,0)] transition-colors duration-200">
+                      {product.name}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed flex-1 mb-4">
+                      {product.description}
+                    </p>
+                  </CardContent>
 
-              <CardFooter className="p-6 pt-0">
-                <OutlineButton className="w-full">Get Sample</OutlineButton>
-              </CardFooter>
-            </Card>
-          ))}
+                  <CardFooter className="p-6 pt-0">
+                    <OutlineButton
+                      className="w-full hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200"
+                      style={{ borderRadius: "12px" }}
+                    >
+                      Get Sample
+                    </OutlineButton>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  index === currentIndex
+                    ? "bg-[rgb(138,0,0)] scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <PrimaryButton
+            size="lg"
+            className="px-10 py-4 text-lg font-semibold bg-[rgb(138,0,0)] hover:bg-[rgb(120,0,0)] transition-all duration-200"
+            style={{ borderRadius: "16px" }}
+          >
+            View Complete Catalog
+          </PrimaryButton>
         </div>
       </div>
     </section>
