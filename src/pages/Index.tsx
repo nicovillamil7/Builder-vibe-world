@@ -117,7 +117,7 @@ const Index = () => {
     {
       question: "Do you provide material take-offs and estimates?",
       answer:
-        "Absolutely! Our team can review blueprints and provide detailed material take-offs, pricing, and recommendations. We also offer technical support for installation questions and product specifications.",
+        "Absolutely! Our team can review blueprints and provide detailed material take-offs, pricing, and recommendations. We also offer technical support for product specifications and material selection guidance.",
     },
     {
       question: "What payment terms do you offer contractors?",
@@ -155,7 +155,7 @@ const Index = () => {
     {
       question: "Do you offer continuing education or design seminars?",
       answer:
-        "Yes! We host quarterly design seminars covering new trends, installation techniques, and product innovations. We also offer AIA continuing education credits for architects and designers.",
+        "Yes! We host quarterly design seminars covering new trends, material applications, and product innovations. We also offer AIA continuing education credits for architects and designers.",
     },
     {
       question:
@@ -172,9 +172,9 @@ const Index = () => {
         "We serve all of South Florida, with same-day pickup available at our Miami showroom and next-day delivery throughout the state. We have special shipping rates for bulk orders.",
     },
     {
-      question: "Do you provide warranties on your products?",
+      question: "What warranties are available on your products?",
       answer:
-        "Yes, we offer comprehensive warranties on all our products. Most products come with manufacturer warranties ranging from 5-25 years, giving you complete peace of mind with your investment.",
+        "All our products come with manufacturer warranties that vary by material type and brand. Most manufacturer warranties range from 5-25 years, providing you with quality assurance directly from the manufacturer.",
     },
     {
       question: "What types of flooring materials do you carry?",
@@ -187,9 +187,9 @@ const Index = () => {
         "Yes! Our Miami showroom is open Mon-Fri 7AM-4PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs.",
     },
     {
-      question: "Do you provide contractor referrals?",
+      question: "Do you offer financing options?",
       answer:
-        "Yes, we work with a network of trusted contractors throughout South Florida. All our referred contractors are licensed, insured, and experienced with the specific materials we carry. We can connect you with qualified professionals.",
+        "We accept various payment methods including cash, check, and card payments. For contractors, we offer Net-30 payment terms with approved credit. We focus on providing competitive pricing and flexible payment terms rather than financing services.",
     },
   ];
 
