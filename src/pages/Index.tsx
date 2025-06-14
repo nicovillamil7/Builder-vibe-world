@@ -227,31 +227,45 @@ const Index = () => {
       <ProductGrid />
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Why Genesis Stone?
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Tailored solutions for every professional need
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* For Contractors */}
-            <div>
-              <h3 className="text-2xl font-bold text-red-800 text-center mb-8">
-                For Contractors
-              </h3>
-              <div className="space-y-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100">
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] rounded-2xl mb-4">
+                  <Calculator className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                  For Contractors
+                </h3>
+                <p className="text-gray-600">Professional-grade solutions</p>
+              </div>
+
+              <div className="space-y-8">
                 {contractorBenefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="h-6 w-6 text-red-800" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                        {benefit.title}
-                      </h4>
-                      <p className="text-gray-600">{benefit.description}</p>
+                  <div key={index} className="group">
+                    <div className="flex items-start space-x-5">
+                      <div className="w-14 h-14 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
+                        <benefit.icon className="h-7 w-7 text-red-700 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div className="flex-1 min-h-[80px] flex flex-col">
+                        <h4 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                          {benefit.title}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed flex-1">
+                          {benefit.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -259,21 +273,32 @@ const Index = () => {
             </div>
 
             {/* For Homeowners */}
-            <div>
-              <h3 className="text-2xl font-bold text-red-800 text-center mb-8">
-                For Homeowners
-              </h3>
-              <div className="space-y-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100">
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] rounded-2xl mb-4">
+                  <Palette className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                  For Homeowners
+                </h3>
+                <p className="text-gray-600">Premium residential options</p>
+              </div>
+
+              <div className="space-y-8">
                 {homeownerBenefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="h-6 w-6 text-red-800" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                        {benefit.title}
-                      </h4>
-                      <p className="text-gray-600">{benefit.description}</p>
+                  <div key={index} className="group">
+                    <div className="flex items-start space-x-5">
+                      <div className="w-14 h-14 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
+                        <benefit.icon className="h-7 w-7 text-red-700 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div className="flex-1 min-h-[80px] flex flex-col">
+                        <h4 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                          {benefit.title}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed flex-1">
+                          {benefit.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
