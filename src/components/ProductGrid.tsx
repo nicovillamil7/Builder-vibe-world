@@ -154,10 +154,10 @@ const ProductGrid = () => {
               {products.map((product) => (
                 <Card
                   key={product.id}
-                  className="flex-shrink-0 w-72 group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg"
+                  className="flex-shrink-0 w-72 h-[480px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
                   style={{ borderRadius: "20px" }}
                 >
-                  <CardHeader className="p-0">
+                  <CardHeader className="p-0 flex-shrink-0">
                     <div
                       className="relative overflow-hidden"
                       style={{ borderRadius: "20px 20px 0 0" }}
@@ -181,12 +181,12 @@ const ProductGrid = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[rgb(138,0,0)] transition-colors duration-200">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed flex-1 mb-4">
+                    <p className="text-gray-600 leading-relaxed flex-1">
                       {product.description}
                     </p>
                   </CardContent>
 
-                  <CardFooter className="p-6 pt-0">
+                  <CardFooter className="p-6 pt-0 flex-shrink-0">
                     <OutlineButton
                       className="w-full hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200"
                       style={{ borderRadius: "12px" }}
