@@ -137,15 +137,13 @@ const ProductGrid = () => {
 
           {/* Products Carousel */}
           <div
-            ref={scrollContainerRef}
             className="overflow-hidden px-12"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div
-              className="flex gap-6 transition-transform duration-500 ease-out pb-6"
+              className="flex gap-8 transition-transform duration-500 ease-out pb-6"
               style={{
                 transform: `translateX(-${currentIndex * itemWidth}px)`,
-                width: `${products.length * itemWidth}px`,
               }}
             >
               {products.map((product) => (
