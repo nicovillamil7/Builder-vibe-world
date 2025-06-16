@@ -34,7 +34,7 @@ const Retail = () => {
       icon: TrendingUp,
       title: "Home Value Enhancement",
       description:
-        "Premium flooring materials that significantly increase your property value and create lasting appeal for potential buyers",
+        "If improving your property´s value is a defining priority for you, weÂ´ve got you covered. Talk to us about our flooring selections designed to specifically enhance property value above all else.",
       highlight: "Increase property value",
       bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
@@ -42,7 +42,7 @@ const Retail = () => {
       icon: Gem,
       title: "Premium Material Selection",
       description:
-        "Curated collection of high-end porcelain, natural stone, and luxury materials from top manufacturers",
+        "Collections of porcelain, natural stone, and luxury materials from top national and international manufacturers from Spain, Italy and Turkey.",
       highlight: "Designer-grade materials",
       bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
     },
@@ -50,7 +50,7 @@ const Retail = () => {
       icon: Palette,
       title: "Interior Design Consultation",
       description:
-        "Professional design guidance to select materials that perfectly complement your home's style and your lifestyle",
+        "As a homeowner who´s set on remodeling their living area, we know how important it is for you to give life to your personal vision. We provide all the expert guidance and support needed to support your selections.",
       highlight: "Expert design guidance",
       bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
@@ -58,8 +58,8 @@ const Retail = () => {
       icon: Shield,
       title: "Warranty & Support",
       description:
-        "Comprehensive material warranties up to 25 years plus ongoing maintenance guidance for your investment",
-      highlight: "25-year warranties",
+        "We aid in facilitating manufacturer warranties, returns & credit when deemed necessary. Subject to Terms & Conditions.",
+      highlight: "Manufacturer warranty",
       bgColor: "bg-gradient-to-br from-[rgb(251,189,35)] to-[rgb(245,158,11)]",
     },
   ];
@@ -164,7 +164,7 @@ const Retail = () => {
             <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
               <span className="block">Transform Your Home</span>
               <span className="block bg-gradient-to-r from-[rgb(251,189,35)] to-amber-400 bg-clip-text text-transparent">
-                Beautiful Flooring
+                Transform Your Space
               </span>
             </h1>
 
@@ -207,7 +207,7 @@ const Retail = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Heart className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
-                <span>Lifetime Warranty</span>
+                <span>Manufacturer Warranty</span>
               </div>
             </div>
           </div>
@@ -233,12 +233,12 @@ const Retail = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold text-gray-900 mb-8">
-              Complete Home Flooring Service - Everything for Your Dream Home
+              Complete Home Flooring Service Home
             </h2>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-              From initial design concepts to project completion, we provide
-              everything you need for a successful flooring project that
-              transforms your house into the home you've always envisioned.
+              From design consultation, to floor selection and budgeting, all
+              the way to delivery and post-installation follow up questions you
+              may have. We are here every step of the way.
             </p>
           </div>
 
