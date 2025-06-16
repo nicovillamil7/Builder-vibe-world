@@ -56,16 +56,16 @@ const products = [
     name: "Metal Trims",
     description:
       "Ensure a flawless finish with our durable metal trims. Designed to protect edges and transitions for enhanced appearance and longevity.",
-    imageId: "vinylInstallation",
-    category: "Popular",
+    imageId: "metalTrims",
+    category: "Premium",
   },
   {
     id: 7,
     name: "Grout",
     description:
       "Essential for perfect tile installation. Our grout solutions offer strong adhesion, color consistency, and resistance to stains and cracking.",
-    imageId: "travertinePool",
-    category: "Luxury",
+    imageId: "grout",
+    category: "Premium",
   },
   {
     id: 8,
