@@ -109,6 +109,17 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     category: "mosaics",
   },
 
+  // 🏗️ WALL PANELS - Modern wall panel systems
+  wallPanels: {
+    id: "wallPanels",
+    primary:
+      "https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/20250616_1826_modern-wall-panels_simple_compose_01jxxgztz3ergafrph5m9n3mjt-5b8656?format=webp&width=800",
+    fallback:
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern wall panels with contemporary design and natural wood texture",
+    category: "wall-panels",
+  },
+
   // 🏢 SHOWROOM & BUSINESS - Unique business images
   showroomDisplay: {
     id: "showroomDisplay",
