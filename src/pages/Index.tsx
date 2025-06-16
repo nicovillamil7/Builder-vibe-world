@@ -88,16 +88,6 @@ const Index = () => {
         "We´ve designed a carefully curated collection that offers various options for every style and budget",
     },
   ];
-  const processSteps = [
-    {
-      number: 1,
-      title: "Choose Your Path",
-      description: "Contractor or Designer",
-    },
-    { number: 2, title: "Get Your Quote", description: "Or Samples" },
-    { number: 3, title: "Approve & Schedule", description: "Delivery" },
-    { number: 4, title: "Connect & Build", description: "Your Dream Home" },
-  ];
 
   const contractorFaqs = [
     {
