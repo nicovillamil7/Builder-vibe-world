@@ -110,9 +110,6 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <div>
-                <div className="text-2xl font-serif font-bold tracking-tight leading-tight text-gray-900">
-                  Genesis Stone
-                </div>
                 <div className="text-sm text-gray-600 font-medium leading-tight">
                   Premium Stone &
                 </div>
