@@ -402,6 +402,27 @@ const Retail = () => {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Ready to Transform Your Home?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Let our experts help you find the perfect flooring solutions for
+            your space
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-[rgb(138,0,0)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[rgb(120,0,0)] transition-colors">
+              Schedule Consultation
+            </button>
+            <button className="border-2 border-[rgb(138,0,0)] text-[rgb(138,0,0)] px-8 py-3 rounded-lg font-semibold hover:bg-[rgb(138,0,0)] hover:text-white transition-colors">
+              Get Free Quote
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Home Design Process */}
       <section className="py-24 bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(120,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
