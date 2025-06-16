@@ -81,28 +81,25 @@ const ProductGrid = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const itemWidth = 320; // Card width + gap
-  const visibleItems = 4;
+  const itemWidth = 320; // Card width (288px) + gap (32px)
+  const visibleItems = 3; // Number of items visible at once
   const maxIndex = Math.max(0, products.length - visibleItems);
 
   const scrollToIndex = (index: number) => {
     const clampedIndex = Math.max(0, Math.min(index, maxIndex));
     setCurrentIndex(clampedIndex);
-
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo({
-        left: clampedIndex * itemWidth,
-        behavior: "smooth",
-      });
-    }
   };
 
   const nextSlide = () => {
-    scrollToIndex(currentIndex + 1);
+    if (currentIndex < maxIndex) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
   const prevSlide = () => {
-    scrollToIndex(currentIndex - 1);
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
   return (
