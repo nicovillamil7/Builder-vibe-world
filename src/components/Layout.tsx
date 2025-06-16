@@ -109,7 +109,11 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <div />
+              <img
+                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/logo_genesis__1_-removebg-df8c37?format=webp&width=800"
+                alt="Genesis Stone & More"
+                className="h-12 w-auto"
+              />
             </Link>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
