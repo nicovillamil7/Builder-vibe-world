@@ -34,7 +34,7 @@ const Retail = () => {
       icon: TrendingUp,
       title: "Home Value Enhancement",
       description:
-        "If improving your property´s value is a defining priority for you, weÂ´ve got you covered. Talk to us about our flooring selections designed to specifically enhance property value above all else.",
+        "If improving your property´s value is a defining priority for you, we´ve got you covered. Talk to us about our flooring selections designed to specifically enhance property value above all else.",
       highlight: "Increase property value",
       bgColor: "bg-gradient-to-br from-[rgb(138,0,0)] to-[rgb(153,27,27)]",
     },
