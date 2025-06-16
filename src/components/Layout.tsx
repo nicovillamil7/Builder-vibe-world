@@ -109,14 +109,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <div>
-                <div className="text-sm text-gray-600 font-medium leading-tight">
-                  Premium Stone &
-                </div>
-                <div className="text-sm text-gray-600 font-medium leading-tight">
-                  Flooring
-                </div>
-              </div>
+              <div />
             </Link>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
