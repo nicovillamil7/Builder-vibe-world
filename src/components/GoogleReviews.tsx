@@ -71,7 +71,7 @@ const GoogleReviews = () => {
     name: string;
   }>({
     rating: 4.8,
-    totalReviews: 150,
+    totalReviews: 127,
     name: "Genesis Stone",
   });
   const [isUsingFallback, setIsUsingFallback] = useState(true);
@@ -222,14 +222,6 @@ const GoogleReviews = () => {
               {businessInfo.totalReviews}+ Customer Reviews
             </div>
           </div>
-
-          {/* Status messages */}
-          {loading && (
-            <div className="flex items-center justify-center gap-2 text-blue-600 animate-pulse">
-              <div className="w-4 h-4 bg-blue-600 rounded-full animate-bounce"></div>
-              <p className="text-sm">Loading latest reviews...</p>
-            </div>
-          )}
 
           {isUsingFallback && !loading && (
             <p className="text-sm text-gray-600 bg-gray-100 px-4 py-2 rounded-full inline-block">
