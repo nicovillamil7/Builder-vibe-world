@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="relative h-screen min-h-[700px] overflow-hidden">
       {/* Large Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 hover:scale-110 transition-transform duration-[10000ms] ease-out"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 hover:scale-110 transition-transform duration-1000 ease-out"
         style={{
           backgroundImage: `url('${getReliableImageUrl("luxuryInterior")}')`,
         }}
