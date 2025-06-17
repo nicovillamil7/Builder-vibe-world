@@ -5,8 +5,10 @@ run = "npm run dev"
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "npm run dev"]
-deploymentTarget = "cloudrun"
+deploymentTarget = "static"
+publicDir = "dist"
+run = ["sh", "-c", ""]
+build = ["sh", "-c", "npm run build"]
 
 [languages.javascript]
 pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
