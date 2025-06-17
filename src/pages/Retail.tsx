@@ -450,7 +450,7 @@ const Retail = () => {
                 01
               </div>
               <h3 className="text-xl font-bold mb-3">Design Consultation</h3>
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-white/80 leading-relaxed text-center">
                 Meet with our design experts to discuss your vision and
                 lifestyle
               </p>
