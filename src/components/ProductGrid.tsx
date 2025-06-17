@@ -72,7 +72,7 @@ const products = [
     name: "Mortar Mix",
     description:
       "High-performance mortar mixes deliver excellent bonding strength for various tile and stone applications with professional-grade reliability.",
-    imageId: "blueMosaicSpa",
+    imageId: "mortarMix",
     category: "Specialty",
   },
 ];
