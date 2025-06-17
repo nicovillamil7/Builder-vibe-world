@@ -117,8 +117,8 @@ const Products = () => {
       </div>
 
       {/* Dealer Program Banner */}
-      <div className="relative py-32 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(180,20,20)]">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="relative py-20 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)]">
+        <div className="absolute inset-0 bg-black/30"></div>
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
@@ -126,24 +126,21 @@ const Products = () => {
           }}
         ></div>
 
-        <div className="relative max-w-6xl mx-auto px-8 text-center text-white">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+        <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Become a Dealer
           </h2>
-          <p className="text-2xl mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-xl sm:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             Join our network of authorized dealers and unlock exclusive pricing,
             priority support, and comprehensive training programs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton size="lg" className="px-10 py-4 text-lg font-semibold">
-              APPLY NOW
+            <GoldButton size="lg" className="px-8">
+              Apply Now
             </GoldButton>
-            <WhiteOutlineButton
-              size="lg"
-              className="px-10 py-4 text-lg font-semibold"
-            >
-              LEARN MORE
+            <WhiteOutlineButton size="lg" className="px-8">
+              Learn More
             </WhiteOutlineButton>
           </div>
         </div>
