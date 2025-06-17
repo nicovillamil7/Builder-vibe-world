@@ -81,36 +81,34 @@ const Products = () => {
       </div>
 
       {/* Product Categories Grid */}
-      <div className="py-20 bg-[rgb(238,238,238)]">
-        <div className="max-w-7xl mx-auto px-12 sm:px-16 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {productCategories.map((category, index) => (
               <Card
                 key={category.id}
-                className="group bg-white border border-[rgb(209,209,209)] rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+                className="group bg-white border-0 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
               >
                 <div className="relative">
                   <SimpleReliableImage
                     imageId={category.imageId}
                     alt={`${category.name} - Premium flooring materials`}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
-                <CardContent className="p-10">
-                  <h3 className="text-3xl font-semibold text-black mb-5 leading-tight">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {category.name}
                   </h3>
-                  <p className="text-lg text-gray-700 mb-8 leading-relaxed font-medium">
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {category.description}
                   </p>
 
-                  <div className="bg-[rgb(55,55,55)] text-white px-6 py-4 rounded-lg hover:bg-black transition-colors duration-300 cursor-pointer text-center">
-                    <span className="text-lg font-semibold">
-                      EXPLORE {category.name.toUpperCase()}
-                    </span>
-                  </div>
+                  <PrimaryButton className="w-full group-hover:bg-[rgb(153,27,27)] transition-colors duration-300">
+                    Explore {category.name}
+                  </PrimaryButton>
                 </CardContent>
               </Card>
             ))}
