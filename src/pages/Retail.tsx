@@ -97,7 +97,6 @@ const Retail = () => {
       homeowner: "The Johnson Family",
       location: "Coral Gables",
       style: "Contemporary Elegance",
-      imageId: "modernFamilyHome", // Already fixed above but making sure it's consistent
       materials: [
         "Large Format Porcelain",
         "Natural Wood-Look LVP",
