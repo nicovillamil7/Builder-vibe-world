@@ -23,3 +23,15 @@ npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[workflows]
+runButton = "Development Server"
+
+[[workflows.workflow]]
+name = "Development Server"
+author = 39702129
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node --max-old-space-size=4096 ./node_modules/.bin/vite --host 0.0.0.0 --port 8080"
