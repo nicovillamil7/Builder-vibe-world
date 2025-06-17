@@ -24,7 +24,10 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-5DTNSBTY8Z');
+      gtag('config', 'G-5DTNSBTY8Z', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
       gtag('config', 'AW-17133497114');
     </script>
     
