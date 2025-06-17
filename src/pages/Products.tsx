@@ -1,8 +1,13 @@
 import Layout from "@/components/Layout";
-import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
+import {
+  GoldButton,
+  WhiteOutlineButton,
+  PrimaryButton,
+} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { getReliableImageUrl } from "@/utils/imageUtils";
+import { Shield, Users, Calculator } from "lucide-react";
 
 const Products = () => {
   const productCategories = [
