@@ -371,24 +371,24 @@ const Index = () => {
       </section>
 
       {/* Application Showcase Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               See Our Work in Action
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Real projects showcasing the quality and beauty of our flooring
               solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
                 src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -397,17 +397,18 @@ const Index = () => {
                     "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F37ad3adaf8fd4909968a7295164d4eb7)",
                 }}
               ></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-bold text-lg">Pool Deck Paradise</h4>
-                <p className="text-sm">Large Format Porcelain</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-bold text-xl mb-2">Pool Deck Paradise</h4>
+                <p className="text-sm opacity-90">Large Format Porcelain</p>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
                 src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury living room with marble accent wall"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -416,30 +417,33 @@ const Index = () => {
                     "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f)",
                 }}
               ></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-bold text-lg">Luxury Interior</h4>
-                <p className="text-sm">Marble & Premium Tiles</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-bold text-xl mb-2">Luxury Interior</h4>
+                <p className="text-sm opacity-90">Marble & Premium Tiles</p>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
                 src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-bold text-lg">Natural Stone Elegance</h4>
-                <p className="text-sm">Travertine Pool & Spa</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-bold text-xl mb-2">
+                  Natural Stone Elegance
+                </h4>
+                <p className="text-sm opacity-90">Travertine Pool & Spa</p>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
                 src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern white interior with polished porcelain"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -448,43 +452,40 @@ const Index = () => {
                     "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F5ca1a82e481b45e8b81cba03d3e6ad83?format=webp)",
                 }}
               ></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-bold text-lg">Contemporary Clean</h4>
-                <p className="text-sm">White Polished Porcelain</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-bold text-xl mb-2">Contemporary Clean</h4>
+                <p className="text-sm opacity-90">White Polished Porcelain</p>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjgw3ne4za9mheafx9wrc5_1750117973_img_1-531f33?format=webp&width=800"
                 alt="Professional installation of luxury vinyl plank flooring"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-bold text-lg">Professional Installation</h4>
-                <p className="text-sm">Luxury Vinyl Plank</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-bold text-xl mb-2">
+                  Professional Installation
+                </h4>
+                <p className="text-sm opacity-90">Luxury Vinyl Plank</p>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
+            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjhp2ee2fbej2h3a8ybwn6_1750118078_img_1-73caf1?format=webp&width=800"
                 alt="Luxury mosaic artistry in spa design"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-bold text-lg">Mosaic Artistry</h4>
-                <p className="text-sm">Custom Spa Design</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-bold text-xl mb-2">Mosaic Artistry</h4>
+                <p className="text-sm opacity-90">Custom Spa Design</p>
               </div>
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <GoldButton size="lg" className="px-8">
-              View Our Complete Portfolio
-            </GoldButton>
           </div>
         </div>
       </section>
