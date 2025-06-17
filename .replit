@@ -34,4 +34,4 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node --max-old-space-size=4096 ./node_modules/.bin/vite --host 0.0.0.0 --port 8080"
+args = "NODE_OPTIONS=\"--max-old-space-size=2048\" npx vite --host 0.0.0.0 --port 8080 --force --clearScreen false"
