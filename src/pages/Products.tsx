@@ -147,53 +147,53 @@ const Products = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+      <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Choose Genesis Stone?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We're committed to providing exceptional quality, service, and
               value for every project, big or small.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full"></div>
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-[rgb(138,0,0)]" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
                 Premium Quality
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 All products come with manufacturer warranties and our
                 comprehensive quality assurance guarantee.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full"></div>
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-[rgb(138,0,0)]" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
                 Expert Support
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Professional guidance from material selection through final
                 installation with our experienced team.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full"></div>
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calculator className="h-8 w-8 text-[rgb(138,0,0)]" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
                 Competitive Pricing
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Volume discounts available for contractors and bulk buyers with
                 transparent, competitive pricing.
               </p>
