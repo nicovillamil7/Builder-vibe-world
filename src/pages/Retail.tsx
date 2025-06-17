@@ -444,41 +444,37 @@ const Retail = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Design Consultation",
-                description:
-                  "Meet with our design experts to discuss your vision and lifestyle",
-              },
-              {
-                step: "02",
-                title: "Material Selection",
-                description:
-                  "Choose from premium materials with professional guidance",
-              },
-              {
-                step: "03",
-                title: "Professional Installation",
-                description: "Expert installation by certified craftsmen",
-              },
-              {
-                step: "04",
-                title: "Enjoy Your New Home",
-                description: "Relax and enjoy your beautiful new flooring",
-              },
-            ].map((process, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-[rgb(251,189,35)] text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                  {process.step}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{process.title}</h3>
-                <p className="text-white/80 leading-relaxed">
-                  {process.description}
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-right flex flex-col justify-center items-center mr-auto">
+              <div className="w-20 h-20 bg-[rgb(251,189,35)] text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                01
               </div>
-            ))}
+              <h3 className="text-xl font-bold mb-3">Design Consultation</h3>
+              <p className="text-white/80 leading-relaxed">
+                Meet with our design experts to discuss your vision and
+                lifestyle
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-[rgb(251,189,35)] text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                02
+              </div>
+              <h3 className="text-xl font-bold mb-3">Material Selection</h3>
+              <p className="text-white/80 leading-relaxed">
+                Choose from premium materials with professional guidance
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-[rgb(251,189,35)] text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                <p>03</p>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Enjoy Your New Home</h3>
+              <p className="text-white/80 leading-relaxed">
+                Relax and enjoy your beautiful new flooring
+              </p>
+            </div>
           </div>
         </div>
       </section>
