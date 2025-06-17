@@ -137,6 +137,29 @@ const Layout = ({ children }: LayoutProps) => {
               <PrimaryButton
                 size="sm"
                 onClick={() => {
+                  // Track Google Ads conversion
+                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                    (window as any).gtag_report_conversion();
+                  }
+
+                  // Track Google Analytics conversion
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'conversion', {
+                      event_category: 'engagement',
+                      event_label: 'call_now_header',
+                      value: 1
+                    });
+                  }
+
+                  // Track Google Ads conversion event
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'gads_conversion', {
+                      event_category: 'engagement',
+                      event_label: 'call_now_header',
+                      value: 1
+                    });
+                  }
+
                   window.location.href = "tel:+13054774402";
                 }}
                 className="cursor-pointer"

@@ -10,14 +10,23 @@ export const WhatsAppButton: React.FC = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-    // Track conversion before opening WhatsApp
+    // Track Google Ads conversion
     if (typeof (window as any).gtag_report_conversion === 'function') {
       (window as any).gtag_report_conversion();
     }
 
-    // Also track as GA4 event (optional)
+    // Track Google Analytics conversion
     if (typeof (window as any).gtag === 'function') {
       (window as any).gtag('event', 'conversion', {
+        event_category: 'engagement',
+        event_label: 'floating_button',
+        value: 1
+      });
+    }
+
+    // Track Google Ads conversion event
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'gads_conversion', {
         event_category: 'engagement',
         event_label: 'floating_button',
         value: 1

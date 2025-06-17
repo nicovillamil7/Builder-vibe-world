@@ -294,7 +294,48 @@ const Index = () => {
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 mb-6">{feature.description}</p>
-                  <PrimaryButton>{feature.action}</PrimaryButton>
+                  <PrimaryButton
+                    onClick={() => {
+                      const phoneNumber = "13055104733";
+                      let message = "";
+                      
+                      if (feature.category === "contractors") {
+                        message = "Hi! I'm a contractor interested in volume pricing and trade accounts. Can you help me get started?";
+                      } else {
+                        message = "Hi! I'm a homeowner looking for design consultation and premium flooring materials. Can you schedule an appointment?";
+                      }
+                      
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                      // Track Google Ads conversion
+                      if (typeof (window as any).gtag_report_conversion === 'function') {
+                        (window as any).gtag_report_conversion();
+                      }
+
+                      // Track Google Analytics conversion
+                      if (typeof (window as any).gtag === 'function') {
+                        (window as any).gtag('event', 'conversion', {
+                          event_category: 'engagement',
+                          event_label: feature.category === "contractors" ? 'get_trade_pricing_feature' : 'request_appointment_feature',
+                          value: 1
+                        });
+                      }
+
+                      // Track Google Ads conversion event
+                      if (typeof (window as any).gtag === 'function') {
+                        (window as any).gtag('event', 'gads_conversion', {
+                          event_category: 'engagement',
+                          event_label: feature.category === "contractors" ? 'get_trade_pricing_feature' : 'request_appointment_feature',
+                          value: 1
+                        });
+                      }
+
+                      window.open(whatsappUrl, "_blank");
+                    }}
+                  >
+                    {feature.action}
+                  </PrimaryButton>
                 </CardContent>
               </Card>
             ))}
@@ -497,10 +538,78 @@ const Index = () => {
             Ready to Get Started?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <GoldButton size="lg" className="px-8 py-3">
+            <GoldButton 
+              size="lg" 
+              className="px-8 py-3"
+              onClick={() => {
+                const phoneNumber = "13055104733";
+                const message = "Hi! I'm interested in getting trade pricing for my project. Can you help me with volume discounts and pricing information?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'get_trade_pricing',
+                    value: 1
+                  });
+                }
+
+                // Track Google Ads conversion event
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'gads_conversion', {
+                    event_category: 'engagement',
+                    event_label: 'get_trade_pricing',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Get Trade Pricing
             </GoldButton>
-            <WhiteOutlineButton size="lg" className="px-8 py-3">
+            <WhiteOutlineButton 
+              size="lg" 
+              className="px-8 py-3"
+              onClick={() => {
+                const phoneNumber = "13055104733";
+                const message = "Hi! I'm a designer and I'd like to request material samples for my client projects. Can you help me with your designer sample program?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'request_designer_samples',
+                    value: 1
+                  });
+                }
+
+                // Track Google Ads conversion event
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'gads_conversion', {
+                    event_category: 'engagement',
+                    event_label: 'request_designer_samples',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Request Designer Samples
             </WhiteOutlineButton>
           </div>
