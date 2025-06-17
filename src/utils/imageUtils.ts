@@ -135,10 +135,21 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   grout: {
     id: "grout",
     primary:
-      "https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxj50r8ffztx4xpjr30dqez_1750117638_img_0-c8d68e?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxj50r8ffztx4xpjr30dqez_1750117638_img_0-c8d68e",
     fallback:
       "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Professional grouting process with tools for tile installation",
+    category: "installation-materials",
+  },
+
+  // 🏗️ MORTAR MIX - Professional tile adhesive and mortar
+  mortarMix: {
+    id: "mortarMix",
+    primary:
+      "https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxkx79bek4ap5qk2ke9mf8z_1750119497_img_0-b87e59?format=webp&width=800",
+    fallback:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Professional mortar mix with tile installation tools and materials",
     category: "installation-materials",
   },
 
