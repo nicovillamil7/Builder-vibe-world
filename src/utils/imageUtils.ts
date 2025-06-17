@@ -146,7 +146,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   showroomDisplay: {
     id: "showroomDisplay",
     primary:
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fd7a19663ca904dd68beaaa9471af36d0",
     fallback:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Genesis Stone showroom with tile samples on display",
