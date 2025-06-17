@@ -1,25 +1,17 @@
 import Layout from "@/components/Layout";
-import {
-  GoldButton,
-  WhiteOutlineButton,
-  PrimaryButton,
-  OutlineButton,
-} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
+import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import {
   Award,
   Users,
   MapPin,
   Clock,
-  CheckCircle,
   Star,
+  Handshake,
   Target,
   Heart,
-  Zap,
-  Building2,
-  Handshake,
-  Shield,
 } from "lucide-react";
 
 const About = () => {

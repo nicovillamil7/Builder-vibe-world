@@ -34,7 +34,40 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <button className="border-2 border-white text-white hover:bg-white hover:text-[rgb(138,0,0)] px-10 py-5 rounded-lg font-semibold text-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/10 min-w-[280px]">
+            <button 
+              className="border-2 border-white text-white hover:bg-white hover:text-[rgb(138,0,0)] px-10 py-5 rounded-lg font-semibold text-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/10 min-w-[280px]"
+              onClick={() => {
+                const phoneNumber = "13055104733";
+                const message = "Hi! I'd like to request material samples for my project. Can you help me get samples to review?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'request_sample_hero',
+                    value: 1
+                  });
+                }
+
+                // Track Google Ads conversion event
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'gads_conversion', {
+                    event_category: 'engagement',
+                    event_label: 'request_sample_hero',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Request Sample
             </button>
           </div>

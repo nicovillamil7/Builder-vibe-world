@@ -673,12 +673,77 @@ const Wholesale = () => {
             Stone Pro to win more bids and deliver better projects.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton size="lg" className="px-12 py-6 text-lg font-bold">
+            <GoldButton 
+              size="lg" 
+              className="px-12 py-6 text-lg font-bold"
+              onClick={() => {
+                const phoneNumber = "13055104733";
+                const message = "Hi! I'm a contractor interested in applying for a trade account. Can you help me get started with volume pricing and trade benefits?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'apply_trade_account',
+                    value: 1
+                  });
+                }
+
+                // Track Google Ads conversion event
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'gads_conversion', {
+                    event_category: 'engagement',
+                    event_label: 'apply_trade_account',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Apply for Trade Account
             </GoldButton>
             <WhiteOutlineButton
               size="lg"
               className="px-12 py-6 text-lg font-bold"
+              onClick={() => {
+                const phoneNumber = "13055104733";
+                const message = "Hi! I'm interested in calculating my potential savings with Genesis Stone's volume pricing. Can you help me with a cost comparison?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'calculate_savings',
+                    value: 1
+                  });
+                }
+
+                // Track Google Ads conversion event
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'gads_conversion', {
+                    event_category: 'engagement',
+                    event_label: 'calculate_savings',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
             >
               Calculate My Savings
             </WhiteOutlineButton>

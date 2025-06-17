@@ -1,23 +1,13 @@
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
+import { Card, CardContent } from "@/components/ui/card";
+import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
+import { MapPin, Phone, Mail, Clock, Car, Building, MessageSquare, CheckCircle } from "lucide-react";
 import {
-  GoldButton,
-  WhiteOutlineButton,
   PrimaryButton,
   OutlineButton,
 } from "@/components/ui/custom-buttons";
-import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  Car,
-  Building,
-  MessageSquare,
-  CheckCircle,
-} from "lucide-react";
 
 const Contact = () => {
   const contactMethods = [
