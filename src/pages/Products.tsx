@@ -133,16 +133,16 @@ const Products = () => {
 
         <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Become a Dealer
+            Ready to Start Your Project?
           </h2>
           <p className="text-xl sm:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Join our network of authorized dealers and unlock exclusive pricing,
-            priority support, and comprehensive training programs.
+            Contact us for personalized product recommendations, competitive
+            pricing, and expert installation guidance.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <GoldButton size="lg" className="px-8">
-              Apply Now
+              Get Custom Quote
             </GoldButton>
             <WhiteOutlineButton size="lg" className="px-8">
               Learn More
