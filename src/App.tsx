@@ -10,10 +10,6 @@ import Wholesale from "./pages/Wholesale";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import { ImageDiagnostic } from "./components/ImageDiagnostic";
-import { ImageIntelligenceDashboard } from "@/components/ImageIntelligenceDashboard";
-import { EnhancedImageIntelligenceDashboard } from "@/components/EnhancedImageIntelligenceDashboard";
-import { ImageSystemTestRunner } from "@/components/ImageSystemTestRunner";
 
 const queryClient = new QueryClient();
 
@@ -30,24 +26,6 @@ const App = () => (
           <Route path="/wholesale" element={<Wholesale />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/image-diagnostic" element={<ImageDiagnostic />} />
-          <Route
-            path="/image-intelligence"
-            element={<EnhancedImageIntelligenceDashboard />}
-          />
-          <Route
-            path="/enhanced-image-intelligence"
-            element={<EnhancedImageIntelligenceDashboard />}
-          />
-          <Route
-            path="/legacy-image-intelligence"
-            element={<ImageIntelligenceDashboard />}
-          />
-          <Route
-            path="/image-system-tests"
-            element={<ImageSystemTestRunner />}
-          />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
