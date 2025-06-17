@@ -9,6 +9,12 @@ export const WhatsAppButton: React.FC = () => {
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Track conversion before opening WhatsApp
+    if (typeof (window as any).gtag_report_conversion === 'function') {
+      (window as any).gtag_report_conversion();
+    }
+    
     window.open(whatsappUrl, "_blank");
   };
 

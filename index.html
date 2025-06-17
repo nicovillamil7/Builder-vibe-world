@@ -26,6 +26,24 @@
 
       gtag('config', 'AW-17133497114');
     </script>
+    
+    <!-- Event snippet for gads_conversion conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17133497114/34IrCITV3tgaEJrW8ek_',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
