@@ -21,7 +21,7 @@ PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_S
 npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
 
 [[ports]]
-localPort = 8080
+localPort = 5000
 externalPort = 80
 
 [workflows]
