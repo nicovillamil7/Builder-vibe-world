@@ -69,10 +69,10 @@ const Products = () => {
       {/* Hero Section */}
       <div className="bg-[rgb(138,0,0)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
             Our Collections
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto font-light">
             Discover our comprehensive selection of premium flooring materials,
             carefully curated for contractors, designers, and homeowners across
             South Florida.
