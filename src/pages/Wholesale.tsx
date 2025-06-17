@@ -203,6 +203,17 @@ const Wholesale = () => {
     <Layout>
       {/* Hero Section - Industrial/Professional design */}
       <div className="relative bg-gradient-to-r from-slate-900 via-gray-900 to-slate-800 text-white overflow-hidden">
+        {/* Floor Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`,
+          }}
+        ></div>
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+
         {/* Industrial grid pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
