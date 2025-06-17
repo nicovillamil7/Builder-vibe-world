@@ -1,4 +1,4 @@
-modules = ["nodejs-20", "web", "bash"]
+modules = ["nodejs-20", "web", "nix"]
 run = "npm run dev"
 
 [nix]
@@ -25,7 +25,6 @@ localPort = 5000
 externalPort = 80
 
 [workflows]
-runButton = "Development Server"
 
 [[workflows.workflow]]
 name = "Development Server"
