@@ -20,11 +20,6 @@ const Hero = () => {
       {/* Content Container */}
       <div className="relative z-10 h-full flex items-center justify-center min-h-[25px]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white">
-          {/* Premium Badge */}
-          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-8 border border-white/20">
-            Premium Flooring Solutions
-          </div>
-
           {/* Main Heading - Large and Bold like cpffloors.com */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
             Genesis Stone
