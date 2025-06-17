@@ -189,31 +189,6 @@ const Index = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Feature Cards Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-lg transition-shadow duration-300"
-              >
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <feature.icon className="h-8 w-8 text-red-800" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">{feature.description}</p>
-                  <PrimaryButton>{feature.action}</PrimaryButton>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Products Section */}
       <ProductGrid />
 
@@ -301,6 +276,31 @@ const Index = () => {
 
       {/* Google Reviews Section */}
       <GoogleReviews />
+
+      {/* Features Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {features.map((feature) => (
+              <Card
+                key={feature.title}
+                className="text-center p-8 hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <feature.icon className="h-8 w-8 text-red-800" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6">{feature.description}</p>
+                  <PrimaryButton>{feature.action}</PrimaryButton>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">

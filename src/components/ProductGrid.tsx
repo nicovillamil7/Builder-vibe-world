@@ -107,7 +107,7 @@ const ProductGrid = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Our Selection
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
