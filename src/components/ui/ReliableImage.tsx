@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
-import { ImageSystemState } from "@/utils/imageSystemState";
 
 interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   imageId: string;
@@ -20,37 +19,11 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
 }) => {
   const [hasErrored, setHasErrored] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentImageUrl, setCurrentImageUrl] = useState<string>("");
 
-  // Check if there's an updated image from the AI system
-  const aiImage = ImageSystemState.getImage(imageId);
-  const config = aiImage || RELIABLE_IMAGES[imageId];
+  const config = RELIABLE_IMAGES[imageId];
   const fallbackConfig = fallbackImageId
     ? RELIABLE_IMAGES[fallbackImageId]
     : null;
-
-  // Update image URL when AI system changes
-  useEffect(() => {
-    const handleImageSystemUpdate = () => {
-      const updatedImage = ImageSystemState.getImage(imageId);
-      if (updatedImage) {
-        setCurrentImageUrl(updatedImage.primary);
-        setHasErrored(false);
-        setIsLoading(true);
-      }
-    };
-
-    window.addEventListener("imageSystemUpdated", handleImageSystemUpdate);
-
-    // Set initial URL
-    if (config) {
-      setCurrentImageUrl(config.primary);
-    }
-
-    return () => {
-      window.removeEventListener("imageSystemUpdated", handleImageSystemUpdate);
-    };
-  }, [imageId, config]);
 
   if (!config) {
     console.warn(`Image ID "${imageId}" not found, using default`);
@@ -97,7 +70,7 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
   return (
     <div className="relative">
       <img
-        src={currentImageUrl || config.primary}
+        src={config.primary}
         alt={alt || config.alt}
         className={`${className} ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
         onLoad={handleLoad}
@@ -128,9 +101,7 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   onError,
   ...props
 }) => {
-  // Check for updated image from AI system first
-  const aiImage = ImageSystemState.getImage(imageId);
-  const config = aiImage || RELIABLE_IMAGES[imageId];
+  const config = RELIABLE_IMAGES[imageId];
 
   if (!config) {
     console.warn(`Image ID "${imageId}" not found, using default`);
