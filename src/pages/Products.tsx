@@ -203,25 +203,22 @@ const Products = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-[rgb(138,0,0)] text-white py-20">
-        <div className="max-w-5xl mx-auto px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+      <div className="bg-[rgb(138,0,0)] text-white py-16">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed font-light">
             Contact us for personalized product recommendations, competitive
             pricing, and expert installation guidance.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton size="lg" className="px-10 py-4 text-lg font-semibold">
-              GET CUSTOM QUOTE
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <GoldButton size="lg" className="px-8">
+              Get Custom Quote
             </GoldButton>
-            <WhiteOutlineButton
-              size="lg"
-              className="px-10 py-4 text-lg font-semibold"
-            >
-              VISIT SHOWROOM
+            <WhiteOutlineButton size="lg" className="px-8">
+              Visit Showroom
             </WhiteOutlineButton>
           </div>
         </div>
