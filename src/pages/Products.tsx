@@ -65,7 +65,7 @@ const Products = () => {
       name: "Mortar Mix",
       description:
         "Our high-performance mortar mixes deliver excellent bonding strength for various tile and stone applications. Easy to work with, they provide the reliability and durability needed for professional-grade installations.",
-      imageId: "professionalInstallation",
+      imageId: "mortarMix",
     },
   ];
 
@@ -111,40 +111,7 @@ const Products = () => {
                     {category.description}
                   </p>
 
-                  <PrimaryButton 
-                    className="w-full group-hover:bg-[rgb(153,27,27)] transition-colors duration-300"
-                    onClick={() => {
-                      const phoneNumber = "13055104733";
-                      const message = `Hi! I'm interested in learning more about ${category.name} materials. Can you help me with options and pricing?`;
-                      const encodedMessage = encodeURIComponent(message);
-                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                      // Track Google Ads conversion
-                      if (typeof (window as any).gtag_report_conversion === 'function') {
-                        (window as any).gtag_report_conversion();
-                      }
-
-                      // Track Google Analytics conversion
-                      if (typeof (window as any).gtag === 'function') {
-                        (window as any).gtag('event', 'conversion', {
-                          event_category: 'engagement',
-                          event_label: `explore_${category.id}`,
-                          value: 1
-                        });
-                      }
-
-                      // Track Google Ads conversion event
-                      if (typeof (window as any).gtag === 'function') {
-                        (window as any).gtag('event', 'gads_conversion', {
-                          event_category: 'engagement',
-                          event_label: `explore_${category.id}`,
-                          value: 1
-                        });
-                      }
-
-                      window.open(whatsappUrl, "_blank");
-                    }}
-                  >
+                  <PrimaryButton className="w-full group-hover:bg-[rgb(153,27,27)] transition-colors duration-300">
                     Explore {category.name}
                   </PrimaryButton>
                 </CardContent>
@@ -174,78 +141,10 @@ const Products = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton 
-              size="lg" 
-              className="px-8"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'd like to get a custom quote for my flooring project. Can you help me with pricing and material recommendations?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_custom_quote_products',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_custom_quote_products',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <GoldButton size="lg" className="px-8">
               Get Custom Quote
             </GoldButton>
-            <WhiteOutlineButton 
-              size="lg" 
-              className="px-8"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'd like to learn more about your flooring products and services. Can you provide more information?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'learn_more_products',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'learn_more_products',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <WhiteOutlineButton size="lg" className="px-8">
               Learn More
             </WhiteOutlineButton>
           </div>
