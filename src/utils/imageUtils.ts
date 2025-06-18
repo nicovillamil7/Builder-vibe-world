@@ -146,7 +146,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   mortarMix: {
     id: "mortarMix",
     primary:
-      "https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxkx79bek4ap5qk2ke9mf8z_1750119497_img_0-b87e59?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxkx79bek4ap5qk2ke9mf8z_1750119497_img_0-89caf5?format=webp&width=800",
     fallback:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Professional mortar mix with tile installation tools and materials",
