@@ -99,3 +99,81 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Blog Content Styles */
+.prose {
+  max-width: none;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-red-200 pb-4;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold text-gray-800 mt-10 mb-5 text-red-800;
+}
+
+.prose h3 {
+  @apply text-2xl font-semibold text-gray-700 mt-8 mb-4;
+}
+
+.prose h4 {
+  @apply text-xl font-semibold text-gray-600 mt-6 mb-3;
+}
+
+.prose p {
+  @apply text-gray-700 leading-relaxed mb-6 text-lg;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose img {
+  @apply rounded-lg shadow-md my-8 mx-auto;
+}
+
+.prose table {
+  @apply w-full border-collapse border border-gray-300 my-8 rounded-lg overflow-hidden shadow-sm;
+}
+
+.prose th {
+  @apply bg-red-50 border border-gray-300 px-6 py-4 text-left font-semibold text-gray-900;
+}
+
+.prose td {
+  @apply border border-gray-300 px-6 py-4 text-gray-700;
+}
+
+.prose tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.prose .faq-section {
+  @apply bg-gradient-to-r from-gray-50 to-red-50 p-8 rounded-xl mt-12 border border-gray-200;
+}
+
+.prose .faq-section h2 {
+  @apply text-3xl font-bold text-red-800 mb-6 text-center;
+}
+
+/* Interactive FAQ Styles */
+.faq-item {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 mb-4 overflow-hidden transition-all duration-300 hover:shadow-md;
+}
+
+.faq-question {
+  @apply w-full text-left p-6 font-semibold text-gray-800 hover:bg-gray-50 transition-colors duration-200 cursor-pointer flex justify-between items-center;
+}
+
+.faq-answer {
+  @apply px-6 pb-6 text-gray-600 leading-relaxed;
+}
+
+.faq-chevron {
+  @apply transform transition-transform duration-200 text-red-600;
+}
+
+.faq-chevron.open {
+  @apply rotate-180;
+}

@@ -143,33 +143,83 @@ export const blogArticles: BlogArticle[] = [
       <h2>Final Thoughts</h2>
       <p><strong>Laminate flooring</strong> is a versatile, cost-effective, and durable option for residential and commercial spaces. Its robust construction, quality <strong>wear</strong> layer, and professional installation ensure long-lasting performance. With low maintenance, ease of cleaning, and significant resistance to heavy traffic, <strong>laminate flooring</strong> is an excellent investment. Combined with comprehensive warranties and a variety of styles, it meets modern design and practical needs.</p>
 
-      <h2>Frequently Asked Questions</h2>
-      <div class="bg-gray-50 p-6 rounded-lg mt-8">
-        <div class="mb-6">
-          <p class="font-semibold mb-2">Q: What makes laminate flooring more durable than hardwood?</p>
-          <p>A: Its optimized wear layer, stable engineered core, and resin-based coatings offer superior resistance to scratches, stains, and moisture compared to hardwood.</p>
-        </div>
-
-        <div class="mb-6">
-          <p class="font-semibold mb-2">Q: How important is professional installation for laminate flooring durability?</p>
-          <p>A: Professional installation is crucial as it ensures correct alignment, proper subfloor preparation, and the creation of appropriate expansion gaps, all of which help prolong the floor's lifespan.</p>
-        </div>
-
-        <div class="mb-6">
-          <p class="font-semibold mb-2">Q: Can laminate flooring withstand high-traffic areas such as homes with pets and children?</p>
-          <p>A: Yes, its scratch-resistant and easy-to-clean properties make it ideal for high-traffic environments, including those with pets and children.</p>
-        </div>
-
-        <div class="mb-6">
-          <p class="font-semibold mb-2">Q: What type of warranty should I expect with quality laminate flooring?</p>
-          <p>A: Warranties typically cover manufacturing defects, premature wear, and color fading, with terms ranging from 10 to 25 years depending on the product quality.</p>
-        </div>
-
-        <div>
-          <p class="font-semibold mb-2">Q: How does maintenance affect the longevity of laminate flooring?</p>
-          <p>A: Regular cleaning with non-abrasive tools and prompt spill management are essential to maintaining the floor's protective coating and overall durability.</p>
-        </div>
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div id="faq-container"></div>
       </div>
+
+      <script>
+        const faqData = [
+          {
+            question: "What makes laminate flooring more durable than hardwood?",
+            answer: "Its optimized wear layer, stable engineered core, and resin-based coatings offer superior resistance to scratches, stains, and moisture compared to hardwood."
+          },
+          {
+            question: "How important is professional installation for laminate flooring durability?",
+            answer: "Professional installation is crucial as it ensures correct alignment, proper subfloor preparation, and the creation of appropriate expansion gaps, all of which help prolong the floor's lifespan."
+          },
+          {
+            question: "Can laminate flooring withstand high-traffic areas such as homes with pets and children?",
+            answer: "Yes, its scratch-resistant and easy-to-clean properties make it ideal for high-traffic environments, including those with pets and children."
+          },
+          {
+            question: "What type of warranty should I expect with quality laminate flooring?",
+            answer: "Warranties typically cover manufacturing defects, premature wear, and color fading, with terms ranging from 10 to 25 years depending on the product quality."
+          },
+          {
+            question: "How does maintenance affect the longevity of laminate flooring?",
+            answer: "Regular cleaning with non-abrasive tools and prompt spill management are essential to maintaining the floor's protective coating and overall durability."
+          }
+        ];
+
+        function createFAQ() {
+          const container = document.getElementById('faq-container');
+          if (!container) return;
+          
+          faqData.forEach((faq, index) => {
+            const faqItem = document.createElement('div');
+            faqItem.className = 'faq-item';
+            
+            const question = document.createElement('button');
+            question.className = 'faq-question';
+            question.innerHTML = \`
+              <span>\${faq.question}</span>
+              <svg class="faq-chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            \`;
+            
+            const answer = document.createElement('div');
+            answer.className = 'faq-answer';
+            answer.style.display = 'none';
+            answer.innerHTML = \`<p>\${faq.answer}</p>\`;
+            
+            question.addEventListener('click', () => {
+              const isOpen = answer.style.display === 'block';
+              const chevron = question.querySelector('.faq-chevron');
+              
+              if (isOpen) {
+                answer.style.display = 'none';
+                chevron.classList.remove('open');
+              } else {
+                answer.style.display = 'block';
+                chevron.classList.add('open');
+              }
+            });
+            
+            faqItem.appendChild(question);
+            faqItem.appendChild(answer);
+            container.appendChild(faqItem);
+          });
+        }
+        
+        // Initialize FAQ when DOM is loaded
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', createFAQ);
+        } else {
+          createFAQ();
+        }
+      </script>
     `,
     image: "https://storage.googleapis.com/content-assistant-images-temp/of-a-a-modern-elegantly-des-4205da73-fe9c-43e7-86ba-78c28597d186.webp",
     author: "Genesis Stone Team",

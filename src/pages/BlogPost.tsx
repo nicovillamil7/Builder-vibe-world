@@ -8,6 +8,7 @@ import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Facebook, Twitter
 import { Link, useParams, Navigate } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
+import InteractiveFAQ from "@/components/InteractiveFAQ";
 import { blogArticles } from "@/utils/blogData";
 
 const BlogPost = () => {
@@ -87,6 +88,9 @@ const BlogPost = () => {
             <div className="prose prose-lg max-w-none">
               <div dangerouslySetInnerHTML={{ __html: article.content }} />
             </div>
+
+            {/* Interactive FAQ Component */}
+            <InteractiveFAQ />
 
             {/* Share Buttons */}
             <div className="border-t border-b py-6 my-8">
