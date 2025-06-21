@@ -102,9 +102,9 @@ const Products = () => {
                 </div>
 
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     {category.name}
-                  </h3>
+                  </h2>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {category.description}
                   </p>

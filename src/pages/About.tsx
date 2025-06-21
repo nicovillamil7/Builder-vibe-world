@@ -12,6 +12,10 @@ import {
   Handshake,
   Target,
   Heart,
+  CheckCircle,
+  Zap,
+  Building2,
+  Shield,
 } from "lucide-react";
 
 const About = () => {

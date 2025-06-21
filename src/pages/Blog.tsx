@@ -30,7 +30,7 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Flooring Insights & Trends
+              Flooring Blog - Expert Tips & Design Trends
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Expert advice, design inspiration, and industry insights from Genesis Stone & More

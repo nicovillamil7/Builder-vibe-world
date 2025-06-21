@@ -348,7 +348,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Got Questions? We've Got Answers
+              Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
               Find answers to the most common questions about our products,
@@ -364,6 +364,7 @@ const Index = () => {
             </TabsList>
 
             <TabsContent value="contractors" className="mt-8">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Contractor Questions</h3>
               <Accordion type="single" collapsible className="w-full">
                 {contractorFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`contractor-${index}`}>
@@ -379,6 +380,7 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="designers" className="mt-8">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Homeowner Questions</h3>
               <Accordion type="single" collapsible className="w-full">
                 {designerFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`designer-${index}`}>
@@ -394,6 +396,7 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="general" className="mt-8">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">General Information</h3>
               <Accordion type="single" collapsible className="w-full">
                 {generalFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`general-${index}`}>
