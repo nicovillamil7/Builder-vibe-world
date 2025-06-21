@@ -90,30 +90,44 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
 };
 
 // Simplified version for cases where you just need a reliable URL
-interface SimpleReliableImageProps
-  extends React.ImgHTMLAttributes<HTMLImageElement> {
-  imageId: string;
+interface SimpleReliableImageProps {
+  imageId?: string;
+  src?: string;
+  alt: string;
+  className?: string;
+  fallbackSrc?: string;
+  width?: number;
+  height?: number;
+  loading?: "lazy" | "eager";
 }
 
 export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   imageId,
+  src,
   alt,
   className = "",
-  ...props
+  fallbackSrc = "/placeholder.svg",
+  width,
+  height,
+  loading = "lazy"
 }) => {
   const imageSrc = getReliableImageUrl(imageId);
+  const finalSrc = src || imageSrc || fallbackSrc;
+
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.target as HTMLImageElement;
+    console.error("Image failed to load:", target.src);
+  };
 
   return (
     <img
-      src={imageSrc}
+      src={finalSrc}
       alt={alt}
       className={className}
-      loading="lazy"
-      decoding="async"
-      width={props.width || "800"}
-      height={props.height || "600"}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      {...props}
+      width={width}
+      height={height}
+      loading={loading}
+      onError={handleError}
     />
   );
 };

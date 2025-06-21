@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
+import {
+  PrimaryButton,
+  OutlineButton,
+} from "@/components/ui/custom-buttons";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
   Phone,

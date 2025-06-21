@@ -51,6 +51,9 @@ const Blog = () => {
                     src={featuredArticle.image}
                     alt={featuredArticle.title}
                     className="w-full h-64 md:h-full object-cover"
+                    width={400}
+                    height={256}
+                    loading="eager"
                   />
                 </div>
                 <CardContent className="md:w-1/2 p-8">
@@ -98,6 +101,9 @@ const Blog = () => {
                   src={article.image}
                   alt={article.title}
                   className="w-full h-48 object-cover"
+                  width={400}
+                  height={192}
+                  loading="lazy"
                 />
                 <CardContent className="p-6">
                   <div className="flex flex-wrap gap-2 mb-3">
