@@ -298,13 +298,13 @@ const Index = () => {
                     onClick={() => {
                       const phoneNumber = "13055104733";
                       let message = "";
-                      
+
                       if (feature.category === "contractors") {
                         message = "Hi! I'm a contractor interested in volume pricing and trade accounts. Can you help me get started?";
                       } else {
                         message = "Hi! I'm a homeowner looking for design consultation and premium flooring materials. Can you schedule an appointment?";
                       }
-                      
+
                       const encodedMessage = encodeURIComponent(message);
                       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 

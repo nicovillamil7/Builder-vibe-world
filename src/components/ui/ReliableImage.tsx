@@ -98,38 +98,21 @@ interface SimpleReliableImageProps
 export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   imageId,
   alt,
-  onError,
+  className = "",
   ...props
 }) => {
-  const config = RELIABLE_IMAGES[imageId];
-
-  if (!config) {
-    console.warn(`Image ID "${imageId}" not found, using default`);
-    return (
-      <img
-        src={RELIABLE_IMAGES.modernPoolDeck.primary}
-        alt={alt || RELIABLE_IMAGES.modernPoolDeck.alt}
-        onError={(e) => {
-          const target = e.target as HTMLImageElement;
-          target.src = RELIABLE_IMAGES.modernPoolDeck.fallback;
-          onError?.(e);
-        }}
-        {...props}
-      />
-    );
-  }
+  const imageSrc = getReliableImageUrl(imageId);
 
   return (
     <img
-      src={config.primary}
-      alt={alt || config.alt}
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        if (target.src !== config.fallback) {
-          target.src = config.fallback;
-        }
-        onError?.(e);
-      }}
+      src={imageSrc}
+      alt={alt}
+      className={className}
+      loading="lazy"
+      decoding="async"
+      width={props.width || "800"}
+      height={props.height || "600"}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       {...props}
     />
   );
