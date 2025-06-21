@@ -29,6 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
     { name: "Products", href: "/products" },
     { name: "Homeowners", href: "/retail" },
     { name: "Contractors", href: "/wholesale" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -272,6 +273,14 @@ const Layout = ({ children }: LayoutProps) => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
               </ul>
             </div>
 
