@@ -27,6 +27,7 @@ localPort = 5000
 externalPort = 80
 
 [workflows]
+runButton = "Run"
 
 [[workflows.workflow]]
 name = "Development Server"
@@ -36,3 +37,12 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "node --max-old-space-size=4096 ./node_modules/.bin/vite --host 0.0.0.0 --port 5000"
+
+[[workflows.workflow]]
+name = "Run"
+author = 39702129
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
