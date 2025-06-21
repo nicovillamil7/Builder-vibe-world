@@ -1,8 +1,9 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://genesis-stone.replit.app/</loc>
+    <loc>https://genesisstoneusa.com/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -13,7 +14,7 @@
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/products</loc>
+    <loc>https://genesisstoneusa.com/products</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -24,42 +25,42 @@
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/wholesale</loc>
+    <loc>https://genesisstoneusa.com/wholesale</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/retail</loc>
+    <loc>https://genesisstoneusa.com/retail</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/about</loc>
+    <loc>https://genesisstoneusa.com/about</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/contact</loc>
+    <loc>https://genesisstoneusa.com/contact</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/blog</loc>
+    <loc>https://genesisstoneusa.com/blog</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://genesis-stone.replit.app/blog/blog-post-1</loc>
+    <loc>https://genesisstoneusa.com/blog/blog-post-1</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
