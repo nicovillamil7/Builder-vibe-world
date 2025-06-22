@@ -652,7 +652,6 @@ const Index = () => {
                     event_category: 'engagement',
                     event_label: 'request_designer_samples',
                     value: 1
-                  value: 1
                   });
                 }
 
