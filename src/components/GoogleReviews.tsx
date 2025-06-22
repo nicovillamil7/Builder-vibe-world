@@ -175,11 +175,11 @@ const GoogleReviews = () => {
   };
 
   useEffect(() => {
-    // Try backend first, then fallback gracefully
-    fetchGoogleReviewsViaBackend();
-
-    // Alternative: uncomment to try JSONP proxy method
-    // fetchGoogleReviewsJSONP();
+    // Use fallback reviews since backend API is not set up
+    console.log("Using fallback reviews for demo");
+    setReviews(fallbackReviews);
+    setIsUsingFallback(true);
+    setLoading(false);
   }, []);
 
   const formatDate = (dateString: string) => {
