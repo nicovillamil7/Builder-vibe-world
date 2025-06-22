@@ -252,6 +252,35 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     alt: "Retail Shopping Center",
     category: "commercial-projects",
   },
+
+  // 🏠 SMALL RESIDENTIAL PROJECTS - New images for bathroom and home renovations
+  bathroomRenovation: {
+    id: "bathroomRenovation",
+    primary:
+      "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern bathroom renovation with porcelain tiles and natural stone accents",
+    category: "residential-renovation",
+  },
+  residentialHomeRenovation: {
+    id: "residentialHomeRenovation",
+    primary:
+      "https://images.unsplash.com/photo-1556912173-46c336c7fd55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Elegant residential home renovation with luxury vinyl plank flooring and designer tiles",
+    category: "residential-renovation",
+  },
+  retailStoreBuildout: {
+    id: "retailStoreBuildout",
+    primary:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern retail store build-out with commercial porcelain flooring and professional finish",
+    category: "retail-commercial",
+  },
   contractorHeroImage: {
     id: "contractorHeroImage",
     primary:
