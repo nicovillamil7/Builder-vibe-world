@@ -538,68 +538,8 @@ const Wholesale = () => {
         </div>
       </section>
 
-      {/* Contractor Testimonials - Credibility focus */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Proven Track Record
-            </h2>
-            <p className="text-xl text-gray-600">
-              Licensed contractors who trust Genesis Stone for their success
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="relative bg-white hover:shadow-xl transition-all duration-300"
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-5 w-5 text-[rgb(251,189,35)] fill-current"
-                        />
-                      ))}
-                    </div>
-                    <Badge className="ml-4 bg-green-100 text-green-800">
-                      {testimonial.savings}
-                    </Badge>
-                  </div>
-
-                  <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    "{testimonial.text}"
-                  </blockquote>
-
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-[rgb(138,0,0)] font-semibold">
-                        {testimonial.role}
-                      </p>
-                      <p className="text-gray-600">{testimonial.company}</p>
-                      <p className="text-sm text-gray-500">
-                        {testimonial.license}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-semibold text-gray-900">
-                        {testimonial.projects}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* Account Setup Process - Clear steps */}
       <section className="py-20 bg-slate-900 text-white">

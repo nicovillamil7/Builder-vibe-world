@@ -357,60 +357,8 @@ const Retail = () => {
         </div>
       </section>
 
-      {/* Homeowner Testimonials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              What Are Families In South Florida Saying
-            </h2>
-            <p className="text-xl text-gray-600">
-              Real stories from homeowners who transformed their spaces
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {homeownerTestimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="relative p-8 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-gray-50 to-white"
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="flex space-x-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-4 w-4 text-[rgb(251,189,35)] fill-current"
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    "{testimonial.text}"
-                  </blockquote>
-
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-[rgb(138,0,0)] font-semibold">
-                        {testimonial.location}
-                      </p>
-                      <p className="text-gray-600">{testimonial.projectType}</p>
-                    </div>
-                    <div className="text-right">
-                      <Badge variant="secondary">{testimonial.timeframe}</Badge>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* CTA Section */}
       <section className="py-16 bg-white">
