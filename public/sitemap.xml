@@ -65,4 +65,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://genesisstoneusa.com/blog/laminate-flooring-durability</loc>
+    <lastmod>2024-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://storage.googleapis.com/content-assistant-images-temp/of-a-a-sleek-modern-interior-02ebd834-0602-4c80-a426-0da36c8167e1.webp</image:loc>
+      <image:title>Laminate Flooring Durability Guide</image:title>
+    </image:image>
+  </url>
 </urlset>

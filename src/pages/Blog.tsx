@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,9 +21,9 @@ const Blog = () => {
         keywords="flooring blog, tile trends, decorative floor ideas, installation tips, natural stone care, porcelain tiles, laminate flooring, floor design"
         canonicalUrl="https://genesisstoneusa.com/blog"
       />
-      
+
       <BreadcrumbNavigation />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-900 to-red-700 text-white py-16">
         <div className="container mx-auto px-4">

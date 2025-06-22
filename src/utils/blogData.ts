@@ -143,7 +143,7 @@ export const blogArticles: BlogArticle[] = [
       <h2>Final Thoughts</h2>
       <p><strong>Laminate flooring</strong> is a versatile, cost-effective, and durable option for residential and commercial spaces. Its robust construction, quality <strong>wear</strong> layer, and professional installation ensure long-lasting performance. With low maintenance, ease of cleaning, and significant resistance to heavy traffic, <strong>laminate flooring</strong> is an excellent investment. Combined with comprehensive warranties and a variety of styles, it meets modern design and practical needs.</p>
 
-      
+
     `,
     image: "https://storage.googleapis.com/content-assistant-images-temp/of-a-a-modern-elegantly-des-4205da73-fe9c-43e7-86ba-78c28597d186.webp",
     author: "Genesis Stone Team",
