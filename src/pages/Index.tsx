@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import GoogleReviews from "@/components/GoogleReviews";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import {
   GoldButton,
   WhiteOutlineButton,
@@ -184,20 +185,7 @@ const Index = () => {
     },
   ];
 
-  const FAQStructuredData = ({ faqs }) => {
-    return (
-      
-        {faqs.map((faq, index) => (
-          
-            {faq.question}
-            
-              {faq.answer}
-            
-          
-        ))}
-      
-    );
-  };
+  
 
   return (
     <Layout>
