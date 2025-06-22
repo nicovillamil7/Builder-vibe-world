@@ -353,21 +353,13 @@ const Wholesale = () => {
                       <ul className="space-y-2">
                         {advantage.details.map((detail, idx) => (
                           <li
-                              <span>
-                                <p>1,000+ sq ft: 5% discount</p>
-                              </span>
-                            </li>
-                            <li className="flex items-center text-sm text-gray-600 mt-2">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              <span>
-                                <p>3,000+ sq ft: 10% discount</p>
-                              </span>
-                            </li>
-                            <li className="flex items-center text-sm text-gray-600 mt-2">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              <span>
-                                <p>10,000+ sq ft: 25% discount</p>
-                              </span>
+                            key={idx}
+                            className="flex items-center text-sm text-gray-600"
+                          >
+                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
                   </div>
                 </CardContent>
               </Card>
