@@ -4,6 +4,9 @@ import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { getReliableImageUrl } from "@/utils/imageUtils";
 import { Shield, Users, Calculator } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/SEOHead";
+import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
+import { PrimaryButton, GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 
 const Products = () => {
   const productCategories = [

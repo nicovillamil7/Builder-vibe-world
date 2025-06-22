@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -75,5 +74,18 @@
       <image:loc>https://storage.googleapis.com/content-assistant-images-temp/of-a-a-sleek-modern-interior-02ebd834-0602-4c80-a426-0da36c8167e1.webp</image:loc>
       <image:title>Laminate Flooring Durability Guide</image:title>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://genesisstoneusa.com/blog/laminate-flooring-durability-that-lasts-for-years</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/blog/benefits-of-laminate-flooring-for-enduring-elegance</loc>
+    <lastmod>2024-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
