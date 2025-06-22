@@ -1,9 +1,4 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
-import SEOHead from "@/components/SEOHead";
-import { Helmet } from "react-helmet-async";
 import ContactForm from "@/components/ContactForm";
 import {
   GoldButton,
@@ -11,6 +6,8 @@ import {
   PrimaryButton,
   OutlineButton,
 } from "@/components/ui/custom-buttons";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import {
   Calculator,
@@ -202,54 +199,15 @@ const Wholesale = () => {
     },
   ];
 
-  const wholesaleStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Wholesale Flooring Services",
-    "description": "Volume pricing and professional support for contractors, architects, and design professionals",
-    "url": "https://genesisstoneusa.com/wholesale",
-    "provider": {
-      "@type": "Organization",
-      "name": "Genesis Stone & More"
-    },
-    "serviceType": "Wholesale Flooring Distribution",
-    "areaServed": {
-      "@type": "Place",
-      "name": "South Florida"
-    },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Contractors, Architects, Design Professionals"
-    },
-    "offers": {
-      "@type": "Offer",
-      "description": "Volume pricing on premium flooring materials",
-      "category": "Wholesale Services"
-    }
-  };
-
   return (
     <Layout>
-      <SEOHead
-        title="Wholesale Flooring for Contractors & Professionals"
-        description="Volume pricing on premium flooring materials for contractors, architects, and design professionals. Porcelain tiles, natural stone, decorative floors with professional support in Miami."
-        keywords="wholesale flooring miami, contractor pricing, volume discounts, professional flooring, bulk tiles, contractor supplies"
-        canonicalUrl="https://genesisstoneusa.com/wholesale"
-      />
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(wholesaleStructuredData)}
-        </script>
-      </Helmet>
-      <BreadcrumbNavigation />
-
       {/* Hero Section - Industrial/Professional design */}
       <div className="relative bg-gradient-to-r from-slate-900 via-gray-900 to-slate-800 text-white overflow-hidden">
         {/* Floor Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`,
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`
           }}
         ></div>
 
@@ -288,16 +246,16 @@ const Wholesale = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <div className="text-3xl font-bold text-[rgb(251,189,35)]">
-                    25%
-                  </div>
-                  <div className="text-sm text-gray-300">Max Savings</div>
+                <div className="text-3xl font-bold text-[rgb(251,189,35)]">
+                  20%
                 </div>
-                <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <div className="text-3xl font-bold text-[rgb(251,189,35)]">
-                    Net-30
-                  </div>
-                  <div className="text-sm text-gray-300">Payment Terms</div>
+                <div className="text-sm text-gray-300">Max Savings</div>
+              </div>
+              <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
+                <div className="text-3xl font-bold text-[rgb(251,189,35)]">
+                  Frexible
+                </div>
+                <div className="text-sm text-gray-300">Payment Terms</div>
                 </div>
               </div>
 
@@ -341,10 +299,12 @@ const Wholesale = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Built for Contractor Success
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every feature, every service, every process designed around the
-              reality of construction deadlines and budgets
-            </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our extensive flooring range with tiered options and
+            special bulk pricing for builders and contractors. Discover
+            competitive rates on flooring, setting materials, and
+            accessories
+          </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -393,15 +353,21 @@ const Wholesale = () => {
                       <ul className="space-y-2">
                         {advantage.details.map((detail, idx) => (
                           <li
-                            key={idx}
-                            className="flex items-center text-sm text-gray-600"
-                          >
-                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                              <span>
+                                <p>1,000+ sq ft: 5% discount</p>
+                              </span>
+                            </li>
+                            <li className="flex items-center text-sm text-gray-600 mt-2">
+                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                              <span>
+                                <p>3,000+ sq ft: 10% discount</p>
+                              </span>
+                            </li>
+                            <li className="flex items-center text-sm text-gray-600 mt-2">
+                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                              <span>
+                                <p>10,000+ sq ft: 25% discount</p>
+                              </span>
                   </div>
                 </CardContent>
               </Card>
@@ -715,77 +681,12 @@ const Wholesale = () => {
             Stone Pro to win more bids and deliver better projects.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton 
-              size="lg" 
-              className="px-12 py-6 text-lg font-bold"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'm a contractor interested in applying for a trade account. Can you help me get started with volume pricing and trade benefits?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'apply_trade_account',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'apply_trade_account',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <GoldButton size="lg" className="px-12 py-6 text-lg font-bold">
               Apply for Trade Account
             </GoldButton>
             <WhiteOutlineButton
               size="lg"
               className="px-12 py-6 text-lg font-bold"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'm interested in calculating my potential savings with Genesis Stone's volume pricing. Can you help me with a cost comparison?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'calculate_savings',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'calculate_savings',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
             >
               Calculate My Savings
             </WhiteOutlineButton>
