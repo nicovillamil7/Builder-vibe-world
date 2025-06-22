@@ -1,13 +1,9 @@
 import Layout from "@/components/Layout";
-import {
-  GoldButton,
-  WhiteOutlineButton,
-  PrimaryButton,
-} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { getReliableImageUrl } from "@/utils/imageUtils";
 import { Shield, Users, Calculator } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const Products = () => {
   const productCategories = [
@@ -69,8 +65,67 @@ const Products = () => {
     },
   ];
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Premium Flooring Products & Collections",
+    "description": "Comprehensive collection of premium flooring materials including porcelain tiles, natural stone, and decorative floors",
+    "url": "https://genesisstoneusa.com/products",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Flooring Product Categories",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "position": 1,
+          "name": "Porcelain Tiles",
+          "description": "High-performance porcelain tiles for interior and exterior applications",
+          "category": "Flooring Materials",
+          "brand": "Genesis Stone & More"
+        },
+        {
+          "@type": "Product",
+          "position": 2,
+          "name": "Natural Stone Floors",
+          "description": "Premium natural stone flooring including travertine, marble, and granite",
+          "category": "Flooring Materials",
+          "brand": "Genesis Stone & More"
+        },
+        {
+          "@type": "Product",
+          "position": 3,
+          "name": "Decorative Floors",
+          "description": "Decorative flooring solutions including mosaics and custom patterns",
+          "category": "Flooring Materials",
+          "brand": "Genesis Stone & More"
+        },
+        {
+          "@type": "Product",
+          "position": 4,
+          "name": "Laminate Flooring",
+          "description": "Cost-effective laminate flooring that replicates wood and stone",
+          "category": "Flooring Materials",
+          "brand": "Genesis Stone & More"
+        }
+      ]
+    }
+  };
+
   return (
     <Layout>
+      <SEOHead
+        title="Premium Flooring Products & Collections"
+        description="Explore our extensive collection of premium flooring materials: porcelain tiles, natural stone floors, decorative flooring, laminate, and professional installation accessories. Serving Miami contractors and homeowners."
+        keywords="porcelain tiles miami, natural stone floors, decorative flooring, laminate flooring, floor tiles, ceramic tiles, stone flooring, miami flooring products"
+        canonicalUrl="https://genesisstoneusa.com/products"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(productStructuredData)}
+        </script>
+      </Helmet>
+      <BreadcrumbNavigation />
+
       {/* Hero Section */}
       <div className="bg-[rgb(138,0,0)] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

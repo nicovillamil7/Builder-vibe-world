@@ -184,6 +184,21 @@ const Index = () => {
     },
   ];
 
+  const FAQStructuredData = ({ faqs }) => {
+    return (
+      
+        {faqs.map((faq, index) => (
+          
+            {faq.question}
+            
+              {faq.answer}
+            
+          
+        ))}
+      
+    );
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -397,7 +412,31 @@ const Index = () => {
 
             <TabsContent value="general" className="mt-8">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">General Information</h3>
-              <Accordion type="single" collapsible className="w-full">
+              <FAQStructuredData
+            faqs={[
+              {
+                question: "What areas in Florida do you serve?",
+                answer: "We serve all of South Florida, with same-day pickup available at our Miami showroom and next-day delivery throughout the state. We have special shipping rates for bulk orders."
+              },
+              {
+                question: "What warranties are available on your products?",
+                answer: "All our products come with manufacturer warranties that vary by material type and brand. Most manufacturer warranties range from 5-25 years, providing you with quality assurance directly from the manufacturer."
+              },
+              {
+                question: "What types of flooring materials do you carry?",
+                answer: "We carry a comprehensive selection including porcelain tiles, natural stone, luxury vinyl plank, laminate, hardwood, and custom mosaics. All materials are sourced from top manufacturers and meet commercial-grade standards."
+              },
+              {
+                question: "Can I visit your showroom to see materials?",
+                answer: "Yes! Our Miami showroom is open Mon-Fri 7AM-4PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs."
+              },
+              {
+                question: "Do you offer financing options?",
+                answer: "We accept various payment methods including cash, check, and card payments. For contractors, we offer Net-30 payment terms with approved credit. We focus on providing competitive pricing and flexible payment terms rather than financing services."
+              }
+            ]}
+          />
+          <Accordion type="single" collapsible className="w-full">
                 {generalFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`general-${index}`}>
                     <AccordionTrigger className="text-left">
@@ -625,6 +664,7 @@ const Index = () => {
                     event_category: 'engagement',
                     event_label: 'request_designer_samples',
                     value: 1
+                  value: 1
                   });
                 }
 

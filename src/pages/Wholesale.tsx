@@ -1,4 +1,9 @@
 import Layout from "@/components/Layout";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
+import SEOHead from "@/components/SEOHead";
+import { Helmet } from "react-helmet-async";
 import ContactForm from "@/components/ContactForm";
 import {
   GoldButton,
@@ -6,8 +11,6 @@ import {
   PrimaryButton,
   OutlineButton,
 } from "@/components/ui/custom-buttons";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import {
   Calculator,
@@ -199,8 +202,47 @@ const Wholesale = () => {
     },
   ];
 
+  const wholesaleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Wholesale Flooring Services",
+    "description": "Volume pricing and professional support for contractors, architects, and design professionals",
+    "url": "https://genesisstoneusa.com/wholesale",
+    "provider": {
+      "@type": "Organization",
+      "name": "Genesis Stone & More"
+    },
+    "serviceType": "Wholesale Flooring Distribution",
+    "areaServed": {
+      "@type": "Place",
+      "name": "South Florida"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Contractors, Architects, Design Professionals"
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Volume pricing on premium flooring materials",
+      "category": "Wholesale Services"
+    }
+  };
+
   return (
     <Layout>
+      <SEOHead
+        title="Wholesale Flooring for Contractors & Professionals"
+        description="Volume pricing on premium flooring materials for contractors, architects, and design professionals. Porcelain tiles, natural stone, decorative floors with professional support in Miami."
+        keywords="wholesale flooring miami, contractor pricing, volume discounts, professional flooring, bulk tiles, contractor supplies"
+        canonicalUrl="https://genesisstoneusa.com/wholesale"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(wholesaleStructuredData)}
+        </script>
+      </Helmet>
+      <BreadcrumbNavigation />
+
       {/* Hero Section - Industrial/Professional design */}
       <div className="relative bg-gradient-to-r from-slate-900 via-gray-900 to-slate-800 text-white overflow-hidden">
         {/* Floor Background Image */}

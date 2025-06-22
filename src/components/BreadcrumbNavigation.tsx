@@ -1,4 +1,3 @@
-
 import { ChevronRight, Home } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -10,11 +9,11 @@ interface BreadcrumbItem {
 const BreadcrumbNavigation = () => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
-  
+
   const breadcrumbs: BreadcrumbItem[] = [
     { label: 'Home', href: '/' }
   ];
-  
+
   let currentPath = '';
   pathnames.forEach((pathname) => {
     currentPath += `/${pathname}`;
@@ -23,6 +22,26 @@ const BreadcrumbNavigation = () => {
   });
 
   if (breadcrumbs.length <= 1) return null;
+
+  // Generate breadcrumb structured data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://genesisstoneusa.com/"
+      },
+      ...breadcrumbs.map((breadcrumb, index) => ({
+        "@type": "ListItem",
+        "position": index + 2,
+        "name": breadcrumb.label,
+        "item": `https://genesisstoneusa.com${breadcrumb.href}`
+      }))
+    ]
+  };
 
   return (
     <nav className="bg-gray-50 py-3" aria-label="Breadcrumb">
