@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
+import GoogleReviews from "@/components/GoogleReviews";
 import {
   GoldButton,
   WhiteOutlineButton,

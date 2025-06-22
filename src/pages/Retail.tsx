@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
+import GoogleReviews from "@/components/GoogleReviews";
 import {
   GoldButton,
   WhiteOutlineButton,
@@ -184,41 +185,7 @@ const Retail = () => {
             </p>
 
             <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-16">
-              <GoldButton 
-                size="lg" 
-                className="px-12 py-6 text-xl font-bold"
-                onClick={() => {
-                  const phoneNumber = "13055104733";
-                  const message = "Hi! I'm interested in starting my home flooring project. Can you help me get started?";
-                  const encodedMessage = encodeURIComponent(message);
-                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                  // Track Google Ads conversion
-                  if (typeof (window as any).gtag_report_conversion === 'function') {
-                    (window as any).gtag_report_conversion();
-                  }
-
-                  // Track Google Analytics conversion
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'start_home_project',
-                      value: 1
-                    });
-                  }
-
-                  // Track Google Ads conversion event
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'gads_conversion', {
-                      event_category: 'engagement',
-                      event_label: 'start_home_project',
-                      value: 1
-                    });
-                  }
-
-                  window.open(whatsappUrl, "_blank");
-                }}
-              >
+              <GoldButton size="lg" className="px-12 py-6 text-xl font-bold">
                 Start Your Home Project
                 <ArrowRight className="ml-3 h-6 w-6" />
               </GoldButton>
@@ -231,30 +198,6 @@ const Retail = () => {
                     "Hi! I'm interested in scheduling a design consultation for my home flooring project. Can you help me?";
                   const encodedMessage = encodeURIComponent(message);
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                  // Track Google Ads conversion
-                  if (typeof (window as any).gtag_report_conversion === 'function') {
-                    (window as any).gtag_report_conversion();
-                  }
-
-                  // Track Google Analytics conversion
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'design_consultation',
-                      value: 1
-                    });
-                  }
-
-                  // Track Google Ads conversion event
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'gads_conversion', {
-                      event_category: 'engagement',
-                      event_label: 'design_consultation',
-                      value: 1
-                    });
-                  }
-
                   window.open(whatsappUrl, "_blank");
                 }}
               >
@@ -480,76 +423,10 @@ const Retail = () => {
             your space
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              className="bg-[rgb(138,0,0)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[rgb(120,0,0)] transition-colors"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'd like to schedule a design consultation for my home flooring project. When would be a good time?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'schedule_consultation',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'schedule_consultation',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <button className="bg-[rgb(138,0,0)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[rgb(120,0,0)] transition-colors">
               Schedule Consultation
             </button>
-            <button 
-              className="border-2 border-[rgb(138,0,0)] text-[rgb(138,0,0)] px-8 py-3 rounded-lg font-semibold hover:bg-[rgb(138,0,0)] hover:text-white transition-colors"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'm interested in getting a free quote for my flooring project. Can you help me with pricing information?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_free_quote',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_free_quote',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <button className="border-2 border-[rgb(138,0,0)] text-[rgb(138,0,0)] px-8 py-3 rounded-lg font-semibold hover:bg-[rgb(138,0,0)] hover:text-white transition-colors">
               Get Free Quote
             </button>
           </div>
