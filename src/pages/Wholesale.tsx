@@ -85,7 +85,7 @@ const Wholesale = () => {
   const pricingCalculator = [
     {
       tier: "Starter",
-      range: "1,000 - 4,999 sq ft",
+      range: "1,000 sq ft",
       discount: "Standard Pricing",
       features: ["Trade pricing", "Standard delivery", "Email support"],
       popular: false,
@@ -93,7 +93,7 @@ const Wholesale = () => {
     },
     {
       tier: "Professional",
-      range: "5,000 - 9,999 sq ft",
+      range: "1,000 - 3,000 sq ft",
       discount: "15% Volume Discount",
       features: [
         "15% off materials",
