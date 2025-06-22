@@ -431,68 +431,6 @@ const Wholesale = () => {
         </div>
       </section>
 
-      {/* Project Showcase - Results-focused */}
-      <section className="py-20 bg-[rgb(138,0,0)] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Real Projects, Real Savings
-            </h2>
-            <p className="text-xl text-gray-300">
-              See how our contractor partners are building better and saving
-              more
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {contractorProjects.map((project, index) => (
-              <Card
-                key={index}
-                className="bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden group hover:bg-white/20 transition-all duration-300"
-              >
-                <div className="relative">
-                  <SimpleReliableImage
-                    imageId={project.imageId}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <Badge className="absolute top-4 right-4 bg-[rgb(251,189,35)] text-black font-bold">
-                    {project.savings}
-                  </Badge>
-                </div>
-                <CardContent className="p-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-[rgb(251,189,35)] font-semibold mb-1">
-                    {project.contractor}
-                  </p>
-                  <p className="text-gray-300 text-sm mb-4">
-                    {project.location}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
-                    <div>
-                      <p className="text-gray-300">Square Footage</p>
-                      <p className="font-semibold">{project.sqft}</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-300">Timeline</p>
-                      <p className="font-semibold">{project.timeline}</p>
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <p className="text-gray-300 text-sm mb-1">
-                      Materials Used:
-                    </p>
-                    <p className="text-white text-sm">{project.materials}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contractor Services - Operational efficiency */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -589,6 +527,68 @@ const Wholesale = () => {
                 </p>
                 <Badge className="bg-white/10 text-white">{process.time}</Badge>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Showcase - Results-focused */}
+      <section className="py-20 bg-[rgb(138,0,0)] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              Real Projects, Real Savings
+            </h2>
+            <p className="text-xl text-gray-300">
+              See how our contractor partners are building better and saving
+              more
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {contractorProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden group hover:bg-white/20 transition-all duration-300"
+              >
+                <div className="relative">
+                  <SimpleReliableImage
+                    imageId={project.imageId}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <Badge className="absolute top-4 right-4 bg-[rgb(251,189,35)] text-black font-bold">
+                    {project.savings}
+                  </Badge>
+                </div>
+                <CardContent className="p-6 text-white">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-[rgb(251,189,35)] font-semibold mb-1">
+                    {project.contractor}
+                  </p>
+                  <p className="text-gray-300 text-sm mb-4">
+                    {project.location}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div>
+                      <p className="text-gray-300">Square Footage</p>
+                      <p className="font-semibold">{project.sqft}</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-300">Timeline</p>
+                      <p className="font-semibold">{project.timeline}</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <p className="text-gray-300 text-sm mb-1">
+                      Materials Used:
+                    </p>
+                    <p className="text-white text-sm">{project.materials}</p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
