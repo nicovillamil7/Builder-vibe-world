@@ -472,9 +472,6 @@ const Wholesale = () => {
         </div>
       </section>
 
-      {/* Google Reviews Section */}
-      <GoogleReviews />
-
       {/* Project Showcase - Results-focused */}
       <section className="py-20 bg-[rgb(138,0,0)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -536,6 +533,9 @@ const Wholesale = () => {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* Contact Form */}
       <section className="py-20 bg-white">
