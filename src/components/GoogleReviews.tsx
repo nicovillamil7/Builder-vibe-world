@@ -2,12 +2,8 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, ExternalLink } from "lucide-react";
 
-// Your Google Places API configuration
-const GOOGLE_API_KEY = "AIzaSyDOEN5ql3dqILeDzp9R71JodVWlR8P2TKQ";
-
-// Manually extracted Place ID for Genesis Stone
-// (We'll get this through backend or manual extraction)
-const GENESIS_STONE_PLACE_ID = "ChIJ_____PLACEHOLDER_____"; // Will be updated
+// Google Reviews Component for Genesis Stone
+// Using fallback reviews for demo purposes
 
 interface GoogleReview {
   reviewId: string;
