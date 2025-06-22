@@ -106,7 +106,7 @@ const Wholesale = () => {
     },
     {
       tier: "Enterprise",
-      range: "10,000+ sq ft",
+      range: "3,000 - 10,000+ sq ft",
       discount: "Up to 25% Discount",
       features: [
         "Maximum discounts",
@@ -247,16 +247,12 @@ const Wholesale = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <div className="text-3xl font-bold text-[rgb(251,189,35)]">
-                    20%
+                  <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-4">
+                    <div className="text-[rgb(251,189,35)] text-3xl font-bold">
+                      Flexible
+                    </div>
+                    <div className="text-gray-300 text-sm">Payment Terms</div>
                   </div>
-                  <div className="text-sm text-gray-300">Max Savings</div>
-                </div>
-                <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <div className="text-3xl font-bold text-[rgb(251,189,35)]">
-                    Frexible
-                  </div>
-                  <div className="text-sm text-gray-300">Payment Terms</div>
                 </div>
               </div>
 
@@ -478,59 +474,6 @@ const Wholesale = () => {
 
       {/* Google Reviews Section */}
       <GoogleReviews />
-
-      {/* Account Setup Process - Clear steps */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Get Started in 24 Hours</h2>
-            <p className="text-xl text-gray-300">
-              Simple application process designed for busy contractors
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Submit Application",
-                description:
-                  "Contractor license, business info, and references",
-                time: "5 minutes",
-              },
-              {
-                step: "02",
-                title: "Credit Review",
-                description: "Quick review for Net-30 payment approval",
-                time: "4 hours",
-              },
-              {
-                step: "03",
-                title: "Account Setup",
-                description: "Account manager assignment and pricing setup",
-                time: "Same day",
-              },
-              {
-                step: "04",
-                title: "Start Ordering",
-                description: "Begin saving immediately on your next project",
-                time: "24 hours",
-              },
-            ].map((process, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-[rgb(251,189,35)] to-amber-500 text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                  {process.step}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{process.title}</h3>
-                <p className="text-gray-300 mb-2 leading-relaxed">
-                  {process.description}
-                </p>
-                <Badge className="bg-white/10 text-white">{process.time}</Badge>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Project Showcase - Results-focused */}
       <section className="py-20 bg-[rgb(138,0,0)] text-white">
