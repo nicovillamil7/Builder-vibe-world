@@ -128,7 +128,7 @@ const Wholesale = () => {
       timeline: "Completed in 3 days",
       materials: "Porcelain tiles, Natural stone",
       savings: "$500 saved",
-      imageId: "luxuryApartmentComplex",
+      imageId: "bathroomRenovation",
     },
     {
       title: "Residential Home Renovation",
@@ -138,7 +138,7 @@ const Wholesale = () => {
       timeline: "Completed in 2 weeks",
       materials: "LVP flooring, Designer tiles",
       savings: "$3,200 saved",
-      imageId: "officeTowerRenovation",
+      imageId: "residentialHomeRenovation",
     },
     {
       title: "Retail Store Build-out",
@@ -148,7 +148,7 @@ const Wholesale = () => {
       timeline: "Completed in 4 weeks",
       materials: "Commercial porcelain, Luxury vinyl",
       savings: "$8,500 saved",
-      imageId: "retailShoppingCenter",
+      imageId: "retailStoreBuildout",
     },
   ];
 
