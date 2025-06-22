@@ -207,7 +207,7 @@ const Wholesale = () => {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`,
           }}
         ></div>
 
@@ -246,16 +246,16 @@ const Wholesale = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                <div className="text-3xl font-bold text-[rgb(251,189,35)]">
-                  20%
+                  <div className="text-3xl font-bold text-[rgb(251,189,35)]">
+                    20%
+                  </div>
+                  <div className="text-sm text-gray-300">Max Savings</div>
                 </div>
-                <div className="text-sm text-gray-300">Max Savings</div>
-              </div>
-              <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                <div className="text-3xl font-bold text-[rgb(251,189,35)]">
-                  Frexible
-                </div>
-                <div className="text-sm text-gray-300">Payment Terms</div>
+                <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-[rgb(251,189,35)]">
+                    Frexible
+                  </div>
+                  <div className="text-sm text-gray-300">Payment Terms</div>
                 </div>
               </div>
 
@@ -299,12 +299,11 @@ const Wholesale = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Built for Contractor Success
             </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our extensive flooring range with tiered options and
-            special bulk pricing for builders and contractors. Discover
-            competitive rates on flooring, setting materials, and
-            accessories
-          </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our extensive flooring range with tiered options and
+              special bulk pricing for builders and contractors. Discover
+              competitive rates on flooring, setting materials, and accessories
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -360,6 +359,8 @@ const Wholesale = () => {
                             <span>{detail}</span>
                           </li>
                         ))}
+                      </ul>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
