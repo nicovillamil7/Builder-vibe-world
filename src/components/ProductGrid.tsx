@@ -9,6 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
+import { Helmet } from "react-helmet-async";
 
 const products = [
   {
@@ -81,6 +82,43 @@ const ProductGrid = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  // Generate structured data for products
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": products.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": product.name,
+        "description": product.description,
+        "category": product.category,
+        "brand": {
+          "@type": "Brand",
+          "name": "Genesis Stone"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "Variable",
+          "priceCurrency": "USD",
+          "seller": {
+            "@type": "Organization",
+            "name": "Genesis Stone"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "150"
+        }
+      }
+    }))
+  };
+
   const itemWidth = 320; // Card width (288px) + gap (32px)
   const visibleItems = 3; // Number of items visible at once
   const maxIndex = Math.max(0, products.length - visibleItems);
@@ -103,7 +141,13 @@ const ProductGrid = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(productStructuredData)}
+        </script>
+      </Helmet>
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -211,6 +255,7 @@ const ProductGrid = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
