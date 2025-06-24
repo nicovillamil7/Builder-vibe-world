@@ -228,7 +228,21 @@ const Products = () => {
                     alt={category.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div
+                    className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                    style={{
+                      backgroundImage:
+                        category.id === "porcelain"
+                          ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F18e90d9f99c3420095f59bd37800aeef)"
+                          : category.id === "natural-stone"
+                            ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F2a92e90ea3be4a5ca96a5c2eb98a0677)"
+                            : category.id === "laminates"
+                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F380930421bb24b70b044aa89b2501734)"
+                              : category.id === "decorative"
+                                ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Ff2ed05f8d528431d854d22437c4645e4)"
+                                : "linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0))",
+                    }}
+                  ></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
                   </div>
