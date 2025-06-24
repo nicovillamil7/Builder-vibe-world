@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import GoogleReviews from "@/components/GoogleReviews";
-import FAQStructuredData from "@/components/FAQStructuredData";
 import {
   GoldButton,
   WhiteOutlineButton,
@@ -185,8 +184,6 @@ const Index = () => {
     },
   ];
 
-  
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -297,48 +294,7 @@ const Index = () => {
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 mb-6">{feature.description}</p>
-                  <PrimaryButton
-                    onClick={() => {
-                      const phoneNumber = "13055104733";
-                      let message = "";
-
-                      if (feature.category === "contractors") {
-                        message = "Hi! I'm a contractor interested in volume pricing and trade accounts. Can you help me get started?";
-                      } else {
-                        message = "Hi! I'm a homeowner looking for design consultation and premium flooring materials. Can you schedule an appointment?";
-                      }
-
-                      const encodedMessage = encodeURIComponent(message);
-                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                      // Track Google Ads conversion
-                      if (typeof (window as any).gtag_report_conversion === 'function') {
-                        (window as any).gtag_report_conversion();
-                      }
-
-                      // Track Google Analytics conversion
-                      if (typeof (window as any).gtag === 'function') {
-                        (window as any).gtag('event', 'conversion', {
-                          event_category: 'engagement',
-                          event_label: feature.category === "contractors" ? 'get_trade_pricing_feature' : 'request_appointment_feature',
-                          value: 1
-                        });
-                      }
-
-                      // Track Google Ads conversion event
-                      if (typeof (window as any).gtag === 'function') {
-                        (window as any).gtag('event', 'gads_conversion', {
-                          event_category: 'engagement',
-                          event_label: feature.category === "contractors" ? 'get_trade_pricing_feature' : 'request_appointment_feature',
-                          value: 1
-                        });
-                      }
-
-                      window.open(whatsappUrl, "_blank");
-                    }}
-                  >
-                    {feature.action}
-                  </PrimaryButton>
+                  <PrimaryButton>{feature.action}</PrimaryButton>
                 </CardContent>
               </Card>
             ))}
@@ -351,7 +307,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
+              Got Questions? We've Got Answers
             </h2>
             <p className="text-lg text-gray-600">
               Find answers to the most common questions about our products,
@@ -367,7 +323,6 @@ const Index = () => {
             </TabsList>
 
             <TabsContent value="contractors" className="mt-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Contractor Questions</h3>
               <Accordion type="single" collapsible className="w-full">
                 {contractorFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`contractor-${index}`}>
@@ -383,7 +338,6 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="designers" className="mt-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Homeowner Questions</h3>
               <Accordion type="single" collapsible className="w-full">
                 {designerFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`designer-${index}`}>
@@ -399,32 +353,7 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="general" className="mt-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">General Information</h3>
-              <FAQStructuredData
-            faqs={[
-              {
-                question: "What areas in Florida do you serve?",
-                answer: "We serve all of South Florida, with same-day pickup available at our Miami showroom and next-day delivery throughout the state. We have special shipping rates for bulk orders."
-              },
-              {
-                question: "What warranties are available on your products?",
-                answer: "All our products come with manufacturer warranties that vary by material type and brand. Most manufacturer warranties range from 5-25 years, providing you with quality assurance directly from the manufacturer."
-              },
-              {
-                question: "What types of flooring materials do you carry?",
-                answer: "We carry a comprehensive selection including porcelain tiles, natural stone, luxury vinyl plank, laminate, hardwood, and custom mosaics. All materials are sourced from top manufacturers and meet commercial-grade standards."
-              },
-              {
-                question: "Can I visit your showroom to see materials?",
-                answer: "Yes! Our Miami showroom is open Mon-Fri 7AM-4PM. We have full displays of all our materials, and our team can provide expert guidance on material selection for your specific project needs."
-              },
-              {
-                question: "Do you offer financing options?",
-                answer: "We accept various payment methods including cash, check, and card payments. For contractors, we offer Net-30 payment terms with approved credit. We focus on providing competitive pricing and flexible payment terms rather than financing services."
-              }
-            ]}
-          />
-          <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="w-full">
                 {generalFaqs.map((faq, index) => (
                   <AccordionItem key={index} value={`general-${index}`}>
                     <AccordionTrigger className="text-left">
@@ -457,12 +386,9 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60"
+                src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                width="400"
-                height="300"
-                loading="lazy"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -474,18 +400,15 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">Pool Deck Paradise</h4>
-                <p className="text-sm opacity-90">Large Format Porcelain</p>
+                <p className="text-sm opacity-90">Natural Stone</p>
               </div>
             </div>
 
             <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60"
+                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury living room with marble accent wall"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                width="400"
-                height="300"
-                loading="lazy"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -503,30 +426,30 @@ const Index = () => {
 
             <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60"
+                src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                width="400"
-                height="300"
-                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                  backgroundImage:
+                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F415bcd7e0a704d01a11986e13ecabc3a)",
+                }}
+              ></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">
-                  Natural Stone Elegance
+                  Travertine Pool & Spa
                 </h4>
-                <p className="text-sm opacity-90">Travertine Pool & Spa</p>
+                <p className="text-sm opacity-90">Natural Stone</p>
               </div>
             </div>
 
             <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60"
+                src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern white interior with polished porcelain"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                width="400"
-                height="300"
-                loading="lazy"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -544,12 +467,9 @@ const Index = () => {
 
             <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
-                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjgw3ne4za9mheafx9wrc5_1750117973_img_1-531f33?format=webp&width=400"
+                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjgw3ne4za9mheafx9wrc5_1750117973_img_1-531f33?format=webp&width=800"
                 alt="Professional installation of luxury vinyl plank flooring"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                width="400"
-                height="300"
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -562,12 +482,9 @@ const Index = () => {
 
             <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
               <img
-                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjhp2ee2fbej2h3a8ybwn6_1750118078_img_1-73caf1?format=webp&width=400"
+                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjhp2ee2fbej2h3a8ybwn6_1750118078_img_1-73caf1?format=webp&width=800"
                 alt="Luxury mosaic artistry in spa design"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                width="400"
-                height="300"
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -586,78 +503,10 @@ const Index = () => {
             Ready to Get Started?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <GoldButton 
-              size="lg" 
-              className="px-8 py-3"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'm interested in getting trade pricing for my project. Can you help me with volume discounts and pricing information?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_trade_pricing',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_trade_pricing',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <GoldButton size="lg" className="px-8 py-3">
               Get Trade Pricing
             </GoldButton>
-            <WhiteOutlineButton 
-              size="lg" 
-              className="px-8 py-3"
-              onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'm a designer and I'd like to request material samples for my client projects. Can you help me with your designer sample program?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-                // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
-                }
-
-                // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'request_designer_samples',
-                    value: 1
-                  });
-                }
-
-                // Track Google Ads conversion event
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'gads_conversion', {
-                    event_category: 'engagement',
-                    event_label: 'request_designer_samples',
-                    value: 1
-                  });
-                }
-
-                window.open(whatsappUrl, "_blank");
-              }}
-            >
+            <WhiteOutlineButton size="lg" className="px-8 py-3">
               Request Designer Samples
             </WhiteOutlineButton>
           </div>
