@@ -168,6 +168,11 @@ const Index = () => {
         "All our products come with manufacturer warranties that vary by material type and brand. Most manufacturer warranties range from 5-25 years, providing you with quality assurance directly from the manufacturer.",
     },
     {
+      question: "What types of natural stone do you offer?",
+      answer:
+        "We specialize in premium natural stone including travertine, marble, limestone, granite, and slate. Our natural stone selection features both domestic and imported varieties, perfect for pool decks, patios, interior floors, and accent walls. Each stone is carefully selected for durability and beauty.",
+    },
+    {
       question: "What types of flooring materials do you carry?",
       answer:
         "We carry a comprehensive selection including porcelain tiles, natural stone, luxury vinyl plank, laminate, hardwood, and custom mosaics. All materials are sourced from top manufacturers and meet commercial-grade standards.",
