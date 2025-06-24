@@ -21,9 +21,10 @@ export const blogArticles: BlogArticle[] = [
     id: "2",
     slug: "benefits-of-laminate-flooring-for-enduring-elegance",
     title: "Benefits of Laminate Flooring for Enduring Elegance",
-    excerpt: "Explore the comprehensive benefits of laminate flooring that combines elegance with practicality. From superior durability to easy maintenance, discover why laminate flooring is the perfect choice for modern homes and commercial spaces.",
+    excerpt:
+      "Explore the comprehensive benefits of laminate flooring that combines elegance with practicality. From superior durability to easy maintenance, discover why laminate flooring is the perfect choice for modern homes and commercial spaces.",
     content: `
-      <img src="https://storage.googleapis.com/content-assistant-images-temp/elegant-laminate-flooring-modern-interior.webp" alt="elegant laminate flooring in a modern interior showcasing enduring elegance and sophisticated design" class="w-full h-64 object-cover rounded-lg mb-8">
+      <img src="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7c5feacc40d1433497e02a4682df187d" alt="elegant laminate flooring in a modern interior showcasing enduring elegance and sophisticated design" class="w-full h-64 object-cover rounded-lg mb-8">
 
       <p>When it comes to choosing the perfect flooring for your home or commercial space, <strong>laminate flooring</strong> stands out as an exceptional choice that combines aesthetic appeal with practical benefits. This comprehensive guide explores the numerous advantages of <strong>laminate flooring</strong> and why it continues to be a preferred option for homeowners, designers, and contractors alike.</p>
 
@@ -166,22 +167,39 @@ export const blogArticles: BlogArticle[] = [
       <h2>Conclusion</h2>
       <p>The <strong>benefits of laminate flooring</strong> make it an outstanding choice for modern homes and commercial spaces. From its exceptional durability and easy maintenance to its cost-effectiveness and design versatility, <strong>laminate flooring</strong> delivers enduring elegance that enhances any environment. As technology continues to advance, laminate flooring will undoubtedly remain at the forefront of innovative flooring solutions, providing beautiful, practical, and sustainable options for discerning property owners.</p>
     `,
-    image: "https://storage.googleapis.com/content-assistant-images-temp/elegant-laminate-flooring-modern-interior.webp",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7c5feacc40d1433497e02a4682df187d",
     author: "Genesis Stone Team",
     date: "March 22, 2024",
     publishDate: "2024-03-22T10:00:00Z",
     lastModified: "2024-03-22T10:00:00Z",
     readTime: "15 min read",
-    tags: ["Laminate Flooring", "Benefits", "Durability", "Design", "Cost-Effective", "Home Improvement"],
+    tags: [
+      "Laminate Flooring",
+      "Benefits",
+      "Durability",
+      "Design",
+      "Cost-Effective",
+      "Home Improvement",
+    ],
     featured: false,
     published: true,
-    seoKeywords: ["laminate flooring benefits", "laminate flooring advantages", "durable flooring", "cost-effective flooring", "easy maintenance flooring", "waterproof laminate", "DIY flooring installation"]
+    seoKeywords: [
+      "laminate flooring benefits",
+      "laminate flooring advantages",
+      "durable flooring",
+      "cost-effective flooring",
+      "easy maintenance flooring",
+      "waterproof laminate",
+      "DIY flooring installation",
+    ],
   },
   {
     id: "1",
     slug: "laminate-flooring-durability-that-lasts-for-years",
     title: "Laminate Flooring Durability That Lasts for Years",
-    excerpt: "Discover why laminate flooring is the perfect choice for durability and longevity. Learn about its advanced materials, protective coatings, and how it withstands everyday wear, stains, scratches, and water damage.",
+    excerpt:
+      "Discover why laminate flooring is the perfect choice for durability and longevity. Learn about its advanced materials, protective coatings, and how it withstands everyday wear, stains, scratches, and water damage.",
     content: `
       <img src="https://storage.googleapis.com/content-assistant-images-temp/of-a-a-modern-elegantly-des-4205da73-fe9c-43e7-86ba-78c28597d186.webp" alt="a modern, elegantly designed home interior features a gleaming laminate floor with a rich wood finish, showcasing its impressive durability under the warm glow of stylish lighting fixtures." class="w-full h-64 object-cover rounded-lg mb-8">
 
@@ -305,39 +323,62 @@ export const blogArticles: BlogArticle[] = [
 
 
     `,
-    image: "https://storage.googleapis.com/content-assistant-images-temp/of-a-a-modern-elegantly-des-4205da73-fe9c-43e7-86ba-78c28597d186.webp",
+    image:
+      "https://storage.googleapis.com/content-assistant-images-temp/of-a-a-modern-elegantly-des-4205da73-fe9c-43e7-86ba-78c28597d186.webp",
     author: "Genesis Stone Team",
     date: "March 20, 2024",
     publishDate: "2024-03-20T10:00:00Z",
     lastModified: "2024-03-20T10:00:00Z",
     readTime: "12 min read",
-    tags: ["Laminate Flooring", "Durability", "Installation", "Maintenance", "Home Improvement"],
+    tags: [
+      "Laminate Flooring",
+      "Durability",
+      "Installation",
+      "Maintenance",
+      "Home Improvement",
+    ],
     featured: true,
     published: true,
-    seoKeywords: ["laminate flooring", "durability", "flooring installation", "floor maintenance", "hardwood alternative", "scratch resistant flooring", "waterproof flooring", "commercial flooring"]
-  }
+    seoKeywords: [
+      "laminate flooring",
+      "durability",
+      "flooring installation",
+      "floor maintenance",
+      "hardwood alternative",
+      "scratch resistant flooring",
+      "waterproof flooring",
+      "commercial flooring",
+    ],
+  },
 ];
 
 // Utility functions for blog management
-export const getFeaturedArticle = () => blogArticles.find(article => article.featured);
+export const getFeaturedArticle = () =>
+  blogArticles.find((article) => article.featured);
 
-export const getPublishedArticles = () => blogArticles.filter(article => article.published);
+export const getPublishedArticles = () =>
+  blogArticles.filter((article) => article.published);
 
-export const getArticleBySlug = (slug: string) => blogArticles.find(article => article.slug === slug);
+export const getArticleBySlug = (slug: string) =>
+  blogArticles.find((article) => article.slug === slug);
 
-export const getRelatedArticles = (currentArticle: BlogArticle, limit: number = 3) => {
+export const getRelatedArticles = (
+  currentArticle: BlogArticle,
+  limit: number = 3,
+) => {
   return blogArticles
-    .filter(article => 
-      article.id !== currentArticle.id && 
-      article.published &&
-      article.tags.some(tag => currentArticle.tags.includes(tag))
+    .filter(
+      (article) =>
+        article.id !== currentArticle.id &&
+        article.published &&
+        article.tags.some((tag) => currentArticle.tags.includes(tag)),
     )
     .slice(0, limit);
 };
 
 export const getArticlesByTag = (tag: string) => {
-  return blogArticles.filter(article => 
-    article.published && article.tags.includes(tag)
+  return blogArticles.filter(
+    (article) => article.published && article.tags.includes(tag),
   );
 };
 
@@ -346,25 +387,25 @@ export const generateBlogSchema = (article: BlogArticle) => {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": article.title,
-    "description": article.excerpt,
-    "image": article.image,
-    "author": {
+    headline: article.title,
+    description: article.excerpt,
+    image: article.image,
+    author: {
       "@type": "Person",
-      "name": article.author
+      name: article.author,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Genesis Stone & More",
-      "logo": {
+      name: "Genesis Stone & More",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://genesisstoneusa.com/logo.png"
-      }
+        url: "https://genesisstoneusa.com/logo.png",
+      },
     },
-    "datePublished": article.publishDate,
-    "dateModified": article.lastModified,
-    "keywords": article.seoKeywords.join(", "),
-    "articleSection": "Flooring",
-    "wordCount": article.content.split(' ').length
+    datePublished: article.publishDate,
+    dateModified: article.lastModified,
+    keywords: article.seoKeywords.join(", "),
+    articleSection: "Flooring",
+    wordCount: article.content.split(" ").length,
   };
 };
