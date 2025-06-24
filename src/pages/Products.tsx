@@ -86,20 +86,64 @@ const Products = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
+            "@type": "CollectionPage",
             name: "Premium Flooring Collections",
             description:
               "Comprehensive collection of premium flooring materials including porcelain tiles, natural stone, laminate, and decorative elements.",
-            brand: {
-              "@type": "Brand",
-              name: "Genesis Stone",
-            },
-            category: "Flooring Materials",
-            offers: {
-              "@type": "Offer",
-              availability: "https://schema.org/InStock",
-              price: "Variable",
-              priceCurrency: "USD",
+            url: "https://genesisstoneusa.com/products",
+            mainEntity: {
+              "@type": "ItemList",
+              name: "Flooring Product Categories",
+              itemListElement: [
+                {
+                  "@type": "Product",
+                  name: "Porcelain Tiles",
+                  description:
+                    "Premium porcelain tiles for residential and commercial applications",
+                  category: "Flooring",
+                  offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    priceCurrency: "USD",
+                    seller: {
+                      "@type": "Organization",
+                      name: "Genesis Stone & More",
+                    },
+                  },
+                },
+                {
+                  "@type": "Product",
+                  name: "Natural Stone",
+                  description:
+                    "Travertine, marble, limestone, granite, and slate flooring",
+                  category: "Flooring",
+                  offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    priceCurrency: "USD",
+                    seller: {
+                      "@type": "Organization",
+                      name: "Genesis Stone & More",
+                    },
+                  },
+                },
+                {
+                  "@type": "Product",
+                  name: "Luxury Vinyl Plank",
+                  description:
+                    "High-quality luxury vinyl plank flooring with realistic wood grain textures",
+                  category: "Flooring",
+                  offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    priceCurrency: "USD",
+                    seller: {
+                      "@type": "Organization",
+                      name: "Genesis Stone & More",
+                    },
+                  },
+                },
+              ],
             },
           })}
         </script>
