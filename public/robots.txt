@@ -1,10 +1,24 @@
+
 User-agent: *
 Allow: /
+
+# Important pages
+Allow: /products
+Allow: /retail
+Allow: /wholesale
+Allow: /about
+Allow: /contact
+Allow: /blog
+
+# Static assets
+Allow: /placeholder.svg
+Allow: /logo.svg
+Allow: /favicon.ico
 
 # Sitemap
 Sitemap: https://genesisstoneusa.com/sitemap.xml
 
-# Specific bot rules
+# Specific bot rules for better crawling
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -19,9 +33,31 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Block unwanted bots
+User-agent: LinkedInBot
+Allow: /
+
+# Block unwanted bots to save server resources
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block AI training bots
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
 Disallow: /
