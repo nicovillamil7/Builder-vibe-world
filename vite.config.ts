@@ -13,6 +13,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: undefined,
@@ -27,5 +28,6 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: 5000,
+    strictPort: true,
   },
 });
