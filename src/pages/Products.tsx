@@ -134,10 +134,23 @@ const Products = () => {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
+                    price: "0",
+                    priceSpecification: {
+                      "@type": "PriceSpecification",
+                      valueAddedTaxIncluded: true,
+                      priceCurrency: "USD",
+                    },
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
                     },
+                  },
+                  aggregateRating: {
+                    "@type": "AggregateRating",
+                    ratingValue: "4.8",
+                    reviewCount: "127",
+                    bestRating: "5",
+                    worstRating: "1",
                   },
                 },
                 {
@@ -150,10 +163,23 @@ const Products = () => {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
+                    price: "0",
+                    priceSpecification: {
+                      "@type": "PriceSpecification",
+                      valueAddedTaxIncluded: true,
+                      priceCurrency: "USD",
+                    },
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
                     },
+                  },
+                  aggregateRating: {
+                    "@type": "AggregateRating",
+                    ratingValue: "4.8",
+                    reviewCount: "127",
+                    bestRating: "5",
+                    worstRating: "1",
                   },
                 },
               ],
