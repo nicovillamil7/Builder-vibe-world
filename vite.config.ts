@@ -11,9 +11,9 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     sourcemap: false,
-    assetsDir: 'assets',
+    assetsDir: "assets",
     rollupOptions: {
       output: {
         manualChunks: undefined,
@@ -21,12 +21,15 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0',
+    host: true, // allows Vite to auto-detect the host, same as '0.0.0.0' but more flexible
     port: 5000,
-    allowedHosts: 'all',
+    allowedHosts: [
+      "all",
+      "19e6b561-60d5-41f5-a03a-c6e431e7f22c-00-15kr3vd6w5nau.janeway.replit.dev",
+    ],
   },
   preview: {
-    host: '0.0.0.0',
+    host: true,
     port: 5000,
     strictPort: true,
   },
