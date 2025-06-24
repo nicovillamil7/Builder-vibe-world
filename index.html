@@ -175,47 +175,7 @@
       }
     </script>
 
-    <!-- FAQ Schema - Single instance to avoid duplication -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What areas in Florida do you serve?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We serve all of South Florida, with same-day pickup available at our Miami showroom and next-day delivery throughout the state. We have special shipping rates for bulk orders."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of natural stone do you offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We specialize in premium natural stone including travertine, marble, limestone, granite, and slate. Our natural stone selection features both domestic and imported varieties, perfect for pool decks, patios, interior floors, and accent walls."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What warranties are available on your products?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "All our products come with manufacturer warranties that vary by material type and brand. Most manufacturer warranties range from 5-25 years, providing you with quality assurance directly from the manufacturer."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer volume discounts for contractors?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! We offer tiered volume pricing: 5% off orders 1,000+ sq ft, 10% off orders 3,000+ sq ft, and up to 25% off orders 10,000+ sq ft. Plus flexible payment terms for qualified contractors with trade accounts."
-            }
-          }
-        ]
-      }
-    </script>
+    <!-- FAQ Schema is now handled dynamically by FAQStructuredData component -->
   </head>
   <body>
     <div id="root"></div>
