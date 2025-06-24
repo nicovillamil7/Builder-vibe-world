@@ -179,7 +179,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   modernFamilyHome: {
     id: "modernFamilyHome",
     primary:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F718b2e6acfee4b5fa3f3a367b959b281",
     fallback:
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Modern family home living room with large format porcelain and marble accents",
@@ -188,7 +188,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   historicHomeRenovation: {
     id: "historicHomeRenovation",
     primary:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F6d89169cab1540248d3097c5555fe354",
     fallback:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Historic home renovation blending classic architecture with modern flooring",
@@ -197,7 +197,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   waterfrontCondoUpgrade: {
     id: "waterfrontCondoUpgrade",
     primary:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7c5feacc40d1433497e02a4682df187d",
     fallback:
       "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Waterfront condo with coastal contemporary flooring and glass mosaics",
