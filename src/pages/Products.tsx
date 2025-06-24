@@ -4,9 +4,13 @@ import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { getReliableImageUrl } from "@/utils/imageUtils";
 import { Shield, Users, Calculator } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { SEOHead } from "@/components/SEOHead";
+import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
-import { PrimaryButton, GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
+import {
+  PrimaryButton,
+  GoldButton,
+  WhiteOutlineButton,
+} from "@/components/ui/custom-buttons";
 
 const Products = () => {
   const productCategories = [
@@ -32,85 +36,41 @@ const Products = () => {
       imageId: "laminateHardwood",
     },
     {
-      id: "mosaics",
-      name: "Mosaics",
+      id: "decorative",
+      name: "Decorative",
       description:
-        "Add a touch of creativity and detail with our mosaic collections. Available in various materials, colors, and patterns, mosaics are perfect for backsplashes, feature walls, and decorative accents that elevate any design.",
-      imageId: "blueMosaicSpa",
-    },
-    {
-      id: "wall-panels",
-      name: "Wall Panels",
-      description:
-        "Transform any room with our modern wall panels. Easy to install and maintain, they provide texture, depth, and character to both residential and commercial interiors, creating impactful and stylish vertical surfaces.",
-      imageId: "wallPanels",
-    },
-    {
-      id: "metal-trims",
-      name: "Metal Trims",
-      description:
-        "Ensure a flawless finish with our durable metal trims. Designed to protect edges and transitions, they enhance both the appearance and longevity of tile and flooring installations.",
-      imageId: "metalTrims",
-    },
-    {
-      id: "grout",
-      name: "Grout",
-      description:
-        "Essential for a perfect tile installation, our grout solutions offer strong adhesion, color consistency, and resistance to stains and cracking, ensuring long-lasting and beautiful results.",
-      imageId: "grout",
-    },
-    {
-      id: "mortar-mix",
-      name: "Mortar Mix",
-      description:
-        "Our high-performance mortar mixes deliver excellent bonding strength for various tile and stone applications. Easy to work with, they provide the reliability and durability needed for professional-grade installations.",
-      imageId: "mortarMix",
+        "Transform any space with our decorative elements, including stunning wall panels, artistic mosaics, and metal trims. These finishing touches add personality and elevate your design to the next level.",
+      imageId: "mosaicGlassFloor",
     },
   ];
 
-  const productStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Premium Flooring Products & Collections",
-    "description": "Comprehensive collection of premium flooring materials including porcelain tiles, natural stone, and decorative floors",
-    "url": "https://genesisstoneusa.com/products",
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Flooring Product Categories",
-      "itemListElement": [
-        {
-          "@type": "Product",
-          "position": 1,
-          "name": "Porcelain Tiles",
-          "description": "High-performance porcelain tiles for interior and exterior applications",
-          "category": "Flooring Materials",
-          "brand": "Genesis Stone & More"
-        },
-        {
-          "@type": "Product",
-          "position": 2,
-          "name": "Natural Stone Floors",
-          "description": "Premium natural stone flooring including travertine, marble, and granite",
-          "category": "Flooring Materials",
-          "brand": "Genesis Stone & More"
-        },
-        {
-          "@type": "Product",
-          "position": 3,
-          "name": "Decorative Floors",
-          "description": "Decorative flooring solutions including mosaics and custom patterns",
-          "category": "Flooring Materials",
-          "brand": "Genesis Stone & More"
-        },
-        {
-          "@type": "Product",
-          "position": 4,
-          "name": "Laminate Flooring",
-          "description": "Cost-effective laminate flooring that replicates wood and stone",
-          "category": "Flooring Materials",
-          "brand": "Genesis Stone & More"
-        }
-      ]
+  const applicationGuide = [
+    {
+      icon: Shield,
+      title: "Commercial Quality",
+      description:
+        "All our materials meet commercial-grade standards, ensuring durability and performance in high-traffic environments.",
+    },
+    {
+      icon: Users,
+      title: "Expert Guidance",
+      description:
+        "Our team provides personalized recommendations based on your specific project requirements and design goals.",
+    },
+    {
+      icon: Calculator,
+      title: "Project Planning",
+      description:
+        "We help with material calculations, installation planning, and timeline coordination for successful project completion.",
+    },
+  ];
+
+  const getProductImage = (imageId: string) => {
+    try {
+      return getReliableImageUrl(imageId);
+    } catch (error) {
+      console.warn(`Failed to get image for ${imageId}:`, error);
+      return "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
     }
   };
 
@@ -124,61 +84,119 @@ const Products = () => {
       />
       <Helmet>
         <script type="application/ld+json">
-          {JSON.stringify(productStructuredData)}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Premium Flooring Collections",
+            description:
+              "Comprehensive collection of premium flooring materials including porcelain tiles, natural stone, laminate, and decorative elements.",
+            brand: {
+              "@type": "Brand",
+              name: "Genesis Stone",
+            },
+            category: "Flooring Materials",
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              price: "Variable",
+              priceCurrency: "USD",
+            },
+          })}
         </script>
       </Helmet>
       <BreadcrumbNavigation />
 
       {/* Hero Section */}
-      <div className="bg-[rgb(138,0,0)] text-white py-20">
+      <section className="py-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            Floor Tiles Miami | Decorative Floors Collection
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Premium Flooring Collections
           </h1>
-          <p className="text-xl sm:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto font-light">
-            Explore Miami's largest selection of thin tile, natural stone floors, ceramics floor, laminate flooring, and decorative floors. Premium tile and flooring solutions for contractors, designers, and homeowners across South Florida.
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Discover our extensive range of high-quality flooring materials,
+            from elegant porcelain to natural stone, designed for both
+            residential and commercial applications.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Product Categories Grid */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      {/* Product Categories */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our Product Categories
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From durable porcelain to stunning natural stone, explore our
+              carefully curated selection of premium flooring materials.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {productCategories.map((category, index) => (
+            {productCategories.map((category) => (
               <Card
                 key={category.id}
-                className="group bg-white border-0 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+                className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white"
               >
-                <div className="relative">
+                <div className="relative h-64 overflow-hidden">
                   <SimpleReliableImage
                     imageId={category.imageId}
-                    alt={`${category.name} - Premium flooring materials`}
-                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                    width={400}
-                    height={288}
-                    loading="lazy"
+                    alt={category.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
+                  </div>
                 </div>
-
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    {category.name}
-                  </h2>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {category.description}
                   </p>
-
-                  <PrimaryButton className="w-full group-hover:bg-[rgb(153,27,27)] transition-colors duration-300">
-                    Explore {category.name}
+                  <PrimaryButton className="w-full group-hover:bg-[rgb(120,0,0)] transition-colors">
+                    View {category.name} Collection
                   </PrimaryButton>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Application Guide */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Why Choose Our Products?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Every product in our collection is selected for quality,
+              durability, and aesthetic appeal.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {applicationGuide.map((guide, index) => (
+              <div
+                key={index}
+                className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300"
+              >
+                <div className="w-20 h-20 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-shadow">
+                  <guide.icon className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {guide.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {guide.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Dealer Program Banner */}
       <div className="relative py-20 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)]">
@@ -186,82 +204,25 @@ const Products = () => {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage: `url(${getReliableImageUrl("showroomDisplay")})`,
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
           }}
         ></div>
-
-        <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center text-white">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl sm:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Contact us for personalized product recommendations, competitive
-            pricing, and expert installation guidance.
+          <p className="text-xl mb-8 text-white/90">
+            Get expert guidance and custom quotes for your flooring project. Our
+            team is ready to help bring your vision to life.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <GoldButton size="lg" className="px-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <GoldButton size="lg" className="px-8 py-4 text-lg">
               Get Custom Quote
             </GoldButton>
-            <WhiteOutlineButton size="lg" className="px-8">
-              Learn More
+            <WhiteOutlineButton size="lg" className="px-8 py-4 text-lg">
+              View Catalog
             </WhiteOutlineButton>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Choose Us Section */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Genesis Stone?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing exceptional quality, service, and
-              value for every project, big or small.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-[rgb(138,0,0)]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Premium Quality
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                All products come with manufacturer warranties and our
-                comprehensive quality assurance guarantee.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-[rgb(138,0,0)]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Expert Support
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Professional guidance from material selection through final
-                installation with our experienced team.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calculator className="h-8 w-8 text-[rgb(138,0,0)]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Competitive Pricing
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Volume discounts available for contractors and bulk buyers with
-                transparent, competitive pricing.
-              </p>
-            </div>
           </div>
         </div>
       </div>
