@@ -266,7 +266,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   residentialHomeRenovation: {
     id: "residentialHomeRenovation",
     primary:
-      "https://images.unsplash.com/photo-1556912173-46c336c7fd55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F485a835ca8144078b06b6e8bff4194e8",
     fallback:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Elegant residential home renovation with luxury vinyl plank flooring and designer tiles",
@@ -275,7 +275,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   retailStoreBuildout: {
     id: "retailStoreBuildout",
     primary:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fff712814d5724f929615c4b691d30baf",
     fallback:
       "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Modern retail store build-out with commercial porcelain flooring and professional finish",
