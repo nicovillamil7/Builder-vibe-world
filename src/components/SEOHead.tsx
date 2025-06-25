@@ -16,9 +16,9 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({
-  title = "Genesis Stone - Premium Flooring Solutions in South Florida",
-  description = "Premier flooring supplier in South Florida. Specializing in porcelain tiles, natural stone, travertine, luxury vinyl, and custom mosaics.",
-  keywords = "flooring Miami, porcelain tiles Florida, natural stone supplier, travertine pool decks, luxury vinyl plank, tile contractor",
+  title = "Genesis Stone - Miami Flooring Contractor & Tile Supplier | Porcelain, Natural Stone, LVP",
+  description = "Premier flooring supplier Miami since 2008. Trade pricing for contractors on porcelain tiles, natural stone, travertine pool decks, luxury vinyl plank installation. Same-day pickup South Florida.",
+  keywords = "flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, commercial flooring Miami, tile supplier Miami, flooring installation Miami",
   canonicalUrl = "https://genesisstoneusa.com/",
   ogImage = "https://genesisstoneusa.com/placeholder.svg",
   schema,

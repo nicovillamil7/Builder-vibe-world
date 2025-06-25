@@ -2,6 +2,8 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import GoogleReviews from "@/components/GoogleReviews";
+import TechnicalSEO from "@/components/TechnicalSEO";
+import SEOHead from "@/components/SEOHead";
 import {
   GoldButton,
   WhiteOutlineButton,
@@ -52,53 +54,52 @@ const Index = () => {
   const contractorBenefits = [
     {
       icon: Calculator,
-      title: "Bulk Discounts and Flexible Payments",
-      description: "Save up to 25% on large orders with flexible payment terms",
+      title: "Trade Pricing for Porcelain Tiles Miami",
+      description: "Save up to 25% on bulk orders with flexible Net-30 payment terms for qualified flooring contractors",
     },
     {
       icon: Truck,
-      title: "Delivery in South Florida",
-      description: "Same-day Delivery, Same-day pick up*",
+      title: "Commercial Flooring Delivery Miami",
+      description: "Same-day pickup and next-day delivery throughout South Florida for tile contractors",
     },
     {
       icon: Users,
-      title: "Dedicated & Experienced Team",
-      description:
-        "Qualified & Experienced Personnel, Excellent customer service and Transportation Network.",
+      title: "Expert Flooring Installation Support",
+      description: "15+ years serving Miami contractors with material take-offs, technical specs, and project support",
     },
   ];
 
   const homeownerBenefits = [
     {
       icon: Palette,
-      title: "Premium Material Selection",
+      title: "Luxury Vinyl Plank & Natural Stone Selection",
       description:
-        "Curated and up-to-date collection of the latest floors, design trends & styles",
+        "Curated collection of premium flooring Miami homeowners love - from waterproof luxury vinyl to elegant travertine",
     },
     {
       icon: Award,
-      title: "Tailored Options & Design",
+      title: "Custom Pool Deck Design Miami",
       description:
-        "See how materials look in your actual lighting before making decisions",
+        "Specialized in travertine pool decks and outdoor natural stone - see materials in your actual South Florida lighting",
     },
     {
       icon: Shield,
-      title: "Expert Design Consultation",
+      title: "Residential Flooring Installation Guidance",
       description:
-        "We´ve designed a carefully curated collection that offers various options for every style and budget",
+        "Expert consultation on flooring installation Miami projects with manufacturer warranties and design support",
     },
   ];
 
   const contractorFaqs = [
     {
-      question: "What volume discounts do you offer for contractors?",
+      question: "What volume discounts do you offer for Miami flooring contractors?",
       answer:
-        "We offer tiered volume pricing: 15% off orders 5,000+ sq ft, 20% off orders 8,000+ sq ft, and 25% off orders 10,000+ sq ft. Plus Net-30 payment terms for qualified contractors with trade accounts.",
+        "We offer tiered volume pricing for porcelain tiles Miami contractors: 15% off orders 5,000+ sq ft, 20% off orders 8,000+ sq ft, and 25% off orders 10,000+ sq ft. Plus Net-30 payment terms for qualified commercial flooring contractors with trade accounts.",
     },
     {
-      question: "Do you offer job site delivery?",
+      question: "Do you offer flooring delivery to job sites in Miami?",
       answer:
-        "Yes! We provide direct job site delivery throughout South Florida. Same-day pickup available at our Miami warehouse, and scheduled delivery can be arranged to meet your project timeline.",
+        "Yes! We provide direct job site delivery for flooring installation Miami projects throughout South Florida. Same-day pickup available at our Miami flooring warehouse, and scheduled delivery of porcelain tiles, natural stone, and luxury vinyl plank to meet your project timeline.",
     },
     {
       question: "What's your lead time for large commercial orders?",
@@ -191,6 +192,24 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Genesis Stone - Miami Flooring Contractor & Tile Supplier | Trade Pricing Available"
+        description="Premier Miami flooring supplier since 2008. Trade pricing for contractors on porcelain tiles, natural stone, travertine pool decks, luxury vinyl plank. Same-day pickup South Florida."
+        keywords="flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, commercial flooring Miami, tile supplier Miami"
+        canonicalUrl="https://genesisstoneusa.com/"
+      />
+      <TechnicalSEO 
+        pageType="website"
+        images={[
+          {
+            url: "https://genesisstoneusa.com/placeholder.svg",
+            alt: "Genesis Stone Miami flooring showroom",
+            width: 1200,
+            height: 630
+          }
+        ]}
+      />
+      
       {/* Hero Section */}
       <Hero />
 
@@ -202,10 +221,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Genesis Stone?
+              Why Choose Genesis Stone for Your Miami Flooring Project?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Tailored solutions for every professional need
+              Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008
             </p>
           </div>
 
@@ -217,9 +236,9 @@ const Index = () => {
                   <Calculator className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                  For Contractors
+                  For Miami Flooring Contractors
                 </h3>
-                <p className="text-gray-600">Professional-grade solutions</p>
+                <p className="text-gray-600">Trade pricing on <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium underline">commercial flooring Miami</a> projects</p>
               </div>
 
               <div className="space-y-8">
