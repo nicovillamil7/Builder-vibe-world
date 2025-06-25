@@ -50,29 +50,32 @@ const SEOHead = ({
       {schema && (
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       )}
-      
+
       {/* Article Schema for Blog Posts */}
-      {articleData && (
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": title,
-          "description": description,
-          "image": ogImage,
-          "author": {
-            "@type": "Person",
-            "name": articleData.author
-          },
-          "publisher": {
-            "@type": "Organization", 
-            "name": "Genesis Stone & More",
-            "logo": "https://genesisstoneusa.com/logo.svg"
-          },
-          "datePublished": articleData.publishedTime,
-          "dateModified": articleData.modifiedTime,
-          "keywords": articleData.tags.join(", ")
-        })}</script>
-      )}
+      {typeof window !== 'undefined' && window.articleData && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": window.articleData.title,
+              "description": window.articleData.description,
+              "author": {
+                "@type": "Organization",
+                "name": "Genesis Stone & More"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Genesis Stone & More",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://genesisstoneusa.com/logo.svg"
+                }
+              },
+              "datePublished": window.articleData.datePublished,
+              "dateModified": window.articleData.dateModified || window.articleData.datePublished
+            })}
+          </script>
+        )}
     </Helmet>
   );
 };

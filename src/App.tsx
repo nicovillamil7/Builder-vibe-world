@@ -14,7 +14,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
-import ServiceAreas from "./pages/ServiceAreas"; // Import the ServiceAreas component
+import ServiceAreas from "./pages/ServicesAreas"; // Import the ServicesAreas component
 
 const queryClient = new QueryClient();
 
