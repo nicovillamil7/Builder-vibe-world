@@ -236,6 +236,11 @@ const Index = () => {
                         <p className="text-gray-600 leading-relaxed flex-1">
                           {benefit.description}
                         </p>
+                        {index === 0 && (
+                          <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block">
+                            Learn more about contractor pricing →
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

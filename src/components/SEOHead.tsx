@@ -7,6 +7,12 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   ogImage?: string;
   schema?: object;
+  articleData?: {
+    publishedTime: string;
+    modifiedTime: string;
+    author: string;
+    tags: string[];
+  };
 }
 
 const SEOHead = ({
@@ -43,6 +49,29 @@ const SEOHead = ({
       {/* Schema.org */}
       {schema && (
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      )}
+      
+      {/* Article Schema for Blog Posts */}
+      {articleData && (
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": title,
+          "description": description,
+          "image": ogImage,
+          "author": {
+            "@type": "Person",
+            "name": articleData.author
+          },
+          "publisher": {
+            "@type": "Organization", 
+            "name": "Genesis Stone & More",
+            "logo": "https://genesisstoneusa.com/logo.svg"
+          },
+          "datePublished": articleData.publishedTime,
+          "dateModified": articleData.modifiedTime,
+          "keywords": articleData.tags.join(", ")
+        })}</script>
       )}
     </Helmet>
   );
