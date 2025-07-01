@@ -13,6 +13,7 @@ interface SEOHeadProps {
     author: string;
     tags: string[];
   };
+  noindex?: boolean;
 }
 
 const SEOHead = ({
@@ -22,13 +23,42 @@ const SEOHead = ({
   canonicalUrl = "https://genesisstoneusa.com/",
   ogImage = "https://genesisstoneusa.com/placeholder.svg",
   schema,
+  noindex = false,
 }: SEOHeadProps) => {
+
+  // Check if current URL should be noindexed
+  const shouldNoIndex = React.useMemo(() => {
+    if (noindex) return true;
+
+    if (typeof window !== 'undefined') {
+      const url = window.location.href;
+      const searchParams = new URLSearchParams(window.location.search);
+
+      // Check for funnel steps or tracking parameters
+      if (url.includes('funnel_step') || 
+          url.includes('tracking') ||
+          searchParams.has('utm_source') ||
+          searchParams.has('utm_medium') ||
+          searchParams.has('utm_campaign') ||
+          searchParams.has('ref') ||
+          searchParams.has('source') ||
+          url.includes('/404')) {
+        return true;
+      }
+    }
+
+    return false;
+  }, [noindex]);
+
   return (
     <Helmet>
+      {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="robots" content="index, follow" />
+
+      {/* Robots Meta Tag */}
+      <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />

@@ -1,21 +1,37 @@
-
 User-agent: *
 Allow: /
 
-# Important pages
+# Important pages for SEO
+Allow: /
 Allow: /products
 Allow: /retail
 Allow: /wholesale
 Allow: /about
 Allow: /contact
 Allow: /blog
+Allow: /blog/*
 
-# Static assets
-Allow: /placeholder.svg
-Allow: /logo.svg
-Allow: /favicon.ico
+# Block admin/sensitive areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /.env
+Disallow: /config/
 
-# Sitemap
+# Block funnel steps and tracking URLs
+Disallow: /genesis?next_funnel_step=*
+Disallow: /*funnel_step*
+Disallow: /*?*funnel*
+Disallow: /*tracking*
+Disallow: /404
+Disallow: /*?*=*&*=*
+
+# Block query parameters that create duplicate content
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?campaign=*
+
+# Sitemap location
 Sitemap: https://genesisstoneusa.com/sitemap.xml
 
 # Specific bot rules for better crawling
