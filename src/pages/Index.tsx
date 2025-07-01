@@ -192,11 +192,9 @@ const Index = () => {
 
   return (
     <Layout>
-      <SEOHead
-        title="Genesis Stone - Miami Flooring Contractor & Tile Supplier | Trade Pricing Available"
-        description="Premier Miami flooring supplier since 2008. Trade pricing for contractors on porcelain tiles, natural stone, travertine pool decks, luxury vinyl plank. Same-day pickup South Florida."
-        keywords="flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, commercial flooring Miami, tile supplier Miami"
-        canonicalUrl="https://genesisstoneusa.com/"
+      <SEOHead 
+        title="Premium Flooring Solutions | Genesis Stone"
+        description="Genesis Stone offers premium porcelain tiles, natural stone, laminates & professional installation in South Florida. Expert flooring solutions for homes & businesses."
       />
       <TechnicalSEO 
         pageType="website"
@@ -209,7 +207,7 @@ const Index = () => {
           }
         ]}
       />
-      
+
       {/* Hero Section */}
       <Hero />
 
@@ -466,6 +464,7 @@ const Index = () => {
                     "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F415bcd7e0a704d01a11986e13ecabc3a)",
                 }}
               ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">
                   Travertine Pool & Spa
