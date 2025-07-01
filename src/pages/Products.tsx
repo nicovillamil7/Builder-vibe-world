@@ -1,7 +1,4 @@
-The code modifications focus on enhancing the SEO of the product page by adding structured data, particularly addressing missing fields like 'image' and incorporating optional fields like 'shippingDetails' and 'hasMerchantReturnPolicy'.
-```
 
-```replit_final_file
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -118,16 +115,11 @@ const Products = () => {
                   description:
                     "Premium porcelain tiles for residential and commercial applications",
                   category: "Flooring",
+                  image: "https://genesisstoneusa.com/images/porcelain-tile-collection.jpg",
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -147,16 +139,11 @@ const Products = () => {
                   description:
                     "Travertine, marble, limestone, granite, and slate flooring",
                   category: "Flooring",
+                  image: "https://genesisstoneusa.com/images/natural-stone-collection.jpg",
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -175,17 +162,12 @@ const Products = () => {
                   name: "Luxury Vinyl Plank",
                   description:
                     "High-quality luxury vinyl plank flooring with realistic wood grain textures",
-                  category: "Flooring",
+                  category: "Flooring", 
+                  image: "https://genesisstoneusa.com/images/laminate-flooring-collection.jpg",
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
