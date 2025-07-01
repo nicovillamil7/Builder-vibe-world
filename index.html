@@ -30,21 +30,24 @@
     <meta name="author" content="Genesis Stone" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Google Site Verification -->
-    <meta
-      name="google-site-verification"
-      content="QaWziF0XzbrhuU3-7Z2-E-2q92-EwoMx-CKltr_hOtg"
-    />
-
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Must be placed early in head -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DTNSBTY8Z"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-5DTNSBTY8Z');
+      gtag('config', 'G-5DTNSBTY8Z', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
     </script>
+
+    <!-- Google Site Verification -->
+    <meta
+      name="google-site-verification"
+      content="QaWziF0XzbrhuU3-7Z2-E-2q92-EwoMx-CKltr_hOtg"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
