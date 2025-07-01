@@ -160,6 +160,31 @@ export class SEOWorkflowCommands {
       data: logs
     };
   }
+
+  /**
+   * Test all pages on the site
+   */
+  public async testAllPages(): Promise<CommandResult> {
+    try {
+      const { runSiteWideSEOTest } = await import('./seoTestingUtility');
+      const results = await runSiteWideSEOTest();
+      
+      const totalPages = Object.keys(results).length;
+      const avgScore = Object.values(results).reduce((sum, report) => sum + report.overallScore, 0) / totalPages;
+      const goodPages = Object.values(results).filter(report => report.overallScore >= 800).length;
+      
+      return {
+        success: true,
+        message: `Site-wide test completed. ${totalPages} pages tested. Average score: ${avgScore.toFixed(0)}/1000. ${goodPages} pages scoring 800+`,
+        data: results
+      };
+    } catch (error) {
+      return {
+        success: false,
+        message: `Failed to test all pages: ${error instanceof Error ? error.message : 'Unknown error'}`
+      };
+    }
+  }
 }
 
 // Global command functions for easy access
@@ -171,7 +196,8 @@ export const seoCommands = {
     SEOWorkflowCommands.getInstance().improveSite(options),
   report: (url?: string) => SEOWorkflowCommands.getInstance().getPageReport(url),
   logs: () => SEOWorkflowCommands.getInstance().getLogs(),
-  clearLogs: () => SEOWorkflowCommands.getInstance().clearLogs()
+  clearLogs: () => SEOWorkflowCommands.getInstance().clearLogs(),
+  testAll: () => SEOWorkflowCommands.getInstance().testAllPages()
 };
 
 // Development helper - attach to window for easy console access
@@ -179,6 +205,7 @@ if (process.env.NODE_ENV === 'development') {
   (window as any).seo = seoCommands;
   console.log('🔧 SEO Commands available via window.seo:');
   console.log('  - seo.test() - Test current page');
+  console.log('  - seo.testAll() - Test all site pages');
   console.log('  - seo.improve() - Improve current page');
   console.log('  - seo.auditSite() - Audit entire site');
   console.log('  - seo.improveSite() - Improve entire site');

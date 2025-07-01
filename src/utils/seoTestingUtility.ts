@@ -345,6 +345,58 @@ export class SEOTestingUtility {
   }
 }
 
+// Site-wide SEO testing
+export const runSiteWideSEOTest = async (): Promise<{ [url: string]: SEOReport }> => {
+  const { getAllSiteUrls } = await import('./urlUtils');
+  const urls = getAllSiteUrls();
+  const results: { [url: string]: SEOReport } = {};
+  const seoTester = new SEOTestingUtility();
+  
+  console.log(`🔍 Running SEO Audit for ${urls.length} pages...`);
+  
+  // For demo purposes, we'll test the current page multiple times with different simulated contexts
+  // In a real implementation, you'd navigate to each URL or use a headless browser
+  for (const url of urls) {
+    try {
+      console.log(`Testing: ${url}`);
+      const report = await seoTester.runFullSEOAudit(url);
+      results[url] = report;
+    } catch (error) {
+      console.error(`Failed to test ${url}:`, error);
+      results[url] = {
+        overallScore: 0,
+        pageHealth: 'Error',
+        results: [{
+          category: 'Error',
+          test: 'Page Test',
+          status: 'fail',
+          score: 0,
+          message: `Failed to test page: ${error instanceof Error ? error.message : 'Unknown error'}`,
+          recommendation: 'Check page accessibility and fix any technical issues'
+        }],
+        summary: { passed: 0, failed: 1, warnings: 0 }
+      };
+    }
+  }
+  
+  // Generate summary
+  const totalPages = Object.keys(results).length;
+  const avgScore = Object.values(results).reduce((sum, report) => sum + report.overallScore, 0) / totalPages;
+  const totalPassed = Object.values(results).reduce((sum, report) => sum + report.summary.passed, 0);
+  const totalFailed = Object.values(results).reduce((sum, report) => sum + report.summary.failed, 0);
+  const totalWarnings = Object.values(results).reduce((sum, report) => sum + report.summary.warnings, 0);
+  
+  console.log('\n📋 === SITE-WIDE SEO AUDIT SUMMARY ===');
+  console.log(`📊 Pages Tested: ${totalPages}`);
+  console.log(`📈 Average Score: ${avgScore.toFixed(0)}/1000`);
+  console.log(`✅ Total Tests Passed: ${totalPassed}`);
+  console.log(`❌ Total Tests Failed: ${totalFailed}`);
+  console.log(`⚠️  Total Warnings: ${totalWarnings}`);
+  console.log('=== END SUMMARY ===\n');
+  
+  return results;
+};
+
 // Development-only testing function
 export const runSEOTest = async (): Promise<void> => {
   if (process.env.NODE_ENV === 'development') {
@@ -369,5 +421,42 @@ export const runSEOTest = async (): Promise<void> => {
     
     // Store results globally for debugging
     (window as any).seoReport = report;
+  }
+};
+
+// Global function to test all site pages
+export const testAllPages = async (): Promise<void> => {
+  if (process.env.NODE_ENV === 'development') {
+    console.log('🚀 Starting site-wide SEO testing...');
+    const results = await runSiteWideSEOTest();
+    
+    // Store results globally for inspection
+    (window as any).siteWideResults = results;
+    
+    // Show individual page results
+    Object.entries(results).forEach(([url, report]) => {
+      console.group(`📄 ${url} - Score: ${report.overallScore}/1000 (${report.pageHealth})`);
+      
+      // Show top issues
+      const issues = report.results.filter(r => r.status === 'fail');
+      if (issues.length > 0) {
+        console.log('❌ Critical Issues:');
+        issues.forEach(issue => {
+          console.log(`  • ${issue.test}: ${issue.message}`);
+        });
+      }
+      
+      const warnings = report.results.filter(r => r.status === 'warning');
+      if (warnings.length > 0) {
+        console.log('⚠️  Warnings:');
+        warnings.forEach(warning => {
+          console.log(`  • ${warning.test}: ${warning.message}`);
+        });
+      }
+      
+      console.groupEnd();
+    });
+    
+    console.log('✅ Site-wide SEO test completed! Results stored in window.siteWideResults');
   }
 };

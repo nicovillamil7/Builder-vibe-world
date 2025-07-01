@@ -1,4 +1,3 @@
-
 export const validateUrl = (url: string): boolean => {
   try {
     new URL(url);
@@ -42,15 +41,40 @@ export const generateBlogUrl = (slug: string): string => {
 };
 
 export const getAllSiteUrls = (): string[] => {
+  // Define all the URLs in your Genesis Stone website
   return [
     '/',
     '/products',
+    '/products/grout',
+    '/products/laminates', 
+    '/products/metalTrims',
+    '/products/mortarMix',
+    '/products/mosaics',
+    '/products/naturalStone',
+    '/products/porcelain',
+    '/products/wallPanels',
     '/retail',
     '/wholesale',
     '/about',
     '/contact',
+    '/service-areas',
     '/blog',
+    '/blog/benefits-of-laminate-flooring-for-enduring-elegance',
     '/blog/laminate-flooring-durability-that-lasts-for-years',
-    '/blog/benefits-of-laminate-flooring-for-enduring-elegance'
+    '/seo-dashboard'
   ];
+};
+
+export const getFullUrl = (path: string): string => {
+  const baseUrl = 'https://genesisstoneusa.com';
+  return path === '/' ? baseUrl : `${baseUrl}${path}`;
+};
+
+export const isValidUrl = (url: string): boolean => {
+  try {
+    new URL(url);
+    return true;
+  } catch {
+    return false;
+  }
 };
