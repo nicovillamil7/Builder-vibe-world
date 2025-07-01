@@ -1,4 +1,7 @@
+The structured data in Products.tsx is updated to include the 'brand' field and use an array for the 'image' field to improve Google Search Console compliance.
+```
 
+```replit_final_file
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -111,15 +114,24 @@ const Products = () => {
               itemListElement: [
                 {
                   "@type": "Product",
+                  position: 1,
                   name: "Porcelain Tiles",
                   description:
                     "Premium porcelain tiles for residential and commercial applications",
                   category: "Flooring",
-                  image: "https://genesisstoneusa.com/images/porcelain-tile-collection.jpg",
+                  image: [
+                    "https://genesisstoneusa.com/images/porcelain-tile-collection.jpg",
+                    "https://genesisstoneusa.com/placeholder.svg"
+                  ],
+                  brand: {
+                    "@type": "Brand",
+                    name: "Genesis Stone"
+                  },
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
+                    url: "https://genesisstoneusa.com/products",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -135,15 +147,24 @@ const Products = () => {
                 },
                 {
                   "@type": "Product",
+                  position: 2,
                   name: "Natural Stone",
                   description:
                     "Travertine, marble, limestone, granite, and slate flooring",
                   category: "Flooring",
-                  image: "https://genesisstoneusa.com/images/natural-stone-collection.jpg",
+                  image: [
+                    "https://genesisstoneusa.com/images/natural-stone-collection.jpg",
+                    "https://genesisstoneusa.com/placeholder.svg"
+                  ],
+                  brand: {
+                    "@type": "Brand",
+                    name: "Genesis Stone"
+                  },
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
+                    url: "https://genesisstoneusa.com/products",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -159,15 +180,24 @@ const Products = () => {
                 },
                 {
                   "@type": "Product",
+                  position: 3,
                   name: "Luxury Vinyl Plank",
                   description:
                     "High-quality luxury vinyl plank flooring with realistic wood grain textures",
                   category: "Flooring", 
-                  image: "https://genesisstoneusa.com/images/laminate-flooring-collection.jpg",
+                  image: [
+                    "https://genesisstoneusa.com/images/laminate-flooring-collection.jpg",
+                    "https://genesisstoneusa.com/placeholder.svg"
+                  ],
+                  brand: {
+                    "@type": "Brand",
+                    name: "Genesis Stone"
+                  },
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
+                    url: "https://genesisstoneusa.com/products",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -386,3 +416,4 @@ const Products = () => {
 };
 
 export default Products;
+`
