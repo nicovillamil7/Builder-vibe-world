@@ -358,9 +358,13 @@ export const runSiteWideSEOTest = async (): Promise<{ [url: string]: SEOReport }
   // In a real implementation, you'd navigate to each URL or use a headless browser
   for (const url of urls) {
     try {
-      console.log(`Testing: ${url}`);
+      console.log(`🔍 Testing: ${url}`);
       const report = await seoTester.runFullSEOAudit(url);
       results[url] = report;
+      
+      // Log immediate result
+      const statusEmoji = report.overallScore >= 800 ? '✅' : report.overallScore >= 600 ? '⚠️' : '❌';
+      console.log(`   ${statusEmoji} Score: ${report.overallScore}/1000 (${report.pageHealth}) - ${report.summary.failed} issues, ${report.summary.warnings} warnings`);
     } catch (error) {
       console.error(`Failed to test ${url}:`, error);
       results[url] = {
