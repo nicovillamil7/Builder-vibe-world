@@ -209,6 +209,7 @@ const Wholesale = () => {
         title="Wholesale Flooring Miami - Trade Program | Genesis Stone"
         description="Genesis Stone wholesale program offers contractor pricing, Net-30 terms & bulk discounts on flooring materials. Serving Miami contractors since 2008."
         keywords="wholesale flooring Miami, contractor pricing, trade program, bulk flooring discounts, Miami flooring contractor, Genesis Stone wholesale"
+        canonicalUrl="https://genesisstoneusa.com/wholesale"
       />
       <BreadcrumbNavigation />
 

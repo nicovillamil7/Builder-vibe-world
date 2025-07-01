@@ -142,6 +142,7 @@ const About = () => {
         title="About Genesis Stone - Miami's Premier Flooring Supplier"
         description="Founded in 2008, Genesis Stone serves South Florida with premium flooring solutions. Expert team, 15+ years experience, 1000+ projects completed."
         keywords="Genesis Stone, Miami flooring company, South Florida flooring, flooring supplier history, Genesis Stone team"
+        canonicalUrl="https://genesisstoneusa.com/about"
       />
       <BreadcrumbNavigation />
 

@@ -159,6 +159,7 @@ const Retail = () => {
         title="Retail Flooring Miami - Genesis Stone Showroom"
         description="Visit our Miami flooring showroom for premium tiles, natural stone & expert consultation. Open Mon-Fri 7AM-4PM. Professional guidance for your home project."
         keywords="Miami flooring showroom, retail flooring, Genesis Stone retail, flooring consultation Miami, tile showroom South Florida"
+        canonicalUrl="https://genesisstoneusa.com/retail"
       />
       <BreadcrumbNavigation />
 

@@ -82,6 +82,7 @@ const Contact = () => {
         title="Contact Genesis Stone Miami - Flooring Consultation"
         description="Contact Genesis Stone Miami for flooring consultation, showroom visits & project quotes. Call, email or visit our showroom Mon-Fri 7AM-4PM."
         keywords="contact Genesis Stone, Miami flooring consultation, showroom visit, flooring quotes, Genesis Stone phone number, flooring contractor Miami"
+        canonicalUrl="https://genesisstoneusa.com/contact"
       />
       <BreadcrumbNavigation />
 
