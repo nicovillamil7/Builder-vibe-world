@@ -1,32 +1,40 @@
 import Layout from "@/components/Layout";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  PrimaryButton,
+  GoldButton,
+  WhiteOutlineButton,
+} from "@/components/ui/custom-buttons";
+import {
+  Users,
+  Award,
+  Clock,
+  Shield,
+  Star,
+  CheckCircle,
+  Palette,
+  Home,
+} from "lucide-react";
+import SEOHead from "@/components/SEOHead";
+import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 import ContactForm from "@/components/ContactForm";
 import GoogleReviews from "@/components/GoogleReviews";
 import {
-  GoldButton,
-  WhiteOutlineButton,
-  PrimaryButton,
   OutlineButton,
 } from "@/components/ui/custom-buttons";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import {
-  Palette,
-  Home,
   Eye,
   Zap,
   Crown,
   Gem,
   Camera,
   Layers,
-  Star,
-  Users,
   ArrowRight,
-  CheckCircle2,
   TrendingUp,
   Heart,
   Sparkles,
-  Shield,
 } from "lucide-react";
 
 const Retail = () => {
@@ -147,96 +155,36 @@ const Retail = () => {
 
   return (
     <Layout>
-      {/* Hero Section - Home-focused design */}
-      <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white overflow-hidden">
-        {/* Floor Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`,
-          }}
-        ></div>
+      <SEOHead 
+        title="Retail Flooring Miami - Genesis Stone Showroom"
+        description="Visit our Miami flooring showroom for premium tiles, natural stone & expert consultation. Open Mon-Fri 7AM-4PM. Professional guidance for your home project."
+        keywords="Miami flooring showroom, retail flooring, Genesis Stone retail, flooring consultation Miami, tile showroom South Florida"
+      />
+      <BreadcrumbNavigation />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
-
-        {/* Elegant background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[rgb(251,189,35)]/10 to-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-          <div className="text-center">
-            <Badge className="bg-[rgb(251,189,35)] text-black mb-8 px-6 py-3 text-lg font-bold">
-              For Homeowners & Interior Designers
-            </Badge>
-
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-              <span className="block">Transform Your Home</span>
-              <span className="block bg-gradient-to-r from-[rgb(251,189,35)] to-amber-400 bg-clip-text text-transparent">
-                Transform Your Space
-              </span>
-            </h1>
-
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Upgrade your home with premium flooring solutions. From design
-              consultation to contractor connections, we help you create the
-              home of your dreams.
-            </p>
-
-            <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-16">
-              <GoldButton size="lg" className="px-12 py-6 text-xl font-bold">
-                Start Your Home Project
-                <ArrowRight className="ml-3 h-6 w-6" />
-              </GoldButton>
-              <WhiteOutlineButton
-                size="lg"
-                className="px-12 py-6 text-xl font-bold"
-                onClick={() => {
-                  const phoneNumber = "13055104733";
-                  const message =
-                    "Hi! I'm interested in scheduling a design consultation for my home flooring project. Can you help me?";
-                  const encodedMessage = encodeURIComponent(message);
-                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                  window.open(whatsappUrl, "_blank");
-                }}
-              >
-                Schedule Design Consultation
-              </WhiteOutlineButton>
-            </div>
-
-            {/* Trust indicators */}
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
-              <div className="flex items-center space-x-3">
-                <Star className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
-                <span>500+ Home Projects</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <TrendingUp className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
-                <span>Increase Property Value</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Heart className="h-4 w-4 text-[rgb(251,189,35)] flex-shrink-0" />
-                <span>Manufacturer Warranty</span>
-              </div>
-            </div>
+      {/* Hero Section */}
+      <section className="py-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Miami Retail Flooring Showroom - Genesis Stone
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white/95">
+            Premium Flooring Materials for South Florida Homeowners
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Explore our extensive collection of high-quality flooring options
+            for every style and budget.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <GoldButton className="px-8 py-3 text-lg font-semibold">
+              Request a Consultation
+            </GoldButton>
+            <WhiteOutlineButton className="px-8 py-3 text-lg font-semibold">
+              View Our Products
+            </WhiteOutlineButton>
           </div>
         </div>
-
-        {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            className="w-full h-24 text-white"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,120 C200,40 400,80 600,60 C800,40 1000,80 1200,60 L1200,120 Z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
-      </div>
+      </section>
 
       {/* Complete Home Flooring Service - Everything for Your Dream Home */}
       <section className="py-24 bg-white">

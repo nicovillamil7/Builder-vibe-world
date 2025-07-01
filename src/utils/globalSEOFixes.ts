@@ -86,7 +86,7 @@ export class GlobalSEOOptimizer {
     if (!document.querySelector('meta[name="twitter:site"]')) {
       const twitterSite = document.createElement('meta');
       twitterSite.name = 'twitter:site';
-      twitterSite.content = '@genesisstoneusa';
+      twitterSite.content = '@genesisstonefl';
       document.head.appendChild(twitterSite);
     }
 
