@@ -259,15 +259,15 @@ const Contact = () => {
             {/* Interactive Google Maps */}
             <div className="rounded-lg overflow-hidden h-96 lg:h-full shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.5676543243876!2d-80.31694368503774!3d25.807861883607945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6f1f1f1f1f1%3A0x1f1f1f1f1f1f1f1f!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033122!5e0!3m2!1sen!2sus!4v1629834567890!5m2!1sen!2sus"
+                src="https://maps.google.com/maps?cid=27303253618402823&output=embed"
+                loading="lazy"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Genesis Stone Location - 3399 NW 72nd Ave #109, Miami, FL 33122"
-              ></iframe>
+                allowFullScreen
+                style={{ border: 0 }}
+              />
             </div>
           </div>
         </div>
