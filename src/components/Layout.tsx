@@ -49,7 +49,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
             <div className="flex items-center space-x-1.5">
               <MapPin className="h-3 w-3 flex-shrink-0" />
-              <span>Miami, FL</span>
+              <span>Miami, FL 33122</span>
             </div>
           </div>
 
