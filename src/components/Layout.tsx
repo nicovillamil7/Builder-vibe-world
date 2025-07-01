@@ -84,7 +84,7 @@ const Layout = ({ children }: LayoutProps) => {
               {/* Social Media Icons */}
               <div className="flex items-center space-x-3">
                 <a
-                  href="https://www.instagram.com/genesisstonefl"
+                  href="https://www.instagram.com/genesistone/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-300 transition-colors duration-200"
@@ -93,7 +93,7 @@ const Layout = ({ children }: LayoutProps) => {
                   <Instagram className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.facebook.com/genesisstonefl"
+                  href="https://es-es.facebook.com/genesisstoneus/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-300 transition-colors duration-200"
@@ -248,7 +248,7 @@ const Layout = ({ children }: LayoutProps) => {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="https://web.facebook.com/genesisstoneus/?_rdc=1&_rdr#"
+                  href="https://es-es.facebook.com/genesisstoneus/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Facebook className="h-5 w-5" />
