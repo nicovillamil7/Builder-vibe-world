@@ -79,6 +79,7 @@ const Products = () => {
       <SEOHead 
         title="Flooring Products | Genesis Stone"
         description="Premium flooring products including porcelain tiles, natural stone, laminates & mosaics. Professional installation materials & expert guidance in South Florida."
+        canonicalUrl="https://genesisstoneusa.com/products"
       />
       <Helmet>
         {/* Twitter Cards */}
