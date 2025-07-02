@@ -195,6 +195,7 @@ const Index = () => {
       <SEOHead 
         title="Premium Flooring Solutions | Genesis Stone"
         description="Genesis Stone offers premium porcelain tiles, natural stone, laminates & professional installation in South Florida. Expert flooring solutions for homes & businesses."
+        canonicalUrl="https://genesisstoneusa.com/"
       />
       <TechnicalSEO 
         pageType="website"

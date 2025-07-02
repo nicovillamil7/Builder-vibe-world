@@ -61,6 +61,16 @@ const PRODUCT_IMAGES: Record<string, SitemapImage> = {
 
 // Blog post images
 const BLOG_IMAGES: Record<string, SitemapImage> = {
+  'expert-insights-on-mastering-simple-tile-installation-techniques': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-focused-view-of-a47800a4-bf92-4988-af91-56ccb0748be8.webp',
+    title: 'Expert Insights on Mastering Simple Tile Installation Techniques',
+    caption: 'Comprehensive guide to tile installation covering tools, techniques, and professional tips'
+  },
+  'homeowners-guide-selecting-right-tile-stone-flooring': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/a-thoughtfully-arranged-interior-178c161f-c77eeb82-6fb0-4623-bd56-50687117283d.webp',
+    title: "A Homeowner's Guide: How to Select the Right Tile or Stone Flooring",
+    caption: 'Complete guide to selecting the perfect tile or stone flooring for your home covering types, durability, and installation'
+  },
   'benefits-of-laminate-flooring-for-enduring-elegance': {
     loc: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7c5feacc40d1433497e02a4682df187d',
     title: 'Benefits of Laminate Flooring for Enduring Elegance',

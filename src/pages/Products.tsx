@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -79,6 +80,7 @@ const Products = () => {
       <SEOHead 
         title="Flooring Products | Genesis Stone"
         description="Premium flooring products including porcelain tiles, natural stone, laminates & mosaics. Professional installation materials & expert guidance in South Florida."
+        canonicalUrl="https://genesisstoneusa.com/products"
       />
       <Helmet>
         {/* Twitter Cards */}
@@ -109,20 +111,24 @@ const Products = () => {
               itemListElement: [
                 {
                   "@type": "Product",
+                  position: 1,
                   name: "Porcelain Tiles",
                   description:
                     "Premium porcelain tiles for residential and commercial applications",
                   category: "Flooring",
+                  image: [
+                    "https://genesisstoneusa.com/images/porcelain-tile-collection.jpg",
+                    "https://genesisstoneusa.com/placeholder.svg"
+                  ],
+                  brand: {
+                    "@type": "Brand",
+                    name: "Genesis Stone"
+                  },
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
+                    url: "https://genesisstoneusa.com/products",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -138,20 +144,24 @@ const Products = () => {
                 },
                 {
                   "@type": "Product",
+                  position: 2,
                   name: "Natural Stone",
                   description:
                     "Travertine, marble, limestone, granite, and slate flooring",
                   category: "Flooring",
+                  image: [
+                    "https://genesisstoneusa.com/images/natural-stone-collection.jpg",
+                    "https://genesisstoneusa.com/placeholder.svg"
+                  ],
+                  brand: {
+                    "@type": "Brand",
+                    name: "Genesis Stone"
+                  },
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
+                    url: "https://genesisstoneusa.com/products",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -167,20 +177,24 @@ const Products = () => {
                 },
                 {
                   "@type": "Product",
+                  position: 3,
                   name: "Luxury Vinyl Plank",
                   description:
                     "High-quality luxury vinyl plank flooring with realistic wood grain textures",
-                  category: "Flooring",
+                  category: "Flooring", 
+                  image: [
+                    "https://genesisstoneusa.com/images/laminate-flooring-collection.jpg",
+                    "https://genesisstoneusa.com/placeholder.svg"
+                  ],
+                  brand: {
+                    "@type": "Brand",
+                    name: "Genesis Stone"
+                  },
                   offers: {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
+                    url: "https://genesisstoneusa.com/products",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
