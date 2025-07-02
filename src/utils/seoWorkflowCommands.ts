@@ -1,7 +1,6 @@
 
 import { SEOImprovementWorkflow, runSEOWorkflow, testCurrentPage } from './seoImprovementWorkflow';
 import { SEOTestingUtility } from './seoTestingUtility';
-import { GlobalSEOOptimizer, fixAllSEOIssues } from './globalSEOFixes';
 
 interface CommandResult {
   success: boolean;
@@ -198,8 +197,7 @@ export const seoCommands = {
   report: (url?: string) => SEOWorkflowCommands.getInstance().getPageReport(url),
   logs: () => SEOWorkflowCommands.getInstance().getLogs(),
   clearLogs: () => SEOWorkflowCommands.getInstance().clearLogs(),
-  testAll: () => SEOWorkflowCommands.getInstance().testAllPages(),
-  fixAll: () => GlobalSEOOptimizer.getInstance().runAllFixes()
+  testAll: () => SEOWorkflowCommands.getInstance().testAllPages()
 };
 
 // Development helper - attach to window for easy console access
@@ -214,28 +212,6 @@ if (process.env.NODE_ENV === 'development') {
   console.log('  - seo.report(url) - Get detailed report');
   console.log('  - seo.logs() - View workflow logs');
   console.log('  - seo.clearLogs() - Clear logs');
-  console.log('  - seo.help() - Show this help menu');
-  
-  // Add help command
-  (window as any).seo.help = () => {
-    console.log('\n🎯 === SEO WORKFLOW COMMANDS HELP ===');
-    console.log('💡 Quick Start:');
-    console.log('   seo.testAll()    - Run site-wide SEO analysis');
-    console.log('   seo.auditSite()  - Full audit with improvements');
-    console.log('\n🔍 Testing Commands:');
-    console.log('   seo.test()       - Test current page SEO');
-    console.log('   seo.testAll()    - Test all site pages');
-    console.log('\n🛠️  Improvement Commands:');
-    console.log('   seo.improve()    - Improve current page');
-    console.log('   seo.improveSite()- Improve entire site');
-    console.log('\n📊 Reporting Commands:');
-    console.log('   seo.report(url)  - Detailed page report');
-    console.log('   seo.logs()       - View workflow logs');
-    console.log('   seo.clearLogs()  - Clear all logs');
-    console.log('\n🔧 Quick Fix Commands:');
-    console.log('   seo.fixAll()     - Apply all common SEO fixes');
-    console.log('=== END HELP ===\n');
-  };
   
   // Auto-run site-wide test on load
   console.log('🚀 Running automatic site-wide SEO test...');

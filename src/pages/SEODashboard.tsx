@@ -6,12 +6,6 @@ import TechnicalSEO from '../components/TechnicalSEO';
 import SEOWorkflowDashboard from '../components/SEOWorkflowDashboard';
 
 const SEODashboard: React.FC = () => {
-  // Redirect if not in development
-  if (process.env.NODE_ENV !== 'development') {
-    window.location.href = '/';
-    return null;
-  }
-
   return (
     <Layout>
       <SEOHead

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,10 +15,6 @@ import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import ServiceAreas from "./pages/ServicesAreas"; // Import the ServicesAreas component
-// Only import SEO Dashboard in development
-const SEODashboard = process.env.NODE_ENV === 'development' 
-  ? React.lazy(() => import("./pages/SEODashboard"))
-  : null;
 
 const queryClient = new QueryClient();
 
@@ -38,17 +33,6 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/service-areas" element={<ServiceAreas />} />
-            {/* SEO Dashboard - Development Only */}
-            {process.env.NODE_ENV === 'development' && SEODashboard && (
-              <Route 
-                path="/seo-dashboard" 
-                element={
-                  <React.Suspense fallback={<div>Loading SEO Dashboard...</div>}>
-                    <SEODashboard />
-                  </React.Suspense>
-                } 
-              />
-            )}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />

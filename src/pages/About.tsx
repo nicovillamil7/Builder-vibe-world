@@ -1,23 +1,22 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
+import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import {
-  PrimaryButton,
-  GoldButton,
-  WhiteOutlineButton,
-} from "@/components/ui/custom-buttons";
-import {
-  Users,
   Award,
+  Users,
+  MapPin,
   Clock,
-  Shield,
   Star,
+  Handshake,
+  Target,
+  Heart,
   CheckCircle,
-  Building,
-  Truck,
+  Zap,
+  Building2,
+  Shield,
 } from "lucide-react";
-import SEOHead from "@/components/SEOHead";
-import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 
 const About = () => {
   const stats = [
@@ -138,14 +137,6 @@ const About = () => {
 
   return (
     <Layout>
-      <SEOHead 
-        title="About Genesis Stone - Miami's Premier Flooring Supplier"
-        description="Founded in 2008, Genesis Stone serves South Florida with premium flooring solutions. Expert team, 15+ years experience, 1000+ projects completed."
-        keywords="Genesis Stone, Miami flooring company, South Florida flooring, flooring supplier history, Genesis Stone team"
-        canonicalUrl="https://genesisstoneusa.com/about"
-      />
-      <BreadcrumbNavigation />
-
       {/* Hero Section - Story-focused */}
       <div className="relative bg-gradient-to-br from-[rgb(138,0,0)] via-[rgb(120,0,0)] to-[rgb(100,0,0)] text-white overflow-hidden">
         {/* Background Pattern */}
@@ -162,15 +153,16 @@ const About = () => {
             <Badge className="bg-[rgb(251,189,35)] text-black mb-6 px-4 py-2 text-sm font-semibold">
               Our Story Since 2008
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            About Genesis Stone - Miami's Premier Flooring Supplier
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white/95">
-            15+ Years Serving South Florida with Premium Flooring Solutions
-          </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Your trusted partner in premium flooring solutions since 2008. Serving South Florida contractors and homeowners with expertise, quality materials, and dedicated service. From <a href="/products/porcelain" className="text-yellow-300 hover:text-yellow-200 underline">porcelain tiles</a> to <a href="/products/naturalStone" className="text-yellow-300 hover:text-yellow-200 underline">natural stone</a>, we're Miami's preferred flooring supplier.
-          </p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Built by Contractors,
+              <br />
+              <span className="text-[rgb(251,189,35)]">for Professionals</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Genesis Stone was born from real experience on real job sites. We
+              understand what it takes to deliver quality projects on time and
+              on budget.
+            </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <GoldButton size="lg" className="px-10 py-4 text-lg">
                 Visit Our Showroom
