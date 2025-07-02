@@ -1,6 +1,7 @@
 
 import { SEOImprovementWorkflow, runSEOWorkflow, testCurrentPage } from './seoImprovementWorkflow';
 import { SEOTestingUtility } from './seoTestingUtility';
+import { GlobalSEOOptimizer, fixAllSEOIssues } from './globalSEOFixes';
 
 interface CommandResult {
   success: boolean;
@@ -197,7 +198,8 @@ export const seoCommands = {
   report: (url?: string) => SEOWorkflowCommands.getInstance().getPageReport(url),
   logs: () => SEOWorkflowCommands.getInstance().getLogs(),
   clearLogs: () => SEOWorkflowCommands.getInstance().clearLogs(),
-  testAll: () => SEOWorkflowCommands.getInstance().testAllPages()
+  testAll: () => SEOWorkflowCommands.getInstance().testAllPages(),
+  fixAll: () => GlobalSEOOptimizer.getInstance().runAllFixes()
 };
 
 // Development helper - attach to window for easy console access
@@ -230,6 +232,8 @@ if (process.env.NODE_ENV === 'development') {
     console.log('   seo.report(url)  - Detailed page report');
     console.log('   seo.logs()       - View workflow logs');
     console.log('   seo.clearLogs()  - Clear all logs');
+    console.log('\n🔧 Quick Fix Commands:');
+    console.log('   seo.fixAll()     - Apply all common SEO fixes');
     console.log('=== END HELP ===\n');
   };
   

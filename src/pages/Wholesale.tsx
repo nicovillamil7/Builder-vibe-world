@@ -1,31 +1,34 @@
 import Layout from "@/components/Layout";
-import ContactForm from "@/components/ContactForm";
-import GoogleReviews from "@/components/GoogleReviews";
-import {
-  GoldButton,
-  WhiteOutlineButton,
-  PrimaryButton,
-  OutlineButton,
-} from "@/components/ui/custom-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SimpleReliableImage } from "@/components/ui/ReliableImage";
+import {
+  PrimaryButton,
+  GoldButton,
+  WhiteOutlineButton,
+} from "@/components/ui/custom-buttons";
 import {
   Calculator,
   Truck,
   Users,
+  Award,
+  Shield,
   Clock,
   CheckCircle,
-  Star,
   Building,
+} from "lucide-react";
+import SEOHead from "@/components/SEOHead";
+import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
+import ContactForm from "@/components/ContactForm";
+import GoogleReviews from "@/components/GoogleReviews";
+import { SimpleReliableImage } from "@/components/ui/ReliableImage";
+import {
   CreditCard,
   Package,
-  Shield,
   Zap,
   Target,
   TrendingUp,
-  Award,
   Handshake,
+  Star,
 } from "lucide-react";
 
 const Wholesale = () => {
@@ -202,92 +205,38 @@ const Wholesale = () => {
 
   return (
     <Layout>
-      {/* Hero Section - Industrial/Professional design */}
-      <div className="relative bg-gradient-to-r from-slate-900 via-gray-900 to-slate-800 text-white overflow-hidden">
-        {/* Floor Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`,
-          }}
-        ></div>
+      <SEOHead 
+        title="Wholesale Flooring Miami - Trade Program | Genesis Stone"
+        description="Genesis Stone wholesale program offers contractor pricing, Net-30 terms & bulk discounts on flooring materials. Serving Miami contractors since 2008."
+        keywords="wholesale flooring Miami, contractor pricing, trade program, bulk flooring discounts, Miami flooring contractor, Genesis Stone wholesale"
+      />
+      <BreadcrumbNavigation />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+      {/* Hero Section */}
+      <section className="py-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Miami Wholesale Flooring & Trade Program
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white/95">
+            Contractor Pricing & Bulk Discounts for Flooring Professionals
+          </h2>
 
-        {/* Industrial grid pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: "50px 50px",
-            }}
-          ></div>
-        </div>
+          <p className="text-xl text-white/80 mb-8">
+            Empowering Miami contractors with premium flooring solutions,
+            exclusive trade pricing, and reliable service.
+          </p>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <Badge className="bg-[rgb(251,189,35)] text-black mb-6 px-4 py-2 font-bold">
-                For Contractors & Builders
-              </Badge>
-
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                <span className="block">Build Smarter.</span>
-                <span className="block text-[rgb(251,189,35)]">Save More.</span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Get the commercial-grade materials you need with volume
-                discounts, flexible payment terms, and delivery that never
-                misses a deadline.
-              </p>
-
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-4">
-                    <div className="text-[rgb(251,189,35)] text-3xl font-bold">
-                      Flexible
-                    </div>
-                    <div className="text-gray-300 text-sm">Payment Terms</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <GoldButton size="lg" className="px-8 py-4 text-lg font-bold">
-                  Get Volume Pricing
-                </GoldButton>
-                <WhiteOutlineButton
-                  size="lg"
-                  className="px-8 py-4 text-lg font-bold"
-                >
-                  Apply for Account
-                </WhiteOutlineButton>
-              </div>
-            </div>
-
-            <div className="relative">
-              <SimpleReliableImage
-                imageId="contractorHeroImage"
-                alt="Professional flooring installation at construction site"
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-8 -left-8 bg-[rgb(251,189,35)] text-black p-6 rounded-lg shadow-xl">
-                <div className="flex items-center space-x-3">
-                  <Building className="h-8 w-8" />
-                  <div>
-                    <p className="font-bold text-xl">500+</p>
-                    <p className="text-sm">Projects Completed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <GoldButton size="lg" className="px-8 py-3 font-bold">
+              Get Trade Pricing
+            </GoldButton>
+            <WhiteOutlineButton size="lg" className="px-8 py-3 font-bold">
+              Apply for Net-30 Terms
+            </WhiteOutlineButton>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Contractor Advantages - Data-driven approach */}
       <section className="py-20 bg-white">

@@ -1,112 +1,68 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async';
 
 interface SEOHeadProps {
   title?: string;
   description?: string;
   keywords?: string;
-  canonicalUrl?: string;
   ogImage?: string;
-  schema?: object;
-  articleData?: {
-    publishedTime: string;
-    modifiedTime: string;
-    author: string;
-    tags: string[];
-  };
-  noindex?: boolean;
+  ogType?: string;
+  canonicalUrl?: string;
+  structuredData?: object;
 }
 
-const SEOHead = ({
-  title = "Genesis Stone - Miami Flooring Contractor & Tile Supplier | Porcelain, Natural Stone, LVP",
-  description = "Premier flooring supplier Miami since 2008. Trade pricing for contractors on porcelain tiles, natural stone, travertine pool decks, luxury vinyl plank installation. Same-day pickup South Florida.",
-  keywords = "flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, commercial flooring Miami, tile supplier Miami, flooring installation Miami",
-  canonicalUrl = "https://genesisstoneusa.com/",
-  ogImage = "https://genesisstoneusa.com/placeholder.svg",
-  schema,
-  noindex = false,
-}: SEOHeadProps) => {
+const SEOHead: React.FC<SEOHeadProps> = ({
+  title = "Genesis Stone - Premium Flooring Solutions in South Florida",
+  description = "Genesis Stone offers premium flooring solutions including porcelain tiles, natural stone, laminates, and professional installation services in South Florida.",
+  keywords = "flooring, tiles, natural stone, porcelain, laminate, South Florida, Genesis Stone",
+  ogImage = "/placeholder.svg",
+  ogType = "website",
+  canonicalUrl,
+  structuredData
+}) => {
+  // Ensure title is under 60 characters for optimal SEO
+  const optimizedTitle = title.length > 60 ? title.substring(0, 57) + '...' : title;
+  const fullTitle = optimizedTitle.includes('Genesis Stone') ? optimizedTitle : `${optimizedTitle} | Genesis Stone`;
 
-  // Check if current URL should be noindexed
-  const shouldNoIndex = React.useMemo(() => {
-    if (noindex) return true;
+  // Ensure description is 150-160 characters for optimal SEO
+  const optimizedDescription = description.length > 160 
+    ? description.substring(0, 157) + '...' 
+    : description.length < 120 
+      ? description + ' Professional flooring solutions and expert installation services in South Florida.'
+      : description;
 
-    if (typeof window !== 'undefined') {
-      const url = window.location.href;
-      const searchParams = new URLSearchParams(window.location.search);
-
-      // Check for funnel steps or tracking parameters
-      if (url.includes('funnel_step') || 
-          url.includes('tracking') ||
-          searchParams.has('utm_source') ||
-          searchParams.has('utm_medium') ||
-          searchParams.has('utm_campaign') ||
-          searchParams.has('ref') ||
-          searchParams.has('source') ||
-          url.includes('/404')) {
-        return true;
-      }
-    }
-
-    return false;
-  }, [noindex]);
+  const currentUrl = canonicalUrl || window.location.href.split('?')[0].split('#')[0];
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{fullTitle}</title>
+      <meta name="description" content={optimizedDescription} />
       <meta name="keywords" content={keywords} />
-
-      {/* Robots Meta Tag */}
-      <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
+      <meta name="robots" content="index, follow" />
 
       {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={optimizedDescription} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:site_name" content="Genesis Stone" />
 
-      {/* Twitter */}
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@genesisstoneusa" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={optimizedDescription} />
+      <meta name="twitter:image" content={ogImage} />
 
-      {/* Canonical */}
-      <link rel="canonical" href={canonicalUrl} />
+      {/* Canonical URL */}
+      <link rel="canonical" href={currentUrl} />
 
-      {/* Schema.org */}
-      {schema && (
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      {/* Structured Data */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       )}
-
-      {/* Article Schema for Blog Posts */}
-      {typeof window !== 'undefined' && window.articleData && (
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": window.articleData.title,
-              "description": window.articleData.description,
-              "author": {
-                "@type": "Organization",
-                "name": "Genesis Stone & More"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Genesis Stone & More",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://genesisstoneusa.com/logo.svg"
-                }
-              },
-              "datePublished": window.articleData.datePublished,
-              "dateModified": window.articleData.dateModified || window.articleData.datePublished
-            })}
-          </script>
-        )}
     </Helmet>
   );
 };
