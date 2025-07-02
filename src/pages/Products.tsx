@@ -1,4 +1,7 @@
+The structured data in Products.tsx is updated to include the 'brand' field and use an array for the 'image' field to improve Google Search Console compliance.
+```
 
+```replit_final_file
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -413,3 +416,4 @@ const Products = () => {
 };
 
 export default Products;
+`
