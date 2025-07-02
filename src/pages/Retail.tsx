@@ -173,7 +173,7 @@ const Retail = () => {
           }}
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgb(138,0,0)]/90 to-[rgb(153,27,27)]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Miami Retail Flooring Showroom - Genesis Stone
