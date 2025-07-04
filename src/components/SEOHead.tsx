@@ -30,13 +30,15 @@ const SEOHead = ({
   // Auto-generate canonical URL if not provided
   const finalCanonicalUrl = React.useMemo(() => {
     if (canonicalUrl) return canonicalUrl;
-    
+
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
       const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
-      return `https://genesisstoneusa.com${cleanPath}`;
+      // Ensure canonical URL is always HTTPS and non-www
+      const canonicalUrl = `https://genesisstoneusa.com${path === '/' ? '/' : path}`;
+      return canonicalUrl;
     }
-    
+
     return "https://genesisstoneusa.com/";
   }, [canonicalUrl]);
 
