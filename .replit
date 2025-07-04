@@ -26,10 +26,6 @@ npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 5001
-externalPort = 3000
-
 [workflows]
 runButton = "Run"
 

@@ -1,11 +1,8 @@
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Clock, Mail } from "lucide-react";
-import SEOHead from "@/components/SEOHead";
-import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
-import { Car, Building, MessageSquare, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Car, Building, MessageSquare, CheckCircle } from "lucide-react";
 import {
   PrimaryButton,
   OutlineButton,
@@ -78,30 +75,17 @@ const Contact = () => {
 
   return (
     <Layout>
-      <SEOHead 
-        title="Contact Genesis Stone Miami - Flooring Consultation"
-        description="Contact Genesis Stone Miami for flooring consultation, showroom visits & project quotes. Call, email or visit our showroom Mon-Fri 7AM-4PM."
-        keywords="contact Genesis Stone, Miami flooring consultation, showroom visit, flooring quotes, Genesis Stone phone number, flooring contractor Miami"
-        canonicalUrl="https://genesisstoneusa.com/contact"
-      />
-      <BreadcrumbNavigation />
-
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] text-white">
+      <div className="bg-[rgb(138,0,0)] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Contact Genesis Stone Miami - Get Expert Consultation
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white/95">
-            Visit Our Showroom or Call for Professional Flooring Guidance
-          </h2>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Ready to start your flooring project? Our team of experts is here to
             help with product selection, pricing, and project planning. Contact
             us today!
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Showroom Preview */}
       <section className="py-16 bg-gray-50">
