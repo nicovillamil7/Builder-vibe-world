@@ -44,8 +44,8 @@ const Contact = () => {
       city: "Miami, FL 33122",
       phone: "(305) 477-4402",
       hours: [
-        "Monday - Friday: 7:00 AM - 6:00 PM",
-        "Saturday: 8:00 AM - 4:00 PM",
+        "Monday - Friday: 7:00 AM - 4:00 PM",
+        "Saturday: Closed",
         "Sunday: Closed",
       ],
       services: [
@@ -63,7 +63,7 @@ const Contact = () => {
       title: "Will Call & Pickup",
       description:
         "Same-day pickup available for contractors and urgent orders",
-      hours: "Mon-Fri: 7:00 AM - 4:00 PM, Sat: 8:00 AM - 4:00 PM",
+      hours: "Mon-Fri: 7:00 AM - 4:00 PM",
     },
     {
       icon: Building,
