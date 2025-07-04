@@ -109,7 +109,7 @@ const generateSitemapUrls = (): SitemapUrl[] => {
       images: Object.values(PRODUCT_IMAGES)
     },
     
-    // Individual product category pages (if they exist)
+    // Individual product category pages
     ...Object.keys(PRODUCT_IMAGES).map(category => ({
       loc: `${SITE_URL}/products/${category}`,
       lastmod: currentDate,
@@ -204,30 +204,43 @@ const generateSitemapUrls = (): SitemapUrl[] => {
   ];
 };
 
+const escapeXml = (unsafe: string): string => {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+      default: return c;
+    }
+  });
+};
+
 const generateImageXml = (images: SitemapImage[]): string => {
   return images.map(image => `
     <image:image>
-      <image:loc>${image.loc}</image:loc>
-      <image:title>${image.title}</image:title>
-      <image:caption>${image.caption}</image:caption>
+      <image:loc>${escapeXml(image.loc)}</image:loc>
+      <image:title>${escapeXml(image.title)}</image:title>
+      <image:caption>${escapeXml(image.caption)}</image:caption>
     </image:image>`).join('');
 };
 
 const generateSitemapXml = (): string => {
   const urls = generateSitemapUrls();
   
-  const urlsXml = urls.map(url => `
-  <url>
-    <loc>${url.loc}</loc>
+  const urlsXml = urls.map(url => `  <url>
+    <loc>${escapeXml(url.loc)}</loc>
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>${url.images ? generateImageXml(url.images) : ''}
-  </url>`).join('');
+  </url>`).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">${urlsXml}
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+${urlsXml}
 </urlset>`;
 };
 

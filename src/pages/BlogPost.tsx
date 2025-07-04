@@ -39,11 +39,11 @@ const BlogPost = () => {
 
   return (
     <Layout>
-      <SEOHead
-        title={`${article.title} | Genesis Stone & More Blog`}
+      <SEOHead 
+        title={article.title}
         description={article.excerpt}
         keywords={`${article.tags.join(", ")}, flooring, tiles, stone`}
-        canonicalUrl={shareUrl}
+        canonicalUrl={`https://genesisstoneusa.com/blog/${article.slug}`}
         ogImage={article.image}
         articleData={{
           publishedTime: article.publishDate,

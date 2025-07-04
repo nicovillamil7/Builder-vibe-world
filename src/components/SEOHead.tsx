@@ -51,31 +51,43 @@ const SEOHead = ({
     return false;
   }, [noindex]);
 
+  const fullTitle = title;
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{title}</title>
+      <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="robots" content={shouldNoIndex ? "noindex,nofollow" : "index,follow"} />
 
-      {/* Robots Meta Tag */}
-      <meta name="robots" content={shouldNoIndex ? "noindex, nofollow" : "index, follow"} />
+      {/* Canonical URL */}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
       {/* Open Graph */}
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={typeof window !== 'undefined' && window.articleData ? "article" : "website"} />
+      <meta property="og:site_name" content="Genesis Stone & More" />
 
-      {/* Twitter */}
-      <meta name="twitter:title" content={title} />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@genesisstoneusa" />
 
-      {/* Canonical */}
-      <link rel="canonical" href={canonicalUrl} />
+      {/* Article specific meta tags */}
+      {typeof window !== 'undefined' && window.articleData && (
+        <>
+          <meta property="article:published_time" content={window.articleData.datePublished} />
+          <meta property="article:modified_time" content={window.articleData.dateModified || window.articleData.datePublished} />
+          <meta property="article:author" content="Genesis Stone & More" />
+          {window.articleData.tags && window.articleData.tags.map((tag, index) => (
+            <meta key={index} property="article:tag" content={tag} />
+          ))}
+        </>
+      )}
 
       {/* Schema.org */}
       {schema && (

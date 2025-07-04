@@ -209,7 +209,7 @@ const Index = () => {
           }
         ]}
       />
-      
+
       {/* Hero Section */}
       <Hero />
 
@@ -466,6 +466,7 @@ const Index = () => {
                     "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F415bcd7e0a704d01a11986e13ecabc3a)",
                 }}
               ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">
                   Travertine Pool & Spa

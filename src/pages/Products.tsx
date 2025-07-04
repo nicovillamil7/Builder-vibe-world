@@ -76,7 +76,7 @@ const Products = () => {
 
   return (
     <Layout>
-      <SEOHead
+      <SEOHead 
         title="Premium Flooring Products Miami | Genesis Stone Collections"
         description="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials. Professional-grade products for Miami contractors and homeowners with same-day pickup available."
         keywords="porcelain tiles miami, natural stone floors, decorative flooring, laminate flooring, floor tiles, ceramic tiles, stone flooring, miami flooring products"
@@ -89,14 +89,14 @@ const Products = () => {
         <meta name="twitter:title" content="Premium Flooring Products Miami | Genesis Stone Collections" />
         <meta name="twitter:description" content="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials for Miami contractors." />
         <meta name="twitter:image" content="https://genesisstoneusa.com/images/products-collection.jpg" />
-        
+
         {/* Open Graph Meta */}
         <meta property="og:title" content="Premium Flooring Products Miami | Genesis Stone Collections" />
         <meta property="og:description" content="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials." />
         <meta property="og:image" content="https://genesisstoneusa.com/images/products-collection.jpg" />
         <meta property="og:url" content="https://genesisstoneusa.com/products" />
         <meta property="og:type" content="website" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
