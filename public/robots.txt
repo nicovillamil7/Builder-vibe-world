@@ -37,11 +37,9 @@ Sitemap: https://genesisstoneusa.com/sitemap.xml
 # Specific bot rules for better crawling
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
