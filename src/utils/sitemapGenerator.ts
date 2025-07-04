@@ -80,6 +80,11 @@ const BLOG_IMAGES: Record<string, SitemapImage> = {
     loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-focused-view-of-a47800a4-bf92-4988-af91-56ccb0748be8.webp',
     title: 'How to Master Simple Tile Installation Techniques',
     caption: 'Expert guide to mastering tile installation techniques for beginners and professionals'
+  },
+  'why-choose-laminate-flooring-long-lasting-beauty': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-sleek-modern-interior-02ebd834-0602-4c80-a426-0da36c8167e1.webp',
+    title: 'Why Choose Laminate Flooring for Long-Lasting Beauty',
+    caption: 'Discover why laminate flooring combines durability, cost-effectiveness, and visual appeal for homes and commercial spaces'
   }
 };
 
