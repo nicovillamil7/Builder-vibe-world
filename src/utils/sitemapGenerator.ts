@@ -70,6 +70,16 @@ const BLOG_IMAGES: Record<string, SitemapImage> = {
     loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-modern-elegantly-des-4205da73-fe9c-43e7-86ba-78c28597d186.webp',
     title: 'Laminate Flooring Durability That Lasts for Years',
     caption: 'Discover why laminate flooring is the perfect choice for durability and longevity'
+  },
+  'homeowners-guide-tile-stone-flooring-selection': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/a-thoughtfully-arranged-interior-178c161f-c77eeb82-6fb0-4623-bd56-50687117283d.webp',
+    title: 'A Homeowner\'s Guide: How to Select the Right Tile or Stone Flooring',
+    caption: 'Comprehensive guide to choosing the perfect tile and stone flooring for your home'
+  },
+  'mastering-simple-tile-installation-techniques': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-focused-view-of-a47800a4-bf92-4988-af91-56ccb0748be8.webp',
+    title: 'How to Master Simple Tile Installation Techniques',
+    caption: 'Expert guide to mastering tile installation techniques for beginners and professionals'
   }
 };
 
