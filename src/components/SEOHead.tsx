@@ -78,12 +78,18 @@ const SEOHead = ({
       <link rel="canonical" href={finalCanonicalUrl} />
 
       {/* Open Graph */}
+      <meta property="og:type" content={typeof window !== 'undefined' && window.articleData ? "article" : "website"} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={finalCanonicalUrl} />
-      <meta property="og:type" content={typeof window !== 'undefined' && window.articleData ? "article" : "website"} />
       <meta property="og:site_name" content="Genesis Stone & More" />
+
+      {/* Social Media Profiles */}
+      <meta property="og:see_also" content="https://es-es.facebook.com/genesisstoneus/" />
+      <meta property="og:see_also" content="https://www.instagram.com/genesistone/" />
+      <meta property="og:see_also" content="https://www.tiktok.com/@genesis.stone.more" />
+      <meta property="og:see_also" content="https://www.youtube.com/@genesisstoneandmore" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 
 interface TechnicalSEOProps {
@@ -17,6 +16,59 @@ const TechnicalSEO: React.FC<TechnicalSEOProps> = ({
   lastModified,
   images = []
 }) => {
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Genesis Stone",
+    "alternateName": "Genesis Stone & More",
+    "url": "https://genesisstoneusa.com",
+    "logo": "https://genesisstoneusa.com/logo.svg",
+    "description": "Premier flooring supplier in South Florida specializing in porcelain tiles, natural stone, luxury vinyl plank, and laminate flooring since 2008.",
+    "foundingDate": "2008",
+    "sameAs": [
+      "https://es-es.facebook.com/genesisstoneus/",
+      "https://www.instagram.com/genesistone/",
+      "https://www.tiktok.com/@genesis.stone.more",
+      "https://www.youtube.com/@genesisstoneandmore"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3399 NW 72nd Ave #109",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "postalCode": "33122",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-305-477-4402",
+      "contactType": "customer service",
+      "email": "genesistonemore@gmail.com",
+      "availableLanguage": ["English", "Spanish"]
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.7617,
+      "longitude": -80.1918
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Florida"
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.7617,
+        "longitude": -80.1918
+      },
+      "geoRadius": "100 miles"
+    },
+    "openingHours": "Mo-Fr 07:00-16:00",
+    "priceRange": "$$"
+  };
+
   return (
     <Helmet>
       {/* Additional meta tags for better SEO */}
@@ -24,56 +76,19 @@ const TechnicalSEO: React.FC<TechnicalSEOProps> = ({
       <meta name="geo.placename" content="Miami, Florida" />
       <meta name="geo.position" content="25.7617;-80.1918" />
       <meta name="ICBM" content="25.7617, -80.1918" />
-      
+
       {/* Language and locale */}
       <meta httpEquiv="content-language" content="en-US" />
       <html lang="en-US" />
-      
+
       {/* Additional Open Graph */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Genesis Stone" />
       <meta property="article:publisher" content="https://www.facebook.com/genesisstonefl" />
-      
+
       {/* Schema.org enhancements */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Genesis Stone & More",
-          "url": "https://genesisstoneusa.com/",
-          "telephone": "(305) 477-4402",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Miami, FL",
-            "addressLocality": "Miami",
-            "addressRegion": "FL",
-            "addressCountry": "US"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 25.7617,
-            "longitude": -80.1918
-          },
-          "openingHours": "Mo-Fr 07:00-16:00",
-          "priceRange": "$$",
-          "paymentAccepted": "Cash, Check, Credit Card",
-          "currenciesAccepted": "USD",
-          "areaServed": [
-            "Miami-Dade County",
-            "Broward County", 
-            "Palm Beach County",
-            "South Florida"
-          ],
-          "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 25.7617,
-              "longitude": -80.1918
-            },
-            "geoRadius": "100000"
-          }
-        })}
+        {JSON.stringify(organizationSchema)}
       </script>
 
       {/* Performance hints */}
@@ -81,9 +96,9 @@ const TechnicalSEO: React.FC<TechnicalSEOProps> = ({
       <link rel="dns-prefetch" href="//cdn.builder.io" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
+
       {lastModified && <meta name="last-modified" content={lastModified} />}
-      
+
       {/* Image metadata */}
       {images.map((image, index) => (
         <link key={index} rel="preload" href={image.url} as="image" />
