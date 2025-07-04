@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://genesisstoneusa.com</loc>
+    <loc>https://genesisstoneusa.com/</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -47,7 +47,7 @@
     <image:image>
       <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
       <image:title>Natural Stone Collection - Genesis Stone</image:title>
-      <image:caption>Premium natural stone products including marble, granite, travertine</image:caption>
+      <image:caption>Premium natural stone products including marble, granite, and travertine</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://genesisstoneusa.com/images/porcelain-tile-collection.jpg</image:loc>
@@ -123,7 +123,7 @@
     <image:image>
       <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
       <image:title>Natural Stone Collection - Genesis Stone</image:title>
-      <image:caption>Premium natural stone products including marble, granite, travertine</image:caption>
+      <image:caption>Premium natural stone products including marble, granite, and travertine</image:caption>
     </image:image>
   </url>
   <url>

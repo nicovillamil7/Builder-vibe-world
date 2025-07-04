@@ -89,7 +89,7 @@ const generateSitemapUrls = (): SitemapUrl[] => {
   return [
     // Homepage
     {
-      loc: SITE_URL,
+      loc: `${SITE_URL}/`,
       lastmod: currentDate,
       changefreq: 'weekly',
       priority: 1.0,
@@ -229,15 +229,18 @@ const generateImageXml = (images: SitemapImage[]): string => {
 const generateSitemapXml = (): string => {
   const urls = generateSitemapUrls();
   
-  const urlsXml = urls.map(url => `  <url>
+  const urlsXml = urls.map(url => {
+    const imageXml = url.images ? generateImageXml(url.images) : '';
+    return `  <url>
     <loc>${escapeXml(url.loc)}</loc>
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
-    <priority>${url.priority}</priority>${url.images ? generateImageXml(url.images) : ''}
-  </url>`).join('\n');
+    <priority>${url.priority}</priority>${imageXml}
+  </url>`;
+  }).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${urlsXml}
