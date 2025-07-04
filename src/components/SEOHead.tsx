@@ -21,11 +21,24 @@ const SEOHead = ({
   title = "Genesis Stone - Miami Flooring Contractor & Tile Supplier | Porcelain, Natural Stone, LVP",
   description = "Premier flooring supplier Miami since 2008. Trade pricing for contractors on porcelain tiles, natural stone, travertine pool decks, luxury vinyl plank installation. Same-day pickup South Florida.",
   keywords = "flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, commercial flooring Miami, tile supplier Miami, flooring installation Miami",
-  canonicalUrl = "https://genesisstoneusa.com/",
+  canonicalUrl,
   ogImage = "https://genesisstoneusa.com/placeholder.svg",
   schema,
   noindex = false,
 }: SEOHeadProps) => {
+
+  // Auto-generate canonical URL if not provided
+  const finalCanonicalUrl = React.useMemo(() => {
+    if (canonicalUrl) return canonicalUrl;
+    
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+      return `https://genesisstoneusa.com${cleanPath}`;
+    }
+    
+    return "https://genesisstoneusa.com/";
+  }, [canonicalUrl]);
 
   // Check if current URL should be noindexed
   const shouldNoIndex = React.useMemo(() => {
@@ -60,13 +73,13 @@ const SEOHead = ({
       <meta name="robots" content={shouldNoIndex ? "noindex,nofollow" : "index,follow"} />
 
       {/* Canonical URL */}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <link rel="canonical" href={finalCanonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={finalCanonicalUrl} />
       <meta property="og:type" content={typeof window !== 'undefined' && window.articleData ? "article" : "website"} />
       <meta property="og:site_name" content="Genesis Stone & More" />
 
