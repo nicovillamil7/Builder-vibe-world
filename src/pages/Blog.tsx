@@ -7,11 +7,11 @@ import { Calendar, Clock, User, ArrowRight, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
-import { blogArticles } from "@/utils/blogData";
+import { processedBlogArticles } from "@/utils/blogData";
 
 const Blog = () => {
-  const featuredArticle = blogArticles.find((article) => article.featured);
-  const regularArticles = blogArticles.filter((article) => !article.featured);
+  const featuredArticle = processedBlogArticles.find((article) => article.featured);
+  const regularArticles = processedBlogArticles.filter((article) => !article.featured);
 
   return (
     <Layout>

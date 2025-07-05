@@ -18,17 +18,17 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 import InteractiveFAQ from "@/components/InteractiveFAQ";
-import { blogArticles } from "@/utils/blogData";
+import { processedBlogArticles } from "@/utils/blogData";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const article = blogArticles.find((a) => a.slug === slug);
+  const article = processedBlogArticles.find((a) => a.slug === slug);
 
   if (!article) {
     return <Navigate to="/404" replace />;
   }
 
-  const relatedArticles = blogArticles
+  const relatedArticles = processedBlogArticles
     .filter(
       (a) =>
         a.id !== article.id && a.tags.some((tag) => article.tags.includes(tag)),
