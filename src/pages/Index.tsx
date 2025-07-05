@@ -224,10 +224,10 @@ const Index = () => {
               Why Choose Genesis Stone for Your Miami Flooring Project?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline" title="Miami flooring products and tile supplier">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008. Specializing in <a href="/products/porcelain" className="text-red-700 hover:text-red-800 font-medium underline" title="Porcelain tiles Miami supplier">porcelain tiles Miami</a>, <a href="/products/naturalStone" className="text-red-700 hover:text-red-800 font-medium underline" title="Natural stone supplier South Florida">natural stone</a>, and <a href="/products/laminates" className="text-red-700 hover:text-red-800 font-medium underline" title="Luxury vinyl plank flooring Miami">luxury vinyl plank installation</a>.
+              Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline" title="Miami flooring products and tile supplier">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008. Specializing in porcelain tiles, natural stone, and luxury vinyl plank installation.
             </p>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Whether you're a contractor seeking <a href="/wholesale" className="text-red-600 hover:text-red-700 underline font-medium">wholesale porcelain tiles Miami</a> or a homeowner looking for premium <a href="/products/naturalStone" className="text-red-600 hover:text-red-700 underline font-medium">natural stone floors</a>, Genesis Stone & More has been South Florida's trusted flooring partner since 2008. Our extensive inventory includes the finest <a href="/products/porcelain" className="text-red-600 hover:text-red-700 underline font-medium">large format porcelain tiles</a>, <a href="/products/naturalStone" className="text-red-600 hover:text-red-700 underline font-medium">travertine flooring</a>, luxury vinyl planks, and decorative elements.
+              Whether you're a contractor seeking <a href="/wholesale" className="text-red-600 hover:text-red-700 underline font-medium">wholesale pricing</a> or a homeowner looking for premium materials, Genesis Stone & More has been South Florida's trusted flooring partner since 2008. Our extensive inventory includes large format porcelain tiles, natural stone floors, luxury vinyl planks, and decorative elements.
             </p>
           </div>
 
@@ -426,7 +426,8 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
+            {/* Natural Stone Pool Deck - Strategic Link */}
+            <a href="/products/naturalStone" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
@@ -441,12 +442,13 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Pool Deck Paradise</h4>
-                <p className="text-sm opacity-90">Natural Stone</p>
+                <h4 className="font-bold text-xl mb-2">Natural Stone Floors Miami</h4>
+                <p className="text-sm opacity-90">Pool Decks & Outdoor Spaces</p>
               </div>
-            </div>
+            </a>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
+            {/* Porcelain Tiles Link */}
+            <a href="/products/porcelain" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury living room with marble accent wall"
@@ -461,12 +463,13 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Luxury Interior</h4>
-                <p className="text-sm opacity-90">Marble & Premium Tiles</p>
+                <h4 className="font-bold text-xl mb-2">Porcelain Tiles Miami</h4>
+                <p className="text-sm opacity-90">Large Format & Premium Options</p>
               </div>
-            </div>
+            </a>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
+            {/* Natural Stone Travertine Link */}
+            <a href="/products/naturalStone" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
@@ -481,14 +484,13 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">
-                  Travertine Pool & Spa
-                </h4>
-                <p className="text-sm opacity-90">Natural Stone</p>
+                <h4 className="font-bold text-xl mb-2">Travertine Flooring Miami</h4>
+                <p className="text-sm opacity-90">Pool Decks & Luxury Homes</p>
               </div>
-            </div>
+            </a>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
+            {/* Porcelain Interior Link */}
+            <a href="/products/porcelain" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern white interior with polished porcelain"
@@ -503,12 +505,13 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Contemporary Clean</h4>
-                <p className="text-sm opacity-90">White Polished Porcelain</p>
+                <h4 className="font-bold text-xl mb-2">Large Format Porcelain Tiles</h4>
+                <p className="text-sm opacity-90">Contemporary Clean Design</p>
               </div>
-            </div>
+            </a>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
+            {/* Luxury Vinyl Plank Link */}
+            <a href="/products/laminates" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjgw3ne4za9mheafx9wrc5_1750117973_img_1-531f33?format=webp&width=800"
                 alt="Professional installation of luxury vinyl plank flooring"
@@ -516,14 +519,13 @@ const Index = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">
-                  Professional Installation
-                </h4>
-                <p className="text-sm opacity-90">Luxury Vinyl Plank</p>
+                <h4 className="font-bold text-xl mb-2">Luxury Vinyl Plank Miami</h4>
+                <p className="text-sm opacity-90">Professional Installation</p>
               </div>
-            </div>
+            </a>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3]">
+            {/* Mosaic Tiles Link */}
+            <a href="/products/mosaics" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjhp2ee2fbej2h3a8ybwn6_1750118078_img_1-73caf1?format=webp&width=800"
                 alt="Luxury mosaic artistry in spa design"
@@ -531,10 +533,10 @@ const Index = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Mosaic Artistry</h4>
-                <p className="text-sm opacity-90">Custom Spa Design</p>
+                <h4 className="font-bold text-xl mb-2">Mosaic Tiles Miami</h4>
+                <p className="text-sm opacity-90">Custom Spa & Pool Design</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
