@@ -37,7 +37,7 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
   const imageConfig = config[imageId] || config.modernPoolDeck;
   const [src, setSrc] = useState(imageConfig.primary);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   return (
     <div className={`relative overflow-hidden ${className}`} style={{ aspectRatio: '16/9' }}>
       {isLoading && (
