@@ -223,3 +223,15 @@
 .faq-chevron.open {
   @apply rotate-180;
 }
+
+/* Add any global styles here */
+
+
+/* Make internal blog links more visible */
+.prose a[href^="/"] {
+  @apply text-red-700 hover:text-red-800 font-semibold underline decoration-2 underline-offset-2;
+}
+
+.prose a[href^="http"] {
+  @apply text-blue-700 hover:text-blue-800 font-medium underline decoration-1 underline-offset-2;
+}

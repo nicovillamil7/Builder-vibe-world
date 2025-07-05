@@ -148,14 +148,14 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-6 py-3 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 ${
+                  className={`px-5 py-2.5 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 ${
                     isActive(item.href)
-                      ? "bg-[rgb(138,0,0)] text-white shadow-lg transform scale-105"
+                      ? "bg-[rgb(138,0,0)] text-white shadow-lg"
                       : "text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-red-50 hover:shadow-md"
                   }`}
                 >
