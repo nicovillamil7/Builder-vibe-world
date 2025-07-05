@@ -14,7 +14,7 @@ interface ReliableImageProps {
   height?: number;
 }
 
-// Simple version for product grids
+// Simple version for product grids - using actual Genesis Stone images
 export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; className?: string; priority?: boolean }> = ({
   imageId,
   alt,
@@ -22,16 +22,46 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
   priority = false,
 }) => {
   const config = {
-    grout: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    naturalStone: { primary: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    laminates: { primary: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    mosaics: { primary: 'https://images.unsplash.com/photo-1615971677499-5467609c2abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    wallPanels: { primary: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    metalTrims: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    mortarMix: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    modernPoolDeck: { primary: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    vinylInstallation: { primary: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
-    blueMosaicSpa: { primary: 'https://images.unsplash.com/photo-1615971677499-5467609c2abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    grout: { 
+      primary: 'https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxj50r8ffztx4xpjr30dqez_1750117638_img_0-c8d68e', 
+      fallback: '/placeholder.svg' 
+    },
+    naturalStone: { 
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93', 
+      fallback: '/placeholder.svg' 
+    },
+    laminates: { 
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7c5feacc40d1433497e02a4682df187d', 
+      fallback: '/placeholder.svg' 
+    },
+    mosaics: { 
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F62a47965cba54dd7b57094f1e799ab8c', 
+      fallback: '/placeholder.svg' 
+    },
+    wallPanels: { 
+      primary: 'https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/20250616_1826_modern-wall-panels_simple_compose_01jxxgztz3ergafrph5m9n3mjt-5b8656?format=webp&width=800', 
+      fallback: '/placeholder.svg' 
+    },
+    metalTrims: { 
+      primary: 'https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxhprpfenpt4vc9bsrmnaa1_1750117185_img_0-d27fd9?format=webp&width=800', 
+      fallback: '/placeholder.svg' 
+    },
+    mortarMix: { 
+      primary: 'https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxkx79bek4ap5qk2ke9mf8z_1750119497_img_0-89caf5?format=webp&width=800', 
+      fallback: '/placeholder.svg' 
+    },
+    modernPoolDeck: { 
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fdb22d75002424925b61abb0b2c647e50?format=webp', 
+      fallback: '/placeholder.svg' 
+    },
+    vinylInstallation: { 
+      primary: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', 
+      fallback: '/placeholder.svg' 
+    },
+    blueMosaicSpa: { 
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F62a47965cba54dd7b57094f1e799ab8c', 
+      fallback: '/placeholder.svg' 
+    },
   };
 
   const imageConfig = config[imageId] || config.modernPoolDeck;

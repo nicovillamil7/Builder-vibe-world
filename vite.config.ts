@@ -21,7 +21,6 @@ export default defineConfig({
     minifyWhitespace: true,
     minifySyntax: true,
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 300,
     rollupOptions: {
       treeshake: {
         moduleSideEffects: false,
