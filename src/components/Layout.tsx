@@ -69,10 +69,18 @@ const Layout = ({ children }: LayoutProps) => {
   };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isSpanish = location.pathname.startsWith('/es');
 
   const isActive = (path: string) => location.pathname === path;
 
-  const navigation = [
+  const navigation = isSpanish ? [
+    { name: "Inicio", href: "/es" },
+    { name: "Productos", href: "/es/products" },
+    { name: "Homeowners", href: "/es/retail" },
+    { name: "Contractors", href: "/es/wholesale" },
+    { name: "Blog", href: "/es/blog" },
+    { name: "Contacto", href: "/es/contact" },
+  ] : [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
     { name: "Homeowners", href: "/retail" },
@@ -185,7 +193,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-3">
+              <Link to={isSpanish ? "/es" : "/"} className="flex items-center space-x-3">
                 <img 
                   src="/genesis-nav-icon.png" 
                   alt="Genesis Stone Logo" 

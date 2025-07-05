@@ -17,6 +17,9 @@ import NotFound from "./pages/NotFound";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import ServiceAreas from "./pages/ServicesAreas"; // Import the ServicesAreas component
 
+// Spanish pages
+import IndexES from "./pages/es/Index";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +30,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
+            {/* English routes */}
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:category" element={<ProductCategory />} />
@@ -37,6 +41,11 @@ const App = () => (
             <Route path="/service-areas" element={<ServiceAreas />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+
+            {/* Spanish routes */}
+            <Route path="/es" element={<IndexES />} />
+            <Route path="/es/" element={<IndexES />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

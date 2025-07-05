@@ -1,0 +1,130 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://genesisstoneusa.com/es/</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/placeholder.svg</image:loc>
+      <image:title>Genesis Stone - Soluciones Premium de Pisos</image:title>
+      <image:caption>Proveedor premier de pisos en el sur de Florida</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/products</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/grout-collection.jpg</image:loc>
+      <image:title>Soluciones Profesionales de Lechada - Genesis Stone</image:title>
+      <image:caption>Productos de lechada de alta calidad para instalaciones de azulejos y piedra</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/laminate-flooring-collection.jpg</image:loc>
+      <image:title>Colección de Pisos Laminados de Lujo - Genesis Stone</image:title>
+      <image:caption>Opciones premium de pisos laminados para proyectos residenciales y comerciales</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/metal-trim-collection.jpg</image:loc>
+      <image:title>Perfiles Metálicos y Soluciones de Borde - Genesis Stone</image:title>
+      <image:caption>Perfiles metálicos profesionales y soluciones de borde para instalaciones de azulejos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/mortar-mix-collection.jpg</image:loc>
+      <image:title>Productos Profesionales de Mezcla de Mortero - Genesis Stone</image:title>
+      <image:caption>Soluciones de mezcla de mortero de alto rendimiento para instalación de azulejos y piedra</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/mosaic-tile-collection.jpg</image:loc>
+      <image:title>Colección de Azulejos de Mosaico - Genesis Stone</image:title>
+      <image:caption>Azulejos de mosaico impresionantes para aplicaciones decorativas y funcionales</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
+      <image:title>Colección de Piedra Natural - Genesis Stone</image:title>
+      <image:caption>Productos de piedra natural premium incluyendo mármol, granito y travertino</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/porcelain-tile-collection.jpg</image:loc>
+      <image:title>Colección de Azulejos de Porcelana - Genesis Stone</image:title>
+      <image:caption>Azulejos de porcelana de alta calidad para aplicaciones residenciales y comerciales</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/wall-panel-collection.jpg</image:loc>
+      <image:title>Soluciones de Paneles de Pared - Genesis Stone</image:title>
+      <image:caption>Sistemas modernos de paneles de pared para aplicaciones interiores y exteriores</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://genesisstoneusa.com/es/retail</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/retail-showroom.jpg</image:loc>
+      <image:title>Showroom Residencial Genesis Stone</image:title>
+      <image:caption>Visita nuestro showroom para consulta personalizada de pisos</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/wholesale</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/wholesale-warehouse.jpg</image:loc>
+      <image:title>Operaciones Mayoristas Genesis Stone</image:title>
+      <image:caption>Precios comerciales y descuentos por volumen para contratistas</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/about</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/genesis-stone-team.jpg</image:loc>
+      <image:title>Equipo Genesis Stone</image:title>
+      <image:caption>Conoce a los profesionales experimentados detrás de Genesis Stone</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/contact</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/contact-location.jpg</image:loc>
+      <image:title>Información de Contacto Genesis Stone</image:title>
+      <image:caption>Visita nuestro showroom o contáctanos para consulta de pisos</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/service-areas</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/south-florida-service-map.jpg</image:loc>
+      <image:title>Áreas de Servicio Genesis Stone</image:title>
+      <image:caption>Sirviendo al sur de Florida con soluciones premium de pisos</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/blog</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/flooring-blog.jpg</image:loc>
+      <image:title>Blog de Pisos Genesis Stone</image:title>
+      <image:caption>Consejos expertos y tips para instalación y mantenimiento de pisos</image:caption>
+    </image:image>
+  </url>
+</urlset>
