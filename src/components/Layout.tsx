@@ -183,7 +183,24 @@ const Layout = ({ children }: LayoutProps) => {
       <nav className="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link to="/" className="flex items-center space-x-3">
+                <img 
+                  src="/genesis-nav-icon.png" 
+                  alt="Genesis Stone Logo" 
+                  className="h-10 w-10 object-contain"
+                  onError={(e) => {
+                    // Fallback to SVG if PNG fails
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/logo.svg";
+                  }}
+                />
+                <span className="text-xl font-bold text-gray-900 hidden sm:block">
+                  Genesis Stone
+                </span>
+              </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center flex-1 space-x-2">
