@@ -454,6 +454,56 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Location Section - Integrated map */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Visit Our Showroom
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                See our extensive collection of flooring options in person. Our
+                knowledgeable staff can help you find the perfect materials for
+                your next project.
+              </p>
+              <div className="flex items-center space-x-4 mb-4">
+                <MapPin className="h-6 w-6 text-[rgb(138,0,0)]" />
+                <div>
+                  <p className="font-semibold text-gray-900">
+                    Genesis Stone Floors Pro
+                  </p>
+                  <p className="text-gray-600">
+                    3399 NW 72nd Ave #109, Miami, FL 33122
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Clock className="h-6 w-6 text-[rgb(138,0,0)]" />
+                <div>
+                  <p className="font-semibold text-gray-900">Showroom Hours</p>
+                  <p className="text-gray-600">
+                    Mon-Fri: 9am - 6pm, Sat: 10am - 4pm
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Address Selection Map */}
+            <div className="rounded-lg overflow-hidden h-96 lg:h-full shadow-lg">
+              <iframe
+                src="https://storage.googleapis.com/maps-solutions-jr2oksp8nh/address-selection/oe6g/address-selection.html"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Genesis Stone Interactive Address Selection"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
