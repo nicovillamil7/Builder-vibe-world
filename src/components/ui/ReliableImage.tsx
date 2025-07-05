@@ -50,7 +50,7 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
-        fetchPriority={priority ? 'high' : 'low'}
+        fetchpriority={priority ? 'high' : 'low'}
         onLoad={() => setIsLoading(false)}
         onError={() => {
           if (src !== imageConfig.fallback) {
@@ -153,7 +153,7 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
         alt={alt}
         loading={loading}
         decoding="async"
-        fetchPriority={loading === 'eager' ? 'high' : 'low'}
+        fetchpriority={loading === 'eager' ? 'high' : 'low'}
         onLoad={handleLoad}
         onError={handleError}
         className={`w-full h-full object-cover transition-opacity duration-200 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError ? "hidden" : ""}`}
