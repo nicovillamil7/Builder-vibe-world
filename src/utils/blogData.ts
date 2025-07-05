@@ -752,6 +752,12 @@ import { addLinksToContent, verifyInternalLinks } from "./blogLinking";
 if (!verifyInternalLinks()) {
   console.warn('Some internal links in blog content point to non-existent routes');
 }
+
+// Process blog articles to add internal/external linking
+export const processedBlogArticles = blogArticles.map(article => ({
+  ...article,
+  content: addLinksToContent(article.content)
+}));
 export const generateBlogSchema = (article: BlogArticle) => {
   return {
     "@context": "https://schema.org",
