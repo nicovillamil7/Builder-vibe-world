@@ -31,7 +31,8 @@ export const WhiteOutlineButton = forwardRef<
       variant="outline"
       className={cn(
         "border-2 border-white text-black bg-white font-semibold transition-all duration-200",
-        "hover:bg-white hover:text-black",
+        "hover:bg-white hover:text-black active:bg-white focus:bg-white",
+        "!bg-white !text-black", // Force white background
         className,
       )}
       {...props}
