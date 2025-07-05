@@ -1,12 +1,21 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./index.html",
+  ],
+  safelist: [
+    // Keep essential utility classes that might be added dynamically
+    'opacity-0',
+    'opacity-100',
+    'transform',
+    'transition-opacity',
+    'duration-300',
   ],
   prefix: "",
   theme: {

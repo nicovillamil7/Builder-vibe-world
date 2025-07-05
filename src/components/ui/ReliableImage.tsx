@@ -1,133 +1,97 @@
-import React, { useState } from "react";
-import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
+import React, { useState, useRef, useEffect } from 'react';
 
-interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  imageId: string;
-  fallbackImageId?: string;
-  onLoadSuccess?: () => void;
-  onLoadError?: (error: Event) => void;
-}
-
-export const ReliableImage: React.FC<ReliableImageProps> = ({
-  imageId,
-  fallbackImageId,
-  onLoadSuccess,
-  onLoadError,
-  className = "",
-  alt,
-  ...props
-}) => {
-  const [hasErrored, setHasErrored] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const config = RELIABLE_IMAGES[imageId];
-  const fallbackConfig = fallbackImageId
-    ? RELIABLE_IMAGES[fallbackImageId]
-    : null;
-
-  if (!config) {
-    console.warn(`Image ID "${imageId}" not found, using default`);
-    return (
-      <img
-        src={RELIABLE_IMAGES.modernPoolDeck.primary}
-        alt={alt || RELIABLE_IMAGES.modernPoolDeck.alt}
-        className={className}
-        {...props}
-      />
-    );
-  }
-
-  const handleLoad = () => {
-    setIsLoading(false);
-    onLoadSuccess?.();
-  };
-
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
-
-    if (!hasErrored) {
-      // First error - try fallback
-      setHasErrored(true);
-      if (fallbackConfig) {
-        target.src = fallbackConfig.primary;
-        return;
-      } else if (config.fallback !== config.primary) {
-        target.src = config.fallback;
-        return;
-      }
-    } else if (fallbackConfig && target.src === fallbackConfig.primary) {
-      // Fallback image failed, try its fallback
-      target.src = fallbackConfig.fallback;
-      return;
-    }
-
-    // All fallbacks failed
-    setIsLoading(false);
-    onLoadError?.(e.nativeEvent);
-    console.error(`All image sources failed for ${imageId}`);
-  };
-
-  return (
-    <div className="relative">
-      <img
-        src={config.primary}
-        alt={alt || config.alt}
-        className={`${className} ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
-        onLoad={handleLoad}
-        onError={handleError}
-        {...props}
-      />
-
-      {isLoading && (
-        <div
-          className={`absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center ${className}`}
-        >
-          <div className="text-gray-400 text-sm">Loading...</div>
-        </div>
-      )}
-    </div>
-  );
-};
-
-// Simplified version for cases where you just need a reliable URL
-interface SimpleReliableImageProps {
-  imageId?: string;
-  src?: string;
+interface ReliableImageProps {
+  src: string;
   alt: string;
   className?: string;
   fallbackSrc?: string;
+  onLoad?: () => void;
+  onError?: () => void;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  srcSet?: string;
   width?: number;
   height?: number;
-  loading?: "lazy" | "eager";
 }
 
-export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
-  imageId,
+export const ReliableImage: React.FC<ReliableImageProps> = ({
   src,
   alt,
-  className = "",
-  fallbackSrc = "/placeholder.svg",
+  className = '',
+  fallbackSrc = '/placeholder.svg',
+  onLoad,
+  onError,
+  loading = 'lazy',
+  sizes,
+  srcSet,
   width,
   height,
-  loading = "lazy"
 }) => {
-  const imageSrc = getReliableImageUrl(imageId);
-  const finalSrc = src || imageSrc || fallbackSrc;
+  const [currentSrc, setCurrentSrc] = useState<string>(src);
+  const [hasError, setHasError] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
-    console.error("Image failed to load:", target.src);
+  // Generate WebP versions if possible
+  const getOptimizedSrc = (originalSrc: string) => {
+    if (originalSrc.includes('storage.googleapis.com') || originalSrc.includes('cdn.builder.io')) {
+      return originalSrc;
+    }
+
+    if (originalSrc.includes('.jpg') || originalSrc.includes('.jpeg') || originalSrc.includes('.png')) {
+      const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+      return webpSrc;
+    }
+
+    return originalSrc;
   };
 
+  // Reset state when src changes
+  useEffect(() => {
+    setCurrentSrc(src);
+    setHasError(false);
+    setIsLoaded(false);
+  }, [src]);
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+    onLoad?.();
+  };
+
+  const handleError = () => {
+    if (!hasError && currentSrc !== fallbackSrc) {
+      console.warn(`Failed to load image: ${currentSrc}, falling back to: ${fallbackSrc}`);
+      setCurrentSrc(fallbackSrc);
+      setHasError(true);
+    }
+    onError?.();
+  };
+
+  // Try WebP first, fallback to original format
+  const optimizedSrc = getOptimizedSrc(currentSrc);
+
   return (
-    <img
-      src={finalSrc}
-      alt={alt}
-      className={className}
-      width={width}
-      height={height}
-      loading={loading}
-      onError={handleError}
-    />
+    <picture>
+      {/* WebP version for modern browsers */}
+      {optimizedSrc !== currentSrc && (
+        <source srcSet={optimizedSrc} type="image/webp" />
+      )}
+
+      <img
+        ref={imgRef}
+        src={currentSrc}
+        alt={alt}
+        className={`${className} ${!isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        onLoad={handleLoad}
+        onError={handleError}
+        loading={loading}
+        sizes={sizes}
+        srcSet={srcSet}
+        width={width}
+        height={height}
+        decoding="async"
+        fetchPriority={loading === 'eager' ? 'high' : 'auto'}
+      />
+    </picture>
   );
 };

@@ -4,6 +4,20 @@ import { ArrowRight } from "lucide-react";
 import { getReliableImageUrl } from "@/utils/imageUtils";
 
 const Hero = () => {
+  // Preload critical images
+  useEffect(() => {
+    const criticalImages = [
+      '/placeholder.svg',
+    ];
+
+    criticalImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  }, []);
   return (
     <div className="relative h-screen min-h-[700px] overflow-hidden">
       {/* Large Background Image */}
