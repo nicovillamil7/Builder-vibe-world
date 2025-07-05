@@ -142,8 +142,16 @@ const Layout = ({ children }: LayoutProps) => {
               <img
                 src="/genesis-icon.png"
                 alt="Genesis Stone & More"
-                className="h-12 w-auto"
+                className="h-12 w-auto object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.nextElementSibling?.classList.remove('hidden');
+                }}
               />
+              <span className="hidden text-xl font-bold text-gray-900">
+                Genesis Stone & More
+              </span>
             </Link>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
