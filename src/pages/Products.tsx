@@ -221,14 +221,14 @@ const Products = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Premium Flooring Product Categories
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Genesis Stone & More has been South Florida's premier flooring supplier since 2008, offering an extensive collection of premium flooring materials. From commercial-grade porcelain tiles to luxury natural stone, our products meet the highest industry standards for durability, beauty, and performance. Whether you're a contractor seeking <a href="/wholesale" className="text-red-600 hover:text-red-700 underline">wholesale pricing</a> or a homeowner exploring <a href="/retail" className="text-red-600 hover:text-red-700 underline">retail options</a>, our expert team provides personalized guidance for every project.
+              Genesis Stone & More has been South Florida's premier flooring supplier since 2008, offering an extensive collection of premium flooring materials. From commercial-grade porcelain tiles to luxury natural stone, our products meet the highest industry standards for durability, beauty, and performance.
             </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our Miami showroom features live displays of trending designs, textures, and finishes. We maintain extensive inventory for same-day pickup and offer professional installation services throughout South Florida, including Miami-Dade, Broward, and Palm Beach counties.
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              Whether you're a contractor seeking <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium underline">wholesale pricing</a> or a homeowner exploring <a href="/retail" className="text-red-700 hover:text-red-800 font-medium underline">retail options</a>, our Miami showroom features live displays with same-day pickup and professional installation services throughout South Florida.
             </p>
           </div>
 
