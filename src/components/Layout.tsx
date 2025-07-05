@@ -39,50 +39,46 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Top Information Bar - Genesis Maroon */}
-      <div className="bg-[rgb(138,0,0)] text-white py-1.5 md:py-2.5 px-4">
+      <div className="bg-[rgb(138,0,0)] text-white py-2 md:py-3 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Mobile Version - Just Phone & Location */}
-          <div className="flex justify-center items-center gap-6 text-xs md:hidden">
-            <div className="flex items-center space-x-1.5">
-              <Phone className="h-3 w-3 flex-shrink-0" />
+          <div className="flex justify-center items-center gap-8 text-xs md:hidden">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-3.5 w-3.5 flex-shrink-0" />
               <span className="font-medium">(305) 477-4402</span>
             </div>
-            <div className="flex items-center space-x-1.5">
-              <MapPin className="h-3 w-3 flex-shrink-0" />
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
               <span>Miami, FL 33122</span>
             </div>
           </div>
 
           {/* Desktop Version - Full Info */}
-          <div className="hidden md:flex flex-col lg:flex-row justify-between items-center gap-3">
+          <div className="hidden md:flex justify-between items-center">
             {/* Left side - Contact & Location */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
-              <div className="flex items-baseline space-x-2">
-                <Phone className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
+            <div className="flex items-center gap-8 text-sm">
+              <div className="flex items-center space-x-2.5">
+                <Phone className="h-4 w-4 flex-shrink-0" />
                 <span className="font-medium">(305) 477-4402</span>
               </div>
-              <div className="flex items-baseline space-x-2">
-                <MapPin className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
-                <span className="text-center sm:text-left">
-                  Miami, FL 33122
-                </span>
+              <div className="flex items-center space-x-2.5">
+                <MapPin className="h-4 w-4 flex-shrink-0" />
+                <span>Miami, FL 33122</span>
               </div>
             </div>
 
             {/* Right side - Service Info & Social */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm">
-              <div className="flex items-baseline space-x-2">
-                <Clock className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
+            <div className="flex items-center gap-8 text-sm">
+              <div className="flex items-center space-x-2.5">
+                <Clock className="h-4 w-4 flex-shrink-0" />
                 <span>Mon-Fri 7AM-4PM</span>
               </div>
-              <div className="flex items-baseline space-x-2">
-                <Truck className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
-                <span className="text-center sm:text-left">
-                  Quality Materials
-                </span>
+              <div className="flex items-center space-x-2.5">
+                <Truck className="h-4 w-4 flex-shrink-0" />
+                <span>Quality Materials</span>
               </div>
               {/* Social Media Icons */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <a
                   href="https://www.instagram.com/genesistone/"
                   target="_blank"
@@ -136,19 +132,19 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Main Navigation Header */}
       <nav className="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14">
+          <div className="flex justify-between items-center h-16">
             
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center justify-center flex-1 space-x-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-4 py-2 rounded-md font-medium text-sm transition-all duration-200 ${
+                  className={`px-6 py-2.5 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-200 ${
                     isActive(item.href)
-                      ? "bg-[rgb(138,0,0)] text-white"
-                      : "text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-gray-50"
+                      ? "bg-[rgb(138,0,0)] text-white shadow-md"
+                      : "text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-red-50"
                   }`}
                 >
                   {item.name}
@@ -157,7 +153,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-3">
+            <div className="hidden lg:flex items-center">
               <PrimaryButton
                 size="sm"
                 onClick={() => {
