@@ -168,24 +168,36 @@ const About = () => {
                 size="lg" 
                 className="px-10 py-4 text-lg"
                 onClick={() => {
-                  const phoneNumber = "13055104733";
-                  const message = "Hi! I'd like to visit your showroom and see your flooring collection. Can you help me schedule a visit?";
-                  const encodedMessage = encodeURIComponent(message);
-                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                  
-                  // Track conversions
-                  if (typeof (window as any).gtag_report_conversion === 'function') {
-                    (window as any).gtag_report_conversion();
+                  try {
+                    const phoneNumber = "13055104733";
+                    const message = "Hi! I'd like to visit your showroom and see your flooring collection. Can you help me schedule a visit?";
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                    
+                    console.log("WhatsApp URL:", whatsappUrl);
+                    
+                    // Track conversions
+                    if (typeof (window as any).gtag_report_conversion === 'function') {
+                      (window as any).gtag_report_conversion();
+                    }
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'conversion', {
+                        event_category: 'engagement',
+                        event_label: 'visit_showroom_about',
+                        value: 1
+                      });
+                    }
+                    
+                    // Try window.open first, fallback to location.href
+                    const newWindow = window.open(whatsappUrl, "_blank");
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                      window.location.href = whatsappUrl;
+                    }
+                  } catch (error) {
+                    console.error("WhatsApp redirect error:", error);
+                    // Fallback - direct navigation
+                    window.location.href = `https://wa.me/13055104733?text=${encodeURIComponent("Hi! I'd like to visit your showroom and see your flooring collection. Can you help me schedule a visit?")}`;
                   }
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'visit_showroom_about',
-                      value: 1
-                    });
-                  }
-                  
-                  window.open(whatsappUrl, "_blank");
                 }}
               >
                 Visit Our Showroom
@@ -194,24 +206,36 @@ const About = () => {
                 size="lg" 
                 className="px-10 py-4 text-lg"
                 onClick={() => {
-                  const phoneNumber = "13055104733";
-                  const message = "Hi! I'd like to learn more about your team and discuss my flooring project. Can we schedule a consultation?";
-                  const encodedMessage = encodeURIComponent(message);
-                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                  
-                  // Track conversions
-                  if (typeof (window as any).gtag_report_conversion === 'function') {
-                    (window as any).gtag_report_conversion();
+                  try {
+                    const phoneNumber = "13055104733";
+                    const message = "Hi! I'd like to learn more about your team and discuss my flooring project. Can we schedule a consultation?";
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                    
+                    console.log("WhatsApp URL:", whatsappUrl);
+                    
+                    // Track conversions
+                    if (typeof (window as any).gtag_report_conversion === 'function') {
+                      (window as any).gtag_report_conversion();
+                    }
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'conversion', {
+                        event_category: 'engagement',
+                        event_label: 'meet_team_about',
+                        value: 1
+                      });
+                    }
+                    
+                    // Try window.open first, fallback to location.href
+                    const newWindow = window.open(whatsappUrl, "_blank");
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                      window.location.href = whatsappUrl;
+                    }
+                  } catch (error) {
+                    console.error("WhatsApp redirect error:", error);
+                    // Fallback - direct navigation
+                    window.location.href = `https://wa.me/13055104733?text=${encodeURIComponent("Hi! I'd like to learn more about your team and discuss my flooring project. Can we schedule a consultation?")}`;
                   }
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'meet_team_about',
-                      value: 1
-                    });
-                  }
-                  
-                  window.open(whatsappUrl, "_blank");
                 }}
               >
                 Meet Our Team
@@ -495,24 +519,36 @@ const About = () => {
               size="lg" 
               className="px-10 py-4 text-lg"
               onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'd like to visit your 20,000 sq ft showroom to see your flooring collection. When would be a good time?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                // Track conversions
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
+                try {
+                  const phoneNumber = "13055104733";
+                  const message = "Hi! I'd like to visit your 20,000 sq ft showroom to see your flooring collection. When would be a good time?";
+                  const encodedMessage = encodeURIComponent(message);
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                  
+                  console.log("WhatsApp URL:", whatsappUrl);
+                  
+                  // Track conversions
+                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                    (window as any).gtag_report_conversion();
+                  }
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'conversion', {
+                      event_category: 'engagement',
+                      event_label: 'visit_showroom_cta',
+                      value: 1
+                    });
+                  }
+                  
+                  // Try window.open first, fallback to location.href
+                  const newWindow = window.open(whatsappUrl, "_blank");
+                  if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                    window.location.href = whatsappUrl;
+                  }
+                } catch (error) {
+                  console.error("WhatsApp redirect error:", error);
+                  // Fallback - direct navigation
+                  window.location.href = `https://wa.me/13055104733?text=${encodeURIComponent("Hi! I'd like to visit your 20,000 sq ft showroom to see your flooring collection. When would be a good time?")}`;
                 }
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'visit_showroom_cta',
-                    value: 1
-                  });
-                }
-                
-                window.open(whatsappUrl, "_blank");
               }}
             >
               Visit Our 20,000 sq ft Showroom
@@ -521,24 +557,36 @@ const About = () => {
               size="lg" 
               className="px-10 py-4 text-lg"
               onClick={() => {
-                const phoneNumber = "13055104733";
-                const message = "Hi! I'd like to schedule a consultation to discuss my flooring project. What's your availability?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                // Track conversions
-                if (typeof (window as any).gtag_report_conversion === 'function') {
-                  (window as any).gtag_report_conversion();
+                try {
+                  const phoneNumber = "13055104733";
+                  const message = "Hi! I'd like to schedule a consultation to discuss my flooring project. What's your availability?";
+                  const encodedMessage = encodeURIComponent(message);
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                  
+                  console.log("WhatsApp URL:", whatsappUrl);
+                  
+                  // Track conversions
+                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                    (window as any).gtag_report_conversion();
+                  }
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'conversion', {
+                      event_category: 'engagement',
+                      event_label: 'schedule_consultation_cta',
+                      value: 1
+                    });
+                  }
+                  
+                  // Try window.open first, fallback to location.href
+                  const newWindow = window.open(whatsappUrl, "_blank");
+                  if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                    window.location.href = whatsappUrl;
+                  }
+                } catch (error) {
+                  console.error("WhatsApp redirect error:", error);
+                  // Fallback - direct navigation
+                  window.location.href = `https://wa.me/13055104733?text=${encodeURIComponent("Hi! I'd like to schedule a consultation to discuss my flooring project. What's your availability?")}`;
                 }
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'schedule_consultation_cta',
-                    value: 1
-                  });
-                }
-                
-                window.open(whatsappUrl, "_blank");
               }}
             >
               Schedule a Consultation
