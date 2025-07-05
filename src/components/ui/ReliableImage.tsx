@@ -113,21 +113,30 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
 }) => {
   const imageSrc = getReliableImageUrl(imageId);
   const finalSrc = src || imageSrc || fallbackSrc;
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const currentSrc = src || imageSrc || fallbackSrc;
 
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
-    console.error("Image failed to load:", target.src);
+  const handleLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleError = () => {
+    setIsLoading(false);
+    setHasError(true);
   };
 
   return (
     <img
-      src={finalSrc}
-      alt={alt}
-      className={className}
-      width={width}
-      height={height}
-      loading={loading}
-      onError={handleError}
-    />
+        src={currentSrc}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        fetchpriority={loading === 'eager' ? 'high' : 'low'}
+        onLoad={handleLoad}
+        onError={handleError}
+        className={`w-full h-full object-cover transition-opacity duration-200 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError ? "hidden" : ""}`}
+        style={{ willChange: isLoading ? 'opacity' : 'auto' }}
+      />
   );
 };

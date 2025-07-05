@@ -257,6 +257,7 @@ const Retail = () => {
               <Card
                 key={index}
                 className="group relative overflow-hidden hover:shadow-2xl transition-all duration-500 border-0"
+                style={{ willChange: 'transform, box-shadow' }}
               >
                 <CardContent className="relative p-10">
                   <div className="flex items-start space-x-6">
@@ -302,6 +303,7 @@ const Retail = () => {
               <Card
                 key={index}
                 className="group bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden hover:bg-white/20 transition-all duration-500"
+                style={{ willChange: 'background-color, transform' }}
               >
                 <div className="relative overflow-hidden">
                   <SimpleReliableImage
@@ -393,8 +395,8 @@ const Retail = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-right flex flex-col justify-center items-center mr-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="text-center lg:text-right flex flex-col justify-center items-center lg:mr-auto">
               <div className="w-20 h-20 bg-[rgb(251,189,35)] text-black rounded-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 01
               </div>

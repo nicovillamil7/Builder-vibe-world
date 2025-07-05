@@ -1,3 +1,31 @@
+
+# Cache static assets for 1 year
+<filesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+  ExpiresActive On
+  ExpiresDefault "access plus 1 year"
+  Header append Cache-Control "public, immutable"
+</filesMatch>
+
+# Cache HTML files for 1 hour
+<filesMatch "\.(html|htm)$">
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  Header set Cache-Control "public, max-age=3600"
+</filesMatch>
+
+# Enable compression
+<ifModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</ifModule>
+
 # Force HTTPS and non-www
 <IfModule mod_rewrite.c>
     RewriteEngine On
