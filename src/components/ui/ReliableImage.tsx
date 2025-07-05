@@ -15,10 +15,11 @@ interface ReliableImageProps {
 }
 
 // Simple version for product grids
-export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; className?: string }> = ({
+export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; className?: string; priority?: boolean }> = ({
   imageId,
   alt,
   className = "",
+  priority = false,
 }) => {
   const config = {
     grout: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
@@ -38,23 +39,28 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
   const [isLoading, setIsLoading] = useState(true);
   
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden ${className}`} style={{ aspectRatio: '16/9' }}>
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: '#f3f4f6' }}>
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
           <div className="w-4 h-4 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
         </div>
       )}
       <img
         src={src}
         alt={alt}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
         onLoad={() => setIsLoading(false)}
         onError={() => {
           if (src !== imageConfig.fallback) {
             setSrc(imageConfig.fallback);
           }
         }}
-        className={`w-full h-full object-cover ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-        style={{ transition: 'opacity 0.2s ease-in-out' }}
+        className={`w-full h-full object-cover transition-opacity duration-200 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        style={{ 
+          maxWidth: '100%',
+          height: 'auto',
+        }}
       />
     </div>
   );

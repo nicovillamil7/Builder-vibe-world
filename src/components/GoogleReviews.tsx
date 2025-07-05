@@ -86,7 +86,6 @@ const GoogleReviews = () => {
 
   useEffect(() => {
     // Use fallback reviews since backend API is not set up
-    console.log("Using fallback reviews for demo");
     setReviews(fallbackReviews);
     setIsUsingFallback(true);
     setLoading(false);
