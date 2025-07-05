@@ -16,12 +16,57 @@ import {
   Clock,
   Truck,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  // Site navigation schema for better sitelinks
+  const siteNavigationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    "name": "Main Navigation",
+    "url": [
+      {
+        "@type": "WebPage",
+        "name": "Products",
+        "url": "https://genesisstoneusa.com/products",
+        "description": "Premium flooring products including porcelain tiles, natural stone, and laminate flooring"
+      },
+      {
+        "@type": "WebPage", 
+        "name": "Retail Services",
+        "url": "https://genesisstoneusa.com/retail",
+        "description": "Visit our showroom for personalized flooring consultation and selection"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Wholesale",
+        "url": "https://genesisstoneusa.com/wholesale", 
+        "description": "Trade pricing and wholesale services for contractors and designers"
+      },
+      {
+        "@type": "WebPage",
+        "name": "About Us",
+        "url": "https://genesisstoneusa.com/about",
+        "description": "Learn about Genesis Stone's history and expertise in flooring solutions"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Contact",
+        "url": "https://genesisstoneusa.com/contact",
+        "description": "Get in touch with our flooring experts for consultation and quotes"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Blog",
+        "url": "https://genesisstoneusa.com/blog",
+        "description": "Expert flooring tips, installation guides, and industry insights"
+      }
+    ]
+  };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -38,6 +83,11 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(siteNavigationSchema)}
+        </script>
+      </Helmet>
       {/* Top Information Bar - Genesis Maroon */}
       <div className="bg-[rgb(138,0,0)] text-white py-2 md:py-3 px-4">
         <div className="max-w-7xl mx-auto">
@@ -133,7 +183,7 @@ const Layout = ({ children }: LayoutProps) => {
       <nav className="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center flex-1 space-x-2">

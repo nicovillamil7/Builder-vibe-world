@@ -27,6 +27,62 @@ const SEOHead = ({
   noindex = false,
 }: SEOHeadProps) => {
 
+  // Generate breadcrumb schema based on current path
+  const breadcrumbSchema = React.useMemo(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      const pathSegments = path.split('/').filter(Boolean);
+      
+      const breadcrumbItems = [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://genesisstoneusa.com/"
+        }
+      ];
+
+      // Add breadcrumb items based on path
+      if (pathSegments.length > 0) {
+        pathSegments.forEach((segment, index) => {
+          const position = index + 2;
+          const url = `https://genesisstoneusa.com/${pathSegments.slice(0, index + 1).join('/')}`;
+          
+          let name = segment.charAt(0).toUpperCase() + segment.slice(1);
+          
+          // Better names for common pages
+          const pageNames: Record<string, string> = {
+            'products': 'Flooring Products',
+            'retail': 'Retail Services', 
+            'wholesale': 'Wholesale Pricing',
+            'about': 'About Us',
+            'contact': 'Contact Us',
+            'blog': 'Flooring Blog',
+            'service-areas': 'Service Areas'
+          };
+          
+          if (pageNames[segment]) {
+            name = pageNames[segment];
+          }
+
+          breadcrumbItems.push({
+            "@type": "ListItem",
+            "position": position,
+            "name": name,
+            "item": url
+          });
+        });
+      }
+
+      return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems
+      };
+    }
+    return null;
+  }, []);
+
   // Auto-generate canonical URL if not provided
   const finalCanonicalUrl = React.useMemo(() => {
     if (canonicalUrl) return canonicalUrl;
@@ -113,6 +169,11 @@ const SEOHead = ({
       {/* Schema.org */}
       {schema && (
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      )}
+      
+      {/* Breadcrumb Schema */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       )}
 
       {/* Article Schema for Blog Posts */}
