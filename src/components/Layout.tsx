@@ -137,15 +137,7 @@ const Layout = ({ children }: LayoutProps) => {
       <nav className="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14">
-            {/* Logo/Brand */}
-            <div className="flex-shrink-0">
-              <Link to="/" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-[rgb(138,0,0)] rounded-md flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">G</span>
-                </div>
-                <span className="text-xl font-bold text-gray-900 hidden sm:block">Genesis Stone</span>
-              </Link>
-            </div>
+            
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1">
@@ -166,11 +158,6 @@ const Layout = ({ children }: LayoutProps) => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
-              <Link to="/contact">
-                <OutlineButton size="sm" className="border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white text-xs px-3 py-1.5">
-                  Get Quote
-                </OutlineButton>
-              </Link>
               <PrimaryButton
                 size="sm"
                 onClick={() => {
@@ -239,9 +226,6 @@ const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                  <OutlineButton size="sm" className="w-full">
-                    Get Quote
-                  </OutlineButton>
                   <PrimaryButton
                     size="sm"
                     className="w-full cursor-pointer"
