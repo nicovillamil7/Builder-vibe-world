@@ -321,10 +321,10 @@ const Products = () => {
               <div className="bg-gradient-to-r from-red-50 to-red-100 p-8 rounded-2xl">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Popular Product Categories</h3>
                 <div className="space-y-3">
-                  <a href="/products/porcelain" className="block text-red-600 hover:text-red-700 font-medium">→ Porcelain Tile Collection</a>
-                  <a href="/products/natural-stone" className="block text-red-600 hover:text-red-700 font-medium">→ Natural Stone Products</a>
-                  <a href="/products/laminates" className="block text-red-600 hover:text-red-700 font-medium">→ Luxury Vinyl & Laminate</a>
-                  <a href="/products/decorative" className="block text-red-600 hover:text-red-700 font-medium">→ Decorative Elements</a>
+                  <a href="/wholesale" className="block text-red-600 hover:text-red-700 font-medium">→ Wholesale Pricing</a>
+                  <a href="/retail" className="block text-red-600 hover:text-red-700 font-medium">→ Retail Showroom</a>
+                  <a href="/blog" className="block text-red-600 hover:text-red-700 font-medium">→ Flooring Guides & Tips</a>
+                  <a href="/service-areas" className="block text-red-600 hover:text-red-700 font-medium">→ Service Areas</a>
                   <a href="/contact" className="block text-red-600 hover:text-red-700 font-medium">→ Installation Services</a>
                   <a href="/about" className="block text-red-600 hover:text-red-700 font-medium">→ About Our Company</a>
                 </div>

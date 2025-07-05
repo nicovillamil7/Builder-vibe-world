@@ -11,39 +11,39 @@ export const getRelatedProducts = (currentProduct: string): RelatedProduct[] => 
     porcelain: [
       {
         name: "Natural Stone Floors",
-        url: "/products/naturalStone", 
+        url: "/products", 
         anchor: "natural stone floors Miami",
         description: "Explore premium natural stone flooring options"
       },
       {
-        name: "Grout Solutions",
-        url: "/products/grout",
-        anchor: "porcelain tile grout solutions Miami", 
-        description: "Professional grout for porcelain tile installations"
+        name: "Professional Installation",
+        url: "/contact",
+        anchor: "porcelain tile installation Miami", 
+        description: "Professional installation services for porcelain tiles"
       },
       {
-        name: "Metal Trims",
-        url: "/products/metalTrims",
-        anchor: "porcelain tile edge trim Miami",
-        description: "Finishing accessories for porcelain tile projects"
+        name: "Wholesale Pricing",
+        url: "/wholesale",
+        anchor: "wholesale porcelain tiles Miami",
+        description: "Trade pricing for contractors and professionals"
       }
     ],
     laminates: [
       {
         name: "Porcelain Tiles", 
-        url: "/products/porcelain",
+        url: "/products",
         anchor: "large format porcelain tiles Miami",
         description: "Upgrade to durable porcelain tile flooring"
       },
       {
         name: "Natural Stone Floors",
-        url: "/products/naturalStone",
+        url: "/products",
         anchor: "natural stone floors vs laminate Miami", 
         description: "Compare natural stone flooring options"
       },
       {
         name: "Installation Services",
-        url: "/wholesale",
+        url: "/contact",
         anchor: "professional flooring installation Miami",
         description: "Expert installation for all flooring types"
       }
@@ -51,7 +51,7 @@ export const getRelatedProducts = (currentProduct: string): RelatedProduct[] => 
     naturalStone: [
       {
         name: "Porcelain Tiles",
-        url: "/products/porcelain",
+        url: "/products",
         anchor: "porcelain tiles vs natural stone Miami",
         description: "Compare porcelain tile alternatives"
       },

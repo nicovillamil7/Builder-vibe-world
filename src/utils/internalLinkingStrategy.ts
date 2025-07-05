@@ -9,18 +9,10 @@ export interface StrategicLink {
   category: 'natural-stone' | 'porcelain' | 'service' | 'commercial';
 }
 
-// Verified URLs from sitemap.xml
+// Verified URLs that actually exist in our React routing
 export const VERIFIED_URLS = [
   '/',
   '/products',
-  '/products/grout',
-  '/products/laminates', 
-  '/products/metalTrims',
-  '/products/mortarMix',
-  '/products/mosaics',
-  '/products/naturalStone',
-  '/products/porcelain',
-  '/products/wallPanels',
   '/retail',
   '/wholesale',
   '/about',
@@ -33,37 +25,37 @@ export const VERIFIED_URLS = [
 export const HIGH_PRIORITY_ANCHORS = [
   {
     anchor: "natural stone floors Miami",
-    url: "/products/naturalStone",
+    url: "/products",
     priority: 'high' as const,
     category: 'natural-stone' as const
   },
   {
     anchor: "porcelain tiles Miami",
-    url: "/products/porcelain", 
+    url: "/products", 
     priority: 'high' as const,
     category: 'porcelain' as const
   },
   {
     anchor: "large format porcelain tiles",
-    url: "/products/porcelain",
+    url: "/products",
     priority: 'high' as const,
     category: 'porcelain' as const
   },
   {
     anchor: "travertine flooring South Florida",
-    url: "/products/naturalStone",
+    url: "/products",
     priority: 'high' as const,
     category: 'natural-stone' as const
   },
   {
     anchor: "natural stone supplier Miami",
-    url: "/products/naturalStone",
+    url: "/products",
     priority: 'high' as const,
     category: 'natural-stone' as const
   },
   {
     anchor: "porcelain tile supplier Miami",
-    url: "/products/porcelain",
+    url: "/products",
     priority: 'high' as const,
     category: 'porcelain' as const
   }
@@ -73,13 +65,13 @@ export const HIGH_PRIORITY_ANCHORS = [
 export const MEDIUM_PRIORITY_ANCHORS = [
   {
     anchor: "luxury vinyl plank flooring Miami",
-    url: "/products/laminates",
+    url: "/products",
     priority: 'medium' as const,
     category: 'service' as const
   },
   {
     anchor: "mosaic tile installation Miami",
-    url: "/products/mosaics", 
+    url: "/products", 
     priority: 'medium' as const,
     category: 'service' as const
   },
@@ -91,7 +83,7 @@ export const MEDIUM_PRIORITY_ANCHORS = [
   },
   {
     anchor: "professional grout solutions Miami",
-    url: "/products/grout",
+    url: "/products",
     priority: 'medium' as const,
     category: 'service' as const
   }

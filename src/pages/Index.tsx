@@ -427,7 +427,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Natural Stone Pool Deck - Strategic Link */}
-            <a href="/products/naturalStone" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a href="/products" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
@@ -469,7 +469,7 @@ const Index = () => {
             </a>
 
             {/* Natural Stone Travertine Link */}
-            <a href="/products/naturalStone" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a href="/products" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
