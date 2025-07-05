@@ -14,11 +14,12 @@ import {
   Twitter,
   Linkedin,
 } from "lucide-react";
-import { Link, useParams, Navigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 import InteractiveFAQ from "@/components/InteractiveFAQ";
 import { processedBlogArticles } from "@/utils/blogData";
+import { addLinksToContent } from "@/utils/linkValidator";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -105,7 +106,7 @@ const BlogPost = () => {
 
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              <div dangerouslySetInnerHTML={{ __html: addLinksToContent(article.content) }} />
             </div>
 
             {/* Interactive FAQ Component */}

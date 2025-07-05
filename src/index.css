@@ -244,4 +244,3 @@ article a[href^="/"] {
 article a[href^="http"] {
   @apply text-blue-700 hover:text-blue-800 font-medium underline decoration-1 underline-offset-2 transition-colors duration-200;
 }
-}
