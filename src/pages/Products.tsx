@@ -206,7 +206,7 @@ const Products = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Premium Flooring Product Categories
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
@@ -266,7 +266,10 @@ const Products = () => {
                       <p>Glass mosaics, metal trims, wall panels, and decorative borders to create stunning focal points and finishing touches.</p>
                     )}
                   </div>
-                  <PrimaryButton className="w-full group-hover:bg-[rgb(120,0,0)] transition-colors">
+                  <PrimaryButton 
+                    className="w-full min-h-[44px] group-hover:bg-[rgb(120,0,0)] transition-colors touch-manipulation"
+                    aria-label={`View ${category.name} collection`}
+                  >
                     View {category.name} Collection
                   </PrimaryButton>
                 </CardContent>

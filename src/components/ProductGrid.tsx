@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import {
   Card,
@@ -80,7 +80,19 @@ const products = [
 
 const ProductGrid = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      // Reset to first slide when switching between mobile/desktop
+      setCurrentIndex(0);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Generate structured data for products
   const productStructuredData = {
@@ -119,8 +131,22 @@ const ProductGrid = () => {
     }))
   };
 
-  const itemWidth = 320; // Card width (288px) + gap (32px)
-  const visibleItems = 3; // Number of items visible at once
+  const getItemWidth = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768 ? 280 : 320; // Mobile vs desktop
+    }
+    return 320;
+  };
+
+  const getVisibleItems = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768 ? 1 : 3; // 1 item on mobile, 3 on desktop
+    }
+    return 3;
+  };
+
+  const itemWidth = getItemWidth();
+  const visibleItems = getVisibleItems();
   const maxIndex = Math.max(0, products.length - visibleItems);
 
   const scrollToIndex = (index: number) => {
@@ -166,34 +192,36 @@ const ProductGrid = () => {
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous products"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 md:w-12 md:h-12 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
           >
-            <ChevronLeft className="h-6 w-6" />
+            <ChevronLeft className="h-7 w-7 md:h-6 md:w-6" />
           </button>
 
           <button
             onClick={nextSlide}
             disabled={currentIndex >= maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next products"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 md:w-12 md:h-12 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
           >
-            <ChevronRight className="h-6 w-6" />
+            <ChevronRight className="h-7 w-7 md:h-6 md:w-6" />
           </button>
 
           {/* Products Carousel */}
           <div
-            className="overflow-hidden px-12"
+            className="overflow-hidden px-6 md:px-12"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div
-              className="flex gap-8 transition-transform duration-500 ease-out pb-6"
+              className="flex gap-4 md:gap-8 transition-transform duration-500 ease-out pb-6"
               style={{
-                transform: `translateX(-${currentIndex * itemWidth}px)`,
+                transform: `translateX(-${currentIndex * (window.innerWidth < 768 ? 280 : itemWidth)}px)`,
               }}
             >
               {products.map((product) => (
                 <Card
                   key={product.id}
-                  className="flex-shrink-0 w-72 h-[480px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
+                  className="flex-shrink-0 w-64 md:w-72 h-[480px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
                   style={{ borderRadius: "20px" }}
                 >
                   <CardHeader className="p-0 flex-shrink-0">
@@ -227,8 +255,9 @@ const ProductGrid = () => {
 
                   <CardFooter className="px-6 pb-6 pt-0 flex-shrink-0">
                     <OutlineButton
-                      className="w-full hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200"
+                      className="w-full min-h-[44px] hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200 touch-manipulation"
                       style={{ borderRadius: "12px" }}
+                      aria-label={`Get sample for ${product.name}`}
                     >
                       Get Sample
                     </OutlineButton>
@@ -239,15 +268,16 @@ const ProductGrid = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-8 space-x-3">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => scrollToIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                aria-label={`Go to slide ${index + 1}`}
+                className={`w-4 h-4 md:w-3 md:h-3 rounded-full transition-all duration-200 touch-manipulation ${
                   index === currentIndex
                     ? "bg-[rgb(138,0,0)] scale-125"
-                    : "bg-gray-300 hover:bg-gray-400"
+                    : "bg-gray-400 hover:bg-gray-500"
                 }`}
               />
             ))}

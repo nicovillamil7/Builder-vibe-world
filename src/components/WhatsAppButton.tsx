@@ -37,15 +37,14 @@ export const WhatsAppButton: React.FC = () => {
   };
 
   return (
-    <button
-      onClick={handleWhatsAppClick}
-      className="fixed bottom-4 right-4 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-200 flex items-center space-x-2 group"
-      title="Chat with us on WhatsApp"
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contact us on WhatsApp"
+      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors duration-300 hover:scale-110 transform min-h-[56px] min-w-[56px] flex items-center justify-center touch-manipulation"
     >
       <MessageCircle className="h-6 w-6" />
-      <span className="hidden group-hover:inline text-sm font-medium animate-fade-in bg-green-500 px-2 py-1 rounded-l-lg -ml-2">
-        Chat with us
-      </span>
-    </button>
+    </a>
   );
 };

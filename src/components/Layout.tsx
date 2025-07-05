@@ -263,7 +263,9 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-700 hover:text-[rgb(138,0,0)] p-2"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+                className="md:hidden flex items-center justify-center p-3 rounded-md text-gray-700 hover:text-[rgb(138,0,0)] transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
               >
                 {mobileMenuOpen ? (
                   <X className="h-6 w-6" />
