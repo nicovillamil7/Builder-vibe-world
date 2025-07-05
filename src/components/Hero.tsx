@@ -2,38 +2,15 @@ import { Link } from "react-router-dom";
 import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { ArrowRight } from "lucide-react";
 import { getReliableImageUrl } from "@/utils/imageUtils";
-import { useEffect } from "react";
 
 const Hero = () => {
-  // Preload critical images with proper sizing
-  useEffect(() => {
-    const criticalImages = [
-      getReliableImageUrl("luxuryInterior"),
-      '/placeholder.svg',
-    ];
-
-    criticalImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-      img.loading = 'eager';
-      img.decoding = 'sync';
-    });
-  }, []);
   return (
     <div className="relative h-screen min-h-[700px] overflow-hidden">
       {/* Large Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 hover:scale-110 transition-transform duration-1000 ease-out"
         style={{
           backgroundImage: `url('${getReliableImageUrl("luxuryInterior")}')`,
-          transform: 'scale(1.05)',
-          transition: 'transform 0.3s ease-out',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.1)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1.05)';
         }}
       />
 

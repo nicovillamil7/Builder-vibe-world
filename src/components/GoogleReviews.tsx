@@ -85,19 +85,11 @@ const GoogleReviews = () => {
   };
 
   useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        // For demo purposes, use fallback data without API calls
-        setReviews(fallbackReviews);
-        setLoading(false);
-      } catch (error) {
-        console.error("Failed to load reviews:", error);
-        setReviews(fallbackReviews);
-        setLoading(false);
-      }
-    };
-
-    fetchReviews();
+    // Use fallback reviews since backend API is not set up
+    console.log("Using fallback reviews for demo");
+    setReviews(fallbackReviews);
+    setIsUsingFallback(true);
+    setLoading(false);
   }, []);
 
   const formatDate = (dateString: string) => {

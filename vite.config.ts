@@ -15,35 +15,14 @@ export default defineConfig({
     sourcemap: false,
     assetsDir: "assets",
     minify: 'esbuild',
-    target: 'es2020',
+    target: 'esnext',
     cssMinify: true,
-    minifyIdentifiers: true,
-    minifyWhitespace: true,
-    minifySyntax: true,
-    reportCompressedSize: false,
     rollupOptions: {
-      treeshake: {
-        moduleSideEffects: false,
-        propertyReadSideEffects: false,
-        tryCatchDeoptimization: false,
-      },
       output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'react-vendor';
-            }
-            if (id.includes('react-router-dom')) {
-              return 'router';
-            }
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            if (id.includes('@radix-ui')) {
-              return 'ui';
-            }
-            return 'vendor';
-          }
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split('.');
@@ -60,7 +39,7 @@ export default defineConfig({
         entryFileNames: 'js/[name]-[hash].js',
       },
     },
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
   },
   server: {
     host: true, // allows Vite to auto-detect the host, same as '0.0.0.0' but more flexible
