@@ -17,19 +17,20 @@ interface ReliableImageProps {
 export const ReliableImage: React.FC<ReliableImageProps> = ({
   src,
   alt,
-  className = '',
+  className = "",
   fallbackSrc = '/placeholder.svg',
   onLoad,
   onError,
-  loading = 'lazy',
+  loading = "lazy",
   sizes,
   srcSet,
   width,
   height,
 }) => {
   const [currentSrc, setCurrentSrc] = useState<string>(src);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<boolean>(false);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [aspectRatio, setAspectRatio] = useState<string>("16/9");
   const imgRef = useRef<HTMLImageElement>(null);
 
   // Generate WebP versions if possible
@@ -50,12 +51,15 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
   useEffect(() => {
     setCurrentSrc(src);
     setHasError(false);
-    setIsLoaded(false);
+    setIsLoading(true); // Reset isLoading when src changes
   }, [src]);
 
-  const handleLoad = () => {
-    setIsLoaded(true);
-    onLoad?.();
+  const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    const ratio = `${img.naturalWidth}/${img.naturalHeight}`;
+    setAspectRatio(ratio);
+    setIsLoading(false);
+    setHasError(false);
   };
 
   const handleError = () => {
@@ -63,6 +67,7 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
       console.warn(`Failed to load image: ${currentSrc}, falling back to: ${fallbackSrc}`);
       setCurrentSrc(fallbackSrc);
       setHasError(true);
+      setIsLoading(false); // Ensure isLoading is false after fallback
     }
     onError?.();
   };
@@ -71,27 +76,39 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
   const optimizedSrc = getOptimizedSrc(currentSrc);
 
   return (
-    <picture>
-      {/* WebP version for modern browsers */}
-      {optimizedSrc !== currentSrc && (
-        <source srcSet={optimizedSrc} type="image/webp" />
+    <div 
+      className={`relative overflow-hidden ${className}`}
+      style={{ aspectRatio }}
+    >
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+        </div>
       )}
 
       <img
-        ref={imgRef}
         src={currentSrc}
         alt={alt}
-        className={`${className} ${!isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        loading={loading}
+        decoding="async"
+        fetchPriority="low"
         onLoad={handleLoad}
         onError={handleError}
-        loading={loading}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError && "hidden"}`}
         sizes={sizes}
         srcSet={srcSet}
         width={width}
         height={height}
-        decoding="async"
-        fetchPriority={loading === 'eager' ? 'high' : 'auto'}
       />
-    </picture>
+
+      {hasError && (
+        <div 
+          className="flex items-center justify-center bg-gray-100 text-gray-500 text-sm p-4 w-full h-full"
+          style={{ aspectRatio }}
+        >
+          Image unavailable
+        </div>
+      )}
+    </div>
   );
 };
