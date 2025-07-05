@@ -136,13 +136,7 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Main Navigation Header */}
       <nav className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo removed */}
-            <div className="flex items-center">
-              <Link to="/" className="text-xl font-bold text-gray-900 hover:text-[rgb(138,0,0)] transition-colors">
-                Genesis Stone & More
-              </Link>
-            </div>
+          <div className="flex justify-center items-center h-20">
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
