@@ -56,10 +56,13 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
 
   const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget;
-    const ratio = `${img.naturalWidth}/${img.naturalHeight}`;
-    setAspectRatio(ratio);
+    if (img.naturalWidth && img.naturalHeight) {
+      const ratio = `${img.naturalWidth}/${img.naturalHeight}`;
+      setAspectRatio(ratio);
+    }
     setIsLoading(false);
     setHasError(false);
+    onLoad?.();
   };
 
   const handleError = () => {
@@ -78,32 +81,40 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
   return (
     <div 
       className={`relative overflow-hidden ${className}`}
-      style={{ aspectRatio }}
+      style={{ 
+        aspectRatio,
+        minHeight: height ? `${height}px` : '200px'
+      }}
     >
       {isLoading && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+          <div className="w-6 h-6 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
         </div>
       )}
 
       <img
+        ref={imgRef}
         src={currentSrc}
         alt={alt}
         loading={loading}
         decoding="async"
-        fetchPriority="low"
+        fetchPriority={loading === 'eager' ? 'high' : 'low'}
         onLoad={handleLoad}
         onError={handleError}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError && "hidden"}`}
-        sizes={sizes}
+        className={`w-full h-full object-cover transition-opacity duration-200 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError ? "hidden" : ""}`}
+        sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
         srcSet={srcSet}
         width={width}
         height={height}
+        style={{
+          maxWidth: '100%',
+          height: 'auto'
+        }}
       />
 
       {hasError && (
         <div 
-          className="flex items-center justify-center bg-gray-100 text-gray-500 text-sm p-4 w-full h-full"
+          className="flex items-center justify-center bg-gray-100 text-gray-500 text-sm p-4 w-full h-full absolute inset-0"
           style={{ aspectRatio }}
         >
           Image unavailable
