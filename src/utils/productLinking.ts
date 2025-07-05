@@ -10,76 +10,138 @@ export const getRelatedProducts = (currentProduct: string): RelatedProduct[] => 
   const productRelations: Record<string, RelatedProduct[]> = {
     porcelain: [
       {
-        name: "Natural Stone",
+        name: "Natural Stone Floors",
         url: "/products/naturalStone", 
-        anchor: "natural stone alternatives Miami",
-        description: "Explore natural stone options for luxury projects"
+        anchor: "natural stone floors Miami",
+        description: "Explore premium natural stone flooring options"
       },
       {
         name: "Grout Solutions",
         url: "/products/grout",
-        anchor: "professional grout solutions Miami", 
-        description: "Complete your porcelain tile installation"
+        anchor: "porcelain tile grout solutions Miami", 
+        description: "Professional grout for porcelain tile installations"
       },
       {
         name: "Metal Trims",
         url: "/products/metalTrims",
-        anchor: "tile edge trim solutions Miami",
-        description: "Professional finishing for porcelain installations"
+        anchor: "porcelain tile edge trim Miami",
+        description: "Finishing accessories for porcelain tile projects"
       }
     ],
     laminates: [
       {
-        name: "Luxury Vinyl Plank", 
-        url: "/products/laminates",
-        anchor: "waterproof luxury vinyl plank Miami",
-        description: "Upgrade to waterproof luxury vinyl options"
+        name: "Porcelain Tiles", 
+        url: "/products/porcelain",
+        anchor: "large format porcelain tiles Miami",
+        description: "Upgrade to durable porcelain tile flooring"
       },
       {
-        name: "Natural Stone",
+        name: "Natural Stone Floors",
         url: "/products/naturalStone",
-        anchor: "natural stone flooring Miami", 
-        description: "Consider natural stone for premium applications"
+        anchor: "natural stone floors vs laminate Miami", 
+        description: "Compare natural stone flooring options"
       },
       {
-        name: "Installation Support",
+        name: "Installation Services",
         url: "/wholesale",
-        anchor: "laminate flooring installation Miami",
-        description: "Professional installation services available"
+        anchor: "professional flooring installation Miami",
+        description: "Expert installation for all flooring types"
       }
     ],
     naturalStone: [
       {
         name: "Porcelain Tiles",
         url: "/products/porcelain",
-        anchor: "porcelain stone-look tiles Miami",
-        description: "Discover stone-look porcelain alternatives"
+        anchor: "porcelain tiles vs natural stone Miami",
+        description: "Compare porcelain tile alternatives"
       },
       {
-        name: "Pool Deck Travertine",
-        url: "/products/naturalStone",
-        anchor: "travertine pool decks South Florida",
-        description: "Specialized pool deck solutions"
+        name: "Pool Deck Solutions",
+        url: "/retail",
+        anchor: "travertine pool deck installation South Florida",
+        description: "Specialized natural stone pool deck services"
       },
       {
-        name: "Custom Installation",
+        name: "Stone Installation",
         url: "/contact",
-        anchor: "natural stone installation consultation Miami",
-        description: "Get expert consultation for your project"
+        anchor: "natural stone floors installation Miami",
+        description: "Professional natural stone flooring consultation"
       }
     ],
     grout: [
       {
         name: "Porcelain Tiles",
         url: "/products/porcelain", 
-        anchor: "porcelain tiles Miami installation",
-        description: "Complete tile and grout solutions"
+        anchor: "porcelain tiles Miami supplier",
+        description: "Premium porcelain tiles with matching grout"
+      },
+      {
+        name: "Natural Stone",
+        url: "/products/naturalStone",
+        anchor: "natural stone grout solutions Miami",
+        description: "Specialized grout for natural stone installations"
       },
       {
         name: "Mosaic Tiles",
         url: "/products/mosaics",
-        anchor: "custom mosaic tile installation Miami",
-        description: "Specialty grout for mosaic projects"
+        anchor: "mosaic tile grout Miami",
+        description: "Custom grout colors for mosaic projects"
+      }
+    ],
+    mosaics: [
+      {
+        name: "Porcelain Tiles",
+        url: "/products/porcelain",
+        anchor: "porcelain tiles with mosaic accents Miami",
+        description: "Complement mosaics with porcelain tile flooring"
+      },
+      {
+        name: "Natural Stone",
+        url: "/products/naturalStone",
+        anchor: "natural stone mosaic floors Miami",
+        description: "Natural stone options for mosaic designs"
+      }
+    ],
+    wallPanels: [
+      {
+        name: "Porcelain Tiles",
+        url: "/products/porcelain",
+        anchor: "porcelain wall tiles Miami",
+        description: "Porcelain tile options for wall applications"
+      },
+      {
+        name: "Natural Stone",
+        url: "/products/naturalStone",
+        anchor: "natural stone wall panels Miami",
+        description: "Natural stone solutions for wall cladding"
+      }
+    ],
+    metalTrims: [
+      {
+        name: "Porcelain Tiles",
+        url: "/products/porcelain",
+        anchor: "porcelain tile trim solutions Miami",
+        description: "Metal trims designed for porcelain installations"
+      },
+      {
+        name: "Natural Stone",
+        url: "/products/naturalStone",
+        anchor: "natural stone edge trim Miami",
+        description: "Professional edge solutions for natural stone"
+      }
+    ],
+    mortarMix: [
+      {
+        name: "Porcelain Tiles",
+        url: "/products/porcelain",
+        anchor: "porcelain tile mortar Miami",
+        description: "Specialized mortar for porcelain tile installation"
+      },
+      {
+        name: "Natural Stone Floors",
+        url: "/products/naturalStone",
+        anchor: "natural stone installation mortar Miami",
+        description: "Professional mortar for natural stone flooring"
       }
     ]
   };

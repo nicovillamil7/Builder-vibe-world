@@ -63,7 +63,8 @@ const Index = () => {
       description: "Same-day pickup and next-day delivery throughout South Florida for tile contractors",
     },
     {
-      icon: Users,
+      ```
+icon: Users,
       title: "Expert Flooring Installation Support",
       description: "15+ years serving Miami contractors with material take-offs, technical specs, and project support",
     },
@@ -195,7 +196,7 @@ const Index = () => {
       <SEOHead
         title="Genesis Stone - Miami Flooring Contractor & Tile Supplier | Trade Pricing Available"
         description="Premier Miami flooring supplier since 2008. Trade pricing for contractors on porcelain tiles, natural stone, travertine pool decks, luxury vinyl plank. Same-day pickup South Florida."
-        keywords="flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, commercial flooring Miami, tile supplier Miami"
+        keywords="flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, tile supplier Miami"
         canonicalUrl="https://genesisstoneusa.com/"
       />
       <TechnicalSEO 
@@ -225,6 +226,9 @@ const Index = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline" title="Miami flooring products and tile supplier">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008. Specializing in <a href="/products/porcelain" className="text-red-700 hover:text-red-800 font-medium underline" title="Porcelain tiles Miami supplier">porcelain tiles Miami</a>, <a href="/products/naturalStone" className="text-red-700 hover:text-red-800 font-medium underline" title="Natural stone supplier South Florida">natural stone</a>, and <a href="/products/laminates" className="text-red-700 hover:text-red-800 font-medium underline" title="Luxury vinyl plank flooring Miami">luxury vinyl plank installation</a>.
+            </p>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              Whether you're a contractor seeking <a href="/wholesale" className="text-red-600 hover:text-red-700 underline font-medium">wholesale porcelain tiles Miami</a> or a homeowner looking for premium <a href="/products/naturalStone" className="text-red-600 hover:text-red-700 underline font-medium">natural stone floors</a>, Genesis Stone & More has been South Florida's trusted flooring partner since 2008. Our extensive inventory includes the finest <a href="/products/porcelain" className="text-red-600 hover:text-red-700 underline font-medium">large format porcelain tiles</a>, <a href="/products/naturalStone" className="text-red-600 hover:text-red-700 underline font-medium">travertine flooring</a>, luxury vinyl planks, and decorative elements.
             </p>
           </div>
 
