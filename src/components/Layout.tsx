@@ -140,18 +140,10 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
-                src="/genesis-icon.png"
+                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/logo_genesis__1_-removebg-df8c37?format=webp&width=800"
                 alt="Genesis Stone & More"
-                className="h-12 w-auto object-contain"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.nextElementSibling?.classList.remove('hidden');
-                }}
+                className="h-12 w-auto"
               />
-              <span className="hidden text-xl font-bold text-gray-900">
-                Genesis Stone & More
-              </span>
             </Link>
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
