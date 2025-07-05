@@ -125,6 +125,7 @@ const Products = () => {
                       valueAddedTaxIncluded: true,
                       priceCurrency: "USD",
                     },
+                    priceValidUntil: "2025-12-31",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -154,6 +155,7 @@ const Products = () => {
                       valueAddedTaxIncluded: true,
                       priceCurrency: "USD",
                     },
+                    priceValidUntil: "2025-12-31",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",
@@ -183,6 +185,7 @@ const Products = () => {
                       valueAddedTaxIncluded: true,
                       priceCurrency: "USD",
                     },
+                    priceValidUntil: "2025-12-31",
                     seller: {
                       "@type": "Organization",
                       name: "Genesis Stone & More",

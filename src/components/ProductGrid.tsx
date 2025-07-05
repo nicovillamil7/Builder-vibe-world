@@ -103,6 +103,7 @@ const ProductGrid = () => {
           "availability": "https://schema.org/InStock",
           "price": "Variable",
           "priceCurrency": "USD",
+          "priceValidUntil": "2025-12-31",
           "seller": {
             "@type": "Organization",
             "name": "Genesis Stone"
