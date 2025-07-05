@@ -22,16 +22,16 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
   priority = false,
 }) => {
   const config = {
-    grout: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    naturalStone: { primary: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    laminates: { primary: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    mosaics: { primary: 'https://images.unsplash.com/photo-1615971677499-5467609c2abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    wallPanels: { primary: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    metalTrims: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    mortarMix: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    modernPoolDeck: { primary: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    vinylInstallation: { primary: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
-    blueMosaicSpa: { primary: 'https://images.unsplash.com/photo-1615971677499-5467609c2abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', fallback: '/placeholder.svg' },
+    grout: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    naturalStone: { primary: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    laminates: { primary: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    mosaics: { primary: 'https://images.unsplash.com/photo-1615971677499-5467609c2abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    wallPanels: { primary: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    metalTrims: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    mortarMix: { primary: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    modernPoolDeck: { primary: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    vinylInstallation: { primary: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
+    blueMosaicSpa: { primary: 'https://images.unsplash.com/photo-1615971677499-5467609c2abd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=75', fallback: '/placeholder.svg' },
   };
 
   const imageConfig = config[imageId] || config.modernPoolDeck;
@@ -39,7 +39,7 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className={`relative overflow-hidden ${className}`} style={{ aspectRatio: '16/9' }}>
+    <div className={`relative overflow-hidden ${className}`} style={{ aspectRatio: '16/9', minHeight: '200px' }}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
           <div className="w-4 h-4 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
@@ -49,7 +49,8 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
         src={src}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
-        decoding="async"
+        decoding={priority ? 'sync' : 'async'}
+        fetchPriority={priority ? 'high' : 'low'}
         onLoad={() => setIsLoading(false)}
         onError={() => {
           if (src !== imageConfig.fallback) {
@@ -61,6 +62,8 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
           maxWidth: '100%',
           height: 'auto',
         }}
+        width="600"
+        height="338"
       />
     </div>
   );
