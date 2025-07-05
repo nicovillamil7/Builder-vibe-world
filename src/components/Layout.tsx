@@ -186,16 +186,9 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3">
-                <img 
-                  src="/genesis-nav-icon.png" 
-                  alt="Genesis Stone Logo" 
-                  className="h-10 w-10 object-contain"
-                  onError={(e) => {
-                    // Fallback to SVG if PNG fails
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/logo.svg";
-                  }}
-                />
+                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">G</span>
+                </div>
                 <span className="text-xl font-bold text-gray-900 hidden sm:block">
                   Genesis Stone
                 </span>
