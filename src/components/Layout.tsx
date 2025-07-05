@@ -134,29 +134,29 @@ const Layout = ({ children }: LayoutProps) => {
       </div>
 
       {/* Main Navigation Header */}
-      <nav className="bg-white shadow-lg sticky top-0 z-40 border-b border-gray-100">
+      <nav className="bg-white shadow-sm sticky top-0 z-40 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-14">
             {/* Logo/Brand */}
             <div className="flex-shrink-0">
-              <Link to="/" className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">G</span>
+              <Link to="/" className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-[rgb(138,0,0)] rounded-md flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">G</span>
                 </div>
-                <span className="text-2xl font-bold text-gray-900 hidden sm:block">Genesis Stone</span>
+                <span className="text-xl font-bold text-gray-900 hidden sm:block">Genesis Stone</span>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-5 py-2.5 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-md font-medium text-sm transition-all duration-200 ${
                     isActive(item.href)
-                      ? "bg-[rgb(138,0,0)] text-white shadow-lg"
-                      : "text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-red-50 hover:shadow-md"
+                      ? "bg-[rgb(138,0,0)] text-white"
+                      : "text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-gray-50"
                   }`}
                 >
                   {item.name}
@@ -165,9 +165,9 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-3">
               <Link to="/contact">
-                <OutlineButton size="sm" className="border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white">
+                <OutlineButton size="sm" className="border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white text-xs px-3 py-1.5">
                   Get Quote
                 </OutlineButton>
               </Link>
@@ -199,7 +199,7 @@ const Layout = ({ children }: LayoutProps) => {
 
                   window.location.href = "tel:+13054774402";
                 }}
-                className="cursor-pointer bg-[rgb(138,0,0)] hover:bg-[rgb(120,0,0)] shadow-lg"
+                className="cursor-pointer bg-[rgb(138,0,0)] hover:bg-[rgb(120,0,0)] text-xs px-3 py-1.5"
               >
                 Call Now
               </PrimaryButton>
