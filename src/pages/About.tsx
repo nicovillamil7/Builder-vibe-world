@@ -490,15 +490,15 @@ const About = () => {
               </div>
             </div>
 
-            {/* Interactive Address Selection Map */}
+            {/* Interactive Neighborhood Discovery Map */}
             <div className="rounded-lg overflow-hidden h-96 lg:h-full shadow-lg">
               <iframe
-                src="https://storage.googleapis.com/maps-solutions-jr2oksp8nh/address-selection/oe6g/address-selection.html"
+                src="https://storage.googleapis.com/maps-solutions-jr2oksp8nh/neighborhood-discovery/tm8b/neighborhood-discovery.html"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 loading="lazy"
-                title="Genesis Stone Interactive Address Selection"
+                title="Genesis Stone Neighborhood Discovery"
               />
             </div>
           </div>
