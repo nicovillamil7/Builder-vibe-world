@@ -63,8 +63,7 @@ const Index = () => {
       description: "Same-day pickup and next-day delivery throughout South Florida for tile contractors",
     },
     {
-      ```
-icon: Users,
+      icon: Users,
       title: "Expert Flooring Installation Support",
       description: "15+ years serving Miami contractors with material take-offs, technical specs, and project support",
     },
