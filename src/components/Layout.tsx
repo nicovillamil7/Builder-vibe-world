@@ -140,7 +140,7 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
-                src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/logo_genesis__1_-removebg-df8c37?format=webp&width=800"
+                src="/genesis-icon.png"
                 alt="Genesis Stone & More"
                 className="h-12 w-auto"
               />
