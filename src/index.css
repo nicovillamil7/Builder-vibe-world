@@ -229,9 +229,19 @@
 
 /* Make internal blog links more visible */
 .prose a[href^="/"] {
-  @apply text-red-700 hover:text-red-800 font-semibold underline decoration-2 underline-offset-2;
+  @apply text-red-700 hover:text-red-800 font-semibold underline decoration-2 underline-offset-2 transition-colors duration-200;
 }
 
 .prose a[href^="http"] {
-  @apply text-blue-700 hover:text-blue-800 font-medium underline decoration-1 underline-offset-2;
+  @apply text-blue-700 hover:text-blue-800 font-medium underline decoration-1 underline-offset-2 transition-colors duration-200;
+}
+
+/* Blog content specific link styling */
+article a[href^="/"] {
+  @apply text-red-700 hover:text-red-800 font-medium underline decoration-2 underline-offset-2 transition-colors duration-200;
+}
+
+article a[href^="http"] {
+  @apply text-blue-700 hover:text-blue-800 font-medium underline decoration-1 underline-offset-2 transition-colors duration-200;
+}
 }

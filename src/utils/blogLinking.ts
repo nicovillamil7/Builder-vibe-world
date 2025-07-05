@@ -14,6 +14,11 @@ export const INTERNAL_LINKS: LinkMap = {
     title: 'Premium Laminate Flooring Collection - Genesis Stone Miami',
     type: 'internal'
   },
+  'laminate flooring': {
+    url: '/products',
+    title: 'Laminate Flooring Collection - Genesis Stone',
+    type: 'internal'
+  },
   'commercial laminate flooring': {
     url: '/wholesale',
     title: 'Commercial Laminate Flooring Installation Miami',
@@ -24,14 +29,29 @@ export const INTERNAL_LINKS: LinkMap = {
     title: 'Natural Stone Flooring Collection - Genesis Stone Miami',
     type: 'internal'
   },
+  'natural stone': {
+    url: '/products',
+    title: 'Natural Stone Collection - Genesis Stone',
+    type: 'internal'
+  },
   'porcelain tiles Miami': {
     url: '/products',
     title: 'Porcelain Tile Collection - Genesis Stone Miami',
     type: 'internal'
   },
+  'porcelain tiles': {
+    url: '/products',
+    title: 'Porcelain Tile Collection - Genesis Stone',
+    type: 'internal'
+  },
   'tile installation Miami': {
     url: '/retail',
     title: 'Professional Tile Installation Services Miami',
+    type: 'internal'
+  },
+  'tile installation': {
+    url: '/retail',
+    title: 'Professional Tile Installation Services',
     type: 'internal'
   },
   'wholesale flooring Miami': {
@@ -49,6 +69,16 @@ export const INTERNAL_LINKS: LinkMap = {
     title: 'Visit Our Miami Flooring Showroom - Genesis Stone',
     type: 'internal'
   },
+  'flooring showroom': {
+    url: '/retail',
+    title: 'Visit Our Flooring Showroom - Genesis Stone',
+    type: 'internal'
+  },
+  'professional installation': {
+    url: '/retail',
+    title: 'Professional Flooring Installation Services',
+    type: 'internal'
+  },
   'contact us': {
     url: '/contact',
     title: 'Contact Genesis Stone - Miami Flooring Experts',
@@ -57,6 +87,31 @@ export const INTERNAL_LINKS: LinkMap = {
   'about Genesis Stone': {
     url: '/about',
     title: 'About Genesis Stone - Miami Flooring Specialists Since 2008',
+    type: 'internal'
+  },
+  'grout solutions': {
+    url: '/products',
+    title: 'Professional Grout Solutions - Genesis Stone',
+    type: 'internal'
+  },
+  'mosaic tiles': {
+    url: '/products',
+    title: 'Mosaic Tile Collection - Genesis Stone',
+    type: 'internal'
+  },
+  'wall panels': {
+    url: '/products',
+    title: 'Wall Panel Solutions - Genesis Stone',
+    type: 'internal'
+  },
+  'metal trims': {
+    url: '/products',
+    title: 'Metal Trim Solutions - Genesis Stone',
+    type: 'internal'
+  },
+  'mortar mix': {
+    url: '/products',
+    title: 'Professional Mortar Mix - Genesis Stone',
     type: 'internal'
   }
 };
@@ -82,6 +137,26 @@ export const EXTERNAL_LINKS: LinkMap = {
     url: 'https://www.ansi.org/',
     title: 'ANSI - Industry Standards and Certifications',
     type: 'external'
+  },
+  'National Wood Flooring Association': {
+    url: 'https://www.nwfa.org/',
+    title: 'NWFA - Wood Flooring Installation Standards',
+    type: 'external'
+  },
+  'Ceramic Tile Distributors Association': {
+    url: 'https://www.ctdahome.org/',
+    title: 'CTDA - Ceramic Tile Distribution Standards',
+    type: 'external'
+  },
+  'Natural Stone Institute': {
+    url: 'https://www.naturalstoneinstitute.org/',
+    title: 'Natural Stone Institute - Industry Standards and Education',
+    type: 'external'
+  },
+  'Flooring Contractors Association': {
+    url: 'https://www.fcica.com/',
+    title: 'FCICA - Flooring Installation Standards',
+    type: 'external'
   }
 };
 
@@ -95,8 +170,15 @@ export const addLinksToContent = (content: string): string => {
   const sortedLinks = Object.entries(ALL_LINKS).sort((a, b) => b[0].length - a[0].length);
   
   sortedLinks.forEach(([keyword, linkData]) => {
-    // Create regex pattern that matches the keyword but not if it's already inside a link
-    const regex = new RegExp(`(?<!<a[^>]*>)\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b(?![^<]*</a>)`, 'gi');
+    // Create regex pattern that matches the keyword but not if it's already inside:
+    // - a link tag
+    // - an img tag
+    // - img alt text
+    // - img title text
+    const regex = new RegExp(
+      `(?<!<a[^>]*>)(?<!<img[^>]*>)(?<!alt="[^"]*?)(?<!title="[^"]*?)\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b(?![^<]*</a>)(?![^"]*"[^>]*>)`, 
+      'gi'
+    );
     
     const linkTag = linkData.type === 'internal' 
       ? `<a href="${linkData.url}" title="${linkData.title}" class="text-red-700 hover:text-red-800 font-medium underline">${keyword}</a>`
@@ -107,6 +189,14 @@ export const addLinksToContent = (content: string): string => {
   });
   
   return updatedContent;
+};
+
+// Function to verify that images are preserved
+export const verifyImagePreservation = (originalContent: string, processedContent: string): boolean => {
+  const originalImages = originalContent.match(/<img[^>]*>/g) || [];
+  const processedImages = processedContent.match(/<img[^>]*>/g) || [];
+  
+  return originalImages.length === processedImages.length;
 };
 
 // Function to verify internal links exist

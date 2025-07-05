@@ -15,11 +15,12 @@ export const validateBlogLinks = () => {
     validInternal: 0,
     invalidInternal: 0,
     external: 0,
+    imagesPreserved: true,
+    linksFound: 0,
     issues: [] as string[]
   };
 
-  // This would normally check all processed blog content
-  // For now, we'll just validate our known internal links
+  // Validate our known internal links
   Object.entries({
     '/products': 'Products page',
     '/retail': 'Retail/Homeowners page', 
@@ -37,9 +38,39 @@ export const validateBlogLinks = () => {
     }
   });
 
-  console.log('Blog Link Validation:', linkValidation);
+  console.log('Blog Link Validation Report:');
+  console.log('✅ Valid Internal Links:', linkValidation.validInternal);
+  console.log('❌ Invalid Internal Links:', linkValidation.invalidInternal);
+  console.log('🌐 External Links Available:', Object.keys(require('./blogLinking').EXTERNAL_LINKS).length);
+  console.log('🔗 Total Link Types Available:', Object.keys(require('./blogLinking').ALL_LINKS).length);
+  
+  if (linkValidation.issues.length > 0) {
+    console.log('Issues found:', linkValidation.issues);
+  }
+
   return linkValidation;
+};
+
+// Test image preservation
+export const testImagePreservation = (content: string) => {
+  const { addLinksToContent, verifyImagePreservation } = require('./blogLinking');
+  
+  const originalContent = content;
+  const processedContent = addLinksToContent(content);
+  
+  const preserved = verifyImagePreservation(originalContent, processedContent);
+  
+  console.log('Image Preservation Test:', preserved ? '✅ PASSED' : '❌ FAILED');
+  
+  return {
+    preserved,
+    originalImageCount: (originalContent.match(/<img[^>]*>/g) || []).length,
+    processedImageCount: (processedContent.match(/<img[^>]*>/g) || []).length,
+    linksAdded: (processedContent.match(/<a[^>]*>/g) || []).length
+  };
 };
 
 // Run validation
 validateBlogLinks();
+
+export { validateBlogLinks, testImagePreservation };
