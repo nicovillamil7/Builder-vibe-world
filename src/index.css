@@ -109,6 +109,17 @@
   color: black !important;
 }
 
+/* Specific override for white outline button */
+button[class*="border-white"] {
+  background-color: white !important;
+  color: black !important;
+}
+
+button[class*="border-white"]:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
 /* Navigation Improvements */
 .nav-brand {
   transition: transform 0.2s ease-in-out;

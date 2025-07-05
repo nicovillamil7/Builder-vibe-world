@@ -24,15 +24,21 @@ export const GoldButton = forwardRef<
 export const WhiteOutlineButton = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
->(({ className, ...props }, ref) => {
+>(({ className, style, ...props }, ref) => {
   return (
     <Button
       ref={ref}
       variant="outline"
+      style={{
+        backgroundColor: 'white',
+        color: 'black',
+        borderColor: 'white',
+        borderWidth: '2px',
+        ...style,
+      }}
       className={cn(
-        "border-2 border-white text-black bg-white font-semibold transition-all duration-200",
+        "font-semibold transition-all duration-200",
         "hover:bg-white hover:text-black active:bg-white focus:bg-white",
-        "!bg-white !text-black", // Force white background
         className,
       )}
       {...props}
