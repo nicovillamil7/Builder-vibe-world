@@ -101,7 +101,6 @@ const ProductGrid = () => {
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/InStock",
-          "price": "Variable",
           "priceCurrency": "USD",
           "priceValidUntil": "2025-12-31",
           "seller": {

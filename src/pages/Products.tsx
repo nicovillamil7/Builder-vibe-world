@@ -119,12 +119,6 @@ const Products = () => {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
                     priceValidUntil: "2025-12-31",
                     seller: {
                       "@type": "Organization",
@@ -149,12 +143,6 @@ const Products = () => {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
                     priceValidUntil: "2025-12-31",
                     seller: {
                       "@type": "Organization",
@@ -179,12 +167,6 @@ const Products = () => {
                     "@type": "Offer",
                     availability: "https://schema.org/InStock",
                     priceCurrency: "USD",
-                    price: "0",
-                    priceSpecification: {
-                      "@type": "PriceSpecification",
-                      valueAddedTaxIncluded: true,
-                      priceCurrency: "USD",
-                    },
                     priceValidUntil: "2025-12-31",
                     seller: {
                       "@type": "Organization",
