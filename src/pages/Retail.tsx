@@ -103,7 +103,7 @@ const Retail = () => {
         "Natural Wood-Look LVP",
         "Marble Accents",
       ],
-      imageId: "modernFamilyHome",
+      imageId: "luxuryInterior",
       result: "Increased home value by $45,000",
     },
     {
@@ -112,7 +112,7 @@ const Retail = () => {
       location: "Coconut Grove",
       style: "Classic with Modern Touches",
       materials: ["Hardwood Restoration", "Decorative Tile", "Natural Stone"],
-      imageId: "historicHomeRenovation",
+      imageId: "contemporaryWhite",
       result: "Featured in Miami Home & Design",
     },
     {
@@ -121,7 +121,7 @@ const Retail = () => {
       location: "Key Biscayne",
       style: "Coastal Contemporary",
       materials: ["Luxury Vinyl Plank", "Porcelain Tile", "Glass Mosaics"],
-      imageId: "waterfrontCondoUpgrade",
+      imageId: "showroomDisplay",
       result: "Perfect for family living",
     },
   ];
@@ -153,7 +153,7 @@ const Retail = () => {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93?format=webp')`,
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F82084b8d71414a99aeb5979316a13668?format=webp')`,
           }}
         ></div>
 

@@ -62,6 +62,18 @@ export const SimpleReliableImage: React.FC<{ imageId: string; alt: string; class
       primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F62a47965cba54dd7b57094f1e799ab8c', 
       fallback: '/placeholder.svg' 
     },
+    luxuryInterior: {
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F82084b8d71414a99aeb5979316a13668?format=webp',
+      fallback: '/placeholder.svg'
+    },
+    contemporaryWhite: {
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F5ca1a82e481b45e8b81cba03d3e6ad83',
+      fallback: '/placeholder.svg'
+    },
+    showroomDisplay: {
+      primary: 'https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fd7a19663ca904dd68beaaa9471af36d0',
+      fallback: '/placeholder.svg'
+    },
   };
 
   const imageConfig = config[imageId] || config.modernPoolDeck;
