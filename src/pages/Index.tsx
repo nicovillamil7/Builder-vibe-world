@@ -224,7 +224,7 @@ const Index = () => {
               Why Choose Genesis Stone for Your Miami Flooring Project?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008
+              Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline" title="Miami flooring products and tile supplier">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008. Specializing in <a href="/products/porcelain" className="text-red-700 hover:text-red-800 font-medium underline" title="Porcelain tiles Miami supplier">porcelain tiles Miami</a>, <a href="/products/naturalStone" className="text-red-700 hover:text-red-800 font-medium underline" title="Natural stone supplier South Florida">natural stone</a>, and <a href="/products/laminates" className="text-red-700 hover:text-red-800 font-medium underline" title="Luxury vinyl plank flooring Miami">luxury vinyl plank installation</a>.
             </p>
           </div>
 
@@ -256,8 +256,18 @@ const Index = () => {
                           {benefit.description}
                         </p>
                         {index === 0 && (
-                          <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block">
-                            Learn more about contractor pricing →
+                          <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block" title="Commercial flooring contractor pricing Miami">
+                            Get commercial flooring Miami trade pricing →
+                          </a>
+                        )}
+                        {index === 1 && (
+                          <a href="/contact" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block" title="Miami flooring delivery and pickup">
+                            Schedule flooring delivery Miami →
+                          </a>
+                        )}
+                        {index === 2 && (
+                          <a href="/about" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block" title="Expert flooring installation support Miami">
+                            Meet our flooring installation experts →
                           </a>
                         )}
                       </div>
