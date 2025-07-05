@@ -186,9 +186,20 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">G</span>
-                </div>
+                <img 
+                  src="/genesis-nav-icon.png" 
+                  alt="Genesis Stone Logo" 
+                  className="h-10 w-10 object-contain rounded-lg"
+                  onError={(e) => {
+                    // Fallback to original design if image fails
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-10 h-10 bg-[rgb(138,0,0)] rounded-full flex items-center justify-center';
+                    fallback.innerHTML = '<span class="text-white font-bold text-lg">G</span>';
+                    target.parentNode?.insertBefore(fallback, target);
+                  }}
+                />
                 <span className="text-xl font-bold text-gray-900 hidden sm:block">
                   Genesis Stone
                 </span>
@@ -309,9 +320,20 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">G</span>
-                </div>
+                <img 
+                  src="/genesis-nav-icon.png" 
+                  alt="Genesis Stone Logo" 
+                  className="h-10 w-10 object-contain rounded-lg bg-white p-1"
+                  onError={(e) => {
+                    // Fallback to original design if image fails
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-10 h-10 bg-[rgb(138,0,0)] rounded-lg flex items-center justify-center';
+                    fallback.innerHTML = '<span class="text-white font-bold text-lg">G</span>';
+                    target.parentNode?.insertBefore(fallback, target);
+                  }}
+                />
                 <span className="text-xl font-bold">Genesis Stone</span>
               </div>
               <p className="text-gray-400 mb-4 leading-relaxed">
