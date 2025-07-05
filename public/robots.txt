@@ -19,11 +19,16 @@ Disallow: /config/
 
 # Block funnel steps and tracking URLs
 Disallow: /genesis?next_funnel_step=*
+Disallow: /genesis?*funnel*
 Disallow: /*funnel_step*
 Disallow: /*?*funnel*
 Disallow: /*tracking*
 Disallow: /404
 Disallow: /*?*=*&*=*
+
+# Block specific funnel patterns
+Disallow: /*next_funnel_step*
+Disallow: /genesis?*
 
 # Block query parameters that create duplicate content
 Disallow: /*?utm_*

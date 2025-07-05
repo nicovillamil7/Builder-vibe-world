@@ -29,7 +29,8 @@ const NotFound = () => {
         canonicalUrl={`https://genesisstoneusa.com${window.location.pathname}`}
       />
       <Helmet>
-        <meta name="robots" content="noindex, follow" />
+        {/* Only noindex if this is actually a 404, not a valid route */}
+        {window.location.pathname === '/404' && <meta name="robots" content="noindex, follow" />}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
