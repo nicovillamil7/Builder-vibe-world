@@ -221,7 +221,7 @@ const ProductGrid = () => {
               {products.map((product) => (
                 <Card
                   key={product.id}
-                  className="flex-shrink-0 w-64 md:w-72 h-[480px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
+                  className="flex-shrink-0 w-64 md:w-72 h-[500px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
                   style={{ borderRadius: "20px" }}
                 >
                   <CardHeader className="p-0 flex-shrink-0">
@@ -248,7 +248,7 @@ const ProductGrid = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[rgb(138,0,0)] transition-colors duration-200">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed flex-1">
+                    <p className={`text-gray-600 leading-relaxed flex-1 ${product.name === 'Mosaics' ? 'text-sm' : ''}`}>
                       {product.description}
                     </p>
                   </CardContent>
