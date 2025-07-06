@@ -85,6 +85,16 @@ const BLOG_IMAGES: Record<string, SitemapImage> = {
     loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-sleek-modern-interior-02ebd834-0602-4c80-a426-0da36c8167e1.webp',
     title: 'Why Choose Laminate Flooring for Long-Lasting Beauty',
     caption: 'Discover why laminate flooring combines durability, cost-effectiveness, and visual appeal for homes and commercial spaces'
+  },
+  'expert-insights-on-mastering-simple-tile-installation-techniques': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-focused-view-of-a47800a4-bf92-4988-af91-56ccb0748be8.webp',
+    title: 'Expert Insights on Mastering Simple Tile Installation Techniques',
+    caption: 'Comprehensive guide to tile installation covering tools, techniques, and professional tips'
+  },
+  'homeowners-guide-selecting-right-tile-stone-flooring': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/a-thoughtfully-arranged-interior-178c161f-c77eeb82-6fb0-4623-bd56-50687117283d.webp',
+    title: 'A Homeowner\'s Guide: How to Select the Right Tile or Stone Flooring',
+    caption: 'Complete guide to selecting the perfect tile or stone flooring for your home covering types, durability, and installation'
   }
 };
 

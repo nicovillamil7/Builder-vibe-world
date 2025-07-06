@@ -221,7 +221,7 @@ const ProductGrid = () => {
               {products.map((product) => (
                 <Card
                   key={product.id}
-                  className="flex-shrink-0 w-64 md:w-72 h-[500px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
+                  className="flex-shrink-0 w-60 sm:w-64 md:w-72 h-[480px] sm:h-[500px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
                   style={{ borderRadius: "20px" }}
                 >
                   <CardHeader className="p-0 flex-shrink-0">
