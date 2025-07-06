@@ -11,35 +11,15 @@ declare global {
 }
 
 const Analytics = () => {
+  // Get tracking IDs from environment variables or use defaults
+  const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-5DTNSBTY8Z';
+  const ADS_ID = import.meta.env.VITE_AW_CONVERSION_ID;
+
   useEffect(() => {
-    // Initialize Google Analytics
-    const initGA = () => {
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', 'GA_MEASUREMENT_ID', {
-        page_title: document.title,
-        page_location: window.location.href,
-      });
-    };
-
-    // Initialize Microsoft Clarity
-    const initClarity = () => {
-      window.clarity = window.clarity || function() {
-        (window.clarity.q = window.clarity.q || []).push(arguments);
-      };
-    };
-
-    // Initialize tracking when component mounts
-    initGA();
-    initClarity();
-
     // Track page views for SPA navigation
     const trackPageView = () => {
       if (window.gtag) {
-        window.gtag('config', 'GA_MEASUREMENT_ID', {
+        window.gtag('config', GA_ID, {
           page_title: document.title,
           page_location: window.location.href,
         });
@@ -56,55 +36,28 @@ const Analytics = () => {
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, []);
+  }, [GA_ID]);
 
   return (
     <Helmet>
-      {/* Google Analytics 4 */}
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-      />
-      
-      {/* Google Analytics Configuration */}
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'GA_MEASUREMENT_ID', {
-            page_title: document.title,
-            page_location: window.location.href,
-            send_page_view: true
-          });
-        `}
-      </script>
-
-      {/* Microsoft Clarity */}
-      <script>
-        {`
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
-        `}
-      </script>
-
-      {/* Google Ads Conversion Tracking */}
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"
-      />
-      
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-CONVERSION_ID');
-        `}
-      </script>
+      {/* Google Ads Conversion Tracking - Only if ADS_ID is provided */}
+      {ADS_ID && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
+          />
+          
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${ADS_ID}');
+            `}
+          </script>
+        </>
+      )}
 
       {/* Enhanced Ecommerce and Event Tracking Setup */}
       <script>
