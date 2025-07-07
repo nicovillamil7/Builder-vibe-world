@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
+import React, { useState, useCallback } from "react";
+import { getImageUrlById, RELIABLE_IMAGES } from "@/utils/imageUtils";
 
 interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   imageId: string;
@@ -95,10 +95,11 @@ interface SimpleReliableImageProps {
   src?: string;
   alt: string;
   className?: string;
-  fallbackSrc?: string;
   width?: number;
   height?: number;
   loading?: "lazy" | "eager";
+  format?: "webp" | "jpg" | "png";
+  quality?: number;
 }
 
 export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
@@ -106,16 +107,41 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   src,
   alt,
   className = "",
-  fallbackSrc = "/placeholder.svg",
-  width,
-  height,
-  loading = "lazy"
+  width = 400,
+  height = 300,
+  loading = "lazy",
+  format = "webp",
+  quality = 80,
 }) => {
-  const imageSrc = getReliableImageUrl(imageId);
-  const finalSrc = src || imageSrc || fallbackSrc;
-  const [isLoading, setIsLoading] = useState(true);
+  const [currentSrc, setCurrentSrc] = useState<string>("");
   const [hasError, setHasError] = useState(false);
-  const currentSrc = src || imageSrc || fallbackSrc;
+  const [isLoading, setIsLoading] = useState(true);
+
+  const getReliableImageUrl = useCallback((imageId: string): string[] => {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const optimizedWidth = isMobile ? Math.min(width, 400) : width;
+    const optimizedHeight = isMobile ? Math.min(height, 300) : height;
+    const optimizedQuality = isMobile ? Math.min(quality, 75) : quality;
+
+    const baseParams = `?format=${format}&width=${optimizedWidth}&height=${optimizedHeight}&fit=crop&quality=${optimizedQuality}`;
+
+    return [
+      `https://cdn.builder.io/api/v1/image/assets/794088d731be4280a896b77e76e82a50/${imageId}${baseParams}`,
+      getImageUrlById(imageId),
+      "/placeholder.svg"
+    ];
+  }, [width, height, format, quality]);
+
+  React.useEffect(() => {
+    if (imageId) {
+      const sources = getReliableImageUrl(imageId);
+      setCurrentSrc(sources[0]);
+    } else if (src) {
+      setCurrentSrc(src);
+    } else {
+      setCurrentSrc("/placeholder.svg");
+    }
+  }, [imageId, src, getReliableImageUrl]);
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -128,15 +154,20 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
 
   return (
     <img
-        src={currentSrc}
-        alt={alt}
-        loading={loading}
-        decoding="async"
-        fetchpriority={loading === 'eager' ? 'high' : 'low'}
-        onLoad={handleLoad}
-        onError={handleError}
-        className={`w-full h-full object-cover transition-opacity duration-200 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError ? "hidden" : ""}`}
-        style={{ willChange: isLoading ? 'opacity' : 'auto' }}
-      />
+      src={currentSrc}
+      alt={alt}
+      className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+      onLoad={handleLoad}
+      onError={handleError}
+      loading={loading}
+      width={width}
+      height={height}
+      decoding="async"
+      fetchPriority={loading === "eager" ? "high" : "low"}
+      style={{
+        aspectRatio: `${width}/${height}`,
+        contentVisibility: loading === "lazy" ? "auto" : "visible",
+      }}
+    />
   );
 };

@@ -145,6 +145,20 @@ const ProductGrid = () => {
     return 3;
   };
 
+  // Preload critical images for mobile
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      const criticalProducts = products.slice(0, 2);
+      criticalProducts.forEach(product => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = `https://cdn.builder.io/api/v1/image/assets/794088d731be4280a896b77e76e82a50/${product.imageId}?format=webp&width=280&quality=75`;
+        document.head.appendChild(link);
+      });
+    }
+  }, []);
+
   const itemWidth = getItemWidth();
   const visibleItems = getVisibleItems();
   const maxIndex = Math.max(0, products.length - visibleItems);
@@ -233,6 +247,11 @@ const ProductGrid = () => {
                         imageId={product.imageId}
                         alt={product.name}
                         className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading={currentIndex === 0 ? "eager" : "lazy"}
+                        width={window.innerWidth < 768 ? 280 : 320}
+                        height={208}
+                        format="webp"
+                        quality={window.innerWidth < 768 ? 75 : 85}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       <Badge

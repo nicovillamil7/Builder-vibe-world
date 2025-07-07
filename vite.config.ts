@@ -38,6 +38,14 @@ export default defineConfig({
         chunkFileNames: 'js/[name]-[hash].js',
         entryFileNames: 'js/[name]-[hash].js',
       },
+      external: (id) => {
+        // Externalize large dependencies for mobile
+        return id.includes('node_modules') && (
+          id.includes('lodash') || 
+          id.includes('moment') ||
+          id.includes('date-fns')
+        );
+      }
     },
     chunkSizeWarningLimit: 1000,
   },
