@@ -62,7 +62,9 @@ export const blogArticles: BlogArticle[] = [
     featured: false,
     published: true,
     seoKeywords: ["tile flooring selection", "stone flooring guide", "home flooring options", "tile installation", "flooring materials"],
-
+    content: `
+      <img src="https://storage.googleapis.com/content-assistant-images-temp/a-thoughtfully-arranged-interior-178c161f-c77eeb82-6fb0-4623-bd56-50687117283d.webp" alt="a thoughtfully arranged interior space showcasing an array of stylish tile and stone flooring samples, illuminated by warm, inviting overhead lighting, capturing the essence of modern home design." class="w-full h-64 object-cover rounded-lg mb-8">
+      
       <p>Choosing flooring for a home project can be overwhelming with many options available. Homeowners must weigh durability, aesthetics, maintenance, and performance. This guide, which includes insights from genesisstoneusa.com, answers common questions on <strong>tile</strong> and stone flooring, helping you make informed decisions that suit your home's design, budget, and lifestyle.</p>
 
       <h2>What Are the Main Types of Tile and Stone Flooring Available?</h2>
