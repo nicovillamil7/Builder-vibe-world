@@ -1,3 +1,63 @@
+// Image optimization utilities for reliable loading and performance
+
+interface ImageConfig {
+  width?: number;
+  height?: number;
+  quality?: number;
+  format?: 'webp' | 'jpg' | 'png';
+}
+
+export const getReliableImageUrl = (
+  imageId: string, 
+  config: ImageConfig = {}
+): string => {
+  const { width = 800, height = 600, quality = 80, format = 'webp' } = config;
+
+  // Handle different image ID formats
+  if (imageId.startsWith('http')) {
+    return imageId; // Already a full URL
+  }
+
+  // Handle Builder.io URLs
+  if (imageId.includes('builder.io') || imageId.includes('cdn.builder.io')) {
+    return imageId;
+  }
+
+  // Handle Google Cloud Storage URLs
+  if (imageId.includes('storage.googleapis.com')) {
+    return imageId;
+  }
+
+  // Handle relative paths
+  if (imageId.startsWith('/')) {
+    return imageId;
+  }
+
+  // Fallback for unknown formats
+  return `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=${width}&h=${height}&q=${quality}`;
+};
+
+export const optimizeImageForMobile = (imageUrl: string): string => {
+  return getReliableImageUrl(imageUrl, {
+    width: 400,
+    height: 300,
+    quality: 70,
+    format: 'webp'
+  });
+};
+
+export const optimizeImageForDesktop = (imageUrl: string): string => {
+  return getReliableImageUrl(imageUrl, {
+    width: 1200,
+    height: 800,
+    quality: 85,
+    format: 'webp'
+  });
+};
+
+// Legacy alias for backward compatibility
+export const getImageUrlById = getReliableImageUrl;
+
 // 🎯 COMPLETELY UNIQUE IMAGE SYSTEM - NO DUPLICATES
 // Every single image URL is unique across all categories
 
@@ -423,15 +483,6 @@ export const checkImageHealth = async (url: string): Promise<boolean> => {
   });
 };
 
-// Get reliable image URL with automatic fallback
-export const getReliableImageUrl = (imageId: string): string => {
-  const config = RELIABLE_IMAGES[imageId];
-  if (!config) {
-    console.warn(`Image ID "${imageId}" not found, using default`);
-    return RELIABLE_IMAGES.modernPoolDeck.primary;
-  }
-  return config.primary;
-};
 
 // Get image by category
 export const getImageByCategory = (category: string): ImageConfig => {
