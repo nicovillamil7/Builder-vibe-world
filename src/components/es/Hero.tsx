@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { ArrowRight } from "lucide-react";
