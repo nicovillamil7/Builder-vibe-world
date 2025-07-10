@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { getImageUrlById, RELIABLE_IMAGES } from "@/utils/imageUtils";
+import React, { useState } from "react";
+import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
 
 interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   imageId: string;
@@ -95,11 +95,10 @@ interface SimpleReliableImageProps {
   src?: string;
   alt: string;
   className?: string;
+  fallbackSrc?: string;
   width?: number;
   height?: number;
   loading?: "lazy" | "eager";
-  format?: "webp" | "jpg" | "png";
-  quality?: number;
 }
 
 export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
@@ -107,88 +106,37 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   src,
   alt,
   className = "",
-  width = 400,
-  height = 300,
-  loading = "lazy",
-  format = "webp",
-  quality = 80,
+  fallbackSrc = "/placeholder.svg",
+  width,
+  height,
+  loading = "lazy"
 }) => {
-  const [currentSrc, setCurrentSrc] = useState<string>("");
-  const [hasError, setHasError] = useState(false);
+  const imageSrc = getReliableImageUrl(imageId);
+  const finalSrc = src || imageSrc || fallbackSrc;
   const [isLoading, setIsLoading] = useState(true);
-
-  const getReliableImageUrl = useCallback((imageId: string): string[] => {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    const optimizedWidth = isMobile ? Math.min(width, 400) : width;
-    const optimizedHeight = isMobile ? Math.min(height, 300) : height;
-    const optimizedQuality = isMobile ? Math.min(quality, 75) : quality;
-
-    const baseParams = `?format=${format}&width=${optimizedWidth}&height=${optimizedHeight}&fit=crop&quality=${optimizedQuality}`;
-
-    return [
-      `https://cdn.builder.io/api/v1/image/assets/794088d731be4280a896b77e76e82a50/${imageId}${baseParams}`,
-      getImageUrlById(imageId),
-      "/placeholder.svg"
-    ];
-  }, [width, height, format, quality]);
-
-  React.useEffect(() => {
-    if (imageId) {
-      // Try to get the reliable image URL
-      try {
-        const reliableUrl = getReliableImageUrl(imageId);
-        setCurrentSrc(reliableUrl);
-      } catch (error) {
-        console.warn(`Failed to get image for ${imageId}, using fallback`);
-        setCurrentSrc("/placeholder.svg");
-      }
-    } else if (src) {
-      setCurrentSrc(src);
-    } else {
-      setCurrentSrc("/placeholder.svg");
-    }
-    setHasError(false);
-    setIsLoading(true);
-  }, [imageId, src, getReliableImageUrl]);
+  const [hasError, setHasError] = useState(false);
+  const currentSrc = src || imageSrc || fallbackSrc;
 
   const handleLoad = () => {
     setIsLoading(false);
   };
 
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
+  const handleError = () => {
     setIsLoading(false);
-    
-    if (!hasError) {
-      setHasError(true);
-      // Try fallback URL
-      if (imageId) {
-        const fallbackUrl = `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=${width}&h=${height}&q=${quality}`;
-        target.src = fallbackUrl;
-        return;
-      }
-    }
-    
-    // Final fallback
-    target.src = "/placeholder.svg";
+    setHasError(true);
   };
 
   return (
     <img
-      src={currentSrc}
-      alt={alt}
-      className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-      onLoad={handleLoad}
-      onError={handleError}
-      loading={loading}
-      width={width}
-      height={height}
-      decoding="async"
-      fetchpriority={loading === "eager" ? "high" : "low"}
-      style={{
-        aspectRatio: `${width}/${height}`,
-        contentVisibility: loading === "lazy" ? "auto" : "visible",
-      }}
-    />
+        src={currentSrc}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        fetchpriority={loading === 'eager' ? 'high' : 'low'}
+        onLoad={handleLoad}
+        onError={handleError}
+        className={`w-full h-full object-cover transition-opacity duration-200 ${isLoading ? "opacity-0" : "opacity-100"} ${hasError ? "hidden" : ""}`}
+        style={{ willChange: isLoading ? 'opacity' : 'auto' }}
+      />
   );
 };

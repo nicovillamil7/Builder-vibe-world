@@ -67,8 +67,7 @@ const Products = () => {
 
   const getProductImage = (imageId: string) => {
     try {
-      const url = getReliableImageUrl(imageId);
-      return url || "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
+      return getReliableImageUrl(imageId);
     } catch (error) {
       console.warn(`Failed to get image for ${imageId}:`, error);
       return "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";

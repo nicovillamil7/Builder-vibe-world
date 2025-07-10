@@ -78,11 +78,11 @@ const BlogPost = () => {
               ))}
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {article.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-sm sm:text-base text-gray-600 mb-6 md:mb-8">
+            <div className="flex items-center gap-6 text-gray-600 mb-8">
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4" />
                 <span>{article.author}</span>
@@ -101,11 +101,11 @@ const BlogPost = () => {
             <SimpleReliableImage
               src={article.image}
               alt={article.title}
-              className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-lg mb-6 md:mb-8"
+              className="w-full h-96 object-cover rounded-lg mb-8"
             />
 
             {/* Article Content */}
-            <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-headings:leading-tight prose-p:text-gray-700 prose-img:rounded-lg prose-img:shadow-md">
+            <div className="prose prose-lg max-w-none">
               <div dangerouslySetInnerHTML={{ __html: addLinksToContent(article.content) }} />
             </div>
 
@@ -176,7 +176,7 @@ const BlogPost = () => {
             <h2 className="text-3xl font-bold mb-8 text-center">
               Related Articles
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {relatedArticles.map((related) => (
                 <Card
                   key={related.id}
@@ -208,12 +208,12 @@ const BlogPost = () => {
       )}
 
       {/* Newsletter CTA */}
-      <section className="py-8 md:py-16 bg-red-900 text-white">
+      <section className="py-16 bg-red-900 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 md:mb-4">
+          <h2 className="text-3xl font-bold mb-4">
             Don't Miss Our Latest Articles
           </h2>
-          <p className="text-lg sm:text-xl mb-6 md:mb-8 opacity-90 px-2">
+          <p className="text-xl mb-8 opacity-90">
             Subscribe to get expert flooring tips and design inspiration
           </p>
           <Link to="/contact">
