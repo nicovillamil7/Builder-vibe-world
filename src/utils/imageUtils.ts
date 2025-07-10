@@ -394,8 +394,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     id: "mosaicStoneBlend",
     primary:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80", // Reusing but in different category
-    fallback:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Natural stone mosaic floor with mixed material composition",
     category: "mosaic-products",
   },
@@ -424,13 +423,41 @@ export const checkImageHealth = async (url: string): Promise<boolean> => {
 };
 
 // Get reliable image URL with automatic fallback
-export const getReliableImageUrl = (imageId: string): string => {
-  const config = RELIABLE_IMAGES[imageId];
-  if (!config) {
-    console.warn(`Image ID "${imageId}" not found, using default`);
-    return RELIABLE_IMAGES.modernPoolDeck.primary;
+export const getReliableImageUrl = (
+  imageId: string, 
+  config: ImageConfig = {}
+): string => {
+  const { width = 800, height = 600, quality = 80, format = 'webp' } = config;
+
+  // Handle different image ID formats
+  if (imageId.startsWith('http')) {
+    return imageId; // Already a full URL
   }
-  return config.primary;
+
+  // Handle Builder.io URLs
+  if (imageId.includes('builder.io') || imageId.includes('cdn.builder.io')) {
+    return imageId;
+  }
+
+  // Handle Google Cloud Storage URLs
+  if (imageId.includes('storage.googleapis.com')) {
+    return imageId;
+  }
+
+  // Handle relative paths
+  if (imageId.startsWith('/')) {
+    return imageId;
+  }
+
+  // Check if the imageId exists in our RELIABLE_IMAGES
+  const imageConfig = RELIABLE_IMAGES[imageId];
+  if (imageConfig) {
+    return imageConfig.primary;
+  }
+
+  // Fallback for unknown formats
+  console.warn(`Image ID "${imageId}" not found in RELIABLE_IMAGES, using fallback`);
+  return `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=${width}&h=${height}&q=${quality}`;
 };
 
 // Get image by category
