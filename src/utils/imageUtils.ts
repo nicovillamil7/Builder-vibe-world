@@ -33,6 +33,12 @@ export const getReliableImageUrl = (
     return imageId;
   }
 
+  // Check if the imageId exists in our RELIABLE_IMAGES
+  const imageConfig = RELIABLE_IMAGES[imageId];
+  if (imageConfig) {
+    return imageConfig.primary;
+  }
+
   // Fallback for unknown formats
   return `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=${width}&h=${height}&q=${quality}`;
 };

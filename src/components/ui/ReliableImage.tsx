@@ -134,22 +134,43 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
 
   React.useEffect(() => {
     if (imageId) {
-      const sources = getReliableImageUrl(imageId);
-      setCurrentSrc(sources[0]);
+      // Try to get the reliable image URL
+      try {
+        const reliableUrl = getReliableImageUrl(imageId);
+        setCurrentSrc(reliableUrl);
+      } catch (error) {
+        console.warn(`Failed to get image for ${imageId}, using fallback`);
+        setCurrentSrc("/placeholder.svg");
+      }
     } else if (src) {
       setCurrentSrc(src);
     } else {
       setCurrentSrc("/placeholder.svg");
     }
+    setHasError(false);
+    setIsLoading(true);
   }, [imageId, src, getReliableImageUrl]);
 
   const handleLoad = () => {
     setIsLoading(false);
   };
 
-  const handleError = () => {
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.target as HTMLImageElement;
     setIsLoading(false);
-    setHasError(true);
+    
+    if (!hasError) {
+      setHasError(true);
+      // Try fallback URL
+      if (imageId) {
+        const fallbackUrl = `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=${width}&h=${height}&q=${quality}`;
+        target.src = fallbackUrl;
+        return;
+      }
+    }
+    
+    // Final fallback
+    target.src = "/placeholder.svg";
   };
 
   return (
@@ -163,7 +184,7 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
       width={width}
       height={height}
       decoding="async"
-      fetchPriority={loading === "eager" ? "high" : "low"}
+      fetchpriority={loading === "eager" ? "high" : "low"}
       style={{
         aspectRatio: `${width}/${height}`,
         contentVisibility: loading === "lazy" ? "auto" : "visible",
