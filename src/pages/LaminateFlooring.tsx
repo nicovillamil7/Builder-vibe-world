@@ -432,55 +432,7 @@ const LaminateFlooring = () => {
         </div>
       </section>
 
-      {/* Customer Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              What Our Customers Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real stories from satisfied customers who chose Genesis Stone for their laminate flooring projects.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2">
-                <CardContent className="p-0">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
-                  <div className="border-t pt-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                        <p className="text-sm text-gray-600">{testimonial.location}</p>
-                        <p className="text-sm text-[rgb(138,0,0)] font-medium">{testimonial.project}</p>
-                      </div>
-                      <a 
-                        href="https://www.google.com/maps/place/Genesis+Stone+%26+More/@25.7617,-80.1918,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b0a20ec8c111:0xa5c75c0e1f6d1c9d!8m2!3d25.7617!4d-80.1918!16s%2Fg%2F11c5m7x8k8"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-blue-600 hover:text-blue-800"
-                      >
-                        Read on Google
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <GoogleReviews />
-          </div>
-        </div>
-      </section>
+      
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
