@@ -2,7 +2,7 @@ import React from "react";
 import { MessageCircle } from "lucide-react";
 
 export const WhatsAppButton: React.FC = () => {
-  const phoneNumber = "13055104733"; // US phone number for WhatsApp
+  const phoneNumber = "13058340800"; // Genesis Stone WhatsApp number
   const message =
     "Hi! I'm interested in Genesis Stone flooring solutions. Can you help me?";
 

@@ -219,7 +219,7 @@ const NaturalStone = () => {
             alt="Luxury travertine pool deck in Miami with cool-touch natural stone"
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/60"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -448,7 +448,13 @@ const NaturalStone = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 text-amber-600 mr-3" />
-                  <span className="text-gray-700">(305) 555-0123</span>
+                  <span className="text-gray-700">(305) 834-0800</span>
+                </div>
+                <div className="flex items-center">
+                  <MessageCircle className="w-6 h-6 text-amber-600 mr-3" />
+                  <a href="https://wa.me/13058340800" className="text-gray-700 hover:text-amber-600">
+                    WhatsApp: (305) 834-0800
+                  </a>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 text-amber-600 mr-3" />
@@ -457,45 +463,50 @@ const NaturalStone = () => {
               </div>
             </div>
 
-            <div className="bg-gray-100 rounded-lg p-8 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-amber-600 mx-auto mb-4" />
-                <p className="text-gray-600">Interactive Map Coming Soon</p>
-                <p className="text-sm text-gray-500 mt-2">
-                  Serving all of South Florida
-                </p>
-              </div>
+            <div className="bg-gray-100 rounded-lg overflow-hidden h-96">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.344676653!2d-80.31468842404!3d25.79158007748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b92d2f8b8b8b%3A0x8b8b8b8b8b8b8b8b!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033122!5e0!3m2!1sen!2sus!4v1642000000000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Genesis Stone Location - Miami, FL"
+              ></iframe>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-amber-600 to-amber-700">
+      <section className="py-20 bg-gradient-to-r from-red-800 to-red-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Elevate Your Space with Natural Stone?
           </h2>
-          <p className="text-xl text-amber-100 mb-8">
+          <p className="text-xl text-red-100 mb-8">
             Transform your home or business with premium natural stone flooring. 
             Get your personalized quote today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <GoldButton size="lg" className="bg-white text-amber-700 hover:bg-gray-100 text-lg px-8 py-4">
+              <GoldButton size="lg" className="bg-white text-red-800 hover:bg-gray-100 text-lg px-8 py-4">
                 Book a Free Estimate
               </GoldButton>
             </Link>
-            <WhiteOutlineButton size="lg" className="border-white text-white hover:bg-white hover:text-amber-700 text-lg px-8 py-4">
-              Get a Personalized Quote
-            </WhiteOutlineButton>
+            <a href="https://wa.me/13058340800?text=Hi! I'm interested in natural stone flooring for my project. Can you provide a quote?">
+              <WhiteOutlineButton size="lg" className="border-white text-white hover:bg-white hover:text-red-800 text-lg px-8 py-4">
+                Get WhatsApp Quote
+              </WhiteOutlineButton>
+            </a>
           </div>
 
           <div className="mt-8 flex justify-center">
-            <div className="flex items-center text-amber-100">
+            <div className="flex items-center text-red-100">
               <MessageCircle className="w-5 h-5 mr-2" />
-              <span>Or chat with us instantly on WhatsApp</span>
+              <span>Or call us: (305) 834-0800</span>
             </div>
           </div>
         </div>
