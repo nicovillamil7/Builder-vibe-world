@@ -32,12 +32,12 @@ const Products = () => {
       hasDetailedPage: true,
     },
     {
-      id: "laminates",
+      id: "laminate-flooring",
       name: "Laminates",
       description:
         "A cost-effective and stylish flooring solution, our laminate options replicate the look of hardwood and stone while providing excellent resistance to scratches, stains, and moisture—ideal for both residential and commercial projects.",
       imageId: "laminateHardwood",
-      hasDetailedPage: false,
+      hasDetailedPage: true,
     },
     {
       id: "decorative",
