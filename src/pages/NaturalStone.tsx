@@ -86,34 +86,40 @@ const NaturalStone = () => {
 
   const stoneTypes = [
     {
-      name: "Travertine",
-      description: "Cool-touch limestone perfect for pool decks and patios",
-      imageId: "poolDeck",
-      features: ["Non-slip surface", "Heat resistant", "Natural texture"]
-    },
-    {
       name: "Marble",
-      description: "Elegant and smooth with stunning natural veining",
+      description: "Premium luxury marble with elegant veining patterns and timeless sophistication",
       imageId: "naturalMarble", 
-      features: ["Luxury finish", "Unique patterns", "High-end appeal"]
-    },
-    {
-      name: "Granite",
-      description: "Tough and stylish with exceptional durability",
-      imageId: "naturalGranite",
-      features: ["Scratch resistant", "Low maintenance", "Commercial grade"]
-    },
-    {
-      name: "Slate",
-      description: "Rustic and textured with rich natural colors",
-      imageId: "naturalSlate",
-      features: ["Anti-slip texture", "Weather resistant", "Natural beauty"]
+      features: ["Luxury finish", "Unique natural veining", "Heat-resistant surfaces", "High-end appeal"]
     },
     {
       name: "Limestone",
-      description: "Soft neutral tones with timeless natural charm",
+      description: "Versatile sedimentary stone with soft neutral tones and natural fossil inclusions",
       imageId: "naturalLimestone",
-      features: ["Fossil inclusions", "Neutral palette", "Versatile design"]
+      features: ["Fossil inclusions", "Neutral color palette", "Easy to work with", "Versatile applications"]
+    },
+    {
+      name: "Travertine",
+      description: "Cool-touch limestone perfect for pool decks, patios, and outdoor living spaces",
+      imageId: "poolDeck",
+      features: ["Non-slip surface", "Cool-touch technology", "Heat resistant", "Pool-friendly"]
+    },
+    {
+      name: "Granite",
+      description: "Ultra-durable igneous rock with superior strength and stunning speckled patterns",
+      imageId: "naturalGranite",
+      features: ["Scratch resistant", "Stain resistant", "Low maintenance", "Commercial grade durability"]
+    },
+    {
+      name: "Dolomite",
+      description: "Crystalline carbonate rock offering marble-like beauty with enhanced durability",
+      imageId: "naturalDolomite",
+      features: ["Marble-like appearance", "Superior hardness", "Acid resistance", "Low porosity"]
+    },
+    {
+      name: "Stacked Stone",
+      description: "Dimensional natural stone panels creating stunning textured walls and accent features",
+      imageId: "stackedStone",
+      features: ["3D textured finish", "Easy installation", "Interior/exterior use", "Natural variations"]
     }
   ];
 

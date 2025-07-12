@@ -368,6 +368,24 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     alt: "Natural limestone with soft neutral tones and fossil inclusions",
     category: "natural-stone-products",
   },
+  naturalDolomite: {
+    id: "naturalDolomite",
+    primary:
+      "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Natural dolomite stone with crystalline structure and durable finish",
+    category: "natural-stone-products",
+  },
+  stackedStone: {
+    id: "stackedStone",
+    primary:
+      "https://images.unsplash.com/photo-1606744824163-985d376605aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Stacked stone wall panels with natural texture and dimensional appearance",
+    category: "natural-stone-products",
+  },
   outdoorPatio: {
     id: "outdoorPatio",
     primary:

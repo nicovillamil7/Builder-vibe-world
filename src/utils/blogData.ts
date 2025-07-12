@@ -1008,3 +1008,9 @@ export const generateBlogSchema = (article: BlogArticle) => {
     wordCount: article.content.split(" ").length,
   };
 };
+import { laminateFlooringPost } from './laminateFlooringPost';
+import { naturalStoneVsCeramicPost } from './naturalStoneVsCeramicPost';
+export const blogPosts = [
+  naturalStoneVsCeramicPost,
+  laminateFlooringPost,
+];
