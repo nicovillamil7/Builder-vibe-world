@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Products from "./pages/Products";
 import NaturalStone from "@/pages/NaturalStone";
 import LaminateFlooring from "@/pages/LaminateFlooring";
+import PorcelainTile from "@/pages/PorcelainTile";
 import ProductCategory from "@/pages/ProductCategory";
 import Retail from "./pages/Retail";
 import Wholesale from "./pages/Wholesale";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/products" element={<Products />} />
             <Route path="/products/natural-stone" element={<NaturalStone />} />
             <Route path="/products/laminate-flooring" element={<LaminateFlooring />} />
+            <Route path="/products/porcelain" element={<PorcelainTile />} />
             <Route path="/products/:category" element={<ProductCategory />} />
             <Route path="/retail" element={<Retail />} />
             <Route path="/wholesale" element={<Wholesale />} />
