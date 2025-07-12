@@ -59,46 +59,32 @@ const PorcelainTile = () => {
 
   const porcelainTypes = [
     {
-      name: "Wood-Look Porcelain",
-      description: "The warmth and beauty of wood with the strength and durability of porcelain tile",
-      features: ["Realistic wood grain textures", "Multiple plank sizes", "Fade and scratch resistant", "No maintenance like real wood"],
+      name: "Wood Look Porcelain",
+      description: "Authentic wood grain appearance with superior durability and waterproof performance for Miami homes",
+      features: ["Realistic wood grain textures", "100% waterproof construction", "Fade and scratch resistant", "No seasonal expansion like real wood"],
       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Wood-look porcelain tile Miami - realistic oak and walnut patterns for living rooms"
-    },
-    {
-      name: "Stone-Look Porcelain",
-      description: "Natural stone appeal with enhanced durability and consistent quality",
-      features: ["Marble and travertine looks", "No sealing required", "Consistent patterns", "Superior durability"],
-      image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Stone-look porcelain tile Miami - marble and granite patterns for luxury spaces"
+      imageAlt: "Wood look porcelain tile Miami - realistic oak and walnut grain patterns for living rooms and bedrooms"
     },
     {
       name: "Polished Porcelain",
-      description: "Sleek, modern finish that reflects light for bright, elegant spaces",
-      features: ["High-gloss finish", "Light-reflecting surface", "Easy to clean", "Modern aesthetic"],
+      description: "High-gloss finish that reflects light beautifully, creating bright and luxurious spaces throughout your home",
+      features: ["Mirror-like high-gloss finish", "Light-amplifying surface", "Stain and water resistant", "Premium aesthetic appeal"],
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Polished porcelain tile Miami - high-gloss finish for modern contemporary spaces"
+      imageAlt: "Polished porcelain tile Miami - high-gloss mirror finish for modern contemporary living spaces"
     },
     {
       name: "Matte Porcelain",
-      description: "Non-slip, understated finish perfect for safety and sophisticated design",
-      features: ["Non-slip surface", "Hides fingerprints", "Subtle sophistication", "Easy maintenance"],
+      description: "Sophisticated non-slip finish that combines safety with elegant design for high-traffic areas",
+      features: ["Non-slip textured surface", "Hides water spots and fingerprints", "Contemporary matte appearance", "Low maintenance requirements"],
       image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Matte porcelain tile Miami - non-slip finish for bathrooms and kitchens"
+      imageAlt: "Matte porcelain tile Miami - non-slip textured finish ideal for bathrooms and kitchen floors"
     },
     {
-      name: "Large Format Tiles",
-      description: "Clean lines with fewer grout joints for seamless, modern installations",
-      features: ["24x48 and larger sizes", "Minimal grout lines", "Contemporary look", "Faster installation"],
+      name: "Satin Porcelain",
+      description: "Perfect balance between matte and polished finishes, offering subtle elegance with practical performance",
+      features: ["Soft satin sheen finish", "Balanced light reflection", "Easy to clean surface", "Versatile design compatibility"],
       image: "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Large format porcelain tile Miami - oversized tiles for modern minimalist design"
-    },
-    {
-      name: "Textured Porcelain",
-      description: "Dimensional surfaces that add depth and visual interest to any space",
-      features: ["3D surface textures", "Slip-resistant options", "Unique visual appeal", "Indoor/outdoor use"],
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Textured porcelain tile Miami - dimensional surface patterns for accent walls"
+      imageAlt: "Satin porcelain tile Miami - subtle sheen finish for elegant residential and commercial applications"
     }
   ];
 
