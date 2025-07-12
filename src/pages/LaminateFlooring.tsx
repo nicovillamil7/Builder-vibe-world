@@ -429,7 +429,7 @@ const LaminateFlooring = () => {
             </span>
             <span className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              Miami & South Florida
+              3399 NW 72nd Ave #109, Miami, FL 33166
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -516,24 +516,7 @@ const LaminateFlooring = () => {
             </WhiteOutlineButton>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm">
-            <a 
-              href="tel:+17863810964" 
-              className="flex items-center gap-2 hover:text-yellow-400 transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              (786) 381-0964
-            </a>
-            <a 
-              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-yellow-400 transition-colors"
-            >
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp Quote
-            </a>
-          </div>
+          
         </div>
       </section>
 

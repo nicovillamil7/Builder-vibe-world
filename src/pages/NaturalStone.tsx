@@ -544,12 +544,7 @@ const NaturalStone = () => {
             </button>
           </div>
 
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center text-red-100">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              <span>Or call us: (305) 834-0800</span>
-            </div>
-          </div>
+          
         </div>
       </section>
 
