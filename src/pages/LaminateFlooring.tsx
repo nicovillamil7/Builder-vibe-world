@@ -469,21 +469,45 @@ const LaminateFlooring = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a 
-              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
+            <GoldButton 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto"
+              onClick={() => {
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'get_quote_hero_laminate',
+                    value: 1
+                  });
+                }
+
+                // Open WhatsApp
+                const phoneNumber = "17863810964";
+                const message = "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+              }}
             >
-              <GoldButton size="lg" className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto">
-                Get Free Quote
-              </GoldButton>
-            </a>
-            <a href="#laminate-types" className="inline-block">
-              <WhiteOutlineButton size="lg" className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto">
-                Browse Styles
-              </WhiteOutlineButton>
-            </a>
+              Get Free Quote
+            </GoldButton>
+            <WhiteOutlineButton 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto"
+              onClick={() => {
+                document.getElementById('laminate-types')?.scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
+            >
+              Browse Styles
+            </WhiteOutlineButton>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm">
@@ -735,21 +759,48 @@ const LaminateFlooring = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
+                <PrimaryButton 
+                  size="lg" 
+                  className="w-full sm:w-auto"
+                  onClick={() => {
+                    // Track conversion
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'conversion', {
+                        event_category: 'engagement',
+                        event_label: 'instant_quote_location',
+                        value: 1
+                      });
+                    }
+
+                    // Open WhatsApp
+                    const phoneNumber = "17863810964";
+                    const message = "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?";
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
                 >
-                  <PrimaryButton size="lg" className="w-full sm:w-auto">
-                    Get Instant Quote
-                  </PrimaryButton>
-                </a>
-                <a href="/contact" className="inline-block">
-                  <WhiteOutlineButton size="lg" className="w-full sm:w-auto border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white">
-                    Visit Showroom
-                  </WhiteOutlineButton>
-                </a>
+                  Get Instant Quote
+                </PrimaryButton>
+                <WhiteOutlineButton 
+                  size="lg" 
+                  className="w-full sm:w-auto border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white"
+                  onClick={() => {
+                    // Track conversion
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'conversion', {
+                        event_category: 'engagement',
+                        event_label: 'visit_showroom_laminate',
+                        value: 1
+                      });
+                    }
+                    
+                    // Navigate to contact page
+                    window.location.href = '/contact';
+                  }}
+                >
+                  Visit Showroom
+                </WhiteOutlineButton>
               </div>
             </div>
 
@@ -790,21 +841,53 @@ const LaminateFlooring = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a 
-              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
+            <GoldButton 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold"
+              onClick={() => {
+                // Track Google Ads conversion
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+
+                // Track Google Analytics conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'book_estimate_final_cta',
+                    value: 1
+                  });
+                }
+
+                // Open WhatsApp
+                const phoneNumber = "17863810964";
+                const message = "Hi! I'm ready to upgrade my floors with laminate flooring. Can you help me book a free estimate?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+              }}
             >
-              <GoldButton size="lg" className="px-8 py-4 text-lg font-semibold">
-                Book Free Estimate
-              </GoldButton>
-            </a>
-            <a href="/contact" className="inline-block">
-              <WhiteOutlineButton size="lg" className="px-8 py-4 text-lg font-semibold">
-                Visit Our Showroom
-              </WhiteOutlineButton>
-            </a>
+              Book Free Estimate
+            </GoldButton>
+            <WhiteOutlineButton 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold"
+              onClick={() => {
+                // Track conversion
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'visit_showroom_final_cta',
+                    value: 1
+                  });
+                }
+                
+                // Navigate to contact page
+                window.location.href = '/contact';
+              }}
+            >
+              Visit Our Showroom
+            </WhiteOutlineButton>
           </div>
 
           <p className="text-white/80">
