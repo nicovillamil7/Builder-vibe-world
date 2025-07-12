@@ -501,9 +501,16 @@ const LaminateFlooring = () => {
               size="lg" 
               className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto"
               onClick={() => {
-                document.getElementById('laminate-types')?.scrollIntoView({ 
-                  behavior: 'smooth' 
-                });
+                // Track navigation
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'navigation', {
+                    event_category: 'engagement',
+                    event_label: 'browse_styles_hero',
+                    value: 1
+                  });
+                }
+                // Navigate to products page
+                window.location.href = '/products';
               }}
             >
               Browse Styles
@@ -782,25 +789,24 @@ const LaminateFlooring = () => {
                 >
                   Get Instant Quote
                 </PrimaryButton>
-                <WhiteOutlineButton 
-                  size="lg" 
-                  className="w-full sm:w-auto border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white"
-                  onClick={() => {
-                    // Track conversion
-                    if (typeof (window as any).gtag === 'function') {
-                      (window as any).gtag('event', 'conversion', {
-                        event_category: 'engagement',
-                        event_label: 'visit_showroom_laminate',
-                        value: 1
-                      });
-                    }
-                    
-                    // Navigate to contact page
-                    window.location.href = '/contact';
-                  }}
-                >
-                  Visit Showroom
-                </WhiteOutlineButton>
+                <a href="/contact" className="w-full sm:w-auto">
+                  <WhiteOutlineButton 
+                    size="lg" 
+                    className="w-full border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white"
+                    onClick={() => {
+                      // Track conversion
+                      if (typeof (window as any).gtag === 'function') {
+                        (window as any).gtag('event', 'conversion', {
+                          event_category: 'engagement',
+                          event_label: 'visit_showroom_laminate',
+                          value: 1
+                        });
+                      }
+                    }}
+                  >
+                    Visit Showroom
+                  </WhiteOutlineButton>
+                </a>
               </div>
             </div>
 
@@ -869,25 +875,24 @@ const LaminateFlooring = () => {
             >
               Book Free Estimate
             </GoldButton>
-            <WhiteOutlineButton 
-              size="lg" 
-              className="px-8 py-4 text-lg font-semibold"
-              onClick={() => {
-                // Track conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'visit_showroom_final_cta',
-                    value: 1
-                  });
-                }
-                
-                // Navigate to contact page
-                window.location.href = '/contact';
-              }}
-            >
-              Visit Our Showroom
-            </WhiteOutlineButton>
+            <a href="/contact">
+              <WhiteOutlineButton 
+                size="lg" 
+                className="px-8 py-4 text-lg font-semibold"
+                onClick={() => {
+                  // Track conversion
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'conversion', {
+                      event_category: 'engagement',
+                      event_label: 'visit_showroom_final_cta',
+                      value: 1
+                    });
+                  }
+                }}
+              >
+                Visit Our Showroom
+              </WhiteOutlineButton>
+            </a>
           </div>
 
           <p className="text-white/80">
