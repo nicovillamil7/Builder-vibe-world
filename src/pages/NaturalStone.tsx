@@ -19,6 +19,7 @@ import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import GoogleReviews from "@/components/GoogleReviews";
+import Layout from "@/components/Layout";
 
 const NaturalStone = () => {
   const [openFAQ, setOpenFAQ] = React.useState<number | null>(null);
@@ -179,7 +180,7 @@ const NaturalStone = () => {
   ];
 
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>Natural Stone Flooring Miami | Travertine, Marble, Granite | Genesis Stone</title>
         <meta 
@@ -553,7 +554,7 @@ const NaturalStone = () => {
       </section>
 
       <WhatsAppButton />
-    </>
+    </Layout>
   );
 };
 
