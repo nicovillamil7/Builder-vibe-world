@@ -50,6 +50,18 @@ export const INTERNAL_LINKS: LinkMap = {
     title: 'Visit Our Flooring Showroom - Genesis Stone',
     type: 'internal',
     priority: 3
+  },
+  'ceramic tile': {
+    url: '/products',
+    title: 'Ceramic Tile Collection - Genesis Stone',
+    type: 'internal',
+    priority: 2
+  },
+  'professional installation': {
+    url: '/retail',
+    title: 'Professional Installation Services - Genesis Stone',
+    type: 'internal',
+    priority: 2
   }
 };
 
@@ -70,6 +82,12 @@ export const EXTERNAL_LINKS: LinkMap = {
   'Environmental Protection Agency': {
     url: 'https://www.epa.gov/',
     title: 'EPA - Environmental Standards',
+    type: 'external',
+    priority: 2
+  },
+  'home improvement': {
+    url: 'https://www.nahb.org/',
+    title: 'National Association of Home Builders - Home Improvement',
     type: 'external',
     priority: 2
   }
