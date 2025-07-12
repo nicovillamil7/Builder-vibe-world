@@ -21,7 +21,7 @@ const Products = () => {
       description:
         "High-performance and versatile, porcelain tiles offer exceptional durability, water resistance, and timeless design. Perfect for both indoor and outdoor spaces, they deliver a sophisticated look while standing up to heavy traffic and wear.",
       imageId: "porcelainLargeFormat",
-      hasDetailedPage: false,
+      hasDetailedPage: true,
     },
     {
       id: "natural-stone",
