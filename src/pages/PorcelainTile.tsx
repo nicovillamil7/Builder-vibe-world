@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -176,7 +175,7 @@ const PorcelainTile = () => {
           content="porcelain tile miami, waterproof tile, wood look porcelain, stone look porcelain, large format tile, outdoor porcelain tile, bathroom tile miami"
         />
         <link rel="canonical" href="https://genesisstoneusa.com/products/porcelain" />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content="Premium Porcelain Tile Miami | Waterproof & Durable | Genesis Stone" />
         <meta property="og:description" content="Transform your space with premium porcelain tile. Wood-look, stone-look, and large format options. Professional installation in Miami and South Florida." />
@@ -246,7 +245,7 @@ const PorcelainTile = () => {
             </span>
             <span className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              Miami & South Florida
+              3399 NW 72nd Ave #109, Miami, FL 33166
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -273,7 +272,7 @@ const PorcelainTile = () => {
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Elegant & Durable
@@ -283,7 +282,7 @@ const PorcelainTile = () => {
             Versatile, water-resistant, and perfect for any space — indoor or outdoor. 
             Discover the ultimate in style and performance.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <GoldButton 
               size="lg" 
@@ -519,7 +518,7 @@ const PorcelainTile = () => {
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Genesis Stone & More has been Miami's trusted porcelain tile specialist since 2008. We serve residential and commercial customers throughout South Florida with premium products and professional installation services.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-[rgb(138,0,0)]" />
@@ -611,7 +610,7 @@ const PorcelainTile = () => {
           <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
             Discover the beauty and durability of premium porcelain tile. Get expert guidance, competitive pricing, and professional installation from Miami's trusted tile specialists.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <GoldButton 
               size="lg" 
