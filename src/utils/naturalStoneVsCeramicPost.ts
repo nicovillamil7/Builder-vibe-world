@@ -99,3 +99,5 @@ const naturalStoneVsCeramicPost = {
     "dateModified": "2025-01-23"
   }
 };
+
+export { naturalStoneVsCeramicPost };
