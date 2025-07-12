@@ -258,7 +258,7 @@ const PorcelainTile = () => {
             Discover the ultimate in style and performance.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <GoldButton 
               size="lg" 
               className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto"
@@ -295,25 +295,6 @@ const PorcelainTile = () => {
             >
               See Porcelain Styles
             </WhiteOutlineButton>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm">
-            <a 
-              href="tel:+17863810964" 
-              className="flex items-center gap-2 hover:text-yellow-400 transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              (786) 381-0964
-            </a>
-            <a 
-              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-yellow-400 transition-colors"
-            >
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp Quote
-            </a>
           </div>
         </div>
       </section>
