@@ -391,7 +391,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     primary:
       "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     fallback:
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=880",
     alt: "Commercial space with natural stone flooring for heavy traffic areas",
     category: "natural-stone-applications",
   },

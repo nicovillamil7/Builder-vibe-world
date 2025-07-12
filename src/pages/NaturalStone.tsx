@@ -18,6 +18,7 @@ import {
 import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import GoogleReviews from "@/components/GoogleReviews";
 
 const NaturalStone = () => {
   const [openFAQ, setOpenFAQ] = React.useState<number | null>(null);
@@ -148,26 +149,7 @@ const NaturalStone = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Maria Rodriguez",
-      location: "Coral Gables, FL",
-      rating: 5,
-      text: "The travertine pool deck is amazing! Even in 90°F weather, we can walk barefoot comfortably."
-    },
-    {
-      name: "James Thompson", 
-      location: "Miami Beach, FL",
-      rating: 5,
-      text: "Genesis Stone transformed our kitchen with beautiful marble. The quality and service exceeded expectations."
-    },
-    {
-      name: "Sofia Martinez",
-      location: "Aventura, FL", 
-      rating: 5,
-      text: "Professional installation and stunning results. Our granite floors look incredible after 3 years."
-    }
-  ];
+  
 
   const faqs = [
     {
@@ -232,13 +214,61 @@ const NaturalStone = () => {
               Durable, luxurious, and perfect for any space — indoors or outdoors. 
               Cool-touch surfaces ideal for Miami's climate.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <GoldButton size="lg" className="text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button 
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[280px]"
+                onClick={() => {
+                  const phoneNumber = "13058340800";
+                  const message = "Hi! I'm interested in natural stone flooring for my project. Can you provide a free quote?";
+                  const encodedMessage = encodeURIComponent(message);
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                  // Track Google Ads conversion
+                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                    (window as any).gtag_report_conversion();
+                  }
+
+                  // Track Google Analytics conversion
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'conversion', {
+                      event_category: 'engagement',
+                      event_label: 'natural_stone_quote_hero',
+                      value: 1
+                    });
+                  }
+
+                  window.open(whatsappUrl, "_blank");
+                }}
+              >
                 Get a Free Quote
-              </GoldButton>
-              <WhiteOutlineButton size="lg" className="text-lg px-8 py-4">
+              </button>
+              <button 
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/10 min-w-[280px]"
+                onClick={() => {
+                  const phoneNumber = "13058340800";
+                  const message = "Hi! I'd like to schedule a free consultation for natural stone flooring. What's your availability?";
+                  const encodedMessage = encodeURIComponent(message);
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                  // Track Google Ads conversion
+                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                    (window as any).gtag_report_conversion();
+                  }
+
+                  // Track Google Analytics conversion
+                  if (typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'conversion', {
+                      event_category: 'engagement',
+                      event_label: 'natural_stone_consultation_hero',
+                      value: 1
+                    });
+                  }
+
+                  window.open(whatsappUrl, "_blank");
+                }}
+              >
                 Schedule Free Consultation
-              </WhiteOutlineButton>
+              </button>
             </div>
           </div>
         </div>
@@ -357,38 +387,8 @@ const NaturalStone = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Customer Testimonials
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              See why Miami homeowners choose Genesis Stone for their natural stone projects.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-amber-500 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4 italic">
-                  "{testimonial.text}"
-                </p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Customer Reviews Section */}
+      <GoogleReviews />
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
@@ -465,7 +465,7 @@ const NaturalStone = () => {
 
             <div className="bg-gray-100 rounded-lg overflow-hidden h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.344676653!2d-80.31468842404!3d25.79158007748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b92d2f8b8b8b%3A0x8b8b8b8b8b8b8b8b!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033122!5e0!3m2!1sen!2sus!4v1642000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.344676653!2d-80.31468842404!3d25.79158007748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ac2bf4e9d4c7%3A0x8e8f1a6b2f4e9a3c!2sGenesis%20Stone%20%26%20More%2C%203399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033122!5e0!3m2!1sen!2sus!4v1699000000000!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -490,17 +490,57 @@ const NaturalStone = () => {
             Get your personalized quote today.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <GoldButton size="lg" className="bg-white text-red-800 hover:bg-gray-100 text-lg px-8 py-4">
-                Book a Free Estimate
-              </GoldButton>
-            </Link>
-            <a href="https://wa.me/13058340800?text=Hi! I'm interested in natural stone flooring for my project. Can you provide a quote?">
-              <WhiteOutlineButton size="lg" className="border-white text-white hover:bg-white hover:text-red-800 text-lg px-8 py-4">
-                Get WhatsApp Quote
-              </WhiteOutlineButton>
-            </a>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button
+              className="bg-white text-red-800 hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[280px]"
+              onClick={() => {
+                const phoneNumber = "13058340800";
+                const message = "Hi! I'd like to book a free estimate for natural stone flooring. When would be a good time?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track conversions
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'natural_stone_estimate_final',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
+              Book a Free Estimate
+            </button>
+            <button
+              className="border-2 border-white text-white hover:bg-white hover:text-red-800 font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 min-w-[280px]"
+              onClick={() => {
+                const phoneNumber = "13058340800";
+                const message = "Hi! I'm interested in natural stone flooring for my project. Can you provide a WhatsApp quote?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Track conversions
+                if (typeof (window as any).gtag_report_conversion === 'function') {
+                  (window as any).gtag_report_conversion();
+                }
+                if (typeof (window as any).gtag === 'function') {
+                  (window as any).gtag('event', 'conversion', {
+                    event_category: 'engagement',
+                    event_label: 'natural_stone_whatsapp_final',
+                    value: 1
+                  });
+                }
+
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
+              Get WhatsApp Quote
+            </button>
           </div>
 
           <div className="mt-8 flex justify-center">
