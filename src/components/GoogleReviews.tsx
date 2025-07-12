@@ -1,8 +1,4 @@
-```
-```tool_code
-The code has been updated with improved API error handling, fallback reviews, and performance enhancements.
-```
-```replit_final_file
+
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, ExternalLink } from "lucide-react";
