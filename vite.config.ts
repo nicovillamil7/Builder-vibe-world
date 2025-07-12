@@ -42,8 +42,15 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
   },
   server: {
-    host: true, // allows Vite to auto-detect the host, same as '0.0.0.0' but more flexible
+    host: '0.0.0.0',
     port: 5000,
+    hmr: {
+      overlay: false,
+    },
+    watch: {
+      usePolling: true,
+      interval: 1000,
+    },
     allowedHosts: [
       "all",
       "19e6b561-60d5-41f5-a03a-c6e431e7f22c-00-15kr3vd6w5nau.janeway.replit.dev",

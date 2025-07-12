@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from "react";
 import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
 
@@ -92,88 +91,68 @@ export const ReliableImage: React.FC<ReliableImageProps> = ({
 
 // Simplified version for cases where you just need a reliable URL
 interface SimpleReliableImageProps {
-  imageId?: string;
   src?: string;
   alt: string;
   className?: string;
+  fallbackSrc?: string;
+  imageId?: string;
   width?: number;
   height?: number;
-  loading?: "lazy" | "eager";
-  format?: "webp" | "jpg" | "png";
-  quality?: number;
+  loading?: 'lazy' | 'eager';
+  style?: React.CSSProperties;
 }
 
 export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
-  imageId,
   src,
   alt,
   className = "",
-  width = 400,
-  height = 300,
+  fallbackSrc = "/placeholder.svg",
+  imageId,
+  width,
+  height,
   loading = "lazy",
-  format = "webp",
-  quality = 80,
+  style = {},
 }) => {
-  const [currentSrc, setCurrentSrc] = useState<string>("");
+  const [currentSrc, setCurrentSrc] = useState(src || fallbackSrc);
   const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   React.useEffect(() => {
-    if (imageId) {
-      // Get the reliable image URL directly from RELIABLE_IMAGES
-      const imageConfig = RELIABLE_IMAGES[imageId];
-      if (imageConfig) {
-        setCurrentSrc(imageConfig.primary);
-      } else {
-        console.warn(`Image ID "${imageId}" not found, using fallback`);
-        setCurrentSrc("/placeholder.svg");
-      }
-    } else if (src) {
+    if (src) {
       setCurrentSrc(src);
-    } else {
-      setCurrentSrc("/placeholder.svg");
+      setHasError(false);
+      setIsLoaded(false);
     }
-    setHasError(false);
-    setIsLoading(true);
-  }, [imageId, src]);
+  }, [src]);
 
-  const handleLoad = () => {
-    setIsLoading(false);
+  const handleError = () => {
+    if (!hasError) {
+      setHasError(true);
+      setCurrentSrc(fallbackSrc);
+    }
   };
 
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
-    setIsLoading(false);
-    
-    if (!hasError && imageId) {
-      setHasError(true);
-      const imageConfig = RELIABLE_IMAGES[imageId];
-      if (imageConfig && imageConfig.fallback !== imageConfig.primary) {
-        target.src = imageConfig.fallback;
-        return;
-      }
-    }
-    
-    // Final fallback
-    target.src = "/placeholder.svg";
+  const handleLoad = () => {
+    setIsLoaded(true);
+  };
+
+  const imageStyle = {
+    ...style,
+    ...(width && height ? { width, height } : {}),
+    ...(isLoaded ? {} : { backgroundColor: '#f3f4f6' }),
   };
 
   return (
     <img
       src={currentSrc}
       alt={alt}
-      className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-      onLoad={handleLoad}
+      className={className}
       onError={handleError}
-      loading={loading}
+      onLoad={handleLoad}
       width={width}
       height={height}
-      decoding="async"
-      fetchpriority={loading === "eager" ? "high" : "low"}
-      style={{
-        aspectRatio: `${width}/${height}`,
-        contentVisibility: loading === "lazy" ? "auto" : "visible",
-      }}
+      loading={loading}
+      style={imageStyle}
     />
   );
 };

@@ -60,28 +60,28 @@ const PorcelainTile = () => {
   const porcelainTypes = [
     {
       name: "Wood Look Porcelain",
-      description: "Authentic wood grain appearance with superior durability and waterproof performance for Miami homes",
+      description: "Authentic wood grain appearance with superior durability and waterproof performance for Miami homes. Perfect for achieving the warmth of hardwood without the maintenance concerns.",
       features: ["Realistic wood grain textures", "100% waterproof construction", "Fade and scratch resistant", "No seasonal expansion like real wood"],
       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt: "Wood look porcelain tile Miami - realistic oak and walnut grain patterns for living rooms and bedrooms"
     },
     {
       name: "Polished Porcelain",
-      description: "High-gloss finish that reflects light beautifully, creating bright and luxurious spaces throughout your home",
+      description: "High-gloss finish that reflects light beautifully, creating bright and luxurious spaces throughout your home. Ideal for formal areas and modern contemporary designs.",
       features: ["Mirror-like high-gloss finish", "Light-amplifying surface", "Stain and water resistant", "Premium aesthetic appeal"],
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt: "Polished porcelain tile Miami - high-gloss mirror finish for modern contemporary living spaces"
     },
     {
       name: "Matte Porcelain",
-      description: "Sophisticated non-slip finish that combines safety with elegant design for high-traffic areas",
+      description: "Sophisticated non-slip finish that combines safety with elegant design for high-traffic areas. Perfect for families with children and pet-friendly homes.",
       features: ["Non-slip textured surface", "Hides water spots and fingerprints", "Contemporary matte appearance", "Low maintenance requirements"],
       image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt: "Matte porcelain tile Miami - non-slip textured finish ideal for bathrooms and kitchen floors"
     },
     {
       name: "Satin Porcelain",
-      description: "Perfect balance between matte and polished finishes, offering subtle elegance with practical performance",
+      description: "Perfect balance between matte and polished finishes, offering subtle elegance with practical performance. Versatile option that works in both traditional and modern settings.",
       features: ["Soft satin sheen finish", "Balanced light reflection", "Easy to clean surface", "Versatile design compatibility"],
       image: "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt: "Satin porcelain tile Miami - subtle sheen finish for elegant residential and commercial applications"
