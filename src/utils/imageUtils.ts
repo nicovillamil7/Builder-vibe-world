@@ -411,8 +411,7 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
     fallback:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     alt: "Modern kitchen with natural stone countertops and backsplash",
-    category: "natural-stone-applications", surface",
-    category: "natural-stone-products",
+    category: "natural-stone-applications",
   },
 
   // VINYL & LAMINATE - Unique product images
