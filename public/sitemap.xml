@@ -107,13 +107,28 @@
   </url>
   <url>
     <loc>https://genesisstoneusa.com/products/natural-stone</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
     <image:image>
-      <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
-      <image:title>Natural Stone Flooring Miami - Marble, Granite, Travertine</image:title>
-      <image:caption>Premium natural stone flooring including marble, granite, travertine, slate, and limestone for Miami homes and businesses</image:caption>
+      <image:loc>https://images.unsplash.com/photo-1571902943202-507ec2618e8f</image:loc>
+      <image:title>Travertine Pool Deck Miami - Cool Touch Natural Stone</image:title>
+      <image:caption>Premium travertine pool decks and natural stone flooring for Miami homes - stays cool in heat, slip-resistant, luxury finish</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1584622781564-1d987f7333c1</image:loc>
+      <image:title>Marble Countertops Miami - Luxury Natural Stone</image:title>
+      <image:caption>Elegant marble countertops and flooring with natural veining patterns for Miami kitchens and bathrooms</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7</image:loc>
+      <image:title>Granite Flooring Miami - Durable Natural Stone</image:title>
+      <image:caption>High-durability granite flooring and surfaces for Miami commercial and residential applications</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1590725140738-115d4443ce6a</image:loc>
+      <image:title>Limestone Natural Stone Miami - Soft Neutral Tones</image:title>
+      <image:caption>Natural limestone flooring and wall applications with fossil inclusions and timeless appeal</image:caption>
     </image:image>
   </url>
   <url>
