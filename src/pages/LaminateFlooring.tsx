@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -185,7 +184,7 @@ const LaminateFlooring = () => {
           content="laminate flooring miami, wood look laminate, waterproof laminate, vinyl plank flooring, affordable hardwood alternative, florida laminate installation"
         />
         <link rel="canonical" href="https://genesisstoneusa.com/products/laminate-flooring" />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content="Premium Laminate Flooring Miami | Wood-Look & Waterproof | Genesis Stone" />
         <meta property="og:description" content="Transform your space with premium laminate flooring. Wood-look, tile-look, and waterproof options. Professional installation in Miami and South Florida." />
@@ -457,7 +456,7 @@ const LaminateFlooring = () => {
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Affordable Style with
@@ -467,7 +466,7 @@ const LaminateFlooring = () => {
             Get the wood look without the cost — durable, modern, and easy to maintain. 
             Perfect for Miami homes and Florida's climate.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <GoldButton 
               size="lg" 
@@ -713,7 +712,7 @@ const LaminateFlooring = () => {
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Genesis Stone & More has been Miami's trusted laminate flooring specialist since 2008. We serve residential and commercial customers throughout South Florida with premium products and professional installation services.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-[rgb(138,0,0)]" />
@@ -777,14 +776,14 @@ const LaminateFlooring = () => {
             <div className="relative">
               <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.4547892847845!2d-80.31703342375048!3d25.793532577354897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b2f6a8f0b0b3%3A0x4c9d7a9b8f5e6f7a!2s7200%20NW%2036th%20St%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sus!4v1706784567890!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.2837272827266!2d-80.31676668447075!3d26.13632098347089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90b5a1f5b5b5b%3A0x1234567890abcdef!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sus!4v1706784567890!5m2!1sen!2sus"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Genesis Stone & More - Laminate Flooring Miami Showroom Location - 7200 NW 36th St, Miami, FL 33166"
+                  title="Genesis Stone & More - Laminate Flooring Miami Showroom Location"
                   className="rounded-2xl"
                 />
               </div>
@@ -809,7 +808,7 @@ const LaminateFlooring = () => {
           <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
             Transform your space with beautiful, durable laminate flooring. Get expert guidance, competitive pricing, and professional installation from Miami's trusted flooring specialists.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <GoldButton 
               size="lg" 

@@ -150,7 +150,7 @@ const NaturalStone = () => {
     }
   ];
 
-  
+
 
   const faqs = [
     {
@@ -466,7 +466,7 @@ const NaturalStone = () => {
 
             <div className="bg-gray-100 rounded-lg overflow-hidden h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.344676653!2d-80.31468842404!3d25.79158007748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ac2bf4e9d4c7%3A0x8e8f1a6b2f4e9a3c!2sGenesis%20Stone%20%26%20More%2C%203399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033122!5e0!3m2!1sen!2sus!4v1699000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.2837272827266!2d-80.31676668447075!3d26.13632098347089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90b5a1f5b5b5b%3A0x1234567890abcdef!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sus!4v1706784567890!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
