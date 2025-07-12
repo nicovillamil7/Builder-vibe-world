@@ -24,6 +24,7 @@ import ServiceAreas from "./pages/ServicesAreas"; // Import the ServicesAreas co
 
 // Spanish pages
 import IndexES from "./pages/es/Index";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             {/* English routes */}
             <Route path="/" element={<Index />} />
