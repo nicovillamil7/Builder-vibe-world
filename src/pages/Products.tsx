@@ -1,8 +1,8 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
 import { getReliableImageUrl } from "@/utils/imageUtils";
-import { Shield, Users, Calculator } from "lucide-react";
+import { Shield, Users, Calculator, ArrowRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
@@ -11,6 +11,7 @@ import {
   GoldButton,
   WhiteOutlineButton,
 } from "@/components/ui/custom-buttons";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const productCategories = [
@@ -20,6 +21,7 @@ const Products = () => {
       description:
         "High-performance and versatile, porcelain tiles offer exceptional durability, water resistance, and timeless design. Perfect for both indoor and outdoor spaces, they deliver a sophisticated look while standing up to heavy traffic and wear.",
       imageId: "porcelainLargeFormat",
+      hasDetailedPage: false,
     },
     {
       id: "natural-stone",
@@ -27,6 +29,7 @@ const Products = () => {
       description:
         "Bring the beauty of nature into your space with our premium selection of natural stone. Each piece is unique in texture and pattern, offering unmatched elegance and durability for floors, walls, and architectural features.",
       imageId: "naturalTravertine",
+      hasDetailedPage: true,
     },
     {
       id: "laminates",
@@ -34,6 +37,7 @@ const Products = () => {
       description:
         "A cost-effective and stylish flooring solution, our laminate options replicate the look of hardwood and stone while providing excellent resistance to scratches, stains, and moisture—ideal for both residential and commercial projects.",
       imageId: "laminateHardwood",
+      hasDetailedPage: false,
     },
     {
       id: "decorative",
@@ -41,6 +45,7 @@ const Products = () => {
       description:
         "Transform any space with our decorative elements, including stunning wall panels, artistic mosaics, and metal trims. These finishing touches add personality and elevate your design to the next level.",
       imageId: "mosaicGlassFloor",
+      hasDetailedPage: false,
     },
   ];
 
@@ -273,6 +278,21 @@ const Products = () => {
                     View {category.name} Collection
                   </PrimaryButton>
                 </CardContent>
+                <CardFooter className="p-6 pt-0">
+                      {category.hasDetailedPage ? (
+                        <Link to={`/products/${category.id}`}>
+                          <GoldButton className="w-full group">
+                            Explore {category.name}
+                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </GoldButton>
+                        </Link>
+                      ) : (
+                        <GoldButton className="w-full group">
+                          Explore {category.name}
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </GoldButton>
+                      )}
+                    </CardFooter>
               </Card>
             ))}
           </div>
