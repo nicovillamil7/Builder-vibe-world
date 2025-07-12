@@ -58,7 +58,6 @@ const GoogleReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        // Simulate API call - in real implementation, this would call Google Places API
         console.log("API call failed.");
         
         // Use fallback reviews for demo

@@ -17,7 +17,7 @@ const products = [
     name: "Porcelain",
     description:
       "High-performance and versatile, porcelain tiles offer exceptional durability, water resistance, and timeless design. Perfect for both indoor and outdoor spaces.",
-    imageId: "porcelainTerrace",
+    imageId: "modernPoolDeck",
     category: "Premium",
   },
   {
@@ -33,7 +33,7 @@ const products = [
     name: "Laminates",
     description:
       "A cost-effective and stylish flooring solution that replicates the look of hardwood and stone while providing excellent resistance to scratches.",
-    imageId: "vinylLuxuryPlank",
+    imageId: "professionalInstallation",
     category: "Luxury",
   },
   {
