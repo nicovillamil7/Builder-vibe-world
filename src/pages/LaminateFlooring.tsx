@@ -175,10 +175,10 @@ const LaminateFlooring = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Laminate Flooring Miami | Wood-Look, Waterproof Options | Genesis Stone</title>
+        <title>Laminate Flooring Miami | Wood-Look & Waterproof Installation | Genesis Stone</title>
         <meta 
           name="description" 
-          content="Premium laminate flooring in Miami - wood-look, tile-look, and waterproof options. Affordable luxury with professional installation. Perfect for Florida homes and businesses."
+          content="Premium laminate flooring Miami - wood-look, waterproof & tile-look options. Professional installation, trade pricing, same-day quotes. Serving South Florida since 2008."
         />
         <meta 
           name="keywords" 
@@ -199,33 +199,79 @@ const LaminateFlooring = () => {
         <meta name="twitter:description" content="Wood-look, tile-look, and waterproof laminate flooring options for Miami homes and businesses." />
         <meta name="twitter:image" content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
 
-        {/* Structured Data */}
+        {/* Breadcrumb Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Laminate Flooring",
-            "description": "Premium laminate flooring collections including wood-look, tile-look, and waterproof options for residential and commercial applications.",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://genesisstoneusa.com/"
+              },
+              {
+                "@type": "ListItem", 
+                "position": 2,
+                "name": "Products",
+                "item": "https://genesisstoneusa.com/products"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Laminate Flooring",
+                "item": "https://genesisstoneusa.com/products/laminate-flooring"
+              }
+            ]
+          })}
+        </script>
+
+        {/* Enhanced Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["Product", "Service"],
+            "name": "Premium Laminate Flooring Miami",
+            "description": "Professional laminate flooring installation and supply in Miami. Wood-look, tile-look, and waterproof laminate options with expert installation services.",
             "brand": {
               "@type": "Brand",
               "name": "Genesis Stone & More"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "Genesis Stone & More",
+              "url": "https://genesisstoneusa.com",
+              "sameAs": [
+                "https://www.facebook.com/genesisstonefl",
+                "https://www.instagram.com/genesisstonefl"
+              ]
+            },
+            "category": ["Flooring", "Home Improvement", "Construction Materials"],
+            "keywords": "laminate flooring Miami, wood look laminate, waterproof laminate, flooring installation, Miami flooring contractor",
+            "serviceType": "Flooring Installation and Supply",
+            "provider": {
+              "@type": "Organization",
+              "name": "Genesis Stone & More",
+              "telephone": "+17863810964",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Miami",
+                "addressRegion": "FL",
+                "addressCountry": "US"
+              }
             },
             "offers": {
               "@type": "AggregateOffer",
               "availability": "https://schema.org/InStock",
               "priceCurrency": "USD",
               "lowPrice": "2.99",
-              "highPrice": "8.99",
+              "highPrice": "12.99",
               "priceValidUntil": "2025-12-31",
+              "url": "https://genesisstoneusa.com/products/laminate-flooring",
               "seller": {
                 "@type": "Organization",
-                "name": "Genesis Stone & More",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Miami",
-                  "addressRegion": "FL",
-                  "addressCountry": "US"
-                }
+                "name": "Genesis Stone & More"
               }
             },
             "aggregateRating": {
@@ -237,21 +283,169 @@ const LaminateFlooring = () => {
             },
             "image": [
               "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-              "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+              "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+              "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
             ],
-            "category": "Flooring",
-            "areaServed": {
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Miami",
+                "containedInPlace": {
+                  "@type": "State", 
+                  "name": "Florida"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Fort Lauderdale", 
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Florida"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "West Palm Beach",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Florida"
+                }
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Laminate Flooring Collection",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Wood-Look Laminate Flooring",
+                    "description": "Realistic wood grain patterns in oak, walnut, and driftwood finishes"
+                  }
+                },
+                {
+                  "@type": "Offer", 
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Waterproof Laminate Flooring",
+                    "description": "100% waterproof core technology for kitchens and bathrooms"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })}
+        </script>
+
+        {/* Local Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FlooringContractor",
+            "name": "Genesis Stone & More - Laminate Flooring Miami",
+            "image": "https://genesisstoneusa.com/placeholder.svg",
+            "telephone": "+17863810964",
+            "email": "genesistonemore@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Miami",
+              "addressRegion": "FL",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 25.7617,
+              "longitude": -80.1918
+            },
+            "url": "https://genesisstoneusa.com/products/laminate-flooring",
+            "sameAs": [
+              "https://www.facebook.com/genesisstonefl",
+              "https://www.instagram.com/genesisstonefl"
+            ],
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "17:00"
+            },
+            "serviceArea": {
               "@type": "GeoCircle",
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": "25.7617",
-                "longitude": "-80.1918"
+                "latitude": 25.7617,
+                "longitude": -80.1918
               },
-              "geoRadius": "50"
+              "geoRadius": "80"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Laminate Flooring Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Laminate Flooring Installation",
+                    "description": "Professional laminate flooring installation services in Miami"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service", 
+                    "name": "Laminate Flooring Supply",
+                    "description": "Premium laminate flooring products and materials"
+                  }
+                }
+              ]
             }
           })}
         </script>
       </Helmet>
+
+      {/* Top Bar */}
+      <div className="bg-[rgb(138,0,0)] text-white py-2 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+          <div className="flex items-center gap-4 mb-2 sm:mb-0">
+            <span className="flex items-center gap-2">
+              <Phone className="h-4 w-4" />
+              <a href="tel:+17863810964" className="hover:text-yellow-300">(786) 381-0964</a>
+            </span>
+            <span className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" />
+              Miami & South Florida
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a 
+              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-yellow-300"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Free WhatsApp Quote
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -432,7 +626,44 @@ const LaminateFlooring = () => {
         </div>
       </section>
 
-      
+      {/* Customer Testimonials - Business Console Style */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              What Our Customers Are Saying
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real experiences from satisfied customers who chose Genesis Stone for their laminate flooring projects.
+            </p>
+          </div>
+
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Customer Success Stories</h3>
+              <GoogleReviews />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-md">
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                  <div className="border-t pt-4">
+                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                    <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    <p className="text-sm text-[rgb(138,0,0)] font-medium">{testimonial.project}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
