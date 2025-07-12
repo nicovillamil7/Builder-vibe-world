@@ -271,28 +271,24 @@ const Products = () => {
                       <p>Glass mosaics, metal trims, wall panels, and decorative borders to create stunning focal points and finishing touches.</p>
                     )}
                   </div>
-                  <PrimaryButton 
-                    className="w-full min-h-[44px] group-hover:bg-[rgb(120,0,0)] transition-colors touch-manipulation"
-                    aria-label={`View ${category.name} collection`}
-                  >
-                    View {category.name} Collection
-                  </PrimaryButton>
+                  {category.hasDetailedPage ? (
+                    <Link to={`/products/${category.id}`}>
+                      <PrimaryButton 
+                        className="w-full min-h-[44px] group-hover:bg-[rgb(120,0,0)] transition-colors touch-manipulation"
+                        aria-label={`View ${category.name} collection`}
+                      >
+                        View {category.name} Collection
+                      </PrimaryButton>
+                    </Link>
+                  ) : (
+                    <PrimaryButton 
+                      className="w-full min-h-[44px] group-hover:bg-[rgb(120,0,0)] transition-colors touch-manipulation"
+                      aria-label={`View ${category.name} collection`}
+                    >
+                      View {category.name} Collection
+                    </PrimaryButton>
+                  )}
                 </CardContent>
-                <CardFooter className="p-6 pt-0">
-                      {category.hasDetailedPage ? (
-                        <Link to={`/products/${category.id}`}>
-                          <GoldButton className="w-full group">
-                            Explore {category.name}
-                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                          </GoldButton>
-                        </Link>
-                      ) : (
-                        <GoldButton className="w-full group">
-                          Explore {category.name}
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </GoldButton>
-                      )}
-                    </CardFooter>
               </Card>
             ))}
           </div>
