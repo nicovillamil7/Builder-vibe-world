@@ -1,5 +1,5 @@
 
-const naturalStoneVsCeramicPost = {
+export const naturalStoneVsCeramicPost = {
   id: "natural-stone-vs-ceramic-tile-cost-considerations",
   title: "Understanding the Cost Differences: Natural Stone vs. Ceramic Tile for Your Home",
   slug: "natural-stone-vs-ceramic-tile-cost-considerations",
