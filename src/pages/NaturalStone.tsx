@@ -454,7 +454,7 @@ const NaturalStone = () => {
                 <div className="flex items-center">
                   <MessageCircle className="w-6 h-6 text-amber-600 mr-3" />
                   <a href="https://wa.me/13058340800" className="text-gray-700 hover:text-amber-600">
-                    WhatsApp: (305) 834-0800
+                    WhatsApp: (305) 8340800
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -466,7 +466,7 @@ const NaturalStone = () => {
 
             <div className="bg-gray-100 rounded-lg overflow-hidden h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.2837272827266!2d-80.31676668447075!3d26.13632098347089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d90b5a1f5b5b5b%3A0x1234567890abcdef!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sus!4v1706784567890!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.3425890707464!2d-80.30823258448123!3d25.887426983540235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6a37e2e5c5d%3A0x9d8f7e6c5b4a3b2c!2s3399%20NW%2072nd%20Ave%20%23109%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sus!4v1737758867890!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
