@@ -429,17 +429,10 @@ const Index = () => {
             {/* Natural Stone Pool Deck - Strategic Link */}
             <a href="/products" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
-                src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Modern pool deck with large format porcelain tiles"
+                src="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F37ad3adaf8fd4909968a7295164d4eb7"
+                alt="Natural Stone Floors Miami - Pool Decks & Outdoor Spaces"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div
-                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F37ad3adaf8fd4909968a7295164d4eb7)",
-                }}
-              ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">Natural Stone Floors Miami</h4>
@@ -450,17 +443,10 @@ const Index = () => {
             {/* Porcelain Tiles Link */}
             <a href="/products/porcelain" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
-                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Luxury living room with marble accent wall"
+                src="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f"
+                alt="Porcelain Tiles Miami - Large Format & Premium Options"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div
-                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f)",
-                }}
-              ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">Porcelain Tiles Miami</h4>
@@ -471,17 +457,10 @@ const Index = () => {
             {/* Natural Stone Travertine Link */}
             <a href="/products" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
-                src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Natural stone travertine pool area with spa"
+                src="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F415bcd7e0a704d01a11986e13ecabc3a"
+                alt="Travertine Flooring Miami - Pool Decks & Luxury Homes"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div
-                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F415bcd7e0a704d01a11986e13ecabc3a)",
-                }}
-              ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">Travertine Flooring Miami</h4>
@@ -492,17 +471,10 @@ const Index = () => {
             {/* Porcelain Interior Link */}
             <a href="/products/porcelain" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
-                src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Modern white interior with polished porcelain"
+                src="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F5ca1a82e481b45e8b81cba03d3e6ad83?format=webp"
+                alt="Large Format Porcelain Tiles - Contemporary Clean Design"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div
-                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage:
-                    "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F5ca1a82e481b45e8b81cba03d3e6ad83?format=webp)",
-                }}
-              ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <h4 className="font-bold text-xl mb-2">Large Format Porcelain Tiles</h4>
@@ -514,7 +486,7 @@ const Index = () => {
             <a href="/products/laminates" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjgw3ne4za9mheafx9wrc5_1750117973_img_1-531f33?format=webp&width=800"
-                alt="Professional installation of luxury vinyl plank flooring"
+                alt="Luxury Vinyl Plank Miami - Professional Installation"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -528,7 +500,7 @@ const Index = () => {
             <a href="/products/mosaics" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjhp2ee2fbej2h3a8ybwn6_1750118078_img_1-73caf1?format=webp&width=800"
-                alt="Luxury mosaic artistry in spa design"
+                alt="Mosaic Tiles Miami - Custom Spa & Pool Design"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
