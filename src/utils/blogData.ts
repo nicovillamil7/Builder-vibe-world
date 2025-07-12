@@ -1012,5 +1012,18 @@ import { laminateFlooringPost } from './laminateFlooringPost';
 import { naturalStoneVsCeramicPost } from './naturalStoneVsCeramicPost';
 export const blogPosts = [
   naturalStoneVsCeramicPost,
-  laminateFlooringPost,
+  {
+    id: "benefits-of-laminate-flooring-for-enduring-elegance",
+    title: "Benefits of Laminate Flooring for Enduring Elegance",
+    slug: "benefits-of-laminate-flooring-for-enduring-elegance",
+    excerpt: "Discover how laminate flooring combines affordability with lasting beauty for your home renovation project.",
+    content: laminateFlooringPost.content,
+    publishedAt: "2025-01-21",
+    author: "Genesis Stone Team",
+    readTime: "8 min read",
+    tags: ["laminate flooring", "home renovation", "flooring benefits", "interior design"],
+    metaDescription: "Explore the comprehensive benefits of laminate flooring that combines elegance with practicality for modern homes in Miami.",
+    canonicalUrl: "https://genesisstoneusa.com/blog/benefits-of-laminate-flooring-for-enduring-elegance",
+    featuredImage: "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7c5feacc40d1433497e02a4682df187d"
+  },
 ];
