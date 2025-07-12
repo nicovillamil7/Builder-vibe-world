@@ -658,119 +658,7 @@ const LaminateFlooring = () => {
       </section>
 
       {/* Customer Success Stories */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Customer Success Stories
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why homeowners and contractors throughout South Florida trust Genesis Stone for premium laminate flooring solutions.
-            </p>
-          </div>
-
-          {/* Google Reviews Integration */}
-          <div className="text-center mb-16">
-            <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-2xl font-bold text-gray-900">4.9/5</span>
-              </div>
-              <p className="text-gray-600 mb-6">Based on 150+ verified customer reviews</p>
-              <GoogleReviews />
-            </div>
-          </div>
-
-          {/* Featured Testimonials */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Primary Testimonial */}
-            <div className="lg:col-span-2 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-2xl p-8 text-white">
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="flex justify-center mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-8 w-8 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <blockquote className="text-2xl md:text-3xl font-light italic mb-6 leading-relaxed">
-                  "Genesis Stone transformed our entire home with beautiful wood-look laminate. The installation was flawless and it's been three years with zero issues. Highly recommend!"
-                </blockquote>
-                <div className="border-t border-white/20 pt-6">
-                  <p className="text-xl font-semibold">Maria Rodriguez</p>
-                  <p className="text-white/80">Coral Gables • 1,500 sq ft whole house renovation</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Secondary Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <div className="text-sm text-gray-500">Kitchen & Dining</div>
-              </div>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                "The water-resistant laminate in our kitchen has been amazing. Easy to clean and looks exactly like real hardwood at half the price."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full flex items-center justify-center text-white font-semibold">
-                  J
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">James Wilson</p>
-                  <p className="text-sm text-gray-600">Aventura, FL</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <div className="text-sm text-gray-500">Commercial Space</div>
-              </div>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                "Professional installation and excellent customer service. Our office laminate floors still look brand new after three years of heavy use."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[rgb(138,0,0)] rounded-full flex items-center justify-center text-white font-semibold">
-                  S
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">Sandra Martinez</p>
-                  <p className="text-sm text-gray-600">Homestead, FL</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">Ready to join our satisfied customers?</p>
-            <a 
-              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <PrimaryButton size="lg" className="px-8 py-3">
-                Get Your Free Quote Today
-              </PrimaryButton>
-            </a>
-          </div>
-        </div>
-      </section>
+      <GoogleReviews />
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
@@ -889,14 +777,14 @@ const LaminateFlooring = () => {
             <div className="relative">
               <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.4547892847845!2d-80.31703342375048!3d25.793532577354897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b90e0c8e5555%3A0x1234567890abcdef!2s7200%20NW%2036th%20St%2C%20Miami%2C%20FL%2033166!5e0!3m2!1sen!2sus!4v1674567890123!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.4547892847845!2d-80.31703342375048!3d25.793532577354897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b2f6a8f0b0b3%3A0x4c9d7a9b8f5e6f7a!2s7200%20NW%2036th%20St%2C%20Miami%2C%20FL%2033166%2C%20USA!5e0!3m2!1sen!2sus!4v1706784567890!5m2!1sen!2sus"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Genesis Stone & More - Laminate Flooring Miami Showroom Location - 7200 NW 36th St, Miami, FL"
+                  title="Genesis Stone & More - Laminate Flooring Miami Showroom Location - 7200 NW 36th St, Miami, FL 33166"
                   className="rounded-2xl"
                 />
               </div>
