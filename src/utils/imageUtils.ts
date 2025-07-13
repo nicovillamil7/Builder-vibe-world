@@ -362,10 +362,19 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   naturalLimestone: {
     id: "naturalLimestone",
     primary:
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F[YOUR_NEW_IMAGE_ID]",
+    fallback:
       "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury limestone flooring in modern interior with floor-to-ceiling windows and premium finish",
+    category: "natural-stone-products",
+  },
+  luxuryLimestoneInterior: {
+    id: "luxuryLimestoneInterior",
+    primary:
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F[YOUR_NEW_IMAGE_ID]",
     fallback:
       "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Natural limestone with soft neutral tones and fossil inclusions",
+    alt: "Premium limestone flooring in luxury interior with large windows and contemporary design",
     category: "natural-stone-products",
   },
   naturalDolomite: {
