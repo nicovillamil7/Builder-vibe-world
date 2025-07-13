@@ -34,30 +34,6 @@ const hardcodedReviews: Review[] = [
     text: "Amazing travertine selection for my pool deck project. The expert guidance and quality materials made all the difference. Will definitely return for future projects!",
     time: Date.now() - 259200000,
     profile_photo_url: "https://lh3.googleusercontent.com/a/default-user=s40-c"
-  },
-  {
-    id: "4",
-    author_name: "David Chen",
-    rating: 5,
-    text: "Excellent trade pricing for our construction company. Fast delivery and consistent quality materials. Genesis Stone has become our go-to supplier for all commercial projects.",
-    time: Date.now() - 345600000,
-    profile_photo_url: "https://lh3.googleusercontent.com/a/default-user=s40-c"
-  },
-  {
-    id: "5",
-    author_name: "Ana Gutierrez",
-    rating: 5,
-    text: "Beautiful luxury vinyl plank selection! The showroom team was incredibly helpful in choosing the perfect flooring for our Miami condo. Love the waterproof features.",
-    time: Date.now() - 432000000,
-    profile_photo_url: "https://lh3.googleusercontent.com/a/default-user=s40-c"
-  },
-  {
-    id: "6",
-    author_name: "Michael Johnson",
-    rating: 5,
-    text: "Top-quality porcelain tiles and professional service. The installation guidance was invaluable for our home renovation project. Highly recommended!",
-    time: Date.now() - 518400000,
-    profile_photo_url: "https://lh3.googleusercontent.com/a/default-user=s40-c"
   }
 ];
 
