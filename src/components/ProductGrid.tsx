@@ -25,7 +25,7 @@ const products = [
     name: "Natural Stone",
     description:
       "Bring the beauty of nature into your space with our premium selection of natural stone. Each piece is unique in texture and pattern.",
-    imageId: "travertinePool",
+    imageId: "poolDeck",
     category: "Popular",
   },
   {
@@ -49,7 +49,7 @@ const products = [
     name: "Wall Panels",
     description:
       "Transform any room with our modern wall panels. Easy to install and maintain, they provide texture, depth, and character to interiors.",
-    imageId: "wallPanels",
+    imageId: "luxuryInterior",
     category: "Premium",
   },
   {
