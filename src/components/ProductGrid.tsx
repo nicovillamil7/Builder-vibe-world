@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import {
@@ -86,7 +87,6 @@ const ProductGrid = () => {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      // Reset to first slide when switching between mobile/desktop
       setCurrentIndex(0);
     };
 
@@ -94,7 +94,6 @@ const ProductGrid = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Generate structured data for products
   const productStructuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -133,14 +132,14 @@ const ProductGrid = () => {
 
   const getItemWidth = () => {
     if (typeof window !== 'undefined') {
-      return window.innerWidth < 768 ? 280 : 320; // Mobile vs desktop
+      return window.innerWidth < 768 ? 280 : 320;
     }
     return 320;
   };
 
   const getVisibleItems = () => {
     if (typeof window !== 'undefined') {
-      return window.innerWidth < 768 ? 1 : 3; // 1 item on mobile, 3 on desktop
+      return window.innerWidth < 768 ? 1 : 3;
     }
     return 3;
   };
@@ -148,11 +147,6 @@ const ProductGrid = () => {
   const itemWidth = getItemWidth();
   const visibleItems = getVisibleItems();
   const maxIndex = Math.max(0, products.length - visibleItems);
-
-  const scrollToIndex = (index: number) => {
-    const clampedIndex = Math.max(0, Math.min(index, maxIndex));
-    setCurrentIndex(clampedIndex);
-  };
 
   const nextSlide = () => {
     if (currentIndex < maxIndex) {
@@ -174,117 +168,106 @@ const ProductGrid = () => {
         </script>
       </Helmet>
       <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-            Our Selection
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our collection of flooring materials, carefully for
-            contractors, designers, and homeowners across South Florida.
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+              Our Selection
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Explore our collection of flooring materials, carefully selected for
+              contractors, designers, and homeowners across South Florida.
+            </p>
+          </div>
 
-        {/* Carousel Container */}
-        <div className="relative">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-            aria-label="Previous products"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 md:w-12 md:h-12 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
-          >
-            <ChevronLeft className="h-7 w-7 md:h-6 md:w-6" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            disabled={currentIndex >= maxIndex}
-            aria-label="Next products"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 md:w-12 md:h-12 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
-          >
-            <ChevronRight className="h-7 w-7 md:h-6 md:w-6" />
-          </button>
-
-          {/* Products Carousel */}
-          <div
-            className="overflow-hidden px-6 md:px-12"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            <div
-              className="flex gap-4 md:gap-8 transition-transform duration-500 ease-out pb-6"
-              style={{
-                transform: `translateX(-${currentIndex * (windowWidth < 768 ? 280 : itemWidth)}px)`,
-              }}
+          <div className="relative">
+            <button
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              aria-label="Previous products"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 md:w-12 md:h-12 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
             >
-              {products.map((product) => (
-                <Card
-                  key={product.id}
-                  className="flex-shrink-0 w-64 md:w-72 h-[480px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"
-                  style={{ borderRadius: "20px" }}
-                >
-                  <CardHeader className="p-0 flex-shrink-0">
-                    <div
-                      className="relative overflow-hidden"
-                      style={{ borderRadius: "20px 20px 0 0" }}
-                    >
-                      <SimpleReliableImage
-                        imageId={product.imageId}
-                        alt={product.name}
-                        className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      <Badge
-                        className="absolute top-4 right-4 bg-[rgb(138,0,0)]/90 hover:bg-[rgb(138,0,0)] text-white border-0 backdrop-blur-sm px-3 py-1 text-xs font-semibold"
-                        style={{ borderRadius: "12px" }}
-                      >
+              <ChevronLeft className="h-7 w-7 md:h-6 md:w-6" />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              disabled={currentIndex >= maxIndex}
+              aria-label="Next products"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-14 h-14 md:w-12 md:h-12 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:text-[rgb(138,0,0)] hover:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
+            >
+              <ChevronRight className="h-7 w-7 md:h-6 md:w-6" />
+            </button>
+
+            <div
+              className="overflow-hidden px-6 md:px-12"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              <div
+                className="flex gap-4 md:gap-8 transition-transform duration-500 ease-out pb-6"
+                style={{
+                  transform: `translateX(-${currentIndex * (windowWidth < 768 ? 280 : itemWidth)}px)`,
+                }}
+              >
+                {products.map((product) => (
+                  <Card
+                    key={product.id}
+                    className="flex-shrink-0 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group border-0 overflow-hidden"
+                    style={{ width: windowWidth < 768 ? '260px' : '300px' }}
+                  >
+                    <CardHeader className="p-0 relative">
+                      <div className="relative overflow-hidden">
+                        <SimpleReliableImage
+                          imageId={product.imageId}
+                          alt={product.name}
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <Badge className="absolute top-4 right-4 bg-[rgb(138,0,0)] text-white font-bold">
                         {product.category}
                       </Badge>
-                    </div>
-                  </CardHeader>
+                    </CardHeader>
 
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[rgb(138,0,0)] transition-colors duration-200">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed flex-1">
-                      {product.description}
-                    </p>
-                  </CardContent>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[rgb(138,0,0)] transition-colors duration-200">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {product.description}
+                      </p>
+                    </CardContent>
 
-                  <CardFooter className="px-6 pb-6 pt-0 flex-shrink-0">
-                    <OutlineButton
-                      className="w-full min-h-[44px] hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200 touch-manipulation"
-                      style={{ borderRadius: "12px" }}
-                      aria-label={`Get sample for ${product.name}`}
-                    >
-                      Get Sample
-                    </OutlineButton>
-                  </CardFooter>
-                </Card>
-              ))}
+                    <CardFooter className="p-6 pt-0 flex flex-col gap-3">
+                      <PrimaryButton 
+                        className="w-full"
+                        onClick={() => {
+                          const phoneNumber = "13058340800";
+                          const message = `Hi! I'm interested in ${product.name} flooring. Can you provide more information and pricing?`;
+                          const encodedMessage = encodeURIComponent(message);
+                          window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+                        }}
+                      >
+                        Get Quote
+                      </PrimaryButton>
+                      <OutlineButton 
+                        className="w-full"
+                        onClick={() => {
+                          const element = document.getElementById('contact-section');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                      >
+                        Learn More
+                      </OutlineButton>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-3">
-            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollToIndex(index)}
-                aria-label={`Go to slide ${index + 1}`}
-                className={`w-4 h-4 md:w-3 md:h-3 rounded-full transition-all duration-200 touch-manipulation ${
-                  index === currentIndex
-                    ? "bg-[rgb(138,0,0)] scale-125"
-                    : "bg-gray-400 hover:bg-gray-500"
-                }`}
-              />
-            ))}
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };
