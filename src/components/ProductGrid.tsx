@@ -81,7 +81,7 @@ const products = [
 
 const ProductGrid = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const [windowWidth, setWindowWidth] = useState(1024);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -90,6 +90,7 @@ const ProductGrid = () => {
       setCurrentIndex(0);
     };
 
+    setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -131,17 +132,11 @@ const ProductGrid = () => {
   };
 
   const getItemWidth = () => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth < 768 ? 280 : 320;
-    }
-    return 320;
+    return windowWidth < 768 ? 280 : 320;
   };
 
   const getVisibleItems = () => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth < 768 ? 1 : 3;
-    }
-    return 3;
+    return windowWidth < 768 ? 1 : 3;
   };
 
   const itemWidth = getItemWidth();

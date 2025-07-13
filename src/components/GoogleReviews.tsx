@@ -1,25 +1,16 @@
+
 import React from 'react';
 import { Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
-interface Review {
-  id: string;
-  author_name: string;
-  rating: number;
-  text: string;
-  time: number;
-  relative_time_description: string;
-}
-
 const GoogleReviews: React.FC = () => {
-  const reviews: Review[] = [
+  const reviews = [
     {
       id: '1',
       author_name: 'Michael Rodriguez',
       rating: 5,
       text: 'Outstanding service and quality products! Genesis Stone helped us transform our entire home with beautiful natural stone flooring. The team was professional and the installation was flawless.',
-      time: Date.now() - 86400000 * 7, // 7 days ago
       relative_time_description: 'a week ago'
     },
     {
@@ -27,7 +18,6 @@ const GoogleReviews: React.FC = () => {
       author_name: 'Sarah Johnson',
       rating: 5,
       text: 'Absolutely love our new porcelain tiles from Genesis Stone! The quality is exceptional and the customer service was top-notch. Highly recommend for anyone looking for premium flooring solutions.',
-      time: Date.now() - 86400000 * 14, // 14 days ago
       relative_time_description: '2 weeks ago'
     },
     {
@@ -35,7 +25,6 @@ const GoogleReviews: React.FC = () => {
       author_name: 'Carlos Martinez',
       rating: 5,
       text: 'Genesis Stone delivered exactly what they promised. Great selection, competitive prices, and excellent installation service. Our travertine pool deck looks amazing!',
-      time: Date.now() - 86400000 * 21, // 21 days ago  
       relative_time_description: '3 weeks ago'
     }
   ];
