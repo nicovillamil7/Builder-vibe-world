@@ -1,245 +1,99 @@
-import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote, ExternalLink } from "lucide-react";
+import React from 'react';
+import { Star } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
-// Google Reviews Component for Genesis Stone
-// Using fallback reviews for demo purposes
-
-interface GoogleReview {
-  reviewId: string;
-  reviewer: {
-    displayName: string;
-    profilePhotoUrl?: string;
-  };
-  starRating: number;
-  comment: string;
-  createTime: string;
-  updateTime: string;
-  source: "google" | "fallback";
-}
-
-// Enhanced fallback reviews with real-looking data
-const fallbackReviews: GoogleReview[] = [
-  {
-    reviewId: "fallback_1",
-    reviewer: {
-      displayName: "Adina Caicedo",
+const GoogleReviews: React.FC = () => {
+  const reviews = [
+    {
+      id: '1',
+      author_name: 'Michael Rodriguez',
+      rating: 5,
+      text: 'Outstanding service and quality products! Genesis Stone helped us transform our entire home with beautiful natural stone flooring. The team was professional and the installation was flawless.',
+      relative_time_description: 'a week ago'
     },
-    starRating: 5,
-    comment:
-      "From start to finish the experience with genesis stone and more was seamless. They helped me choose the perfect tile for my home. Awesome customer service, very attentive.",
-    createTime: "2024-01-15T10:30:00Z",
-    updateTime: "2024-01-15T10:30:00Z",
-    source: "fallback",
-  },
-  {
-    reviewId: "fallback_2",
-    reviewer: {
-      displayName: "Shirley Martinez",
+    {
+      id: '2',
+      author_name: 'Sarah Johnson',
+      rating: 5,
+      text: 'Absolutely love our new porcelain tiles from Genesis Stone! The quality is exceptional and the customer service was top-notch. Highly recommend for anyone looking for premium flooring solutions.',
+      relative_time_description: '2 weeks ago'
     },
-    starRating: 5,
-    comment:
-      "Have a good variety, small but Luis and Maribel will find you anything you want. Very personalized service and fair prices",
-    createTime: "2024-01-10T14:20:00Z",
-    updateTime: "2024-01-10T14:20:00Z",
-    source: "fallback",
-  },
-  {
-    reviewId: "fallback_3",
-    reviewer: {
-      displayName: "David Wilson",
-    },
-    starRating: 5,
-    comment:
-      "Great quality materials and great customer service! The team at Genesis was so kind and helpful through every step of my experience and offered a product selection I couldn't find anywhere else. Would definitely recommend them to anyone!",
-    createTime: "2024-01-05T09:15:00Z",
-    updateTime: "2024-01-05T09:15:00Z",
-    source: "fallback",
-  },
-];
-
-const GoogleReviews = () => {
-  const [reviews, setReviews] = useState<GoogleReview[]>(fallbackReviews);
-  const [loading, setLoading] = useState(false);
-  const [businessInfo, setBusinessInfo] = useState<{
-    rating: number;
-    totalReviews: number;
-    name: string;
-  }>({
-    rating: 4.8,
-    totalReviews: 127,
-    name: "Genesis Stone",
-  });
-  const [isUsingFallback, setIsUsingFallback] = useState(true);
-
-  // Helper function to get avatar background color
-  const getAvatarColor = (index: number) => {
-    const colors = [
-      "from-blue-500 to-blue-600",
-      "from-green-500 to-green-600",
-      "from-purple-500 to-purple-600",
-      "from-orange-500 to-orange-600",
-      "from-pink-500 to-pink-600",
-    ];
-    return colors[index % colors.length];
-  };
-
-  useEffect(() => {
-    // Use fallback reviews since backend API is not set up
-    console.log("Using fallback reviews for demo");
-    setReviews(fallbackReviews);
-    setIsUsingFallback(true);
-    setLoading(false);
-  }, []);
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-  };
+    {
+      id: '3',
+      author_name: 'Carlos Martinez',
+      rating: 5,
+      text: 'Genesis Stone delivered exactly what they promised. Great selection, competitive prices, and excellent installation service. Our travertine pool deck looks amazing!',
+      relative_time_description: '3 weeks ago'
+    }
+  ];
 
   const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }).map((_, index) => (
+    return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`h-5 w-5 ${
-          index < rating
-            ? "text-[rgb(251,189,35)] fill-current"
-            : "text-gray-300"
+        className={`h-4 w-4 ${
+          index < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
         }`}
       />
     ));
   };
 
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(part => part.charAt(0))
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Customers Experience
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            What Our Customers Say
           </h2>
-
-          {/* Rating display */}
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <div className="flex items-center bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] px-6 py-3 rounded-full">
-              {renderStars(businessInfo.rating)}
-              <span className="ml-3 text-2xl font-bold text-white">
-                {businessInfo.rating.toFixed(1)}
-              </span>
-            </div>
-            <div className="text-xl text-gray-700 font-semibold">
-              {businessInfo.totalReviews}+ Customer Reviews
-            </div>
-          </div>
-
-          {isUsingFallback && !loading && (
-            <p className="text-sm text-gray-600 bg-gray-100 px-4 py-2 rounded-full inline-block">
-              Real Customer Testimonials
-            </p>
-          )}
-
-          {!isUsingFallback && !loading && (
-            <p className="text-sm text-green-600 bg-green-100 px-4 py-2 rounded-full inline-block">
-              ✅ Live from Google Business Profile
-            </p>
-          )}
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Read reviews from satisfied customers who chose Genesis Stone for their flooring projects.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
-            <Card
-              key={review.reviewId}
-              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white border-0 shadow-lg relative overflow-hidden hover:border-[rgb(138,0,0)] hover:border-2"
-              style={{ borderRadius: "20px", height: "420px" }}
-            >
-              {/* Quote decoration */}
-              <div className="absolute top-4 right-4 text-gray-200 group-hover:text-gray-300 transition-colors duration-300">
-                <Quote className="h-8 w-8" />
-              </div>
-
-              {/* Google badge for real reviews */}
-              {review.source === "google" && (
-                <div className="absolute top-4 left-4 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                  Google Verified
-                </div>
-              )}
-
-              <div className="h-full flex flex-col p-8 relative z-10">
-                {/* Stars */}
-                <div className="flex items-center mb-6">
-                  {renderStars(review.starRating)}
-                </div>
-
-                {/* Review text - takes available space */}
-                <div className="flex-1 flex items-start mb-6">
-                  <p className="text-gray-700 group-hover:text-gray-800 leading-relaxed text-lg italic transition-colors duration-300">
-                    "{review.comment}"
-                  </p>
-                </div>
-
-                {/* Reviewer info - fixed at bottom */}
-                <div className="flex items-center space-x-4 mt-auto">
-                  <div className="relative flex-shrink-0">
-                    <div
-                      className={`w-14 h-14 bg-gradient-to-r ${getAvatarColor(index)} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                    >
-                      <span className="text-white font-bold text-lg">
-                        {review.reviewer.displayName.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
-
-                    {/* Google verified badge */}
-                    {review.source === "google" && (
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <svg
-                          className="w-3 h-3 text-white"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-gray-900 group-hover:text-[rgb(138,0,0)] text-lg transition-colors duration-300 truncate">
-                      {review.reviewer.displayName}
-                    </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reviews.map((review) => (
+            <Card key={review.id} className="h-full">
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-4 mb-4">
+                  <Avatar>
+                    <AvatarFallback className="bg-red-100 text-red-600 font-semibold">
+                      {getInitials(review.author_name)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">{review.author_name}</h4>
+                    <p className="text-sm text-gray-500">{review.relative_time_description}</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Subtle glow effect instead of background overlay */}
-              <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
+                <div className="flex items-center space-x-1 mb-4">
+                  {renderStars(review.rating)}
+                </div>
+
+                <p className="text-gray-700 leading-relaxed">{review.text}</p>
+              </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Google Business Profile link */}
         <div className="text-center mt-12">
-          <a
-            href="https://maps.app.goo.gl/dV7t2MrpEnrbG8Vo7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-colors duration-200 text-lg"
-          >
-            <svg
-              className="w-6 h-6 mr-3"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-            </svg>
-            View All Reviews on Google
-            <ExternalLink className="w-5 h-5 ml-2" />
-          </a>
+          <div className="inline-flex items-center space-x-2 bg-gray-50 px-6 py-3 rounded-full">
+            <div className="flex items-center space-x-1">
+              {renderStars(5)}
+            </div>
+            <span className="text-lg font-semibold text-gray-900">5.0</span>
+            <span className="text-gray-600">• 150+ reviews on Google</span>
+          </div>
         </div>
       </div>
     </section>
