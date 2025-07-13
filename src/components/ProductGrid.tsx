@@ -49,7 +49,7 @@ const products = [
     name: "Wall Panels",
     description:
       "Transform any room with our modern wall panels. Easy to install and maintain, they provide texture, depth, and character to interiors.",
-    imageId: "wallPanels",
+    imageId: "luxuryInterior",
     category: "Premium",
   },
   {
