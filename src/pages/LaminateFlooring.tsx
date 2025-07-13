@@ -419,33 +419,6 @@ const LaminateFlooring = () => {
         </script>
       </Helmet>
 
-      {/* Top Bar */}
-      <div className="bg-[rgb(138,0,0)] text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
-          <div className="flex items-center gap-4 mb-2 sm:mb-0">
-            <span className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <a href="tel:+17863810964" className="hover:text-yellow-300">(786) 381-0964</a>
-            </span>
-            <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              3399 NW 72nd Ave #109, Miami, FL 33166
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a 
-              href={`https://wa.me/17863810964?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-yellow-300"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Free WhatsApp Quote
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
