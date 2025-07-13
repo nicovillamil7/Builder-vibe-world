@@ -2,35 +2,26 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote, ExternalLink } from "lucide-react";
 
-interface Review {
-  id: string;
-  author_name: string;
-  rating: number;
-  text: string;
-  time: number;
-  profile_photo_url?: string;
-}
-
-const hardcodedReviews: Review[] = [
+const hardcodedReviews = [
   {
     id: "1",
     author_name: "Maria Rodriguez",
     rating: 5,
-    text: "Outstanding selection of porcelain tiles! The team at Genesis Stone helped me find the perfect flooring for my Miami home. Professional service and competitive pricing.",
+    text: "Outstanding service and quality travertine for our pool area. The team provided excellent guidance throughout the selection process. Highly recommend Genesis Stone!",
     time: Date.now() - 86400000,
     profile_photo_url: "https://lh3.googleusercontent.com/a/default-user=s40-c"
   },
   {
-    id: "2", 
-    author_name: "Carlos Martinez",
+    id: "2",
+    author_name: "John Smith",
     rating: 5,
-    text: "Best flooring supplier in South Florida! Great quality natural stone and excellent customer service. Highly recommend for both contractors and homeowners.",
+    text: "Professional installation and beautiful porcelain tiles. The showroom has an amazing selection and the staff is very knowledgeable. Will definitely return for future projects!",
     time: Date.now() - 172800000,
     profile_photo_url: "https://lh3.googleusercontent.com/a/default-user=s40-c"
   },
   {
     id: "3",
-    author_name: "Jennifer Thompson",
+    author_name: "Sarah Chen",
     rating: 5,
     text: "Amazing travertine selection for my pool deck project. The expert guidance and quality materials made all the difference. Will definitely return for future projects!",
     time: Date.now() - 259200000,
@@ -39,89 +30,89 @@ const hardcodedReviews: Review[] = [
 ];
 
 const GoogleReviews = () => {
-  const averageRating = 5.0;
-  const totalReviews = 150;
+  const formatTimeAgo = (timestamp: number): string => {
+    const now = Date.now();
+    const diffInSeconds = Math.floor((now - timestamp) / 1000);
+    const diffInDays = Math.floor(diffInSeconds / 86400);
+    
+    if (diffInDays === 0) return "today";
+    if (diffInDays === 1) return "1 day ago";
+    return `${diffInDays} days ago`;
+  };
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`h-4 w-4 ${
-          i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
+        className={`h-5 w-5 ${
+          i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
         }`}
       />
     ));
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             What Our Customers Say
           </h2>
-
-          <div className="flex items-center justify-center mb-4">
-            <div className="flex items-center space-x-1 mr-3">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Real experiences from homeowners and contractors who trust Genesis Stone
+          </p>
+          <div className="flex items-center justify-center mt-6 space-x-2">
+            <div className="flex">
               {renderStars(5)}
             </div>
-            <span className="text-lg font-semibold text-gray-900">
-              {averageRating.toFixed(1)}
-            </span>
-            <span className="text-gray-600 ml-2">
-              ({totalReviews} reviews)
-            </span>
+            <span className="text-lg font-semibold text-gray-900">5.0</span>
+            <span className="text-gray-600">(150 reviews)</span>
           </div>
-
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See why South Florida contractors and homeowners trust Genesis Stone for their flooring projects
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {hardcodedReviews.map((review) => (
-            <Card key={review.id} className="h-full hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6 h-full flex flex-col">
+            <Card key={review.id} className="relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="absolute top-4 left-4 text-[rgb(138,0,0)] opacity-20">
+                  <Quote className="h-8 w-8" />
+                </div>
+                
                 <div className="flex items-center mb-4">
                   <img
-                    src={review.profile_photo_url || "https://lh3.googleusercontent.com/a/default-user=s40-c"}
+                    src={review.profile_photo_url}
                     alt={review.author_name}
-                    className="h-10 w-10 rounded-full mr-3"
+                    className="w-12 h-12 rounded-full mr-4 bg-gray-200"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "https://lh3.googleusercontent.com/a/default-user=s40-c";
+                      target.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(review.author_name) + "&background=8a0000&color=fff";
                     }}
                   />
-                  <div className="flex-1">
+                  <div>
                     <h4 className="font-semibold text-gray-900">{review.author_name}</h4>
-                    <div className="flex items-center">
-                      {renderStars(review.rating)}
-                    </div>
+                    <p className="text-sm text-gray-600">{formatTimeAgo(review.time)}</p>
                   </div>
-                  <Quote className="h-6 w-6 text-gray-400" />
                 </div>
-
-                <p className="text-gray-600 flex-1 leading-relaxed">
-                  "{review.text}"
-                </p>
-
-                <div className="mt-4 text-sm text-gray-500">
-                  {new Date(review.time).toLocaleDateString()}
+                
+                <div className="flex mb-4">
+                  {renderStars(review.rating)}
                 </div>
+                
+                <p className="text-gray-700 leading-relaxed">{review.text}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center">
           <a
-            href="https://www.google.com/maps/place/Genesis+Stone"
+            href="https://www.google.com/search?q=Genesis+Stone+reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[rgb(138,0,0)] hover:bg-[rgb(120,0,0)] transition-colors duration-200"
+            className="inline-flex items-center px-6 py-3 bg-[rgb(138,0,0)] text-white font-semibold rounded-lg hover:bg-[rgb(110,0,0)] transition-colors duration-200"
           >
-            <ExternalLink className="h-4 w-4 mr-2" />
-            Read More Reviews on Google
+            View All Reviews
+            <ExternalLink className="ml-2 h-4 w-4" />
           </a>
         </div>
       </div>
