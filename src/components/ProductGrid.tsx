@@ -174,7 +174,7 @@ const ProductGrid = () => {
               Our Selection
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore our collection of flooring materials, carefully for
+              Explore our collection of flooring materials, carefully selected for
               contractors, designers, and homeowners across South Florida.
             </p>
           </div>
