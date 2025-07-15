@@ -449,6 +449,92 @@ const PorcelainTile = () => {
         </div>
       </section>
 
+      {/* Location & Service Area */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Serving Miami & South Florida
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Genesis Stone & More has been Miami's trusted porcelain tile specialist since 2008. We serve residential and commercial customers throughout South Florida with premium products and professional installation services.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-[rgb(138,0,0)]" />
+                  <span className="text-gray-700">Miami-Dade, Broward, and Palm Beach Counties</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-[rgb(138,0,0)]" />
+                  <a href="tel:+17863810964" className="text-gray-700 hover:text-[rgb(138,0,0)]">(786) 381-0964</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MessageCircle className="h-5 w-5 text-[rgb(138,0,0)]" />
+                  <span className="text-gray-700">Same-day quotes via WhatsApp</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <PrimaryButton 
+                  size="lg" 
+                  className="w-full sm:w-auto"
+                  onClick={() => {
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'conversion', {
+                        event_category: 'engagement',
+                        event_label: 'instant_quote_location_porcelain',
+                        value: 1
+                      });
+                    }
+                    const phoneNumber = "17863810964";
+                    const message = "Hi! I'm interested in porcelain tile for my project. Can you help me with pricing and options?";
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                >
+                  Get Instant Quote
+                </PrimaryButton>
+                <a href="/contact" className="w-full sm:w-auto">
+                  <WhiteOutlineButton 
+                    size="lg" 
+                    className="w-full border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white"
+                    onClick={() => {
+                      if (typeof (window as any).gtag === 'function') {
+                        (window as any).gtag('event', 'conversion', {
+                          event_category: 'engagement',
+                          event_label: 'visit_showroom_porcelain',
+                          value: 1
+                        });
+                      }
+                    }}
+                  >
+                    Visit Showroom
+                  </WhiteOutlineButton>
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="aspect-w-16 aspect-h-12 rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://maps.google.com/maps?cid=27303253618402823&output=embed"
+                  loading="lazy"
+                  width="600px"
+                  height="450px"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Map"
+                  allowFullScreen
+                  style={{ border: '0' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       
 
       {/* Final CTA */}
