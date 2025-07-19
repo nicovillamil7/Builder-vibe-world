@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile-first optimizations */
+@layer base {
+  /* Optimize font loading for mobile */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Reduce motion for better mobile performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Mobile viewport optimization */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Optimize touch targets for mobile */
+  button, [role="button"], input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { PrimaryButton, OutlineButton } from "@/components/ui/custom-buttons";
 import {
@@ -208,7 +207,7 @@ const ProductGrid = () => {
                   transform: `translateX(-${currentIndex * (windowWidth < 768 ? 280 : itemWidth)}px)`,
                 }}
               >
-                {products.map((product) => (
+                {products.map((product, index) => (
                   <Card
                     key={product.id}
                     className="flex-shrink-0 w-64 md:w-72 h-[480px] group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-lg flex flex-col"

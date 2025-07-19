@@ -1,5 +1,4 @@
-
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
 
 interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -144,7 +143,7 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
   const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const target = e.target as HTMLImageElement;
     setIsLoading(false);
-    
+
     if (!hasError && imageId) {
       setHasError(true);
       const imageConfig = RELIABLE_IMAGES[imageId];
@@ -153,7 +152,7 @@ export const SimpleReliableImage: React.FC<SimpleReliableImageProps> = ({
         return;
       }
     }
-    
+
     // Final fallback
     target.src = "/placeholder.svg";
   };
