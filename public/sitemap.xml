@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://genesisstoneusa.com/</loc>
     <lastmod>2025-01-21</lastmod>
@@ -17,8 +18,47 @@
     <lastmod>2025-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/grout-collection.jpg</image:loc>
+      <image:title>Professional Grout Solutions - Genesis Stone</image:title>
+      <image:caption>High-quality grout products for tile and stone installations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/laminate-flooring-collection.jpg</image:loc>
+      <image:title>Luxury Laminate Flooring Collection - Genesis Stone</image:title>
+      <image:caption>Premium laminate flooring options for residential and commercial projects</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/metal-trim-collection.jpg</image:loc>
+      <image:title>Metal Trim and Edge Solutions - Genesis Stone</image:title>
+      <image:caption>Professional metal trims and edge solutions for tile installations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/mortar-mix-collection.jpg</image:loc>
+      <image:title>Professional Mortar Mix Products - Genesis Stone</image:title>
+      <image:caption>High-performance mortar mix solutions for tile and stone installation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/mosaic-tile-collection.jpg</image:loc>
+      <image:title>Mosaic Tile Collection - Genesis Stone</image:title>
+      <image:caption>Stunning mosaic tiles for decorative and functional applications</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
+      <image:title>Natural Stone Collection - Genesis Stone</image:title>
+      <image:caption>Premium natural stone products including marble, granite, and travertine</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/porcelain-tile-collection.jpg</image:loc>
+      <image:title>Porcelain Tile Collection - Genesis Stone</image:title>
+      <image:caption>High-quality porcelain tiles for residential and commercial applications</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/wall-panel-collection.jpg</image:loc>
+      <image:title>Wall Panel Solutions - Genesis Stone</image:title>
+      <image:caption>Modern wall panel systems for interior and exterior applications</image:caption>
+    </image:image>
   </url>
-<<<<<<< HEAD
   
   <!-- Individual Product Category Pages -->
   <url>
@@ -34,6 +74,17 @@
   </url>
   <url>
     <loc>https://genesisstoneusa.com/products/laminates</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/laminate-flooring-collection.jpg</image:loc>
+      <image:title>Luxury Laminate Flooring Collection - Genesis Stone</image:title>
+      <image:caption>Premium laminate flooring options for residential and commercial projects</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/products/laminate-flooring</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -76,14 +127,11 @@
       <image:caption>Stunning mosaic tiles for decorative and functional applications</image:caption>
     </image:image>
   </url>
-=======
->>>>>>> origin/main
   <url>
     <loc>https://genesisstoneusa.com/products/natural-stone</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-<<<<<<< HEAD
     <image:image>
       <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
       <image:title>Natural Stone Collection - Genesis Stone</image:title>
@@ -114,50 +162,60 @@
   </url>
   
   <!-- Service Pages -->
-=======
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/porcelain-tile</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/laminate-flooring</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
->>>>>>> origin/main
   <url>
     <loc>https://genesisstoneusa.com/retail</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/retail-showroom.jpg</image:loc>
+      <image:title>Genesis Stone Retail Showroom</image:title>
+      <image:caption>Visit our showroom for personalized flooring consultation</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://genesisstoneusa.com/wholesale</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/wholesale-warehouse.jpg</image:loc>
+      <image:title>Genesis Stone Wholesale Operations</image:title>
+      <image:caption>Trade pricing and volume discounts for contractors</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://genesisstoneusa.com/about</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/genesis-stone-team.jpg</image:loc>
+      <image:title>Genesis Stone Team</image:title>
+      <image:caption>Meet the experienced professionals behind Genesis Stone</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://genesisstoneusa.com/contact</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/contact-location.jpg</image:loc>
+      <image:title>Genesis Stone Contact Information</image:title>
+      <image:caption>Visit our showroom or contact us for flooring consultation</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://genesisstoneusa.com/service-areas</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/south-florida-service-map.jpg</image:loc>
+      <image:title>Genesis Stone Service Areas</image:title>
+      <image:caption>Serving South Florida with premium flooring solutions</image:caption>
+    </image:image>
   </url>
   
   <!-- Blog Section -->
@@ -166,6 +224,11 @@
     <lastmod>2025-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/flooring-blog.jpg</image:loc>
+      <image:title>Genesis Stone Flooring Blog</image:title>
+      <image:caption>Expert advice and tips for flooring installation and maintenance</image:caption>
+    </image:image>
   </url>
   
   <!-- Blog Posts - Updated with actual repository content -->
@@ -234,5 +297,48 @@
       <image:title>Natural Stone vs Ceramic Tile Cost Considerations</image:title>
       <image:caption>Comprehensive guide to understanding cost differences between natural stone and ceramic tile for home renovations</image:caption>
     </image:image>
+  </url>
+
+  <!-- Spanish Language Pages -->
+  <url>
+    <loc>https://genesisstoneusa.com/es/</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/placeholder.svg</image:loc>
+      <image:title>Genesis Stone - Soluciones Premium de Pisos</image:title>
+      <image:caption>Proveedor premier de pisos en el sur de Florida</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/products</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/retail</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/wholesale</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/about</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/es/contact</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
