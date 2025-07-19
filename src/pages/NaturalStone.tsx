@@ -134,7 +134,8 @@ const NaturalStone = () => {
       name: "Granite",
       description:
         "Ultra-durable igneous rock with superior strength and stunning speckled patterns",
-      imageId: "naturalGranite",
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F752cb8e8215b4da698733a7ef3e1ed3d",
       features: [
         "Scratch resistant",
         "Stain resistant",
