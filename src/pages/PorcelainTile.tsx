@@ -98,6 +98,8 @@ const PorcelainTile = () => {
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt:
         "Polished porcelain tile Miami - high-gloss mirror finish for modern contemporary living spaces",
+      overlayImage:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F7e3d69cf9c3a4d03aede0dbeb49a0843",
     },
     {
       name: "Matte Porcelain",
