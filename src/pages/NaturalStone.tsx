@@ -121,7 +121,8 @@ const NaturalStone = () => {
       name: "Travertine",
       description:
         "Cool-touch limestone perfect for pool decks, patios, and outdoor living spaces",
-      imageId: "poolDeck",
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F8b2f09499d21483cb694602313286f4b",
       features: [
         "Non-slip surface",
         "Cool-touch technology",
