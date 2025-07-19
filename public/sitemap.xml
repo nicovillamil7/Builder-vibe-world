@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
@@ -30,21 +29,6 @@
       <image:caption>Premium laminate flooring options for residential and commercial projects</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://genesisstoneusa.com/images/metal-trim-collection.jpg</image:loc>
-      <image:title>Metal Trim and Edge Solutions - Genesis Stone</image:title>
-      <image:caption>Professional metal trims and edge solutions for tile installations</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/mortar-mix-collection.jpg</image:loc>
-      <image:title>Professional Mortar Mix Products - Genesis Stone</image:title>
-      <image:caption>High-performance mortar mix solutions for tile and stone installation</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/mosaic-tile-collection.jpg</image:loc>
-      <image:title>Mosaic Tile Collection - Genesis Stone</image:title>
-      <image:caption>Stunning mosaic tiles for decorative and functional applications</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
       <image:title>Natural Stone Collection - Genesis Stone</image:title>
       <image:caption>Premium natural stone products including marble, granite, and travertine</image:caption>
@@ -54,25 +38,31 @@
       <image:title>Porcelain Tile Collection - Genesis Stone</image:title>
       <image:caption>High-quality porcelain tiles for residential and commercial applications</image:caption>
     </image:image>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/wall-panel-collection.jpg</image:loc>
-      <image:title>Wall Panel Solutions - Genesis Stone</image:title>
-      <image:caption>Modern wall panel systems for interior and exterior applications</image:caption>
-    </image:image>
   </url>
   <url>
-    <loc>https://genesisstoneusa.com/products/grout</loc>
+    <loc>https://genesisstoneusa.com/products/natural-stone</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://genesisstoneusa.com/images/grout-collection.jpg</image:loc>
-      <image:title>Professional Grout Solutions - Genesis Stone</image:title>
-      <image:caption>High-quality grout products for tile and stone installations</image:caption>
+      <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
+      <image:title>Natural Stone Collection - Genesis Stone</image:title>
+      <image:caption>Premium natural stone products including marble, granite, and travertine</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://genesisstoneusa.com/products/laminates</loc>
+    <loc>https://genesisstoneusa.com/products/porcelain-tile</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://genesisstoneusa.com/images/porcelain-tile-collection.jpg</image:loc>
+      <image:title>Porcelain Tile Collection - Genesis Stone</image:title>
+      <image:caption>High-quality porcelain tiles for residential and commercial applications</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://genesisstoneusa.com/products/laminate-flooring</loc>
     <lastmod>2025-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -80,72 +70,6 @@
       <image:loc>https://genesisstoneusa.com/images/laminate-flooring-collection.jpg</image:loc>
       <image:title>Luxury Laminate Flooring Collection - Genesis Stone</image:title>
       <image:caption>Premium laminate flooring options for residential and commercial projects</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/metalTrims</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/metal-trim-collection.jpg</image:loc>
-      <image:title>Metal Trim and Edge Solutions - Genesis Stone</image:title>
-      <image:caption>Professional metal trims and edge solutions for tile installations</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/mortarMix</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/mortar-mix-collection.jpg</image:loc>
-      <image:title>Professional Mortar Mix Products - Genesis Stone</image:title>
-      <image:caption>High-performance mortar mix solutions for tile and stone installation</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/mosaics</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/mosaic-tile-collection.jpg</image:loc>
-      <image:title>Mosaic Tile Collection - Genesis Stone</image:title>
-      <image:caption>Stunning mosaic tiles for decorative and functional applications</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/naturalStone</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/natural-stone-collection.jpg</image:loc>
-      <image:title>Natural Stone Collection - Genesis Stone</image:title>
-      <image:caption>Premium natural stone products including marble, granite, and travertine</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/porcelain</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/porcelain-tile-collection.jpg</image:loc>
-      <image:title>Porcelain Tile Collection - Genesis Stone</image:title>
-      <image:caption>High-quality porcelain tiles for residential and commercial applications</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://genesisstoneusa.com/products/wallPanels</loc>
-    <lastmod>2025-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://genesisstoneusa.com/images/wall-panel-collection.jpg</image:loc>
-      <image:title>Wall Panel Solutions - Genesis Stone</image:title>
-      <image:caption>Modern wall panel systems for interior and exterior applications</image:caption>
     </image:image>
   </url>
   <url>
@@ -243,7 +167,7 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://storage.googleapis.com/content-assistant-images-temp/a-thoughtfully-arranged-interior-178c161f-c77eeb82-6fb0-4623-bd56-50687117283d.webp</image:loc>
-      <image:title>A Homeowner&apos;s Guide: How to Select the Right Tile or Stone Flooring</image:title>
+      <image:title>A Homeowner's Guide: How to Select the Right Tile or Stone Flooring</image:title>
       <image:caption>Comprehensive guide to choosing the perfect tile and stone flooring for your home</image:caption>
     </image:image>
   </url>
