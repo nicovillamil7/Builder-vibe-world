@@ -444,44 +444,6 @@ const NaturalStone = () => {
         </div>
       </section>
 
-      {/* Applications Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Perfect Applications
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From luxury interiors to outdoor entertainment areas, natural
-              stone enhances every space.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {applications.map((app, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                <div className="h-64 overflow-hidden">
-                  <SimpleReliableImage
-                    imageId={app.imageId}
-                    alt={`Natural stone ${app.title.toLowerCase()}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                  <div className="p-6 text-white">
-                    <h3 className="text-xl font-bold mb-2">{app.title}</h3>
-                    <p className="text-gray-200">{app.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Customer Reviews Section */}
       <GoogleReviews />
 
