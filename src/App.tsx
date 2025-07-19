@@ -6,11 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import Index from "./pages/Index";
 import Products from "./pages/Products";
-import ProductCategory from "./pages/ProductCategory";
+import NaturalStone from "@/pages/NaturalStone";
+import LaminateFlooring from "@/pages/LaminateFlooring";
+import PorcelainTile from "@/pages/PorcelainTile";
+import ProductCategory from "@/pages/ProductCategory";
 import Retail from "./pages/Retail";
 import Wholesale from "./pages/Wholesale";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ServicesAreas from "./pages/ServicesAreas"; // Import the ServicesAreas component
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -20,6 +24,7 @@ import ServiceAreas from "./pages/ServicesAreas"; // Import the ServicesAreas co
 
 // Spanish pages
 import IndexES from "./pages/es/Index";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -31,10 +36,14 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             {/* English routes */}
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/natural-stone" element={<NaturalStone />} />
+            <Route path="/products/laminate-flooring" element={<LaminateFlooring />} />
+            <Route path="/products/porcelain" element={<PorcelainTile />} />
             <Route path="/products/:category" element={<ProductCategory />} />
             <Route path="/retail" element={<Retail />} />
             <Route path="/wholesale" element={<Wholesale />} />

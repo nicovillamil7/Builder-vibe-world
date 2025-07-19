@@ -261,12 +261,12 @@ const Contact = () => {
               <iframe
                 src="https://maps.google.com/maps?cid=27303253618402823&output=embed"
                 loading="lazy"
-                width="100%"
-                height="100%"
+                width="600px"
+                height="450px"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Genesis Stone Location - 3399 NW 72nd Ave #109, Miami, FL 33122"
+                title="Google Map"
                 allowFullScreen
-                style={{ border: 0 }}
+                style={{ border: '0', width: '100%', height: '100%' }}
               />
             </div>
           </div>

@@ -15,14 +15,33 @@ export default defineConfig({
     sourcemap: false,
     assetsDir: "assets",
     minify: 'esbuild',
-    target: 'esnext',
+    target: 'es2020', // Better mobile compatibility
     cssMinify: true,
+    cssCodeSplit: true, // Split CSS for better caching
+    reportCompressedSize: false, // Faster builds
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+        manualChunks: (id) => {
+          // Core React libraries
+          if (id.includes('react') || id.includes('react-dom')) {
+            return 'react-vendor';
+          }
+          // Router
+          if (id.includes('react-router')) {
+            return 'router';
+          }
+          // UI components
+          if (id.includes('lucide-react') || id.includes('@radix-ui')) {
+            return 'ui';
+          }
+          // Utils and smaller libraries
+          if (id.includes('class-variance-authority') || id.includes('clsx') || id.includes('tailwind-merge')) {
+            return 'utils';
+          }
+          // Default vendor for other node_modules
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split('.');

@@ -129,6 +129,19 @@ const BLOG_IMAGES: Record<string, SitemapImage> = {
     caption:
       "Discover why laminate flooring combines durability, cost-effectiveness, and visual appeal for homes and commercial spaces",
   },
+<<<<<<< HEAD
+=======
+  'why-choose-laminate-flooring-long-lasting-beauty': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/of-a-a-sleek-modern-interior-02ebd834-0602-4c80-a426-0da36c8167e1.webp',
+    title: 'Why Choose Laminate Flooring for Long-Lasting Beauty',
+    caption: 'Discover why laminate flooring combines durability, cost-effectiveness, and visual appeal for homes and commercial spaces'
+  },
+  'natural-stone-vs-ceramic-tile-cost-considerations': {
+    loc: 'https://storage.googleapis.com/content-assistant-images-temp/a-stylish-and-modern-kitc-b56e915e-3a4d7270-8e90-4734-b34f-cd41549e316c.webp',
+    title: 'Natural Stone vs Ceramic Tile Cost Considerations',
+    caption: 'Comprehensive guide to understanding cost differences between natural stone and ceramic tile for home renovations'
+  }
+>>>>>>> origin/main
 };
 
 const generateSitemapUrls = (): SitemapUrl[] => {

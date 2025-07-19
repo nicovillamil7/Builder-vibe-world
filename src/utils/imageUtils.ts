@@ -344,11 +344,101 @@ export const RELIABLE_IMAGES: Record<string, ImageConfig> = {
   naturalMarble: {
     id: "naturalMarble",
     primary:
-      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80", // Reusing but in different category
+      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     fallback:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Natural marble floor with elegant veining and polished surface",
+    alt: "Natural marble floor with elegant veining and polished finish",
     category: "natural-stone-products",
+  },
+  naturalGranite: {
+    id: "naturalGranite",
+    primary:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Natural granite flooring with speckled pattern and high durability",
+    category: "natural-stone-products",
+  },
+  naturalLimestone: {
+    id: "naturalLimestone",
+    primary:
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F[YOUR_NEW_IMAGE_ID]",
+    fallback:
+      "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury limestone flooring in modern interior with floor-to-ceiling windows and premium finish",
+    category: "natural-stone-products",
+  },
+  luxuryLimestoneInterior: {
+    id: "luxuryLimestoneInterior",
+    primary:
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F[YOUR_NEW_IMAGE_ID]",
+    fallback:
+      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Premium limestone flooring in luxury interior with large windows and contemporary design",
+    category: "natural-stone-products",
+  },
+  naturalDolomite: {
+    id: "naturalDolomite",
+    primary:
+      "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Natural dolomite stone with crystalline structure and durable finish",
+    category: "natural-stone-products",
+  },
+  stackedStone: {
+    id: "stackedStone",
+    primary:
+      "https://images.unsplash.com/photo-1606744824163-985d376605aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Stacked stone wall panels with natural texture and dimensional appearance",
+    category: "natural-stone-products",
+  },
+  outdoorPatio: {
+    id: "outdoorPatio",
+    primary:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Outdoor patio with natural stone flooring and seating area",
+    category: "natural-stone-applications",
+  },
+  poolDeck: {
+    id: "poolDeck",
+    primary:
+      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F965f0200ba374906b44fa49ee7bcaa93",
+    alt: "Pool deck with travertine natural stone, cool to touch surface",
+    category: "natural-stone-applications",
+  },
+  commercialFlooring: {
+    id: "commercialFlooring",
+    primary:
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=880",
+    alt: "Commercial space with natural stone flooring for heavy traffic areas",
+    category: "natural-stone-applications",
+  },
+  stoneWall: {
+    id: "stoneWall",
+    primary:
+      "https://images.unsplash.com/photo-1606744824163-985d376605aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Stone wall cladding with natural texture and dramatic lighting",
+    category: "natural-stone-applications",
+  },
+  modernKitchen: {
+    id: "modernKitchen",
+    primary:
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    fallback:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern kitchen with natural stone countertops and backsplash",
+    category: "natural-stone-applications",
   },
 
   // VINYL & LAMINATE - Unique product images

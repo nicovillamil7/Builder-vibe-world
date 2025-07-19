@@ -173,9 +173,9 @@ const About = () => {
                     const message = "Hi! I'd like to visit your showroom and see your flooring collection. Can you help me schedule a visit?";
                     const encodedMessage = encodeURIComponent(message);
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                    
+
                     console.log("WhatsApp URL:", whatsappUrl);
-                    
+
                     // Track conversions
                     if (typeof (window as any).gtag_report_conversion === 'function') {
                       (window as any).gtag_report_conversion();
@@ -187,7 +187,7 @@ const About = () => {
                         value: 1
                       });
                     }
-                    
+
                     // Try window.open first, fallback to location.href
                     const newWindow = window.open(whatsappUrl, "_blank");
                     if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
@@ -211,9 +211,9 @@ const About = () => {
                     const message = "Hi! I'd like to learn more about your team and discuss my flooring project. Can we schedule a consultation?";
                     const encodedMessage = encodeURIComponent(message);
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                    
+
                     console.log("WhatsApp URL:", whatsappUrl);
-                    
+
                     // Track conversions
                     if (typeof (window as any).gtag_report_conversion === 'function') {
                       (window as any).gtag_report_conversion();
@@ -225,7 +225,7 @@ const About = () => {
                         value: 1
                       });
                     }
-                    
+
                     // Try window.open first, fallback to location.href
                     const newWindow = window.open(whatsappUrl, "_blank");
                     if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
@@ -524,9 +524,9 @@ const About = () => {
                   const message = "Hi! I'd like to visit your 20,000 sq ft showroom to see your flooring collection. When would be a good time?";
                   const encodedMessage = encodeURIComponent(message);
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                  
+
                   console.log("WhatsApp URL:", whatsappUrl);
-                  
+
                   // Track conversions
                   if (typeof (window as any).gtag_report_conversion === 'function') {
                     (window as any).gtag_report_conversion();
@@ -538,7 +538,7 @@ const About = () => {
                       value: 1
                     });
                   }
-                  
+
                   // Try window.open first, fallback to location.href
                   const newWindow = window.open(whatsappUrl, "_blank");
                   if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
@@ -562,9 +562,9 @@ const About = () => {
                   const message = "Hi! I'd like to schedule a consultation to discuss my flooring project. What's your availability?";
                   const encodedMessage = encodeURIComponent(message);
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                  
+
                   console.log("WhatsApp URL:", whatsappUrl);
-                  
+
                   // Track conversions
                   if (typeof (window as any).gtag_report_conversion === 'function') {
                     (window as any).gtag_report_conversion();
@@ -576,7 +576,7 @@ const About = () => {
                       value: 1
                     });
                   }
-                  
+
                   // Try window.open first, fallback to location.href
                   const newWindow = window.open(whatsappUrl, "_blank");
                   if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
@@ -631,15 +631,19 @@ const About = () => {
             </div>
 
             {/* Interactive Neighborhood Discovery Map */}
-            <div className="rounded-lg overflow-hidden h-96 lg:h-full shadow-lg">
-              <iframe
-                src="https://storage.googleapis.com/maps-solutions-jr2oksp8nh/neighborhood-discovery/tm8b/neighborhood-discovery.html"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                loading="lazy"
-                title="Genesis Stone Neighborhood Discovery"
-              />
+            <div className="lg:w-1/2">
+              <div className="h-96 rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://maps.google.com/maps?cid=27303253618402823&output=embed"
+                  loading="lazy"
+                  width="600px"
+                  height="450px"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Map"
+                  allowFullScreen
+                  style={{ border: '0', width: '100%', height: '100%' }}
+                />
+              </div>
             </div>
           </div>
         </div>
