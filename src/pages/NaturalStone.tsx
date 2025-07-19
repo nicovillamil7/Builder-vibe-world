@@ -1,19 +1,19 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { 
-  Gem, 
-  Shield, 
-  TrendingUp, 
-  Snowflake, 
-  Sun, 
+import {
+  Gem,
+  Shield,
+  TrendingUp,
+  Snowflake,
+  Sun,
   Star,
   MapPin,
   Phone,
   Mail,
   MessageCircle,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
 } from "lucide-react";
 import { GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
 import { SimpleReliableImage } from "@/components/ui/ReliableImage";
@@ -27,174 +27,230 @@ const NaturalStone = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Natural Stone Flooring Miami",
-    "description": "Premium natural stone flooring including travertine, marble, granite, slate, and limestone for Miami homes and businesses. Cool-touch surfaces perfect for pool decks and luxury interiors.",
-    "brand": {
+    name: "Natural Stone Flooring Miami",
+    description:
+      "Premium natural stone flooring including travertine, marble, granite, slate, and limestone for Miami homes and businesses. Cool-touch surfaces perfect for pool decks and luxury interiors.",
+    brand: {
       "@type": "Brand",
-      "name": "Genesis Stone"
+      name: "Genesis Stone",
     },
-    "offers": {
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "lowPrice": "4.99",
-      "highPrice": "15.99",
-      "priceSpecification": {
+      priceCurrency: "USD",
+      lowPrice: "4.99",
+      highPrice: "15.99",
+      priceSpecification: {
         "@type": "UnitPriceSpecification",
-        "price": "4.99-15.99",
-        "priceCurrency": "USD",
-        "unitText": "per square foot"
-      }
+        price: "4.99-15.99",
+        priceCurrency: "USD",
+        unitText: "per square foot",
+      },
     },
-    "aggregateRating": {
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150"
+      ratingValue: "4.9",
+      reviewCount: "150",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "State",
-      "name": "Florida"
-    }
+      name: "Florida",
+    },
   };
 
   const benefits = [
     {
       icon: <Gem className="w-8 h-8 text-amber-600" />,
       title: "Timeless Beauty & Luxury",
-      description: "Each piece features unique natural patterns that never go out of style"
+      description:
+        "Each piece features unique natural patterns that never go out of style",
     },
     {
       icon: <Shield className="w-8 h-8 text-amber-600" />,
       title: "Extreme Durability",
-      description: "Withstands heavy traffic and harsh Miami weather for decades"
+      description:
+        "Withstands heavy traffic and harsh Miami weather for decades",
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-amber-600" />,
       title: "Increases Property Value",
-      description: "Premium natural stone adds significant resale value to your property"
+      description:
+        "Premium natural stone adds significant resale value to your property",
     },
     {
       icon: <Snowflake className="w-8 h-8 text-amber-600" />,
       title: "Cool Touch Surface",
-      description: "Perfect for Miami pool decks - stays cool even in direct sunlight"
+      description:
+        "Perfect for Miami pool decks - stays cool even in direct sunlight",
     },
     {
       icon: <Sun className="w-8 h-8 text-amber-600" />,
       title: "Indoor & Outdoor Versatility",
-      description: "Seamlessly transitions from interior floors to outdoor patios"
-    }
+      description:
+        "Seamlessly transitions from interior floors to outdoor patios",
+    },
   ];
 
   const stoneTypes = [
     {
       name: "Marble",
-      description: "Premium luxury marble with elegant veining patterns and timeless sophistication",
-      imageId: "naturalMarble", 
-      features: ["Luxury finish", "Unique natural veining", "Heat-resistant surfaces", "High-end appeal"]
+      description:
+        "Premium luxury marble with elegant veining patterns and timeless sophistication",
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F026f26e88569479184cc5ef36cbf77ef",
+      features: [
+        "Luxury finish",
+        "Unique natural veining",
+        "Heat-resistant surfaces",
+        "High-end appeal",
+      ],
     },
     {
       name: "Limestone",
-      description: "Versatile sedimentary stone with soft neutral tones and natural fossil inclusions",
+      description:
+        "Versatile sedimentary stone with soft neutral tones and natural fossil inclusions",
       imageId: "naturalLimestone",
-      features: ["Fossil inclusions", "Neutral color palette", "Easy to work with", "Versatile applications"]
+      features: [
+        "Fossil inclusions",
+        "Neutral color palette",
+        "Easy to work with",
+        "Versatile applications",
+      ],
     },
     {
       name: "Travertine",
-      description: "Cool-touch limestone perfect for pool decks, patios, and outdoor living spaces",
+      description:
+        "Cool-touch limestone perfect for pool decks, patios, and outdoor living spaces",
       imageId: "poolDeck",
-      features: ["Non-slip surface", "Cool-touch technology", "Heat resistant", "Pool-friendly"]
+      features: [
+        "Non-slip surface",
+        "Cool-touch technology",
+        "Heat resistant",
+        "Pool-friendly",
+      ],
     },
     {
       name: "Granite",
-      description: "Ultra-durable igneous rock with superior strength and stunning speckled patterns",
+      description:
+        "Ultra-durable igneous rock with superior strength and stunning speckled patterns",
       imageId: "naturalGranite",
-      features: ["Scratch resistant", "Stain resistant", "Low maintenance", "Commercial grade durability"]
+      features: [
+        "Scratch resistant",
+        "Stain resistant",
+        "Low maintenance",
+        "Commercial grade durability",
+      ],
     },
     {
       name: "Dolomite",
-      description: "Crystalline carbonate rock offering marble-like beauty with enhanced durability",
+      description:
+        "Crystalline carbonate rock offering marble-like beauty with enhanced durability",
       imageId: "naturalDolomite",
-      features: ["Marble-like appearance", "Superior hardness", "Acid resistance", "Low porosity"]
+      features: [
+        "Marble-like appearance",
+        "Superior hardness",
+        "Acid resistance",
+        "Low porosity",
+      ],
     },
     {
       name: "Stacked Stone",
-      description: "Dimensional natural stone panels creating stunning textured walls and accent features",
+      description:
+        "Dimensional natural stone panels creating stunning textured walls and accent features",
       imageId: "stackedStone",
-      features: ["3D textured finish", "Easy installation", "Interior/exterior use", "Natural variations"]
-    }
+      features: [
+        "3D textured finish",
+        "Easy installation",
+        "Interior/exterior use",
+        "Natural variations",
+      ],
+    },
   ];
 
   const applications = [
     {
       title: "Living Rooms",
       description: "Create stunning focal points with natural stone flooring",
-      imageId: "luxuryInterior"
+      imageId: "luxuryInterior",
     },
     {
-      title: "Kitchens", 
+      title: "Kitchens",
       description: "Durable surfaces that handle daily cooking activities",
-      imageId: "modernKitchen"
+      imageId: "modernKitchen",
     },
     {
       title: "Pool Decks",
       description: "Cool-touch travertine that's safe and comfortable",
-      imageId: "poolDeck"
+      imageId: "poolDeck",
     },
     {
       title: "Outdoor Patios",
       description: "Weather-resistant stone for year-round enjoyment",
-      imageId: "outdoorPatio"
+      imageId: "outdoorPatio",
     },
     {
       title: "Commercial Spaces",
       description: "High-traffic flooring for offices and retail",
-      imageId: "commercialFlooring"
+      imageId: "commercialFlooring",
     },
     {
       title: "Wall Cladding",
       description: "Dramatic accent walls with natural texture",
-      imageId: "stoneWall"
-    }
+      imageId: "stoneWall",
+    },
   ];
-
-
 
   const faqs = [
     {
       question: "Is natural stone waterproof?",
-      answer: "Natural stone is naturally water-resistant, but we recommend sealing for optimal protection, especially in wet areas like bathrooms and pool decks."
+      answer:
+        "Natural stone is naturally water-resistant, but we recommend sealing for optimal protection, especially in wet areas like bathrooms and pool decks.",
     },
     {
       question: "How do I clean natural stone?",
-      answer: "Use pH-neutral cleaners and avoid acidic products. Daily cleaning with a microfiber mop and periodic professional cleaning maintains the beauty."
+      answer:
+        "Use pH-neutral cleaners and avoid acidic products. Daily cleaning with a microfiber mop and periodic professional cleaning maintains the beauty.",
     },
     {
       question: "Can natural stone be used outdoors in Miami?",
-      answer: "Absolutely! Our natural stone is perfect for Miami's climate. Travertine and limestone stay cool in direct sunlight, making them ideal for pool decks."
+      answer:
+        "Absolutely! Our natural stone is perfect for Miami's climate. Travertine and limestone stay cool in direct sunlight, making them ideal for pool decks.",
     },
     {
       question: "Is natural stone slippery when wet?",
-      answer: "We offer various finishes including honed and textured surfaces that provide excellent slip resistance, especially important around pools."
+      answer:
+        "We offer various finishes including honed and textured surfaces that provide excellent slip resistance, especially important around pools.",
     },
     {
       question: "How long does natural stone last?",
-      answer: "With proper installation and minimal maintenance, natural stone can last 50+ years, making it an excellent long-term investment."
+      answer:
+        "With proper installation and minimal maintenance, natural stone can last 50+ years, making it an excellent long-term investment.",
     },
     {
       question: "What's the difference between marble and granite?",
-      answer: "Marble offers elegant veining and softer tones, while granite provides superior durability and speckled patterns. Both are excellent choices for different applications."
-    }
+      answer:
+        "Marble offers elegant veining and softer tones, while granite provides superior durability and speckled patterns. Both are excellent choices for different applications.",
+    },
   ];
 
   return (
     <Layout>
       <Helmet>
-        <title>Natural Stone Flooring Miami | Travertine, Marble, Granite | Genesis Stone</title>
-        <meta 
-          name="description" 
-          content="Premium natural stone flooring in Miami. Travertine pool decks, marble floors, granite surfaces. Cool-touch, slip-resistant, luxury finishes. Free estimates." 
+        <title>
+          Natural Stone Flooring Miami | Travertine, Marble, Granite | Genesis
+          Stone
+        </title>
+        <meta
+          name="description"
+          content="Premium natural stone flooring in Miami. Travertine pool decks, marble floors, granite surfaces. Cool-touch, slip-resistant, luxury finishes. Free estimates."
         />
-        <meta name="keywords" content="natural stone flooring Miami, travertine pool deck, marble flooring, granite surfaces, limestone tiles, slate flooring, cool touch stone, Miami pool deck, luxury stone floors" />
-        <link rel="canonical" href="https://genesisstoneusa.com/products/natural-stone" />
+        <meta
+          name="keywords"
+          content="natural stone flooring Miami, travertine pool deck, marble flooring, granite surfaces, limestone tiles, slate flooring, cool touch stone, Miami pool deck, luxury stone floors"
+        />
+        <link
+          rel="canonical"
+          href="https://genesisstoneusa.com/products/natural-stone"
+        />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
@@ -214,33 +270,38 @@ const NaturalStone = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Timeless Elegance with 
-              <span className="text-amber-400 block">Natural Stone Flooring</span>
+              Timeless Elegance with
+              <span className="text-amber-400 block">
+                Natural Stone Flooring
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Durable, luxurious, and perfect for any space — indoors or outdoors. 
-              Cool-touch surfaces ideal for Miami's climate.
+              Durable, luxurious, and perfect for any space — indoors or
+              outdoors. Cool-touch surfaces ideal for Miami's climate.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
+              <button
                 className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[280px]"
                 onClick={() => {
                   const phoneNumber = "13058340800";
-                  const message = "Hi! I'm interested in natural stone flooring for my project. Can you provide a free quote?";
+                  const message =
+                    "Hi! I'm interested in natural stone flooring for my project. Can you provide a free quote?";
                   const encodedMessage = encodeURIComponent(message);
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
                   // Track Google Ads conversion
-                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                  if (
+                    typeof (window as any).gtag_report_conversion === "function"
+                  ) {
                     (window as any).gtag_report_conversion();
                   }
 
                   // Track Google Analytics conversion
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'natural_stone_quote_hero',
-                      value: 1
+                  if (typeof (window as any).gtag === "function") {
+                    (window as any).gtag("event", "conversion", {
+                      event_category: "engagement",
+                      event_label: "natural_stone_quote_hero",
+                      value: 1,
                     });
                   }
 
@@ -249,25 +310,28 @@ const NaturalStone = () => {
               >
                 Get a Free Quote
               </button>
-              <button 
+              <button
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/10 min-w-[280px]"
                 onClick={() => {
                   const phoneNumber = "13058340800";
-                  const message = "Hi! I'd like to schedule a free consultation for natural stone flooring. What's your availability?";
+                  const message =
+                    "Hi! I'd like to schedule a free consultation for natural stone flooring. What's your availability?";
                   const encodedMessage = encodeURIComponent(message);
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
                   // Track Google Ads conversion
-                  if (typeof (window as any).gtag_report_conversion === 'function') {
+                  if (
+                    typeof (window as any).gtag_report_conversion === "function"
+                  ) {
                     (window as any).gtag_report_conversion();
                   }
 
                   // Track Google Analytics conversion
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'natural_stone_consultation_hero',
-                      value: 1
+                  if (typeof (window as any).gtag === "function") {
+                    (window as any).gtag("event", "conversion", {
+                      event_category: "engagement",
+                      event_label: "natural_stone_consultation_hero",
+                      value: 1,
                     });
                   }
 
@@ -289,22 +353,22 @@ const NaturalStone = () => {
               Why Choose Natural Stone?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the unmatched benefits that make natural stone the preferred choice for Miami homeowners and businesses.
+              Discover the unmatched benefits that make natural stone the
+              preferred choice for Miami homeowners and businesses.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="flex justify-center mb-4">
-                  {benefit.icon}
-                </div>
+              <div
+                key={index}
+                className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <div className="flex justify-center mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">
-                  {benefit.description}
-                </p>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -319,13 +383,17 @@ const NaturalStone = () => {
               Types of Natural Stone We Offer
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Each stone type offers unique characteristics perfect for different applications and design preferences.
+              Each stone type offers unique characteristics perfect for
+              different applications and design preferences.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {stoneTypes.map((stone, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
                 <div className="h-48 overflow-hidden">
                   <SimpleReliableImage
                     imageId={stone.imageId}
@@ -337,12 +405,13 @@ const NaturalStone = () => {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {stone.name}
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    {stone.description}
-                  </p>
+                  <p className="text-gray-600 mb-4">{stone.description}</p>
                   <ul className="space-y-2">
                     {stone.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-600"
+                      >
                         <Star className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
@@ -368,13 +437,17 @@ const NaturalStone = () => {
               Perfect Applications
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From luxury interiors to outdoor entertainment areas, natural stone enhances every space.
+              From luxury interiors to outdoor entertainment areas, natural
+              stone enhances every space.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {applications.map((app, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all"
+              >
                 <div className="h-64 overflow-hidden">
                   <SimpleReliableImage
                     imageId={app.imageId}
@@ -416,7 +489,9 @@ const NaturalStone = () => {
                   className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none"
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                 >
-                  <span className="font-semibold text-gray-900">{faq.question}</span>
+                  <span className="font-semibold text-gray-900">
+                    {faq.question}
+                  </span>
                   {openFAQ === index ? (
                     <ChevronUp className="w-5 h-5 text-gray-500" />
                   ) : (
@@ -443,15 +518,17 @@ const NaturalStone = () => {
                 Serving Miami & South Florida
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                As South Florida's premier natural stone supplier, we serve Miami-Dade, 
-                Broward, and Palm Beach counties with professional installation and 
-                premium materials.
+                As South Florida's premier natural stone supplier, we serve
+                Miami-Dade, Broward, and Palm Beach counties with professional
+                installation and premium materials.
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-center">
                   <MapPin className="w-6 h-6 text-amber-600 mr-3" />
-                  <span className="text-gray-700">Miami, Coral Gables, Aventura, Doral</span>
+                  <span className="text-gray-700">
+                    Miami, Coral Gables, Aventura, Doral
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 text-amber-600 mr-3" />
@@ -459,13 +536,18 @@ const NaturalStone = () => {
                 </div>
                 <div className="flex items-center">
                   <MessageCircle className="w-6 h-6 text-amber-600 mr-3" />
-                  <a href="https://wa.me/13058340800" className="text-gray-700 hover:text-amber-600">
+                  <a
+                    href="https://wa.me/13058340800"
+                    className="text-gray-700 hover:text-amber-600"
+                  >
                     WhatsApp: (305) 8340800
                   </a>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 text-amber-600 mr-3" />
-                  <span className="text-gray-700">info@genesisstoneusa.com</span>
+                  <span className="text-gray-700">
+                    info@genesisstoneusa.com
+                  </span>
                 </div>
               </div>
             </div>
@@ -493,7 +575,7 @@ const NaturalStone = () => {
             Ready to Elevate Your Space with Natural Stone?
           </h2>
           <p className="text-xl text-red-100 mb-8">
-            Transform your home or business with premium natural stone flooring. 
+            Transform your home or business with premium natural stone flooring.
             Get your personalized quote today.
           </p>
 
@@ -502,19 +584,22 @@ const NaturalStone = () => {
               className="bg-white text-red-800 hover:bg-gray-100 font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[280px]"
               onClick={() => {
                 const phoneNumber = "13058340800";
-                const message = "Hi! I'd like to book a free estimate for natural stone flooring. When would be a good time?";
+                const message =
+                  "Hi! I'd like to book a free estimate for natural stone flooring. When would be a good time?";
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
                 // Track conversions
-                if (typeof (window as any).gtag_report_conversion === 'function') {
+                if (
+                  typeof (window as any).gtag_report_conversion === "function"
+                ) {
                   (window as any).gtag_report_conversion();
                 }
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'natural_stone_estimate_final',
-                    value: 1
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "natural_stone_estimate_final",
+                    value: 1,
                   });
                 }
 
@@ -527,19 +612,22 @@ const NaturalStone = () => {
               className="border-2 border-white text-white hover:bg-white hover:text-red-800 font-bold text-lg px-10 py-5 rounded-lg transition-all duration-300 transform hover:scale-105 min-w-[280px]"
               onClick={() => {
                 const phoneNumber = "13058340800";
-                const message = "Hi! I'm interested in natural stone flooring for my project. Can you provide a WhatsApp quote?";
+                const message =
+                  "Hi! I'm interested in natural stone flooring for my project. Can you provide a WhatsApp quote?";
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
                 // Track conversions
-                if (typeof (window as any).gtag_report_conversion === 'function') {
+                if (
+                  typeof (window as any).gtag_report_conversion === "function"
+                ) {
                   (window as any).gtag_report_conversion();
                 }
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'natural_stone_whatsapp_final',
-                    value: 1
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "natural_stone_whatsapp_final",
+                    value: 1,
                   });
                 }
 
@@ -549,8 +637,6 @@ const NaturalStone = () => {
               Get WhatsApp Quote
             </button>
           </div>
-
-          
         </div>
       </section>
 
