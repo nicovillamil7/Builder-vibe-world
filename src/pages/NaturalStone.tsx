@@ -160,7 +160,8 @@ const NaturalStone = () => {
       name: "Stacked Stone",
       description:
         "Dimensional natural stone panels creating stunning textured walls and accent features",
-      imageId: "stackedStone",
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F89da7459cd1e44cc9671cb3806995930",
       features: [
         "3D textured finish",
         "Easy installation",
