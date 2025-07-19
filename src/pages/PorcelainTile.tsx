@@ -132,6 +132,8 @@ const PorcelainTile = () => {
         "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt:
         "Satin porcelain tile Miami - subtle sheen finish for elegant residential and commercial applications",
+      overlayImage:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fa24fdd6d44804974ac880f235ebd0cfa",
     },
   ];
 
