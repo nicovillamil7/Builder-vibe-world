@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -52,7 +51,7 @@ const Analytics = () => {
     };
 
     window.addEventListener('popstate', handleRouteChange);
-    
+
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
@@ -60,14 +59,14 @@ const Analytics = () => {
 
   return (
     <Helmet>
-      {/* Google Analytics 4 */}
-      <script
+      {/* Google Analytics 4 - commented out to remove API call */}
+      {/* <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-      />
-      
-      {/* Google Analytics Configuration */}
-      <script>
+      /> */}
+
+      {/* Google Analytics Configuration - commented out to remove API call */}
+      {/* <script>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -78,10 +77,10 @@ const Analytics = () => {
             send_page_view: true
           });
         `}
-      </script>
+      </script> */}
 
-      {/* Microsoft Clarity */}
-      <script>
+      {/* Microsoft Clarity - commented out to remove API call */}
+      {/* <script>
         {`
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -89,25 +88,25 @@ const Analytics = () => {
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
         `}
-      </script>
+      </script> */}
 
-      {/* Google Ads Conversion Tracking */}
-      <script
+      {/* Google Ads Conversion Tracking - commented out to remove API call */}
+      {/* <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"
-      />
-      
-      <script>
+      /> */}
+
+      {/* <script>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-CONVERSION_ID');
         `}
-      </script>
+      </script> */}
 
-      {/* Enhanced Ecommerce and Event Tracking Setup */}
-      <script>
+      {/* Enhanced Ecommerce and Event Tracking Setup - commented out to remove API call */}
+      {/* <script>
         {`
           // Custom event tracking functions
           window.trackEvent = function(eventName, parameters) {
@@ -149,7 +148,7 @@ const Analytics = () => {
             }
           };
         `}
-      </script>
+      </script> */}
     </Helmet>
   );
 };
