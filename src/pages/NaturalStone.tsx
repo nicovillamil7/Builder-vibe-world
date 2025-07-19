@@ -171,39 +171,6 @@ const NaturalStone = () => {
     },
   ];
 
-  const applications = [
-    {
-      title: "Living Rooms",
-      description: "Create stunning focal points with natural stone flooring",
-      imageId: "luxuryInterior",
-    },
-    {
-      title: "Kitchens",
-      description: "Durable surfaces that handle daily cooking activities",
-      imageId: "modernKitchen",
-    },
-    {
-      title: "Pool Decks",
-      description: "Cool-touch travertine that's safe and comfortable",
-      imageId: "poolDeck",
-    },
-    {
-      title: "Outdoor Patios",
-      description: "Weather-resistant stone for year-round enjoyment",
-      imageId: "outdoorPatio",
-    },
-    {
-      title: "Commercial Spaces",
-      description: "High-traffic flooring for offices and retail",
-      imageId: "commercialFlooring",
-    },
-    {
-      title: "Wall Cladding",
-      description: "Dramatic accent walls with natural texture",
-      imageId: "stoneWall",
-    },
-  ];
-
   const faqs = [
     {
       question: "Is natural stone waterproof?",
