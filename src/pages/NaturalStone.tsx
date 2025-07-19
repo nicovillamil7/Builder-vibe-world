@@ -147,7 +147,8 @@ const NaturalStone = () => {
       name: "Dolomite",
       description:
         "Crystalline carbonate rock offering marble-like beauty with enhanced durability",
-      imageId: "naturalDolomite",
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F582758e9108e4f3ab984fa6e4fbb206d",
       features: [
         "Marble-like appearance",
         "Superior hardness",
