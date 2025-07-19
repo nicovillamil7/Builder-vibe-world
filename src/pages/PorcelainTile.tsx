@@ -490,45 +490,6 @@ const PorcelainTile = () => {
         </div>
       </section>
 
-      {/* Perfect Applications */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Perfect Applications for Every Space
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Porcelain tile's versatility makes it ideal for any room or
-              outdoor space, providing unmatched beauty and performance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {applications.map((app, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden rounded-2xl group hover:transform hover:-translate-y-2 transition-all duration-300"
-              >
-                <div className="relative h-64">
-                  <img
-                    src={app.image}
-                    alt={`Porcelain tile in ${app.name.toLowerCase()} Miami - ${app.description}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-xl font-bold mb-2">{app.name}</h3>
-                    <p className="text-white/90 text-sm leading-relaxed">
-                      {app.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Customer Success Stories */}
       <GoogleReviews />
 
