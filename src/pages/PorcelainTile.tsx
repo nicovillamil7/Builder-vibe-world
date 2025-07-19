@@ -137,50 +137,6 @@ const PorcelainTile = () => {
     },
   ];
 
-  const applications = [
-    {
-      name: "Kitchens",
-      description:
-        "Waterproof and stain-resistant for cooking and dining areas",
-      image:
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Bathrooms",
-      description:
-        "Non-slip options perfect for wet areas and spa-like environments",
-      image:
-        "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Patios & Balconies",
-      description:
-        "Weather-resistant tiles that handle Florida's climate year-round",
-      image:
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Commercial Spaces",
-      description: "Heavy-duty durability for offices, retail, and hospitality",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Entryways",
-      description:
-        "First impressions that last with durable, elegant tile flooring",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Pool Surrounds",
-      description:
-        "Slip-resistant and chlorine-resistant for pool areas and outdoor walkways",
-      image:
-        "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    },
-  ];
-
   const faqs = [
     {
       question: "Is porcelain tile slippery when wet?",
