@@ -108,7 +108,8 @@ const NaturalStone = () => {
       name: "Limestone",
       description:
         "Versatile sedimentary stone with soft neutral tones and natural fossil inclusions",
-      imageId: "naturalLimestone",
+      imageUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F8ea9bfb38ad647ab8ca9a801a46425dc",
       features: [
         "Fossil inclusions",
         "Neutral color palette",
