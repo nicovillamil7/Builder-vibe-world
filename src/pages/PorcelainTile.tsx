@@ -115,6 +115,8 @@ const PorcelainTile = () => {
         "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       imageAlt:
         "Matte porcelain tile Miami - non-slip textured finish ideal for bathrooms and kitchen floors",
+      overlayImage:
+        "https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F76750fbebd56487ea47a369bf62771ad",
     },
     {
       name: "Satin Porcelain",
