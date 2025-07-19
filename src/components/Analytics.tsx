@@ -40,7 +40,7 @@ const Analytics = () => {
     // Track page views for SPA navigation
     const trackPageView = () => {
       if (window.gtag) {
-        window.gtag("config", "GA_MEASUREMENT_ID", {
+        window.gtag("config", "G-5DTNSBTY8Z", {
           page_title: document.title,
           page_location: window.location.href,
         });
