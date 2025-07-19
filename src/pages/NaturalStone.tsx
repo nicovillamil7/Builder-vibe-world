@@ -399,11 +399,21 @@ const NaturalStone = () => {
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="h-48 overflow-hidden">
-                  <SimpleReliableImage
-                    imageId={stone.imageId}
+                <div
+                  className={`h-48 overflow-hidden ${stone.name === "Limestone" ? "flex flex-col" : ""}`}
+                >
+                  <img
+                    src={stone.imageUrl}
                     alt={`${stone.name} natural stone flooring`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className={`object-cover hover:scale-105 transition-transform duration-300 ${
+                      stone.name === "Limestone"
+                        ? "w-auto h-auto mb-auto flex-grow-0 self-stretch"
+                        : "w-full h-full"
+                    }`}
+                    loading="lazy"
+                    width="400"
+                    height="300"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6">
