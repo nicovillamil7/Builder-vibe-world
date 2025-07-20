@@ -519,6 +519,8 @@ const Index = () => {
                 src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury living room with marble accent wall"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
