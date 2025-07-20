@@ -1,5 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const SITE_URL = "https://genesisstoneusa.com";
 
@@ -44,6 +49,11 @@ const BLOG_IMAGES = {
     title: "Benefits of Laminate Flooring for Enduring Elegance",
     caption:
       "Explore the comprehensive benefits of laminate flooring that combines elegance with practicality",
+  },
+  "transform-your-space-with-modern-tile-styles-for-luxurious-living": {
+    loc: "https://storage.googleapis.com/content-assistant-images-temp/a-a-contemporary-living-room--97ea685d-62a4-42cc-a11e-44cb2e75971e.webp",
+    title: "Transform Your Space With Modern Tile Styles for Luxurious Living",
+    caption: "Discover modern tile styles that create luxurious living spaces with sophisticated design elements",
   },
 };
 

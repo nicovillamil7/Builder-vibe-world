@@ -120,6 +120,30 @@ export const EXTERNAL_LINKS: LinkMap = {
     title: 'Porcelanosa Premium Tiles',
     type: 'external',
     priority: 3
+  },
+  'ceramic tile institute': {
+    url: 'https://www.ceramictileinstitute.org/',
+    title: 'Ceramic Tile Institute of America',
+    type: 'external',
+    priority: 3
+  },
+  'natural stone institute': {
+    url: 'https://www.naturalstoneinstitute.org/',
+    title: 'Natural Stone Institute',
+    type: 'external',
+    priority: 3
+  },
+  'tile council of north america': {
+    url: 'https://www.tcnatile.com/',
+    title: 'Tile Council of North America - Installation Guidelines',
+    type: 'external',
+    priority: 3
+  },
+  'interior design trends': {
+    url: 'https://www.architecturaldigest.com/',
+    title: 'Architectural Digest - Interior Design Trends',
+    type: 'external',
+    priority: 3
   }
 };
 
