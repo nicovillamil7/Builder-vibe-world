@@ -8,10 +8,15 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 import { processedBlogArticles } from "@/utils/blogData";
+import { useEffect, useState } from "react";
 
 const Blog = () => {
-  const featuredArticle = processedBlogArticles.find((article) => article.featured);
-  const regularArticles = processedBlogArticles.filter((article) => !article.featured);
+  const featuredArticle = processedBlogArticles.find(
+    (article) => article.featured,
+  );
+  const regularArticles = processedBlogArticles.filter(
+    (article) => !article.featured,
+  );
 
   return (
     <Layout>
