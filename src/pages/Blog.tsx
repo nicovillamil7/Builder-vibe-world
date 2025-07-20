@@ -11,12 +11,36 @@ import { processedBlogArticles } from "@/utils/blogData";
 import { useEffect, useState } from "react";
 
 const Blog = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Ensure page renders even if third-party scripts fail
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const featuredArticle = processedBlogArticles.find(
     (article) => article.featured,
   );
   const regularArticles = processedBlogArticles.filter(
     (article) => !article.featured,
   );
+
+  if (!isLoaded) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-900 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading blog articles...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
