@@ -400,7 +400,26 @@ const NaturalStone = () => {
                     ))}
                   </ul>
                   <div className="mt-6">
-                    <GoldButton className="w-full">
+                    <GoldButton 
+                      className="w-full"
+                      onClick={() => {
+                        // Track conversion
+                        if (typeof (window as any).gtag === "function") {
+                          (window as any).gtag("event", "conversion", {
+                            event_category: "engagement",
+                            event_label: `quote_request_${stone.name.toLowerCase().replace(/[^a-z0-9]/g, "_")}`,
+                            value: 1,
+                          });
+                        }
+
+                        // Open WhatsApp with personalized message
+                        const phoneNumber = "13058340800";
+                        const message = `Hi! I'm interested in ${stone.name} natural stone for my project. Can you provide more details and pricing for ${stone.name}?`;
+                        const encodedMessage = encodeURIComponent(message);
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                        window.open(whatsappUrl, "_blank");
+                      }}
+                    >
                       Request Quote Information
                     </GoldButton>
                   </div>
