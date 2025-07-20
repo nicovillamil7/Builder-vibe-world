@@ -108,12 +108,19 @@ const Products = () => {
           rel="preload"
           as="image"
           href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F18e90d9f99c3420095f59bd37800aeef"
+          media="(min-width: 768px)"
         />
         <link
           rel="preload"
           as="image"
           href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F620f1c12fdce4a8883d8ef7b30b7bf90"
+          media="(min-width: 768px)"
         />
+
+        {/* Mobile-first optimizations */}
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
