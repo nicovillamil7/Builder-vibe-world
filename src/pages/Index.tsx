@@ -310,18 +310,18 @@ const Index = () => {
                 <p className="text-gray-600">Premium residential options</p>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {homeownerBenefits.map((benefit, index) => (
                   <div key={index} className="group">
-                    <div className="flex items-start space-x-5">
-                      <div className="w-14 h-14 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
-                        <benefit.icon className="h-7 w-7 text-red-700 group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-red-50 to-red-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
+                        <benefit.icon className="h-6 w-6 text-red-700 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <div className="flex-1 min-h-[80px] flex flex-col">
-                        <h4 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                      <div className="flex-1 min-h-[70px] flex flex-col justify-center">
+                        <h4 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
                           {benefit.title}
                         </h4>
-                        <p className="text-gray-600 leading-relaxed flex-1">
+                        <p className="text-gray-600 leading-relaxed text-sm">
                           {benefit.description}
                         </p>
                       </div>
