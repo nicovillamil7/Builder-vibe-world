@@ -14,7 +14,7 @@ import {
   Twitter,
   Linkedin,
 } from "lucide-react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNavigation from "@/components/BreadcrumbNavigation";
 import InteractiveFAQ from "@/components/InteractiveFAQ";

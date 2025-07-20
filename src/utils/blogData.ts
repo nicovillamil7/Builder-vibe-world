@@ -17,6 +17,7 @@ export interface BlogArticle {
 }
 
 export const blogArticles: BlogArticle[] = [
+  modernTileStylesPost,
   {
     id: "5",
     slug: "natural-stone-vs-ceramic-tile-cost-considerations",
@@ -959,6 +960,7 @@ export const getArticlesByTag = (tag: string) => {
 
 // SEO utility functions
 import { addLinksToContent, verifyInternalLinks } from "./blogLinking";
+import { modernTileStylesPost } from './modernTileStylesPost';
 
 // Verify all internal links are valid
 if (!verifyInternalLinks()) {
