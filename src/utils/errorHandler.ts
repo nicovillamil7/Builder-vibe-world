@@ -1,6 +1,7 @@
 // Error handler for third-party script fetch failures
 export const initializeFetchErrorHandler = () => {
-  // Wrap the original fetch to handle errors gracefully
+  if (typeof window === 'undefined') return; // Skip in SSR
+
   const originalFetch = window.fetch;
 
   window.fetch = function (...args) {
