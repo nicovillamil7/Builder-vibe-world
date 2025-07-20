@@ -489,6 +489,8 @@ const Index = () => {
                 src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
