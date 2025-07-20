@@ -30,7 +30,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   // Ensure React is properly loaded
-  if (typeof React.createElement === 'undefined') {
+  if (typeof React.createElement === "undefined") {
     return <div>Loading...</div>;
   }
 
@@ -42,35 +42,41 @@ const App = () => {
             <ScrollToTop />
             <Analytics />
             <Routes>
-            {/* English routes */}
-            <Route path="/" element={<Index />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/natural-stone" element={<NaturalStone />} />
-            <Route
-              path="/products/laminate-flooring"
-              element={<LaminateFlooring />}
-            />
-            <Route path="/products/porcelain" element={<PorcelainTile />} />
-            <Route path="/products/:category" element={<ProductCategory />} />
-            <Route path="/retail" element={<Retail />} />
-            <Route path="/wholesale" element={<Wholesale />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/service-areas" element={<ServiceAreas />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+              {/* English routes */}
+              <Route path="/" element={<Index />} />
+              <Route path="/products" element={<Products />} />
+              <Route
+                path="/products/natural-stone"
+                element={<NaturalStone />}
+              />
+              <Route
+                path="/products/laminate-flooring"
+                element={<LaminateFlooring />}
+              />
+              <Route path="/products/porcelain" element={<PorcelainTile />} />
+              <Route path="/products/:category" element={<ProductCategory />} />
+              <Route path="/retail" element={<Retail />} />
+              <Route path="/wholesale" element={<Wholesale />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/service-areas" element={<ServiceAreas />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
 
-            {/* Spanish routes */}
-            <Route path="/es" element={<IndexES />} />
-            <Route path="/es/" element={<IndexES />} />
+              {/* Spanish routes */}
+              <Route path="/es" element={<IndexES />} />
+              <Route path="/es/" element={<IndexES />} />
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-    <PerformanceMonitor />
-  </HelmetProvider>
-);
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Toaster />
+            <Sonner />
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+      <PerformanceMonitor />
+    </HelmetProvider>
+  );
+};
 
 export default App;
