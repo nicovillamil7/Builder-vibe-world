@@ -7,31 +7,33 @@ export const initializeFetchErrorHandler = () => {
     return originalFetch.apply(this, args).catch((error) => {
       const url = args[0]?.toString() || "";
 
-      // Check if this is a SearchAtlas or other third-party API failure
+      // Only handle specific third-party services, not module loading
       if (
         url.includes("searchatlas.com") ||
         url.includes("clarity.ms") ||
-        url.includes("googletagmanager.com")
+        url.includes("googletagmanager.com") ||
+        url.includes("google-analytics.com")
       ) {
         console.warn(
           "Third-party service request failed (continuing without it):",
           url,
           error,
         );
-      } else {
-        console.warn("Fetch request failed:", error);
-      }
 
-      // Return a resolved promise with a fake response to prevent script errors
-      return Promise.resolve(
-        new Response("{}", {
-          status: 200,
-          statusText: "OK",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }),
-      );
+        // Return a resolved promise with a fake response to prevent script errors
+        return Promise.resolve(
+          new Response("{}", {
+            status: 200,
+            statusText: "OK",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }),
+        );
+      } else {
+        // For other URLs (like modules), let the error propagate naturally
+        throw error;
+      }
     });
   };
 
