@@ -34,6 +34,17 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const [isPageReady, setIsPageReady] = useState(false);
+
+  useEffect(() => {
+    // Ensure page renders even if third-party scripts fail
+    const timer = setTimeout(() => {
+      setIsPageReady(true);
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const features = [
     {
       icon: Calculator,
