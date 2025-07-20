@@ -37,10 +37,35 @@ export const initializeFetchErrorHandler = () => {
 
   // Also handle unhandled promise rejections
   window.addEventListener("unhandledrejection", (event) => {
-    if (event.reason?.message?.includes("Failed to fetch")) {
-      // Prevent the error from appearing in console
+    const reason = event.reason?.message || event.reason?.toString() || "";
+
+    if (
+      reason.includes("Failed to fetch") ||
+      reason.includes("searchatlas") ||
+      reason.includes("401") ||
+      reason.includes("Unauthorized")
+    ) {
+      // Prevent the error from appearing in console and breaking the app
       event.preventDefault();
-      console.warn("Prevented unhandled fetch rejection:", event.reason);
+      console.warn(
+        "Prevented unhandled third-party service rejection:",
+        event.reason,
+      );
+    }
+  });
+
+  // Handle SearchAtlas specific errors
+  window.addEventListener("error", (event) => {
+    const errorMessage = event.message || "";
+    const source = event.filename || "";
+
+    if (
+      source.includes("searchatlas.com") ||
+      errorMessage.includes("searchatlas")
+    ) {
+      // Prevent SearchAtlas errors from breaking the page
+      event.preventDefault();
+      console.warn("SearchAtlas error prevented:", errorMessage);
     }
   });
 };
