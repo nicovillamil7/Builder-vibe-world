@@ -5,6 +5,7 @@ import GoogleReviews from "@/components/GoogleReviews";
 import TechnicalSEO from "@/components/TechnicalSEO";
 import SEOHead from "@/components/SEOHead";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
 import {
   GoldButton,
   WhiteOutlineButton,
