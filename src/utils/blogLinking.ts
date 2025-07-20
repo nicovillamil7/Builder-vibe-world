@@ -62,6 +62,24 @@ export const INTERNAL_LINKS: LinkMap = {
     title: 'Professional Installation Services - Genesis Stone',
     type: 'internal',
     priority: 2
+  },
+  'modern tiles': {
+    url: '/products',
+    title: 'Modern Tile Collection - Genesis Stone',
+    type: 'internal',
+    priority: 1
+  },
+  'luxury living': {
+    url: '/retail',
+    title: 'Luxury Living Solutions - Genesis Stone Showroom',
+    type: 'internal',
+    priority: 2
+  },
+  'interior design': {
+    url: '/retail',
+    title: 'Interior Design Consultation - Genesis Stone',
+    type: 'internal',
+    priority: 2
   }
 };
 
@@ -90,6 +108,18 @@ export const EXTERNAL_LINKS: LinkMap = {
     title: 'National Association of Home Builders - Home Improvement',
     type: 'external',
     priority: 2
+  },
+  'Marazzi': {
+    url: 'https://www.marazzi.com/',
+    title: 'Marazzi Tile Collections',
+    type: 'external',
+    priority: 3
+  },
+  'Porcelanosa': {
+    url: 'https://www.porcelanosa.com/',
+    title: 'Porcelanosa Premium Tiles',
+    type: 'external',
+    priority: 3
   }
 };
 
