@@ -66,7 +66,7 @@ const Index = () => {
     },
     {
       icon: Users,
-      title: "Expert Flooring Installation Support",
+      title: "Expert Support",
       description:
         "15+ years serving Miami contractors with material take-offs, technical specs, and project support",
     },
