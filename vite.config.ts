@@ -1,3 +1,4 @@
+// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -14,8 +15,8 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: false,
     assetsDir: "assets",
-    minify: 'esbuild',
-    target: 'es2020', // Better mobile compatibility
+    minify: "esbuild",
+    target: "es2020", // Better mobile compatibility
     cssMinify: true,
     cssCodeSplit: true, // Split CSS for better caching
     reportCompressedSize: false, // Faster builds
@@ -23,28 +24,32 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           // Core React libraries
-          if (id.includes('react') || id.includes('react-dom')) {
-            return 'react-vendor';
+          if (id.includes("react") || id.includes("react-dom")) {
+            return "react-vendor";
           }
           // Router
-          if (id.includes('react-router')) {
-            return 'router';
+          if (id.includes("react-router")) {
+            return "router";
           }
           // UI components
-          if (id.includes('lucide-react') || id.includes('@radix-ui')) {
-            return 'ui';
+          if (id.includes("lucide-react") || id.includes("@radix-ui")) {
+            return "ui";
           }
           // Utils and smaller libraries
-          if (id.includes('class-variance-authority') || id.includes('clsx') || id.includes('tailwind-merge')) {
-            return 'utils';
+          if (
+            id.includes("class-variance-authority") ||
+            id.includes("clsx") ||
+            id.includes("tailwind-merge")
+          ) {
+            return "utils";
           }
           // Default vendor for other node_modules
-          if (id.includes('node_modules')) {
-            return 'vendor';
+          if (id.includes("node_modules")) {
+            return "vendor";
           }
         },
         assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
+          const info = assetInfo.name.split(".");
           const ext = info[info.length - 1];
           if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
             return `images/[name]-[hash][extname]`;
@@ -54,8 +59,8 @@ export default defineConfig({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        chunkFileNames: 'js/[name]-[hash].js',
-        entryFileNames: 'js/[name]-[hash].js',
+        chunkFileNames: "js/[name]-[hash].js",
+        entryFileNames: "js/[name]-[hash].js",
       },
     },
     chunkSizeWarningLimit: 1000,
@@ -66,6 +71,7 @@ export default defineConfig({
     allowedHosts: [
       "all",
       "19e6b561-60d5-41f5-a03a-c6e431e7f22c-00-15kr3vd6w5nau.janeway.replit.dev",
+      "5e2b82b6-b90d-48d6-956f-29faebd7d5ef-00-385r4peuavxeb.kirk.replit.dev", // Added the new host here
     ],
   },
   preview: {
