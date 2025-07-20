@@ -35,10 +35,11 @@ const App = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
+    return (
+    <ErrorBoundary>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
           <BrowserRouter>
             <ScrollToTop />
             <Analytics />
