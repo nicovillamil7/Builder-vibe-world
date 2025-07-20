@@ -30,9 +30,18 @@ import ScrollToTop from "./components/ScrollToTop";
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
+  // Debug React state in App component
+  console.log("App component - React object:", React);
+  console.log("App component - createContext available:", !!React.createContext);
+  
   // Ensure React is properly loaded
-  if (typeof React.createElement === "undefined") {
-    return React.createElement("div", {}, "Loading...");
+  if (!React || typeof React.createElement === "undefined") {
+    return <div>React not properly initialized. Please refresh.</div>;
+  }
+
+  if (!React.createContext) {
+    console.error("React.createContext is undefined in App component");
+    return <div>React Context error. Please refresh the page.</div>;
   }
 
   return (
