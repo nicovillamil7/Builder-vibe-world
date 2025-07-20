@@ -27,16 +27,20 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Analytics />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
+const App = () => {
+  // Ensure React is properly loaded
+  if (typeof React.createElement === 'undefined') {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Analytics />
+            <Routes>
             {/* English routes */}
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
