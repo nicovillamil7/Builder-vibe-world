@@ -695,16 +695,28 @@ const LaminateFlooring = () => {
                       </div>
                     ))}
                   </div>
-                  <a
-                    href={`https://wa.me/17863810964?text=${encodeURIComponent(`Hi! I'm interested in ${type.name}. Can you provide more details and pricing?`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full"
+                  <PrimaryButton
+                    className="w-full group-hover:bg-[rgb(120,0,0)] transition-colors"
+                    onClick={() => {
+                      // Track quote request
+                      if (typeof (window as any).gtag === "function") {
+                        (window as any).gtag("event", "conversion", {
+                          event_category: "engagement",
+                          event_label: `quote_request_${type.name.toLowerCase().replace(/[^a-z0-9]/g, "_")}`,
+                          value: 1,
+                        });
+                      }
+
+                      // Open WhatsApp with personalized message
+                      const phoneNumber = "17863810964";
+                      const message = `Hi! I'm interested in ${type.name} for my project. Can you provide more details and pricing?`;
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                      window.open(whatsappUrl, "_blank");
+                    }}
                   >
-                    <PrimaryButton className="w-full group-hover:bg-[rgb(120,0,0)] transition-colors">
-                      Request Quote Information
-                    </PrimaryButton>
-                  </a>
+                    Request Quote Information
+                  </PrimaryButton>
                 </CardContent>
               </Card>
             ))}
