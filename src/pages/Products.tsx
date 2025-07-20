@@ -88,6 +88,33 @@ const Products = () => {
         canonicalUrl="https://genesisstoneusa.com/products"
       />
       <Helmet>
+        {/* Mobile Optimization */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+        {/* Performance Hints */}
+        <link rel="preconnect" href="https://cdn.builder.io" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Critical Resource Hints */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F18e90d9f99c3420095f59bd37800aeef"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F620f1c12fdce4a8883d8ef7b30b7bf90"
+        />
+
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@genesisstonefl" />
