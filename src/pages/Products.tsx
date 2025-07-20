@@ -422,12 +422,6 @@ const Products = () => {
                     → Service Areas
                   </a>
                   <a
-                    href="/contact"
-                    className="block text-red-600 hover:text-red-700 font-medium"
-                  >
-                    → Installation Services
-                  </a>
-                  <a
                     href="/about"
                     className="block text-red-600 hover:text-red-700 font-medium"
                   >
