@@ -1,6 +1,9 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import { getReliableImageUrl, RELIABLE_IMAGES } from "@/utils/imageUtils";
 
+import React, { useState } from "react";
+import { RELIABLE_IMAGES } from "@/utils/imageUtils";
+
 interface ReliableImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   imageId: string;
   fallbackImageId?: string;
