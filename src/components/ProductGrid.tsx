@@ -90,44 +90,44 @@ const ProductGrid = () => {
     };
 
     setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const productStructuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "itemListElement": products.map((product, index) => ({
+    itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
-      "item": {
+      position: index + 1,
+      item: {
         "@type": "Product",
-        "name": product.name,
-        "description": product.description,
-        "category": product.category,
-        "brand": {
+        name: product.name,
+        description: product.description,
+        category: product.category,
+        brand: {
           "@type": "Brand",
-          "name": "Genesis Stone"
+          name: "Genesis Stone",
         },
-        "offers": {
+        offers: {
           "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "priceCurrency": "USD",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
+          availability: "https://schema.org/InStock",
+          priceCurrency: "USD",
+          priceValidUntil: "2025-12-31",
+          seller: {
             "@type": "Organization",
-            "name": "Genesis Stone"
-          }
+            name: "Genesis Stone",
+          },
         },
-        "aggregateRating": {
+        aggregateRating: {
           "@type": "AggregateRating",
-          "ratingValue": "5",
-          "bestRating": "5",
-          "worstRating": "1",
-          "ratingCount": "150"
-        }
-      }
-    }))
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+          ratingCount: "150",
+        },
+      },
+    })),
   };
 
   const getItemWidth = () => {
@@ -173,8 +173,8 @@ const ProductGrid = () => {
               Our Selection
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore our collection of flooring materials, carefully selected for
-              contractors, designers, and homeowners across South Florida.
+              Explore our collection of flooring materials, carefully selected
+              for contractors, designers, and homeowners across South Florida.
             </p>
           </div>
 
@@ -247,6 +247,23 @@ const ProductGrid = () => {
                         className="w-full min-h-[44px] hover:bg-[rgb(138,0,0)] hover:text-white hover:border-[rgb(138,0,0)] transition-all duration-200 touch-manipulation"
                         style={{ borderRadius: "12px" }}
                         aria-label={`Get sample for ${product.name}`}
+                        onClick={() => {
+                          // Track sample request
+                          if (typeof (window as any).gtag === "function") {
+                            (window as any).gtag("event", "conversion", {
+                              event_category: "engagement",
+                              event_label: `sample_request_${product.name.toLowerCase().replace(/[^a-z0-9]/g, "_")}`,
+                              value: 1,
+                            });
+                          }
+
+                          // Open WhatsApp with personalized message
+                          const phoneNumber = "17863810964";
+                          const message = `Hi! I'd like to request a sample of ${product.name} for my project. Can you help me with sample options and pricing information?`;
+                          const encodedMessage = encodeURIComponent(message);
+                          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                          window.open(whatsappUrl, "_blank");
+                        }}
                       >
                         Get Sample
                       </OutlineButton>
