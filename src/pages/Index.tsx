@@ -646,10 +646,52 @@ const Index = () => {
             Ready to Get Started?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <GoldButton size="lg" className="px-8 py-3">
+            <GoldButton
+              size="lg"
+              className="px-8 py-3"
+              onClick={() => {
+                // Track trade pricing request
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "trade_pricing_request_cta",
+                    value: 1,
+                  });
+                }
+
+                // Open WhatsApp
+                const phoneNumber = "17863810964";
+                const message =
+                  "Hi! I'm interested in trade pricing for flooring materials. Can you provide information about contractor pricing and terms?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Get Trade Pricing
             </GoldButton>
-            <WhiteOutlineButton size="lg" className="px-8 py-3">
+            <WhiteOutlineButton
+              size="lg"
+              className="px-8 py-3"
+              onClick={() => {
+                // Track sample request
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "designer_samples_request_cta",
+                    value: 1,
+                  });
+                }
+
+                // Open WhatsApp
+                const phoneNumber = "17863810964";
+                const message =
+                  "Hi! I'd like to request designer samples for my project. Can you help me with sample options and product information?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Request Designer Samples
             </WhiteOutlineButton>
           </div>
