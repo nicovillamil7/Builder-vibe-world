@@ -22,31 +22,9 @@ export default defineConfig({
     reportCompressedSize: false, // Faster builds
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Core React libraries
-          if (id.includes("react") || id.includes("react-dom")) {
-            return "react-vendor";
-          }
-          // Router
-          if (id.includes("react-router")) {
-            return "router";
-          }
-          // UI components
-          if (id.includes("lucide-react") || id.includes("@radix-ui")) {
-            return "ui";
-          }
-          // Utils and smaller libraries
-          if (
-            id.includes("class-variance-authority") ||
-            id.includes("clsx") ||
-            id.includes("tailwind-merge")
-          ) {
-            return "utils";
-          }
-          // Default vendor for other node_modules
-          if (id.includes("node_modules")) {
-            return "vendor";
-          }
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split(".");
