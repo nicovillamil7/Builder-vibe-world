@@ -2,13 +2,6 @@ import * as React from "react";
 
 import type { ToastActionElement, ToastProps } from "@/components/ui/toast";
 
-// Ensure React is available before using Context
-if (typeof React.createContext === "undefined") {
-  throw new Error(
-    "React is not properly loaded. Cannot initialize toast system.",
-  );
-}
-
 const TOAST_LIMIT = 1;
 const TOAST_REMOVE_DELAY = 1000000;
 
