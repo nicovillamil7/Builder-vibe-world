@@ -5,8 +5,22 @@ export const initializeFetchErrorHandler = () => {
 
   window.fetch = function (...args) {
     return originalFetch.apply(this, args).catch((error) => {
-      // Log the error but don't break the application
-      console.warn("Fetch request failed (likely third-party script):", error);
+      const url = args[0]?.toString() || "";
+
+      // Check if this is a SearchAtlas or other third-party API failure
+      if (
+        url.includes("searchatlas.com") ||
+        url.includes("clarity.ms") ||
+        url.includes("googletagmanager.com")
+      ) {
+        console.warn(
+          "Third-party service request failed (continuing without it):",
+          url,
+          error,
+        );
+      } else {
+        console.warn("Fetch request failed:", error);
+      }
 
       // Return a resolved promise with a fake response to prevent script errors
       return Promise.resolve(
