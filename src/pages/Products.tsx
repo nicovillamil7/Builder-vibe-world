@@ -35,7 +35,7 @@ const Products = () => {
       id: "laminate-flooring",
       name: "Laminates",
       description:
-        "A cost-effective and stylish flooring solution, our laminate options replicate the look of hardwood and stone while providing excellent resistance to scratches, stains, and moisture—ideal for both residential and commercial projects.",
+        "A cost-effective and stylish flooring solution, our premium laminate options perfectly replicate the authentic look of hardwood and natural stone while providing excellent resistance to scratches, stains, and moisture. Featuring advanced AC4-AC5 wear ratings and waterproof core technology, these floors are ideal for both high-traffic residential areas and demanding commercial projects throughout South Florida.",
       imageId: "laminateHardwood",
       hasDetailedPage: true,
     },
