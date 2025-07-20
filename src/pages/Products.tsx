@@ -298,8 +298,10 @@ const Products = () => {
                 <div className="relative h-64 overflow-hidden">
                   <SimpleReliableImage
                     imageId={category.imageId}
-                    alt={category.name}
+                    alt={`${category.name} collection - Premium flooring options from Genesis Stone`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div
                     className="absolute inset-0 bg-no-repeat bg-center bg-cover"
