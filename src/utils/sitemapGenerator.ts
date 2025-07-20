@@ -35,6 +35,12 @@ const PRODUCT_IMAGES: Record<string, SitemapImage> = {
     caption:
       "Premium laminate flooring options for residential and commercial projects",
   },
+  "laminate-flooring": {
+    loc: `${SITE_URL}/images/laminate-flooring-collection.jpg`,
+    title: "Luxury Laminate Flooring Collection - Genesis Stone",
+    caption:
+      "Premium laminate flooring with waterproof technology and realistic wood grain textures for South Florida homes and businesses",
+  },
   metalTrims: {
     loc: `${SITE_URL}/images/metal-trim-collection.jpg`,
     title: "Metal Trim and Edge Solutions - Genesis Stone",
