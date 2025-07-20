@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genesis Stone - Health Check</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #8a0000, #991b1b);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 1rem;
+        backdrop-filter: blur(10px);
+      }
+      .status {
+        font-size: 1.5rem;
+        color: #4ade80;
+        margin-bottom: 1rem;
+      }
+      .timestamp {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏠 Genesis Stone & More</h1>
+      <div class="status">✅ Site Status: Online</div>
+      <p>All systems operational</p>
+      <div class="timestamp">Last checked: <span id="timestamp"></span></div>
+      <br />
+      <a href="/" style="color: #fbbf24; text-decoration: none"
+        >← Back to Main Site</a
+      >
+    </div>
+
+    <script>
+      document.getElementById("timestamp").textContent =
+        new Date().toLocaleString();
+    </script>
+  </body>
+</html>
