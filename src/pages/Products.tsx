@@ -312,11 +312,26 @@ const Products = () => {
                         interior applications.
                       </p>
                     )}
-                    {category.id === "laminates" && (
+                    {category.id === "laminate-flooring" && (
                       <p>
-                        Water-resistant luxury vinyl plank (LVP) and traditional
-                        laminate options with realistic wood grain textures and
-                        stone patterns.
+                        Water-resistant{" "}
+                        <a
+                          href="/products/laminate-flooring"
+                          className="text-red-700 hover:text-red-800 font-medium"
+                        >
+                          luxury vinyl plank (LVP)
+                        </a>{" "}
+                        and traditional laminate options with realistic wood
+                        grain textures and stone patterns. Perfect for{" "}
+                        <a
+                          href="/blog/laminate-flooring-installation-tips"
+                          className="text-red-700 hover:text-red-800 font-medium"
+                        >
+                          DIY installation
+                        </a>{" "}
+                        or professional setup with click-lock systems and
+                        enhanced moisture barriers ideal for Florida's humid
+                        climate.
                       </p>
                     )}
                     {category.id === "decorative" && (
