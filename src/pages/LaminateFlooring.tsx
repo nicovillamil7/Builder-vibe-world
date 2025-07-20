@@ -660,7 +660,22 @@ const LaminateFlooring = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     fallbackSrc={type.image}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        type.name === "Wood-Look Laminate"
+                          ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fdcfb028f37b7499aa488b193aeb5925f)"
+                          : type.name === "Tile-Look Laminate"
+                            ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fa26622430cde4e0c89207faa92c414fc)"
+                            : type.name === "Wide Plank Laminate"
+                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F532dae5e91ea4cf189b93207aedbc837)"
+                              : "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fb651a9f9b03d486096986cc74711a06b)",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-2xl font-bold mb-2">{type.name}</h3>
                   </div>
