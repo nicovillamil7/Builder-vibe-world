@@ -7,8 +7,6 @@ channel = "stable-24_05"
 [deployment]
 deploymentTarget = "static"
 publicDir = "dist"
-run = ["sh", "-c", "npm run build && npm run preview"]
-build = ["sh", "-c", "npm run build"]
 
 [languages.javascript]
 pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
