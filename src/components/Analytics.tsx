@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 declare global {
   interface Window {
@@ -17,8 +17,8 @@ const Analytics = () => {
       window.gtag = function gtag() {
         window.dataLayer.push(arguments);
       };
-      window.gtag('js', new Date());
-      window.gtag('config', 'GA_MEASUREMENT_ID', {
+      window.gtag("js", new Date());
+      window.gtag("config", "G-5DTNSBTY8Z", {
         page_title: document.title,
         page_location: window.location.href,
       });
@@ -26,9 +26,11 @@ const Analytics = () => {
 
     // Initialize Microsoft Clarity
     const initClarity = () => {
-      window.clarity = window.clarity || function() {
-        (window.clarity.q = window.clarity.q || []).push(arguments);
-      };
+      window.clarity =
+        window.clarity ||
+        function () {
+          (window.clarity.q = window.clarity.q || []).push(arguments);
+        };
     };
 
     // Initialize tracking when component mounts
@@ -38,7 +40,7 @@ const Analytics = () => {
     // Track page views for SPA navigation
     const trackPageView = () => {
       if (window.gtag) {
-        window.gtag('config', 'GA_MEASUREMENT_ID', {
+        window.gtag("config", "G-5DTNSBTY8Z", {
           page_title: document.title,
           page_location: window.location.href,
         });
@@ -50,10 +52,10 @@ const Analytics = () => {
       setTimeout(trackPageView, 100);
     };
 
-    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener("popstate", handleRouteChange);
 
     return () => {
-      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener("popstate", handleRouteChange);
     };
   }, []);
 

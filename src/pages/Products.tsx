@@ -35,7 +35,7 @@ const Products = () => {
       id: "laminate-flooring",
       name: "Laminates",
       description:
-        "A cost-effective and stylish flooring solution, our laminate options replicate the look of hardwood and stone while providing excellent resistance to scratches, stains, and moisture—ideal for both residential and commercial projects.",
+        "A cost-effective and stylish flooring solution, our premium laminate options perfectly replicate the authentic look of hardwood and natural stone while providing excellent resistance to scratches, stains, and moisture. Featuring advanced AC4-AC5 wear ratings and waterproof core technology, these floors are ideal for both high-traffic residential areas and demanding commercial projects throughout South Florida.",
       imageId: "laminateHardwood",
       hasDetailedPage: true,
     },
@@ -81,25 +81,80 @@ const Products = () => {
 
   return (
     <Layout>
-      <SEOHead 
+      <SEOHead
         title="Premium Flooring Products Miami | Genesis Stone Collections"
         description="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials. Professional-grade products for Miami contractors and homeowners with same-day pickup available."
         keywords="porcelain tiles miami, natural stone floors, decorative flooring, laminate flooring, floor tiles, ceramic tiles, stone flooring, miami flooring products"
         canonicalUrl="https://genesisstoneusa.com/products"
       />
       <Helmet>
+        {/* Mobile Optimization */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+        {/* Performance Hints */}
+        <link rel="preconnect" href="https://cdn.builder.io" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Critical Resource Hints */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F18e90d9f99c3420095f59bd37800aeef"
+          media="(min-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F620f1c12fdce4a8883d8ef7b30b7bf90"
+          media="(min-width: 768px)"
+        />
+
+        {/* Mobile-first optimizations */}
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
+
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@genesisstonefl" />
-        <meta name="twitter:title" content="Premium Flooring Products Miami | Genesis Stone Collections" />
-        <meta name="twitter:description" content="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials for Miami contractors." />
-        <meta name="twitter:image" content="https://genesisstoneusa.com/images/products-collection.jpg" />
+        <meta
+          name="twitter:title"
+          content="Premium Flooring Products Miami | Genesis Stone Collections"
+        />
+        <meta
+          name="twitter:description"
+          content="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials for Miami contractors."
+        />
+        <meta
+          name="twitter:image"
+          content="https://genesisstoneusa.com/images/products-collection.jpg"
+        />
 
         {/* Open Graph Meta */}
-        <meta property="og:title" content="Premium Flooring Products Miami | Genesis Stone Collections" />
-        <meta property="og:description" content="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials." />
-        <meta property="og:image" content="https://genesisstoneusa.com/images/products-collection.jpg" />
-        <meta property="og:url" content="https://genesisstoneusa.com/products" />
+        <meta
+          property="og:title"
+          content="Premium Flooring Products Miami | Genesis Stone Collections"
+        />
+        <meta
+          property="og:description"
+          content="Browse premium flooring collections: porcelain tiles, natural stone, laminate flooring, and decorative materials."
+        />
+        <meta
+          property="og:image"
+          content="https://genesisstoneusa.com/images/products-collection.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://genesisstoneusa.com/products"
+        />
         <meta property="og:type" content="website" />
 
         <script type="application/ld+json">
@@ -215,10 +270,29 @@ const Products = () => {
               Premium Flooring Product Categories
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Genesis Stone & More has been South Florida's premier flooring supplier since 2008, offering an extensive collection of premium flooring materials. From commercial-grade porcelain tiles to luxury natural stone, our products meet the highest industry standards for durability, beauty, and performance.
+              Genesis Stone & More has been South Florida's premier flooring
+              supplier since 2008, offering an extensive collection of premium
+              flooring materials. From commercial-grade porcelain tiles to
+              luxury natural stone, our products meet the highest industry
+              standards for durability, beauty, and performance.
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Whether you're a contractor seeking <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium underline">wholesale pricing</a> or a homeowner exploring <a href="/retail" className="text-red-700 hover:text-red-800 font-medium underline">retail options</a>, our Miami showroom features live displays with same-day pickup and professional installation services throughout South Florida.
+              Whether you're a contractor seeking{" "}
+              <a
+                href="/wholesale"
+                className="text-red-700 hover:text-red-800 font-medium underline"
+              >
+                wholesale pricing
+              </a>{" "}
+              or a homeowner exploring{" "}
+              <a
+                href="/retail"
+                className="text-red-700 hover:text-red-800 font-medium underline"
+              >
+                retail options
+              </a>
+              , our Miami showroom features live displays with same-day pickup
+              and professional installation services throughout South Florida.
             </p>
           </div>
 
@@ -231,8 +305,10 @@ const Products = () => {
                 <div className="relative h-64 overflow-hidden">
                   <SimpleReliableImage
                     imageId={category.imageId}
-                    alt={category.name}
+                    alt={`${category.name} collection - Premium flooring options from Genesis Stone`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div
                     className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -242,8 +318,8 @@ const Products = () => {
                           ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F18e90d9f99c3420095f59bd37800aeef)"
                           : category.id === "natural-stone"
                             ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F2a92e90ea3be4a5ca96a5c2eb98a0677)"
-                            : category.id === "laminates"
-                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F380930421bb24b70b044aa89b2501734)"
+                            : category.id === "laminate-flooring"
+                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F620f1c12fdce4a8883d8ef7b30b7bf90)"
                               : category.id === "decorative"
                                 ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Ff2ed05f8d528431d854d22437c4645e4)"
                                 : "linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0))",
@@ -259,21 +335,52 @@ const Products = () => {
                   </p>
                   <div className="text-sm text-gray-500 mb-6">
                     {category.id === "porcelain" && (
-                      <p>Available in large format tiles, wood-look planks, and stone-look designs. Perfect for high-traffic commercial spaces and residential applications.</p>
+                      <p>
+                        Available in large format tiles, wood-look planks, and
+                        stone-look designs. Perfect for high-traffic commercial
+                        spaces and residential applications.
+                      </p>
                     )}
                     {category.id === "natural-stone" && (
-                      <p>Including travertine, marble, granite, limestone, and slate. Ideal for pool decks, outdoor patios, and luxury interior applications.</p>
+                      <p>
+                        Including travertine, marble, granite, limestone, and
+                        slate. Ideal for pool decks, outdoor patios, and luxury
+                        interior applications.
+                      </p>
                     )}
-                    {category.id === "laminates" && (
-                      <p>Water-resistant luxury vinyl plank (LVP) and traditional laminate options with realistic wood grain textures and stone patterns.</p>
+                    {category.id === "laminate-flooring" && (
+                      <p>
+                        Water-resistant{" "}
+                        <a
+                          href="/products/laminate-flooring"
+                          className="text-red-700 hover:text-red-800 font-medium"
+                        >
+                          luxury vinyl plank (LVP)
+                        </a>{" "}
+                        and traditional laminate options with realistic wood
+                        grain textures and stone patterns. Perfect for{" "}
+                        <a
+                          href="/blog/laminate-flooring-installation-tips"
+                          className="text-red-700 hover:text-red-800 font-medium"
+                        >
+                          DIY installation
+                        </a>{" "}
+                        or professional setup with click-lock systems and
+                        enhanced moisture barriers ideal for Florida's humid
+                        climate.
+                      </p>
                     )}
                     {category.id === "decorative" && (
-                      <p>Glass mosaics, metal trims, wall panels, and decorative borders to create stunning focal points and finishing touches.</p>
+                      <p>
+                        Glass mosaics, metal trims, wall panels, and decorative
+                        borders to create stunning focal points and finishing
+                        touches.
+                      </p>
                     )}
                   </div>
                   {category.hasDetailedPage ? (
                     <Link to={`/products/${category.id}`}>
-                      <PrimaryButton 
+                      <PrimaryButton
                         className="w-full min-h-[44px] group-hover:bg-[rgb(120,0,0)] transition-colors touch-manipulation"
                         aria-label={`View ${category.name} collection`}
                       >
@@ -281,7 +388,7 @@ const Products = () => {
                       </PrimaryButton>
                     </Link>
                   ) : (
-                    <PrimaryButton 
+                    <PrimaryButton
                       className="w-full min-h-[44px] group-hover:bg-[rgb(120,0,0)] transition-colors touch-manipulation"
                       aria-label={`View ${category.name} collection`}
                     >
@@ -304,33 +411,73 @@ const Products = () => {
                 Complete Flooring Solutions for Every Project
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Beyond our extensive tile and flooring collection, Genesis Stone provides everything you need for successful installation projects. Our inventory includes professional-grade adhesives, grouts, underlayments, and finishing accessories from leading manufacturers.
+                Beyond our extensive tile and flooring collection, Genesis Stone
+                provides everything you need for successful installation
+                projects. Our inventory includes professional-grade adhesives,
+                grouts, underlayments, and finishing accessories from leading
+                manufacturers.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
-                  <p className="text-gray-600"><strong>Installation Materials:</strong> MAPEI mortars, Laticrete adhesives, custom grout colors, and waterproofing membranes</p>
+                  <p className="text-gray-600">
+                    <strong>Installation Materials:</strong> MAPEI mortars,
+                    Laticrete adhesives, custom grout colors, and waterproofing
+                    membranes
+                  </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
-                  <p className="text-gray-600"><strong>Professional Tools:</strong> Tile cutters, spacers, leveling systems, and specialty installation equipment</p>
+                  <p className="text-gray-600">
+                    <strong>Professional Tools:</strong> Tile cutters, spacers,
+                    leveling systems, and specialty installation equipment
+                  </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2"></div>
-                  <p className="text-gray-600"><strong>Expert Support:</strong> Technical guidance, material calculations, and project planning assistance</p>
+                  <p className="text-gray-600">
+                    <strong>Expert Support:</strong> Technical guidance,
+                    material calculations, and project planning assistance
+                  </p>
                 </div>
               </div>
             </div>
             <div className="relative">
               <div className="bg-gradient-to-r from-red-50 to-red-100 p-8 rounded-2xl">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Popular Product Categories</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Popular Product Categories
+                </h3>
                 <div className="space-y-3">
-                  <a href="/wholesale" className="block text-red-600 hover:text-red-700 font-medium">→ Wholesale Pricing</a>
-                  <a href="/retail" className="block text-red-600 hover:text-red-700 font-medium">→ Retail Showroom</a>
-                  <a href="/blog" className="block text-red-600 hover:text-red-700 font-medium">→ Flooring Guides & Tips</a>
-                  <a href="/service-areas" className="block text-red-600 hover:text-red-700 font-medium">→ Service Areas</a>
-                  <a href="/contact" className="block text-red-600 hover:text-red-700 font-medium">→ Installation Services</a>
-                  <a href="/about" className="block text-red-600 hover:text-red-700 font-medium">→ About Our Company</a>
+                  <a
+                    href="/wholesale"
+                    className="block text-red-600 hover:text-red-700 font-medium"
+                  >
+                    → Wholesale Pricing
+                  </a>
+                  <a
+                    href="/retail"
+                    className="block text-red-600 hover:text-red-700 font-medium"
+                  >
+                    → Retail Showroom
+                  </a>
+                  <a
+                    href="/blog"
+                    className="block text-red-600 hover:text-red-700 font-medium"
+                  >
+                    → Flooring Guides & Tips
+                  </a>
+                  <a
+                    href="/service-areas"
+                    className="block text-red-600 hover:text-red-700 font-medium"
+                  >
+                    → Service Areas
+                  </a>
+                  <a
+                    href="/about"
+                    className="block text-red-600 hover:text-red-700 font-medium"
+                  >
+                    → About Our Company
+                  </a>
                 </div>
               </div>
             </div>

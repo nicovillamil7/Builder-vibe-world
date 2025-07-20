@@ -4,6 +4,8 @@ import ProductGrid from "@/components/ProductGrid";
 import GoogleReviews from "@/components/GoogleReviews";
 import TechnicalSEO from "@/components/TechnicalSEO";
 import SEOHead from "@/components/SEOHead";
+import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
 import {
   GoldButton,
   WhiteOutlineButton,
@@ -32,6 +34,17 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const [isPageReady, setIsPageReady] = useState(false);
+
+  useEffect(() => {
+    // Ensure page renders even if third-party scripts fail
+    const timer = setTimeout(() => {
+      setIsPageReady(true);
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const features = [
     {
       icon: Calculator,
@@ -55,17 +68,20 @@ const Index = () => {
     {
       icon: Calculator,
       title: "Trade Pricing for Porcelain Tiles Miami",
-      description: "Save up to 25% on bulk orders with flexible Net-30 payment terms for qualified flooring contractors",
+      description:
+        "Save up to 25% on bulk orders with flexible Net-30 payment terms for qualified flooring contractors",
     },
     {
       icon: Truck,
       title: "Commercial Flooring Delivery Miami",
-      description: "Same-day pickup and next-day delivery throughout South Florida for tile contractors",
+      description:
+        "Same-day pickup and next-day delivery throughout South Florida for tile contractors",
     },
     {
       icon: Users,
-      title: "Expert Flooring Installation Support",
-      description: "15+ years serving Miami contractors with material take-offs, technical specs, and project support",
+      title: "Expert Support",
+      description:
+        "15+ years serving Miami contractors with material take-offs, technical specs, and project support",
     },
   ];
 
@@ -92,7 +108,8 @@ const Index = () => {
 
   const contractorFaqs = [
     {
-      question: "What volume discounts do you offer for Miami flooring contractors?",
+      question:
+        "What volume discounts do you offer for Miami flooring contractors?",
       answer:
         "We offer tiered volume pricing for porcelain tiles Miami contractors: 15% off orders 5,000+ sq ft, 20% off orders 8,000+ sq ft, and 25% off orders 10,000+ sq ft. Plus Net-30 payment terms for qualified commercial flooring contractors with trade accounts.",
     },
@@ -190,6 +207,21 @@ const Index = () => {
     },
   ];
 
+  if (!isPageReady) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(120,0,0)] rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span className="text-white font-bold text-2xl">G</span>
+            </div>
+            <p className="text-gray-600">Loading Genesis Stone...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <SEOHead
@@ -198,15 +230,51 @@ const Index = () => {
         keywords="flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, tile supplier Miami"
         canonicalUrl="https://genesisstoneusa.com/"
       />
-      <TechnicalSEO 
+
+      {/* Mobile Performance Optimizations */}
+      <Helmet>
+        {/* Mobile Viewport and Performance */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
+
+        {/* Performance Hints */}
+        <link rel="preconnect" href="https://cdn.builder.io" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+
+        {/* Critical Resource Hints for Mobile */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F37ad3adaf8fd4909968a7295164d4eb7"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f"
+          media="(max-width: 768px)"
+        />
+      </Helmet>
+      <TechnicalSEO
         pageType="website"
         images={[
           {
             url: "https://genesisstoneusa.com/placeholder.svg",
             alt: "Genesis Stone Miami flooring showroom",
             width: 1200,
-            height: 630
-          }
+            height: 630,
+          },
         ]}
       />
 
@@ -224,10 +292,30 @@ const Index = () => {
               Why Choose Genesis Stone for Your Miami Flooring Project?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Premier <a href="/products" className="text-red-700 hover:text-red-800 font-medium underline" title="Miami flooring products and tile supplier">flooring supplier Miami</a> serving contractors and homeowners across South Florida since 2008. Specializing in porcelain tiles, natural stone, and luxury vinyl plank installation.
+              Premier{" "}
+              <a
+                href="/products"
+                className="text-red-700 hover:text-red-800 font-medium underline"
+                title="Miami flooring products and tile supplier"
+              >
+                flooring supplier Miami
+              </a>{" "}
+              serving contractors and homeowners across South Florida since
+              2008. Specializing in porcelain tiles, natural stone, and luxury
+              vinyl plank installation.
             </p>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Whether you're a contractor seeking <a href="/wholesale" className="text-red-600 hover:text-red-700 underline font-medium">wholesale pricing</a> or a homeowner looking for premium materials, Genesis Stone & More has been South Florida's trusted flooring partner since 2008. Our extensive inventory includes large format porcelain tiles, natural stone floors, luxury vinyl planks, and decorative elements.
+              Whether you're a contractor seeking{" "}
+              <a
+                href="/wholesale"
+                className="text-red-600 hover:text-red-700 underline font-medium"
+              >
+                wholesale pricing
+              </a>{" "}
+              or a homeowner looking for premium materials, Genesis Stone & More
+              has been South Florida's trusted flooring partner since 2008. Our
+              extensive inventory includes large format porcelain tiles, natural
+              stone floors, luxury vinyl planks, and decorative elements.
             </p>
           </div>
 
@@ -241,38 +329,32 @@ const Index = () => {
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">
                   For Miami Flooring Contractors
                 </h3>
-                <p className="text-gray-600">Trade pricing on <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium underline">commercial flooring Miami</a> projects</p>
+                <p className="text-gray-600">
+                  Trade pricing on{" "}
+                  <a
+                    href="/wholesale"
+                    className="text-red-700 hover:text-red-800 font-medium underline"
+                  >
+                    commercial flooring Miami
+                  </a>{" "}
+                  projects
+                </p>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {contractorBenefits.map((benefit, index) => (
                   <div key={index} className="group">
-                    <div className="flex items-start space-x-5">
-                      <div className="w-14 h-14 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
-                        <benefit.icon className="h-7 w-7 text-red-700 group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-red-50 to-red-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
+                        <benefit.icon className="h-6 w-6 text-red-700 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <div className="flex-1 min-h-[80px] flex flex-col">
-                        <h4 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                      <div className="flex-1 min-h-[70px] flex flex-col justify-center">
+                        <h4 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
                           {benefit.title}
                         </h4>
-                        <p className="text-gray-600 leading-relaxed flex-1">
+                        <p className="text-gray-600 leading-relaxed text-sm">
                           {benefit.description}
                         </p>
-                        {index === 0 && (
-                          <a href="/wholesale" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block" title="Commercial flooring contractor pricing Miami">
-                            Get commercial flooring Miami trade pricing →
-                          </a>
-                        )}
-                        {index === 1 && (
-                          <a href="/contact" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block" title="Miami flooring delivery and pickup">
-                            Schedule flooring delivery Miami →
-                          </a>
-                        )}
-                        {index === 2 && (
-                          <a href="/about" className="text-red-700 hover:text-red-800 font-medium mt-2 inline-block" title="Expert flooring installation support Miami">
-                            Meet our flooring installation experts →
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -292,18 +374,18 @@ const Index = () => {
                 <p className="text-gray-600">Premium residential options</p>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {homeownerBenefits.map((benefit, index) => (
                   <div key={index} className="group">
-                    <div className="flex items-start space-x-5">
-                      <div className="w-14 h-14 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
-                        <benefit.icon className="h-7 w-7 text-red-700 group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-red-50 to-red-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-[rgb(138,0,0)] group-hover:to-[rgb(120,0,0)] transition-all duration-300">
+                        <benefit.icon className="h-6 w-6 text-red-700 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <div className="flex-1 min-h-[80px] flex flex-col">
-                        <h4 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                      <div className="flex-1 min-h-[70px] flex flex-col justify-center">
+                        <h4 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
                           {benefit.title}
                         </h4>
-                        <p className="text-gray-600 leading-relaxed flex-1">
+                        <p className="text-gray-600 leading-relaxed text-sm">
                           {benefit.description}
                         </p>
                       </div>
@@ -427,11 +509,16 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Natural Stone Pool Deck - Strategic Link */}
-            <a href="/products" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a
+              href="/products"
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer"
+            >
               <img
                 src="https://images.unsplash.com/photo-1594739797188-97c1a5b64b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern pool deck with large format porcelain tiles"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -442,17 +529,26 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Natural Stone Floors Miami</h4>
-                <p className="text-sm opacity-90">Pool Decks & Outdoor Spaces</p>
+                <h4 className="font-bold text-xl mb-2">
+                  Natural Stone Floors Miami
+                </h4>
+                <p className="text-sm opacity-90">
+                  Pool Decks & Outdoor Spaces
+                </p>
               </div>
             </a>
 
             {/* Porcelain Tiles Link */}
-            <a href="/products/porcelain" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a
+              href="/products/porcelain"
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer"
+            >
               <img
                 src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury living room with marble accent wall"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -463,17 +559,26 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Porcelain Tiles Miami</h4>
-                <p className="text-sm opacity-90">Large Format & Premium Options</p>
+                <h4 className="font-bold text-xl mb-2">
+                  Porcelain Tiles Miami
+                </h4>
+                <p className="text-sm opacity-90">
+                  Large Format & Premium Options
+                </p>
               </div>
             </a>
 
             {/* Natural Stone Travertine Link */}
-            <a href="/products" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a
+              href="/products"
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer"
+            >
               <img
                 src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -484,17 +589,24 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Travertine Flooring Miami</h4>
+                <h4 className="font-bold text-xl mb-2">
+                  Travertine Flooring Miami
+                </h4>
                 <p className="text-sm opacity-90">Pool Decks & Luxury Homes</p>
               </div>
             </a>
 
             {/* Porcelain Interior Link */}
-            <a href="/products/porcelain" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a
+              href="/products/porcelain"
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer"
+            >
               <img
                 src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern white interior with polished porcelain"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -505,31 +617,45 @@ const Index = () => {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Large Format Porcelain Tiles</h4>
+                <h4 className="font-bold text-xl mb-2">
+                  Large Format Porcelain Tiles
+                </h4>
                 <p className="text-sm opacity-90">Contemporary Clean Design</p>
               </div>
             </a>
 
             {/* Luxury Vinyl Plank Link */}
-            <a href="/products/laminates" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a
+              href="/products/laminates"
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer"
+            >
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjgw3ne4za9mheafx9wrc5_1750117973_img_1-531f33?format=webp&width=800"
                 alt="Professional installation of luxury vinyl plank flooring"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-bold text-xl mb-2">Luxury Vinyl Plank Miami</h4>
+                <h4 className="font-bold text-xl mb-2">
+                  Luxury Vinyl Plank Miami
+                </h4>
                 <p className="text-sm opacity-90">Professional Installation</p>
               </div>
             </a>
 
             {/* Mosaic Tiles Link */}
-            <a href="/products/mosaics" className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer">
+            <a
+              href="/products/mosaics"
+              className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-[4/3] cursor-pointer"
+            >
               <img
                 src="https://cdn.builder.io/api/v1/assets/794088d731be4280a896b77e76e82a50/assets_task_01jxxjhp2ee2fbej2h3a8ybwn6_1750118078_img_1-73caf1?format=webp&width=800"
                 alt="Luxury mosaic artistry in spa design"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -548,10 +674,52 @@ const Index = () => {
             Ready to Get Started?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <GoldButton size="lg" className="px-8 py-3">
+            <GoldButton
+              size="lg"
+              className="px-8 py-3"
+              onClick={() => {
+                // Track trade pricing request
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "trade_pricing_request_cta",
+                    value: 1,
+                  });
+                }
+
+                // Open WhatsApp
+                const phoneNumber = "17863810964";
+                const message =
+                  "Hi! I'm interested in trade pricing for flooring materials. Can you provide information about contractor pricing and terms?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Get Trade Pricing
             </GoldButton>
-            <WhiteOutlineButton size="lg" className="px-8 py-3">
+            <WhiteOutlineButton
+              size="lg"
+              className="px-8 py-3"
+              onClick={() => {
+                // Track sample request
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "designer_samples_request_cta",
+                    value: 1,
+                  });
+                }
+
+                // Open WhatsApp
+                const phoneNumber = "17863810964";
+                const message =
+                  "Hi! I'd like to request designer samples for my project. Can you help me with sample options and product information?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
               Request Designer Samples
             </WhiteOutlineButton>
           </div>

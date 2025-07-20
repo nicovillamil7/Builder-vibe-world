@@ -5,119 +5,168 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import GoogleReviews from "@/components/GoogleReviews";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Shield, 
-  Wrench, 
-  Sparkles, 
-  Home, 
-  DollarSign, 
-  Users, 
-  ChevronDown, 
+import {
+  Shield,
+  Wrench,
+  Sparkles,
+  Home,
+  DollarSign,
+  Users,
+  ChevronDown,
   ChevronUp,
   Star,
   MapPin,
   Phone,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
-import { PrimaryButton, GoldButton, WhiteOutlineButton } from "@/components/ui/custom-buttons";
+import {
+  PrimaryButton,
+  GoldButton,
+  WhiteOutlineButton,
+} from "@/components/ui/custom-buttons";
 
 const LaminateFlooring = () => {
   const [openFAQ, setOpenFAQ] = React.useState<number | null>(null);
 
   const whatsappMessage = encodeURIComponent(
-    "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?"
+    "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?",
   );
 
   const benefits = [
     {
       icon: DollarSign,
       title: "Affordable Style",
-      description: "Get the beautiful wood look without the high cost. Premium laminate flooring at budget-friendly prices."
+      description:
+        "Get the beautiful wood look without the high cost. Premium laminate flooring at budget-friendly prices.",
     },
     {
       icon: Shield,
       title: "Scratch & Dent Resistant",
-      description: "Advanced wear layer technology protects against daily wear, pets, and heavy foot traffic."
+      description:
+        "Advanced wear layer technology protects against daily wear, pets, and heavy foot traffic.",
     },
     {
       icon: Wrench,
       title: "Easy Installation",
-      description: "DIY-friendly click-lock system or professional installation available. Quick and hassle-free setup."
+      description:
+        "DIY-friendly click-lock system or professional installation available. Quick and hassle-free setup.",
     },
     {
       icon: Sparkles,
       title: "Low Maintenance",
-      description: "Simple cleaning with regular sweeping and occasional mopping. No refinishing required."
+      description:
+        "Simple cleaning with regular sweeping and occasional mopping. No refinishing required.",
     },
     {
       icon: Users,
       title: "Family & Pet Friendly",
-      description: "Safe for children and pets with anti-bacterial surface treatment and non-toxic materials."
-    }
+      description:
+        "Safe for children and pets with anti-bacterial surface treatment and non-toxic materials.",
+    },
   ];
 
   const laminateTypes = [
     {
       name: "Wood-Look Laminate",
-      description: "Classic oak, walnut, and driftwood tones with realistic grain patterns",
-      features: ["Authentic wood grain texture", "Multiple plank widths", "Traditional and rustic styles", "AC3-AC5 ratings available"],
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Wood-look laminate flooring Miami - realistic oak grain patterns for living rooms and bedrooms"
+      description:
+        "Classic oak, walnut, and driftwood tones with realistic grain patterns",
+      features: [
+        "Authentic wood grain texture",
+        "Multiple plank widths",
+        "Traditional and rustic styles",
+        "AC3-AC5 ratings available",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      imageAlt:
+        "Wood-look laminate flooring Miami - realistic oak grain patterns for living rooms and bedrooms",
     },
     {
       name: "Tile-Look Laminate",
-      description: "Mimics stone and ceramic surfaces with waterproof technology",
-      features: ["Stone and ceramic designs", "Waterproof core", "Grout line textures", "Perfect for kitchens"],
-      image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Tile-look laminate flooring Miami - waterproof stone patterns for kitchens and bathrooms"
+      description:
+        "Mimics stone and ceramic surfaces with waterproof technology",
+      features: [
+        "Stone and ceramic designs",
+        "Waterproof core",
+        "Grout line textures",
+        "Perfect for kitchens",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      imageAlt:
+        "Tile-look laminate flooring Miami - waterproof stone patterns for kitchens and bathrooms",
     },
     {
       name: "Wide Plank Laminate",
       description: "Sleek modern look with fewer seams and contemporary appeal",
-      features: ["7-9 inch wide planks", "Modern aesthetic", "Fewer seams", "Premium finishes"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Wide plank laminate flooring Miami - modern large format planks for contemporary homes"
+      features: [
+        "7-9 inch wide planks",
+        "Modern aesthetic",
+        "Fewer seams",
+        "Premium finishes",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      imageAlt:
+        "Wide plank laminate flooring Miami - modern large format planks for contemporary homes",
     },
     {
       name: "Water-Resistant Laminate",
-      description: "Advanced waterproof core technology for high-moisture areas",
-      features: ["100% waterproof core", "Spill protection", "Humidity resistant", "Ideal for Florida climate"],
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Water-resistant laminate flooring Miami - waterproof technology for Florida kitchens and bathrooms"
-    }
+      description:
+        "Advanced waterproof core technology for high-moisture areas",
+      features: [
+        "100% waterproof core",
+        "Spill protection",
+        "Humidity resistant",
+        "Ideal for Florida climate",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      imageAlt:
+        "Water-resistant laminate flooring Miami - waterproof technology for Florida kitchens and bathrooms",
+    },
   ];
 
   const applications = [
     {
       name: "Bedrooms",
-      description: "Warm, comfortable underfoot with sound-dampening properties",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      description:
+        "Warm, comfortable underfoot with sound-dampening properties",
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       name: "Living Rooms",
       description: "Durable enough for family gatherings and daily activities",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       name: "Kitchens",
-      description: "Water-resistant options perfect for cooking and dining areas",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      description:
+        "Water-resistant options perfect for cooking and dining areas",
+      image:
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       name: "Home Offices",
       description: "Professional appearance with comfort for long work hours",
-      image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image:
+        "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       name: "Hallways",
       description: "High-traffic durability with easy maintenance",
-      image: "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image:
+        "https://images.unsplash.com/photo-1590725140738-115d4443ce6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       name: "Commercial Spaces",
-      description: "Commercial-grade options for offices, retail, and hospitality",
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    }
+      description:
+        "Commercial-grade options for offices, retail, and hospitality",
+      image:
+        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    },
   ];
 
   const testimonials = [
@@ -126,103 +175,137 @@ const LaminateFlooring = () => {
       location: "Coral Gables, FL",
       rating: 5,
       text: "Genesis Stone helped us install beautiful wood-look laminate throughout our home. It looks amazing and has held up perfectly with our two dogs!",
-      project: "1,500 sq ft whole house renovation"
+      project: "1,500 sq ft whole house renovation",
     },
     {
       name: "James Wilson",
       location: "Aventura, FL",
       rating: 5,
       text: "The water-resistant laminate in our kitchen has been a game-changer. Easy to clean and looks exactly like real hardwood at half the price.",
-      project: "Kitchen and dining room flooring"
+      project: "Kitchen and dining room flooring",
     },
     {
       name: "Sandra Martinez",
       location: "Homestead, FL",
       rating: 5,
       text: "Professional installation and great customer service. Our laminate floors still look brand new after 3 years of heavy use.",
-      project: "Commercial office space - 3,000 sq ft"
-    }
+      project: "Commercial office space - 3,000 sq ft",
+    },
   ];
 
   const faqs = [
     {
       question: "Is laminate flooring waterproof?",
-      answer: "Our premium water-resistant laminate collections feature waterproof cores that protect against spills and moisture. While traditional laminate should avoid standing water, our waterproof options are perfect for kitchens, bathrooms, and Florida's humid climate."
+      answer:
+        "Our premium water-resistant laminate collections feature waterproof cores that protect against spills and moisture. While traditional laminate should avoid standing water, our waterproof options are perfect for kitchens, bathrooms, and Florida's humid climate.",
     },
     {
       question: "Can I install laminate flooring myself?",
-      answer: "Yes! Most laminate flooring features click-lock installation that's DIY-friendly. However, for best results and warranty coverage, we recommend professional installation. Our certified installers ensure proper subfloor preparation and perfect results."
+      answer:
+        "Yes! Most laminate flooring features click-lock installation that's DIY-friendly. However, for best results and warranty coverage, we recommend professional installation. Our certified installers ensure proper subfloor preparation and perfect results.",
     },
     {
       question: "Does laminate flooring work in humid climates like Miami?",
-      answer: "Absolutely! Our laminate flooring is specifically chosen for South Florida's climate. Water-resistant and waterproof options handle humidity excellently, and proper installation with moisture barriers ensures long-lasting performance."
+      answer:
+        "Absolutely! Our laminate flooring is specifically chosen for South Florida's climate. Water-resistant and waterproof options handle humidity excellently, and proper installation with moisture barriers ensures long-lasting performance.",
     },
     {
       question: "Is laminate flooring safe for pets and children?",
-      answer: "Yes, laminate flooring is very family and pet-friendly. It's made with non-toxic materials, has anti-bacterial surface treatments, and the scratch-resistant wear layer handles pet claws better than hardwood."
+      answer:
+        "Yes, laminate flooring is very family and pet-friendly. It's made with non-toxic materials, has anti-bacterial surface treatments, and the scratch-resistant wear layer handles pet claws better than hardwood.",
     },
     {
       question: "How long does laminate flooring last?",
-      answer: "High-quality laminate flooring can last 15-30 years with proper care. Our premium collections come with 20-30 year warranties, reflecting their durability and long-term value."
+      answer:
+        "High-quality laminate flooring can last 15-30 years with proper care. Our premium collections come with 20-30 year warranties, reflecting their durability and long-term value.",
     },
     {
-      question: "What's the difference between laminate and luxury vinyl plank?",
-      answer: "Laminate has a wood fiber core with a photographic layer, offering authentic wood texture. LVP is 100% waterproof plastic. Laminate typically offers better realism and comfort underfoot, while LVP excels in moisture resistance."
-    }
+      question:
+        "What's the difference between laminate and luxury vinyl plank?",
+      answer:
+        "Laminate has a wood fiber core with a photographic layer, offering authentic wood texture. LVP is 100% waterproof plastic. Laminate typically offers better realism and comfort underfoot, while LVP excels in moisture resistance.",
+    },
   ];
 
   return (
     <Layout>
       <Helmet>
-        <title>Laminate Flooring Miami | Wood-Look & Waterproof Installation | Genesis Stone</title>
-        <meta 
-          name="description" 
+        <title>
+          Laminate Flooring Miami | Wood-Look & Waterproof Installation |
+          Genesis Stone
+        </title>
+        <meta
+          name="description"
           content="Premium laminate flooring Miami - wood-look, waterproof & tile-look options. Professional installation, trade pricing, same-day quotes. Serving South Florida since 2008."
         />
-        <meta 
-          name="keywords" 
+        <meta
+          name="keywords"
           content="laminate flooring miami, wood look laminate, waterproof laminate, vinyl plank flooring, affordable hardwood alternative, florida laminate installation"
         />
-        <link rel="canonical" href="https://genesisstoneusa.com/products/laminate-flooring" />
+        <link
+          rel="canonical"
+          href="https://genesisstoneusa.com/products/laminate-flooring"
+        />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Premium Laminate Flooring Miami | Wood-Look & Waterproof | Genesis Stone" />
-        <meta property="og:description" content="Transform your space with premium laminate flooring. Wood-look, tile-look, and waterproof options. Professional installation in Miami and South Florida." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
-        <meta property="og:url" content="https://genesisstoneusa.com/products/laminate-flooring" />
+        <meta
+          property="og:title"
+          content="Premium Laminate Flooring Miami | Wood-Look & Waterproof | Genesis Stone"
+        />
+        <meta
+          property="og:description"
+          content="Transform your space with premium laminate flooring. Wood-look, tile-look, and waterproof options. Professional installation in Miami and South Florida."
+        />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
+        <meta
+          property="og:url"
+          content="https://genesisstoneusa.com/products/laminate-flooring"
+        />
         <meta property="og:type" content="product" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Premium Laminate Flooring Miami | Genesis Stone" />
-        <meta name="twitter:description" content="Wood-look, tile-look, and waterproof laminate flooring options for Miami homes and businesses." />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+        <meta
+          name="twitter:title"
+          content="Premium Laminate Flooring Miami | Genesis Stone"
+        />
+        <meta
+          name="twitter:description"
+          content="Wood-look, tile-look, and waterproof laminate flooring options for Miami homes and businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        />
 
         {/* Breadcrumb Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "itemListElement": [
+            itemListElement: [
               {
                 "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://genesisstoneusa.com/"
-              },
-              {
-                "@type": "ListItem", 
-                "position": 2,
-                "name": "Products",
-                "item": "https://genesisstoneusa.com/products"
+                position: 1,
+                name: "Home",
+                item: "https://genesisstoneusa.com/",
               },
               {
                 "@type": "ListItem",
-                "position": 3,
-                "name": "Laminate Flooring",
-                "item": "https://genesisstoneusa.com/products/laminate-flooring"
-              }
-            ]
+                position: 2,
+                name: "Products",
+                item: "https://genesisstoneusa.com/products",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Laminate Flooring",
+                item: "https://genesisstoneusa.com/products/laminate-flooring",
+              },
+            ],
           })}
         </script>
 
@@ -231,109 +314,117 @@ const LaminateFlooring = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": ["Product", "Service"],
-            "name": "Premium Laminate Flooring Miami",
-            "description": "Professional laminate flooring installation and supply in Miami. Wood-look, tile-look, and waterproof laminate options with expert installation services.",
-            "brand": {
+            name: "Premium Laminate Flooring Miami",
+            description:
+              "Professional laminate flooring installation and supply in Miami. Wood-look, tile-look, and waterproof laminate options with expert installation services.",
+            brand: {
               "@type": "Brand",
-              "name": "Genesis Stone & More"
+              name: "Genesis Stone & More",
             },
-            "manufacturer": {
+            manufacturer: {
               "@type": "Organization",
-              "name": "Genesis Stone & More",
-              "url": "https://genesisstoneusa.com",
-              "sameAs": [
+              name: "Genesis Stone & More",
+              url: "https://genesisstoneusa.com",
+              sameAs: [
                 "https://www.facebook.com/genesisstonefl",
-                "https://www.instagram.com/genesisstonefl"
-              ]
+                "https://www.instagram.com/genesisstonefl",
+              ],
             },
-            "category": ["Flooring", "Home Improvement", "Construction Materials"],
-            "keywords": "laminate flooring Miami, wood look laminate, waterproof laminate, flooring installation, Miami flooring contractor",
-            "serviceType": "Flooring Installation and Supply",
-            "provider": {
+            category: [
+              "Flooring",
+              "Home Improvement",
+              "Construction Materials",
+            ],
+            keywords:
+              "laminate flooring Miami, wood look laminate, waterproof laminate, flooring installation, Miami flooring contractor",
+            serviceType: "Flooring Installation and Supply",
+            provider: {
               "@type": "Organization",
-              "name": "Genesis Stone & More",
-              "telephone": "+17863810964",
-              "address": {
+              name: "Genesis Stone & More",
+              telephone: "+17863810964",
+              address: {
                 "@type": "PostalAddress",
-                "addressLocality": "Miami",
-                "addressRegion": "FL",
-                "addressCountry": "US"
-              }
+                addressLocality: "Miami",
+                addressRegion: "FL",
+                addressCountry: "US",
+              },
             },
-            "offers": {
+            offers: {
               "@type": "AggregateOffer",
-              "availability": "https://schema.org/InStock",
-              "priceCurrency": "USD",
-              "lowPrice": "2.99",
-              "highPrice": "12.99",
-              "priceValidUntil": "2025-12-31",
-              "url": "https://genesisstoneusa.com/products/laminate-flooring",
-              "seller": {
+              availability: "https://schema.org/InStock",
+              priceCurrency: "USD",
+              lowPrice: "2.99",
+              highPrice: "12.99",
+              priceValidUntil: "2025-12-31",
+              url: "https://genesisstoneusa.com/products/laminate-flooring",
+              seller: {
                 "@type": "Organization",
-                "name": "Genesis Stone & More"
-              }
+                name: "Genesis Stone & More",
+              },
             },
-            "aggregateRating": {
+            aggregateRating: {
               "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "187",
-              "bestRating": "5",
-              "worstRating": "1"
+              ratingValue: "4.9",
+              reviewCount: "187",
+              bestRating: "5",
+              worstRating: "1",
             },
-            "image": [
+            image: [
               "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
               "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
               "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-              "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
             ],
-            "areaServed": [
+            areaServed: [
               {
                 "@type": "City",
-                "name": "Miami",
-                "containedInPlace": {
-                  "@type": "State", 
-                  "name": "Florida"
-                }
+                name: "Miami",
+                containedInPlace: {
+                  "@type": "State",
+                  name: "Florida",
+                },
               },
               {
                 "@type": "City",
-                "name": "Fort Lauderdale", 
-                "containedInPlace": {
+                name: "Fort Lauderdale",
+                containedInPlace: {
                   "@type": "State",
-                  "name": "Florida"
-                }
+                  name: "Florida",
+                },
               },
               {
                 "@type": "City",
-                "name": "West Palm Beach",
-                "containedInPlace": {
+                name: "West Palm Beach",
+                containedInPlace: {
                   "@type": "State",
-                  "name": "Florida"
-                }
-              }
+                  name: "Florida",
+                },
+              },
             ],
-            "hasOfferCatalog": {
+            hasOfferCatalog: {
               "@type": "OfferCatalog",
-              "name": "Laminate Flooring Collection",
-              "itemListElement": [
+              name: "Laminate Flooring Collection",
+              itemListElement: [
                 {
                   "@type": "Offer",
-                  "itemOffered": {
+                  itemOffered: {
                     "@type": "Product",
-                    "name": "Wood-Look Laminate Flooring",
-                    "description": "Realistic wood grain patterns in oak, walnut, and driftwood finishes"
-                  }
+                    name: "Wood-Look Laminate Flooring",
+                    description:
+                      "Realistic wood grain patterns in oak, walnut, and driftwood finishes",
+                  },
                 },
                 {
-                  "@type": "Offer", 
-                  "itemOffered": {
+                  "@type": "Offer",
+                  itemOffered: {
                     "@type": "Product",
-                    "name": "Waterproof Laminate Flooring",
-                    "description": "100% waterproof core technology for kitchens and bathrooms"
-                  }
-                }
-              ]
-            }
+                    name: "Waterproof Laminate Flooring",
+                    description:
+                      "100% waterproof core technology for kitchens and bathrooms",
+                  },
+                },
+              ],
+            },
           })}
         </script>
 
@@ -342,14 +433,14 @@ const LaminateFlooring = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": faqs.map(faq => ({
+            mainEntity: faqs.map((faq) => ({
               "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
+              name: faq.question,
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
+                text: faq.answer,
+              },
+            })),
           })}
         </script>
 
@@ -358,138 +449,153 @@ const LaminateFlooring = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FlooringContractor",
-            "name": "Genesis Stone & More - Laminate Flooring Miami",
-            "image": "https://genesisstoneusa.com/placeholder.svg",
-            "telephone": "+17863810964",
-            "email": "genesistonemore@gmail.com",
-            "address": {
+            name: "Genesis Stone & More - Laminate Flooring Miami",
+            image: "https://genesisstoneusa.com/placeholder.svg",
+            telephone: "+17863810964",
+            email: "genesistonemore@gmail.com",
+            address: {
               "@type": "PostalAddress",
-              "addressLocality": "Miami",
-              "addressRegion": "FL",
-              "addressCountry": "US"
+              addressLocality: "Miami",
+              addressRegion: "FL",
+              addressCountry: "US",
             },
-            "geo": {
+            geo: {
               "@type": "GeoCoordinates",
-              "latitude": 25.7617,
-              "longitude": -80.1918
+              latitude: 25.7617,
+              longitude: -80.1918,
             },
-            "url": "https://genesisstoneusa.com/products/laminate-flooring",
-            "sameAs": [
+            url: "https://genesisstoneusa.com/products/laminate-flooring",
+            sameAs: [
               "https://www.facebook.com/genesisstonefl",
-              "https://www.instagram.com/genesisstonefl"
+              "https://www.instagram.com/genesisstonefl",
             ],
-            "openingHoursSpecification": {
+            openingHoursSpecification: {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "08:00",
-              "closes": "17:00"
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+              ],
+              opens: "08:00",
+              closes: "17:00",
             },
-            "serviceArea": {
+            serviceArea: {
               "@type": "GeoCircle",
-              "geoMidpoint": {
+              geoMidpoint: {
                 "@type": "GeoCoordinates",
-                "latitude": 25.7617,
-                "longitude": -80.1918
+                latitude: 25.7617,
+                longitude: -80.1918,
               },
-              "geoRadius": "80"
+              geoRadius: "80",
             },
-            "hasOfferCatalog": {
+            hasOfferCatalog: {
               "@type": "OfferCatalog",
-              "name": "Laminate Flooring Services",
-              "itemListElement": [
+              name: "Laminate Flooring Services",
+              itemListElement: [
                 {
                   "@type": "Offer",
-                  "itemOffered": {
+                  itemOffered: {
                     "@type": "Service",
-                    "name": "Laminate Flooring Installation",
-                    "description": "Professional laminate flooring installation services in Miami"
-                  }
+                    name: "Laminate Flooring Installation",
+                    description:
+                      "Professional laminate flooring installation services in Miami",
+                  },
                 },
                 {
                   "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service", 
-                    "name": "Laminate Flooring Supply",
-                    "description": "Premium laminate flooring products and materials"
-                  }
-                }
-              ]
-            }
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Laminate Flooring Supply",
+                    description:
+                      "Premium laminate flooring products and materials",
+                  },
+                },
+              ],
+            },
           })}
         </script>
       </Helmet>
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div
+            className="absolute inset-0 bg-black/40"
+            style={{ left: "1px" }}
+          ></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Affordable Style with
-            <span className="block text-yellow-400">Durable Laminate Flooring</span>
+            <span className="block text-yellow-400">
+              Durable Laminate Flooring
+            </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Get the wood look without the cost — durable, modern, and easy to maintain. 
-            Perfect for Miami homes and Florida's climate.
+            Get the wood look without the cost — durable, modern, and easy to
+            maintain. Perfect for Miami homes and Florida's climate.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <GoldButton 
-              size="lg" 
+            <GoldButton
+              size="lg"
               className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto"
               onClick={() => {
                 // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
+                if (
+                  typeof (window as any).gtag_report_conversion === "function"
+                ) {
                   (window as any).gtag_report_conversion();
                 }
 
                 // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'get_quote_hero_laminate',
-                    value: 1
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "get_quote_hero_laminate",
+                    value: 1,
                   });
                 }
 
                 // Open WhatsApp
                 const phoneNumber = "17863810964";
-                const message = "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?";
+                const message =
+                  "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?";
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                window.open(whatsappUrl, '_blank');
+                window.open(whatsappUrl, "_blank");
               }}
             >
               Get Free Quote
             </GoldButton>
-            <WhiteOutlineButton 
-              size="lg" 
+            <WhiteOutlineButton
+              size="lg"
               className="px-8 py-4 text-lg font-semibold min-h-[56px] w-full sm:w-auto"
               onClick={() => {
                 // Track navigation
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'navigation', {
-                    event_category: 'engagement',
-                    event_label: 'browse_styles_hero',
-                    value: 1
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "navigation", {
+                    event_category: "engagement",
+                    event_label: "browse_styles_hero",
+                    value: 1,
                   });
                 }
                 // Navigate to products page
-                window.location.href = '/products';
+                window.location.href = "/products";
               }}
             >
               Browse Styles
             </WhiteOutlineButton>
           </div>
-
-          
         </div>
       </section>
 
@@ -501,7 +607,8 @@ const LaminateFlooring = () => {
               Why Choose Laminate Flooring?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the perfect combination of style, durability, and affordability with our premium laminate flooring collections.
+              Discover the perfect combination of style, durability, and
+              affordability with our premium laminate flooring collections.
             </p>
           </div>
 
@@ -514,8 +621,12 @@ const LaminateFlooring = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-[rgb(138,0,0)] to-[rgb(153,27,27)] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <benefit.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -530,13 +641,18 @@ const LaminateFlooring = () => {
               Types of Laminate Flooring We Offer
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              From classic wood-look to modern tile designs, our laminate collections offer endless possibilities for your Miami home or business.
+              From classic wood-look to modern tile designs, our laminate
+              collections offer endless possibilities for your Miami home or
+              business.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {laminateTypes.map((type, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              >
                 <div className="relative h-64">
                   <SimpleReliableImage
                     imageId="laminateHardwood"
@@ -544,31 +660,63 @@ const LaminateFlooring = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     fallbackSrc={type.image}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        type.name === "Wood-Look Laminate"
+                          ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fdcfb028f37b7499aa488b193aeb5925f)"
+                          : type.name === "Tile-Look Laminate"
+                            ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fa26622430cde4e0c89207faa92c414fc)"
+                            : type.name === "Wide Plank Laminate"
+                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F532dae5e91ea4cf189b93207aedbc837)"
+                              : "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fb651a9f9b03d486096986cc74711a06b)",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-2xl font-bold mb-2">{type.name}</h3>
                   </div>
                 </div>
                 <CardContent className="p-8">
-                  <p className="text-gray-600 mb-6 leading-relaxed">{type.description}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {type.description}
+                  </p>
                   <div className="space-y-2 mb-6">
                     {type.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3">
+                      <div
+                        key={featureIndex}
+                        className="flex items-center gap-3"
+                      >
                         <div className="w-2 h-2 bg-[rgb(138,0,0)] rounded-full"></div>
                         <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  <a 
-                    href={`https://wa.me/17863810964?text=${encodeURIComponent(`Hi! I'm interested in ${type.name}. Can you provide more details and pricing?`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full"
+                  <PrimaryButton
+                    className="w-full group-hover:bg-[rgb(120,0,0)] transition-colors"
+                    onClick={() => {
+                      // Track quote request
+                      if (typeof (window as any).gtag === "function") {
+                        (window as any).gtag("event", "conversion", {
+                          event_category: "engagement",
+                          event_label: `quote_request_${type.name.toLowerCase().replace(/[^a-z0-9]/g, "_")}`,
+                          value: 1,
+                        });
+                      }
+
+                      // Open WhatsApp with personalized message
+                      const phoneNumber = "17863810964";
+                      const message = `Hi! I'm interested in ${type.name} for my project. Can you provide more details and pricing?`;
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                      window.open(whatsappUrl, "_blank");
+                    }}
                   >
-                    <PrimaryButton className="w-full group-hover:bg-[rgb(120,0,0)] transition-colors">
-                      Request Quote Information
-                    </PrimaryButton>
-                  </a>
+                    Request Quote Information
+                  </PrimaryButton>
                 </CardContent>
               </Card>
             ))}
@@ -584,7 +732,8 @@ const LaminateFlooring = () => {
               Perfect Applications for Every Space
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Laminate flooring is versatile enough for any room in your home or business, providing beauty and durability where you need it most.
+              Laminate flooring is versatile enough for any room in your home or
+              business, providing beauty and durability where you need it most.
             </p>
           </div>
 
@@ -600,10 +749,31 @@ const LaminateFlooring = () => {
                     alt={`Laminate flooring in ${app.name.toLowerCase()} Miami - ${app.description}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        app.name === "Bedrooms"
+                          ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe4dcb29ae2244d8f9d0bacabfd5c63fd)"
+                          : app.name === "Living Rooms"
+                            ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F620f1c12fdce4a8883d8ef7b30b7bf90)"
+                            : app.name === "Kitchens"
+                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe46d67f570a14e4b81f03ea307722d30)"
+                              : app.name === "Home Offices"
+                                ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F592ab1206214444bba679e0fdd869485)"
+                                : app.name === "Hallways"
+                                  ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F435ea90ecd0b41c9b8feedf67778319e)"
+                                  : "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F6c6bde2292394df9929c7c38965a16eb)",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-xl font-bold mb-2">{app.name}</h3>
-                    <p className="text-white/90 text-sm leading-relaxed">{app.description}</p>
+                    <p className="text-white/90 text-sm leading-relaxed">
+                      {app.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -623,7 +793,8 @@ const LaminateFlooring = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600">
-              Get answers to common questions about laminate flooring installation and maintenance.
+              Get answers to common questions about laminate flooring
+              installation and maintenance.
             </p>
           </div>
 
@@ -648,7 +819,9 @@ const LaminateFlooring = () => {
                 </button>
                 {openFAQ === index && (
                   <div className="px-8 pb-6">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 )}
               </div>
@@ -666,59 +839,72 @@ const LaminateFlooring = () => {
                 Serving Miami & South Florida
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Genesis Stone & More has been Miami's trusted laminate flooring specialist since 2008. We serve residential and commercial customers throughout South Florida with premium products and professional installation services.
+                Genesis Stone & More has been Miami's trusted laminate flooring
+                specialist since 2008. We serve residential and commercial
+                customers throughout South Florida with premium products and
+                professional installation services.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-[rgb(138,0,0)]" />
-                  <span className="text-gray-700">Miami-Dade, Broward, and Palm Beach Counties</span>
+                  <span className="text-gray-700">
+                    Miami-Dade, Broward, and Palm Beach Counties
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-[rgb(138,0,0)]" />
-                  <a href="tel:+17863810964" className="text-gray-700 hover:text-[rgb(138,0,0)]">(786) 381-0964</a>
+                  <a
+                    href="tel:+17863810964"
+                    className="text-gray-700 hover:text-[rgb(138,0,0)]"
+                  >
+                    (786) 381-0964
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <MessageCircle className="h-5 w-5 text-[rgb(138,0,0)]" />
-                  <span className="text-gray-700">Same-day quotes via WhatsApp</span>
+                  <span className="text-gray-700">
+                    Same-day quotes via WhatsApp
+                  </span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <PrimaryButton 
-                  size="lg" 
+                <PrimaryButton
+                  size="lg"
                   className="w-full sm:w-auto"
                   onClick={() => {
                     // Track conversion
-                    if (typeof (window as any).gtag === 'function') {
-                      (window as any).gtag('event', 'conversion', {
-                        event_category: 'engagement',
-                        event_label: 'instant_quote_location',
-                        value: 1
+                    if (typeof (window as any).gtag === "function") {
+                      (window as any).gtag("event", "conversion", {
+                        event_category: "engagement",
+                        event_label: "instant_quote_location",
+                        value: 1,
                       });
                     }
 
                     // Open WhatsApp
                     const phoneNumber = "17863810964";
-                    const message = "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?";
+                    const message =
+                      "Hi! I'm interested in laminate flooring for my project. Can you help me with pricing and options?";
                     const encodedMessage = encodeURIComponent(message);
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                    window.open(whatsappUrl, '_blank');
+                    window.open(whatsappUrl, "_blank");
                   }}
                 >
                   Get Instant Quote
                 </PrimaryButton>
                 <a href="/contact" className="w-full sm:w-auto">
-                  <WhiteOutlineButton 
-                    size="lg" 
+                  <WhiteOutlineButton
+                    size="lg"
                     className="w-full border-[rgb(138,0,0)] text-[rgb(138,0,0)] hover:bg-[rgb(138,0,0)] hover:text-white"
                     onClick={() => {
                       // Track conversion
-                      if (typeof (window as any).gtag === 'function') {
-                        (window as any).gtag('event', 'conversion', {
-                          event_category: 'engagement',
-                          event_label: 'visit_showroom_laminate',
-                          value: 1
+                      if (typeof (window as any).gtag === "function") {
+                        (window as any).gtag("event", "conversion", {
+                          event_category: "engagement",
+                          event_label: "visit_showroom_laminate",
+                          value: 1,
                         });
                       }
                     }}
@@ -754,7 +940,8 @@ const LaminateFlooring = () => {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
           }}
         />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -762,49 +949,54 @@ const LaminateFlooring = () => {
             Ready to Upgrade Your Floors?
           </h2>
           <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Transform your space with beautiful, durable laminate flooring. Get expert guidance, competitive pricing, and professional installation from Miami's trusted flooring specialists.
+            Transform your space with beautiful, durable laminate flooring. Get
+            expert guidance, competitive pricing, and professional installation
+            from Miami's trusted flooring specialists.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <GoldButton 
-              size="lg" 
+            <GoldButton
+              size="lg"
               className="px-8 py-4 text-lg font-semibold"
               onClick={() => {
                 // Track Google Ads conversion
-                if (typeof (window as any).gtag_report_conversion === 'function') {
+                if (
+                  typeof (window as any).gtag_report_conversion === "function"
+                ) {
                   (window as any).gtag_report_conversion();
                 }
 
                 // Track Google Analytics conversion
-                if (typeof (window as any).gtag === 'function') {
-                  (window as any).gtag('event', 'conversion', {
-                    event_category: 'engagement',
-                    event_label: 'book_estimate_final_cta',
-                    value: 1
+                if (typeof (window as any).gtag === "function") {
+                  (window as any).gtag("event", "conversion", {
+                    event_category: "engagement",
+                    event_label: "book_estimate_final_cta",
+                    value: 1,
                   });
                 }
 
                 // Open WhatsApp
                 const phoneNumber = "17863810964";
-                const message = "Hi! I'm ready to upgrade my floors with laminate flooring. Can you help me book a free estimate?";
+                const message =
+                  "Hi! I'm ready to upgrade my floors with laminate flooring. Can you help me book a free estimate?";
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                window.open(whatsappUrl, '_blank');
+                window.open(whatsappUrl, "_blank");
               }}
             >
               Book Free Estimate
             </GoldButton>
             <a href="/contact">
-              <WhiteOutlineButton 
-                size="lg" 
+              <WhiteOutlineButton
+                size="lg"
                 className="px-8 py-4 text-lg font-semibold"
                 onClick={() => {
                   // Track conversion
-                  if (typeof (window as any).gtag === 'function') {
-                    (window as any).gtag('event', 'conversion', {
-                      event_category: 'engagement',
-                      event_label: 'visit_showroom_final_cta',
-                      value: 1
+                  if (typeof (window as any).gtag === "function") {
+                    (window as any).gtag("event", "conversion", {
+                      event_category: "engagement",
+                      event_label: "visit_showroom_final_cta",
+                      value: 1,
                     });
                   }
                 }}
@@ -815,8 +1007,14 @@ const LaminateFlooring = () => {
           </div>
 
           <p className="text-white/80">
-            Call us today: <a href="tel:+17863810964" className="font-semibold hover:text-yellow-400">(786) 381-0964</a> | 
-            Same-day quotes available via WhatsApp
+            Call us today:{" "}
+            <a
+              href="tel:+17863810964"
+              className="font-semibold hover:text-yellow-400"
+            >
+              (786) 381-0964
+            </a>{" "}
+            | Same-day quotes available via WhatsApp
           </p>
         </div>
       </section>
