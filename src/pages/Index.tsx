@@ -549,6 +549,8 @@ const Index = () => {
                 src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Natural stone travertine pool area with spa"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
@@ -575,6 +577,8 @@ const Index = () => {
                 src="https://images.unsplash.com/photo-1562113530-57ba2cea56c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Modern white interior with polished porcelain"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 bg-no-repeat bg-center bg-cover"
