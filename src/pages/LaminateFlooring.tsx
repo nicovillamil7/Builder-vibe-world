@@ -737,7 +737,26 @@ const LaminateFlooring = () => {
                     alt={`Laminate flooring in ${app.name.toLowerCase()} Miami - ${app.description}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        app.name === "Bedrooms"
+                          ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe4dcb29ae2244d8f9d0bacabfd5c63fd)"
+                          : app.name === "Living Rooms"
+                            ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F620f1c12fdce4a8883d8ef7b30b7bf90)"
+                            : app.name === "Kitchens"
+                              ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe46d67f570a14e4b81f03ea307722d30)"
+                              : app.name === "Home Offices"
+                                ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F592ab1206214444bba679e0fdd869485)"
+                                : app.name === "Hallways"
+                                  ? "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F435ea90ecd0b41c9b8feedf67778319e)"
+                                  : "url(https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F6c6bde2292394df9929c7c38965a16eb)",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <h3 className="text-xl font-bold mb-2">{app.name}</h3>
                     <p className="text-white/90 text-sm leading-relaxed">
