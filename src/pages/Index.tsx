@@ -202,6 +202,42 @@ const Index = () => {
         keywords="flooring Miami, porcelain tiles Miami, natural stone supplier Miami, travertine pool decks South Florida, luxury vinyl plank installation, flooring contractor Miami, tile supplier Miami"
         canonicalUrl="https://genesisstoneusa.com/"
       />
+
+      {/* Mobile Performance Optimizations */}
+      <Helmet>
+        {/* Mobile Viewport and Performance */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
+
+        {/* Performance Hints */}
+        <link rel="preconnect" href="https://cdn.builder.io" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+
+        {/* Critical Resource Hints for Mobile */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2F37ad3adaf8fd4909968a7295164d4eb7"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F794088d731be4280a896b77e76e82a50%2Fe53984331f4746c9824532d42afd5c1f"
+          media="(max-width: 768px)"
+        />
+      </Helmet>
       <TechnicalSEO
         pageType="website"
         images={[
