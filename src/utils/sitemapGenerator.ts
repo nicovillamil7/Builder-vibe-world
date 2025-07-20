@@ -141,17 +141,6 @@ const BLOG_IMAGES: Record<string, SitemapImage> = {
     caption:
       "Comprehensive guide to understanding cost differences between natural stone and ceramic tile for home renovations",
   },
-  "modern-tile-styles-luxurious-living": {
-    loc: "https://storage.googleapis.com/content-assistant-images-temp/a-a-contemporary-living-room--97ea685d-62a4-42cc-a11e-44cb2e75971e.webp",
-    title: "Transform Your Space With Modern Tile Styles for Luxurious Living",
-    caption:
-      "Discover the latest trends in modern tile designs that elevate luxury living rooms with sophisticated finishes and expert installation techniques",
-  },
-  "transform-your-space-with-modern-tile-styles-for-luxurious-living": {
-    loc: "https://storage.googleapis.com/content-assistant-images-temp/a-a-contemporary-living-room--97ea685d-62a4-42cc-a11e-44cb2e75971e.webp",
-    title: "Transform Your Space With Modern Tile Styles for Luxurious Living",
-    caption: "Discover modern tile styles that create luxurious living spaces with sophisticated design elements and premium finishes",
-  },
 };
 
 const generateSitemapUrls = (): SitemapUrl[] => {

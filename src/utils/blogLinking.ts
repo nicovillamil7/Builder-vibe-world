@@ -62,24 +62,6 @@ export const INTERNAL_LINKS: LinkMap = {
     title: 'Professional Installation Services - Genesis Stone',
     type: 'internal',
     priority: 2
-  },
-  'modern tiles': {
-    url: '/products',
-    title: 'Modern Tile Collection - Genesis Stone',
-    type: 'internal',
-    priority: 1
-  },
-  'luxury living': {
-    url: '/retail',
-    title: 'Luxury Living Solutions - Genesis Stone Showroom',
-    type: 'internal',
-    priority: 2
-  },
-  'interior design': {
-    url: '/retail',
-    title: 'Interior Design Consultation - Genesis Stone',
-    type: 'internal',
-    priority: 2
   }
 };
 
@@ -108,42 +90,6 @@ export const EXTERNAL_LINKS: LinkMap = {
     title: 'National Association of Home Builders - Home Improvement',
     type: 'external',
     priority: 2
-  },
-  'Marazzi': {
-    url: 'https://www.marazzi.com/',
-    title: 'Marazzi Tile Collections',
-    type: 'external',
-    priority: 3
-  },
-  'Porcelanosa': {
-    url: 'https://www.porcelanosa.com/',
-    title: 'Porcelanosa Premium Tiles',
-    type: 'external',
-    priority: 3
-  },
-  'ceramic tile institute': {
-    url: 'https://www.ceramictileinstitute.org/',
-    title: 'Ceramic Tile Institute of America',
-    type: 'external',
-    priority: 3
-  },
-  'natural stone institute': {
-    url: 'https://www.naturalstoneinstitute.org/',
-    title: 'Natural Stone Institute',
-    type: 'external',
-    priority: 3
-  },
-  'tile council of north america': {
-    url: 'https://www.tcnatile.com/',
-    title: 'Tile Council of North America - Installation Guidelines',
-    type: 'external',
-    priority: 3
-  },
-  'interior design trends': {
-    url: 'https://www.architecturaldigest.com/',
-    title: 'Architectural Digest - Interior Design Trends',
-    type: 'external',
-    priority: 3
   }
 };
 
